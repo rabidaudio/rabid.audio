@@ -1,0 +1,32 @@
+
+
+pre {
+  overflow-x: auto;
+}
+
+div.post {
+  background-color: $post-background-color;
+  padding: 1em;
+  border-radius: 1px;
+  box-shadow: 0px 0px 6px 2px $shadow-color;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a.wikipedia {
+  background-position: top right;
+  background-image: url($wp-img);
+  background-repeat: no-repeat;
+  padding-right: 11px;
+}
+
+.post-title {
+  margin-bottom: 0px;
+  font-size: 48px;
+}
+.post-meta {
+  padding-left: 10px;
+  a{ color: $grey-color; }
+}

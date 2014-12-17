@@ -2,3 +2,4 @@ _site
 .sass-cache
 .divshot-cache
 *.sublime-workspace
+components

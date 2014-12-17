@@ -1,0 +1,10 @@
+{
+  "name": "rabid.audio",
+  "version": "0.0.0",
+  "homepage": "rabid.audio",
+  "license": "CC-3.0-SA",
+  "private": true,
+  "dependencies": {
+    "MathJax": "~2.4.0"
+  }
+}

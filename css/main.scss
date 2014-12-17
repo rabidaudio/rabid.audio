@@ -14,8 +14,12 @@ $base-line-height: 1.5;
 $spacing-unit:     30px;
 
 $text-color:       #111;
-$background-color: #fdfdfd;
+//$background-color: #eeeeee;
+$background-color: white;
+$post-background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
+
+$shadow-color: #cccccc;
 
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
@@ -26,6 +30,8 @@ $content-width:    800px;
 
 $on-palm:          600px;
 $on-laptop:        800px;
+
+$wp-img: "{{ "/images/wp-10.png" | prepend: site.baseurl }}";
 
 
 
@@ -43,10 +49,10 @@ $on-laptop:        800px;
 }
 
 
-
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
         "layout",
-        "syntax-highlighting"
+        "rabidaudio",
+        "monokai"
 ;

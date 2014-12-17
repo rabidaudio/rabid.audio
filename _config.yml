@@ -8,9 +8,22 @@ url: "http://rabid.audio" # the base hostname & protocol for your site
 twitter_username: charlesjuliank
 github_username:  rabidaudio
 
-exclude: [deploy.sh, divshot.json, cheatsheet.md, "rabidaudio.sublime-project", "rabidaudio.sublime-workspace"]
+exclude: [deploy.sh, divshot.json, cheatsheet.md, "rabidaudio.sublime-project", "rabidaudio.sublime-workspace"]#, components]
+keep_files: [
+#  'components/MathJax/MathJax.js'
+]
 destination: _site/blog
 timezone: America/New_York
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+      author: "Charles Julian Knight"
+      author_contact: "http://twitter.com/charlesjuliank"
 
 # Build settings
 markdown: kramdown

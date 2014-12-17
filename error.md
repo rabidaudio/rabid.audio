@@ -2,7 +2,7 @@
 layout: default
 ---
 
-#### Sorry to do this, but... ####
+# Sorry to do this, but... #
 
 {% highlight javascript %} 
     res.status(404).send('Page Not Found');
