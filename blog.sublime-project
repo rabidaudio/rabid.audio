@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "/home/charles/Dropbox/Projects/blog2/rabidaudio_blog_2"
+		}
+	],
+
+    "settings":
+      {
+          "Jekyll":
+          {
+              "posts_path": "/home/charles/Dropbox/Projects/blog2/rabidaudio_blog_2/_posts",
+              "drafts_path": "/home/charles/Dropbox/Projects/blog2/rabidaudio_blog_2_drafts"
+          }
+      }
+}

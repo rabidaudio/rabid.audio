@@ -1,6 +1,18 @@
 ---
-layout: post
-title: Markdown Style Guide
+layout
+    If set, this specifies the layout file to use. Use the layout file name without the file extension. Layout files must be placed in the  _layouts directory.
+
+permalink
+    If you need your processed blog post URLs to be something other than the default /year/month/day/title.html then you can set this variable and it will be used as the final URL.
+
+published
+    Set to false if you don’t want a specific post to show up when the site is generated.
+
+category, categories
+    Instead of placing posts inside of folders, you can specify one or more categories that the post belongs to. When the site is generated the post will act as though it had been set with these categories normally. Categories (plural key) can be specified as a YAML list or a space-separated string.
+
+tags
+    Similar to categories, one or multiple tags can be added to a post. Also like categories, tags can be specified as a YAML list or a space- separated string.
 ---
 
 This is a demo of all styled elements in Jekyll Now. 
@@ -44,13 +56,6 @@ Inline markup styles:
 >> Nested Blockquote 
  
 Syntax highlighting can be used by wrapping your code in a liquid tag like so:
-
-{{ "{% highlight javascript " }}%}  
-/* Some pointless Javascript */
-var rawr = ["r", "a", "w", "r"];
-{{ "{% endhighlight " }}%}  
-
-creates...
 
 {% highlight javascript %}
 /* Some pointless Javascript */
