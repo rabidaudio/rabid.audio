@@ -30,3 +30,30 @@ a.wikipedia {
   padding-left: 10px;
   a{ color: $grey-color; }
 }
+
+// .site-nav {
+//   margin-top: -50px;
+// }
+
+.site-title img {
+  width: 10%;
+  padding-top: 5px;
+  // position: absolute;
+}
+
+@include media-query($on-palm) {
+
+  body{
+    background-color: $post-background-color;
+  }
+
+  .wrapper {
+    padding: 0px;
+  }
+  div.post {
+    padding: .25em;
+    border-radius: 1px;
+    box-shadow: none;
+    background-color: inherit;
+  }
+}

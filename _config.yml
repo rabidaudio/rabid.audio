@@ -8,9 +8,10 @@ url: "http://rabid.audio" # the base hostname & protocol for your site
 twitter_username: charlesjuliank
 github_username:  rabidaudio
 
-exclude: [deploy.sh, divshot.json, cheatsheet.md, "rabidaudio.sublime-project", "rabidaudio.sublime-workspace"]#, components]
+exclude: [deploy.sh, divshot.json, "rabidaudio.sublime-project", "rabidaudio.sublime-workspace", components]
 keep_files: [
-#  'components/MathJax/MathJax.js'
+  #'components/MathJax/MathJax.js',
+  #'components/MathJax/config'
 ]
 destination: _site/blog
 timezone: America/New_York

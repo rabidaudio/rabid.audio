@@ -4,7 +4,5 @@
   "homepage": "rabid.audio",
   "license": "CC-3.0-SA",
   "private": true,
-  "dependencies": {
-    "MathJax": "~2.4.0"
-  }
+  "dependencies": {}
 }
