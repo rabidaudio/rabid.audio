@@ -1,0 +1,111 @@
+
+
+
+<!--charlesjuliank.kgmk70ec
+
+
+green - 248456
+dark  - 18563d
+white - d5e1df
+chip  - 383639
+
+-->
+
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.4/mapbox.css' rel='stylesheet' />
+
+<div id="map" style="width:100%; height:100%;"></div>
+<script src="OSMBuildings-Leaflet.debug.js"></script>
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+
+<script>
+// Provide your access token
+L.mapbox.accessToken = 'pk.eyJ1IjoiY2hhcmxlc2p1bGlhbmsiLCJhIjoiTDBILXBMVSJ9.G4QD3lBQE-mSB_FM8wzM8w';
+// Create a map in the div #map
+map = L.mapbox.map('map', 'charlesjuliank.605bc106', {
+  inertia: false,
+  inertiaDeceleration: 2000,
+  inertiaMaxSpeed: 1500,
+  zoomControl: false
+});
+
+osmb = new OSMBuildings(map);
+osmb.style({ wallColor:'rgb(0, 0, 0)', roofColor:'#383639', shadows: false });
+
+//var drawControl = new L.Control.Draw({
+//  draw: { polyline:false, circle:false, marker:false }
+//});
+//map.addControl(drawControl);
+
+// buildings = L.geoJson().addTo(map);
+// buildings.setStyle({
+//   "color": "#383639",
+//   "weight": 5,
+//   //"opacity": 0.65
+// });
+
+// $.ajax({
+//   url: "http://data.osmbuildings.org/0.2/rkc8ywdl/tile/16/17404/26228.json",
+//   dataType: "json",
+// 
+// }).done(function(data, status, jqXHR){
+//   console.log(["Got data", data.features]);
+//   data.features.forEach(function(feature){
+//     var maxX, maxY, minX, minY;
+//     feature.geometry.coordinates[0].forEach(function(coordinates, index){
+//       if(index==1){
+//         maxX = coordinates[0];
+//         minX = coordinates[0];
+//         maxY = coordinates[1];
+//         minY = coordinates[1];
+//       }else{
+//         if(coordinates[0] < minX) minX=coordinates[0];
+//         if(coordinates[0] > maxX) maxX=coordinates[0];
+//         if(coordinates[1] < minY) minY=coordinates[1];
+//         if(coordinates[1] > maxY) maxY=coordinates[1];
+//       }
+//     });
+//     feature.geometry.coordinates[0] = [
+//       [minX, minY],
+//       [minX, maxY],
+//       [maxX, maxY],
+//       [maxX, minY]
+//     ];
+//   });
+//   buildings.addData(data);
+//   //buildings.addData(data.features[0]);
+// });
+
+
+//map.dragging.disable();
+//map.touchZoom.disable();
+//map.doubleClickZoom.disable();
+//map.scrollWheelZoom.disable();
+
+
+
+
+var x = 33.77681;
+var y = -84.38855;
+var z = 19;
+map.setView([x, y], z);
+
+osmb.load();
+
+//var layer = L.mapbox.tileLayer('charlesjuliank.605bc106');
+rate = 5000;
+// i = setInterval(function(){
+//   map.panBy([100,100],{ //[(Math.random()-.5)*400, (Math.random()-.5)*400], {
+//     duration: 2,
+//     easeLinearity: 1,
+//     animate: true
+//   });
+// }, rate);
+
+//generate random elipse coordinates
+
+function stop(){
+  clearInterval(i);
+}
+
+</script>
