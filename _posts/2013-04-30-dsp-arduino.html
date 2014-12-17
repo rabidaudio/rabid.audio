@@ -1,0 +1,16 @@
+---
+layout: post
+title: DSP + Arduino
+date: '2013-04-30T19:30:00.001-04:00'
+author: Charles Knight
+tags:
+- electronics
+- arduino
+- music
+modified_time: '2013-04-30T22:10:06.645-04:00'
+thumbnail: http://1.bp.blogspot.com/-6JGJIpBSL-w/UYBS8XOyinI/AAAAAAAACaY/-qLl4VRj49g/s72-c/arduino-dsp-bass.png
+blogger_id: tag:blogger.com,1999:blog-3872869707490468262.post-7762901621825509122
+blogger_orig_url: http://blog.rabidaudio.com/2013/04/dsp-arduino.html
+---
+
+<a href="http://www.amandaghassaei.com/about.html" target="_blank">Amanda Ghassaei</a>, who has <a href="http://www.amandaghassaei.com/3D_printed_record.html" target="_blank">this amazing project I just found out about</a>, also has <a href="http://www.instructables.com/id/Arduino-Audio-Input" target="_blank">a great Instructable for doing DSP with Arduino</a>. A few hours and one blown op-amp later, I was able to get my Arduino to pickup my bass playing. It samples around 38.5 kHz, but I only had it send serial data back every 10 ms (a measly 100 Hz). Still, I was able to generate this graph with the data. You can see the clipping where I cranked it up to test the peak indicator LED.<br /><br /><div class="separator" style="clear: both; text-align: center;"><a href="http://1.bp.blogspot.com/-6JGJIpBSL-w/UYBS8XOyinI/AAAAAAAACaY/-qLl4VRj49g/s1600/arduino-dsp-bass.png" imageanchor="1" style="clear: left; float: left; margin-bottom: 1em; margin-right: 1em;"><img border="0" height="177" src="http://1.bp.blogspot.com/-6JGJIpBSL-w/UYBS8XOyinI/AAAAAAAACaY/-qLl4VRj49g/s320/arduino-dsp-bass.png" width="320" /></a></div>The atmega328 has 32Kb flash memory. If I used half of that for a delay line, 16,000 samples / 38500 samples/sec = .42 second delay. I could get a longer delay by using external flash (e.g. SD card), but I worry that the read/write time would be low. It will be interesting to apply some of the concepts from class to actual signals. What does a 50-point averager do to my tone? (answer: probably reverb)<br /><br />There's not a lot I can do with this now, since I can't hear the results of any processing yet. I just ordered a DAC0808 8-bit digital-analog converter. (The new DUE has two built-in DAC outputs, as well as PWM, although it still isn't an ideal platform for DSP). Eventually, I would like to get an FFT algorithm running and make a tuner. That will probably have to wait until after finals, though.<br /><br /><b>EDIT</b>: Just found out about <a href="http://wki.pe/Resistor_ladder">wki.pe/Resistor_ladder</a>&nbsp;s.

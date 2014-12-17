@@ -1,0 +1,17 @@
+---
+layout: post
+title: Swank - A Stupid-simple static webserver
+date: '2014-02-18T23:19:00.003-05:00'
+author: Charles Knight
+tags:
+- server
+- web development
+- software
+- networking
+- computing
+modified_time: '2014-04-25T13:23:34.103-04:00'
+blogger_id: tag:blogger.com,1999:blog-3872869707490468262.post-5687067875625624483
+blogger_orig_url: http://blog.rabidaudio.com/2014/02/swank-stupid-simple-static-webserver.html
+---
+
+Today doing some web development I got tired of messing with httpd.conf files with <a href="http://www.apachefriends.org/index.html" target="_blank">XAMPP</a> every time I changed projects, so I whipped up a little project called <a href="https://github.com/rabidaudio/swank" target="_blank">swank</a>. Simply run swank from a terminal, optionally giving it the root path (if not the current working directory) and the port (if not 8000). It will spin up a static file webserver on your local machine, and spit back a link you can try in your browser. Ctrl-C to kill when you are done.<br /><br />Sure, most browsers will open raw local files, but you run into issues with cross-site requests and over permissions. And the closer you can imitate a real webserver in development, the better.To install:<br /><blockquote class="tr_bq"><span style="font-family: Courier New, Courier, monospace;">[sudo] npm install -g swank</span></blockquote>It is my first item on <a href="http://npmjs.org/" target="_blank">npm</a>. I was quite impressed with how easy it was to create a module and publish it. It is really nothing more than <span style="font-family: Courier New, Courier, monospace;">npm init</span> (which is required for things like Heroku and good practice anyway) and <span style="font-family: Courier New, Courier, monospace;">npm publish</span>.<br /><br />I'd like to eventually drop the <a href="http://www.senchalabs.org/connect/" target="_blank">Connect middleware</a> requirement, but it works for now (and it is realistically <a href="https://github.com/rabidaudio/swank/blob/master/swank.js" target="_blank">about 15 lines of code</a>). <a href="https://www.npmjs.org/package/swank" target="_blank">Here is the project on npm</a>. Let me know what you think!<br /><br /><b><u>EDIT:</u></b> The latest version of swank now has optional <a href="https://ngrok.com/" target="_blank">ngrok</a> support. Just add the <span style="font-family: Courier New, Courier, monospace;">--ngrok</span> flag to the command, and have your server tunneled to the outside world. Pretty cool!
