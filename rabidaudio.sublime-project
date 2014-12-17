@@ -1,0 +1,20 @@
+{
+    "folders":
+    [
+        {
+            "path": "/home/charles/Dropbox/Projects/blog2/rabid.audio"
+        }
+    ],
+
+    "settings":
+      {
+          "Jekyll":
+          {
+              "posts_path": "/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts",
+              "drafts_path": "/home/charles/Dropbox/Projects/blog2/rabid.audio_drafts"
+          },
+
+          "tab_size": 2,
+          "translate_tabs_to_spaces": true
+      }
+}

@@ -519,51 +519,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "error.md",
-			"settings":
-			{
-				"buffer_size": 302,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "Package Control Messages\n========================\n\nJekyll:\n------\n\n  Thanks for installing sublime-jekyll!\n  \n  This package should help maintaining Jekyll sites and posts easier by providing access to new post/draft shortcuts, key template tags and filters, as well as common completions and a current date/datetime command (for dating posts).\n  \n  \n  After installing this package, make sure you configure your User settings file. The most important piece of this is to set your `posts_path` and `drafts_path` locations. This can also be set on a per-project basis later if you have multiple Jekyll sites you wish to manage.\n  \n  {\n  \n      // This should point to your \"_posts\" directory.\n      // NOTE: This should be an absolute path. Also, the path should\n      // match your system convention. For example, Windows machines should\n      // have a path similar to \"C:\\\\Users\\\\username\\\\site\\\\_posts\".\n      // *nix systems should have a path similar to \"/Users/username/site/_posts\".\n      \"posts_path\": \"\",\n  \n      // This should point to your \"_drafts\" directory.\n      // NOTE: This should be an absolute path. Also, the path should\n      // match your system convention. For example, Windows machines should\n      // have a path similar to \"C:\\\\Users\\\\username\\\\site\\\\_drafts\".\n      // *nix systems should have a path similar to \"/Users/username/site/_drafts\".\n      \"drafts_path\": \"\",\n  \n  }\n  \n  ```\n  \n  For per-project settings, make sure you add your Jekyll settings correctly to your project settings file:\n  \n  {\n      \"folders\":\n      [\n          {\n              \"follow_symlinks\": true,\n              \"path\": \"/Users/username/site/\"\n          }\n      ],\n  \n      \"settings\":\n      {\n          \"Jekyll\":\n          {\n              \"posts_path\": \"/Users/username/site/_posts\",\n              \"drafts_path\": \"/Users/username/site/_drafts\",\n          }\n      }\n  }\n  \n  \n  If you have any questions or issues, please visit the homepage and log an issue: http://23maverick23.github.io/sublime-jekyll/\n",
-			"settings":
-			{
-				"buffer_size": 2015,
-				"line_ending": "Unix",
-				"name": "Package Control Messages",
-				"scratch": true
-			}
-		},
-		{
-			"file": "index.html",
-			"settings":
-			{
-				"buffer_size": 506,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_config.yml",
-			"settings":
-			{
-				"buffer_size": 527,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "\npre {\n    \n}",
-			"file": "css/ra.css",
-			"file_size": 0,
-			"file_write_time": 1418792967000000,
-			"settings":
-			{
-				"buffer_size": 13,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -809,6 +764,10 @@
 	},
 	"file_history":
 	[
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/css/ra.css",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_config.yml",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/error.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/index.html",
 		"/home/charles/Dropbox/Projects/blog2/rabidaudio_blog_2/cheatsheet.md",
 		"/home/charles/clubalert.me/webapp/app/scripts/templates/home.hbs",
 		"/home/charles/clubalert.me/webapp/app/scripts/models/Page.js",
@@ -932,11 +891,7 @@
 		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/templates/post.hbs",
 		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/templates/author.hbs",
 		"/home/charles/Dropbox/Projects/Utterson/blog/styles/main.css",
-		"/home/charles/Dropbox/Projects/Utterson/blog/data/author_store.json",
-		"/home/charles/Dropbox/Projects/Utterson/blog/data/authors/0.json",
-		"/home/charles/Dropbox/Projects/Utterson/README.md",
-		"/home/charles/Dropbox/Projects/Utterson/Gruntfile.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/data/custom.css"
+		"/home/charles/Dropbox/Projects/Utterson/blog/data/author_store.json"
 	],
 	"find":
 	{
@@ -1142,141 +1097,8 @@
 	"groups":
 	[
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "error.md",
-					"settings":
-					{
-						"buffer_size": 302,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								61,
-								61
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Markdown/Markdown.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"settings":
-					{
-						"buffer_size": 2015,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2015,
-								2015
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Text/Plain text.tmLanguage",
-							"word_wrap": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 90.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "index.html",
-					"settings":
-					{
-						"buffer_size": 506,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								242,
-								242
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "_config.yml",
-					"settings":
-					{
-						"buffer_size": 527,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								489,
-								489
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/YAML/YAML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "css/ra.css",
-					"settings":
-					{
-						"buffer_size": 13,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								11,
-								11
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				}
 			]
 		}
 	],
