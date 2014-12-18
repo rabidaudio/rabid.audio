@@ -1,0 +1,15 @@
+
+
+<script>
+$(document).ready(function(){
+  $.ajax({
+    url: '',
+
+  }).done(function(data){
+    $('#content').css('background-image', 'url('+data.img+')');
+  });
+});
+
+</script>
+
+<div id="content" style="width:100%;height:100%;"></div>

@@ -37,7 +37,7 @@ literal link <http://github.com/barryclark/jekyll-now/>
   
 A [link]({% post_url 2012-11-28-the-color-of-music %}) to an existing post and {% wkipe Bertrand Russel %} to wikipedia
 
-![an image alt text]({{ site.baseurl }}/images/cat.jpg "My Cat")
+![an image alt text]({{ site.baseurl }}/images/cat.jpg "My Cat"){:data-lightbox="post" data-title="Adorbs"}
 
 Now let's add some $$\LaTeX$$:
 
@@ -101,13 +101,12 @@ Inline `markup` styles:
 - **bold**
 - `code()` 
  
-> Blockquote
-  More blockquote
-
-> Nested Blockquote 
-
-> No way dogg
-  uhh yeah actually
- 
-----
-****
+> This is a paragraph.
+>
+> > A nested blockquote.
+>
+> ## Headers work
+>
+> * lists too
+>
+> and all other block-level elements

@@ -11,6 +11,13 @@ div.post {
   box-shadow: 0px 0px 6px 2px $shadow-color;
 }
 
+a {
+  color: $color-dark;
+}
+a:visited {
+  color: $color-darker;
+}
+
 a:hover {
   text-decoration: underline;
 }
@@ -56,4 +63,8 @@ a.wikipedia {
     box-shadow: none;
     background-color: inherit;
   }
+}
+.site-header{
+  border-top: 10px solid $color-darker;
+  background-color: $color-light;
 }
