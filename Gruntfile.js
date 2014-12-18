@@ -2,6 +2,8 @@
 
 var LIVERELOAD_PORT = 35729;
 var SERVER_PORT = 9000;
+var fs = require('fs');
+var path = require('path');
 
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
@@ -118,6 +120,15 @@ module.exports = function(grunt) {
         path: 'http://localhost:<%= connect.options.port %>/blog'
       }
     },
+
+    //open files in editor
+    editor: {
+      options: {
+        //editor: '<%= pkg.editor || process.env.VISUAL || process.env.EDITOR %>'
+        editor: "subl"
+      },
+      src: []
+    }
   });
 
   grunt.registerTask('devbuild', ['concat:dev','jekyll:dev']);
@@ -129,6 +140,40 @@ module.exports = function(grunt) {
   grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'open:server', 'watch']);
   grunt.registerTask('default', ['serve']);
 
-  //todo tasks for new posts
+
+
+  //tasks for new posts
+  grunt.registerTask('new', 'Start a new post or draft', function(type) {
+    var done = this.async();
+    // var data = grunt.file.readYAML('_templates/post.md'); //read template
+    var dir = "_drafts";
+    if(type==="post"){
+      dir = "_posts";
+      // data.published = true;
+    }
+
+    var d = new Date();
+
+    require('readline').createInterface({
+      input: process.stdin,
+      output: process.stdout
+    }).question("Title of the post: ", function(title){
+      if(!title) return grunt.fail.warn("No title specified");
+
+      grunt.log.writeln('Creating...');
+
+      //data.title = title;
+      var file_title = title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ /g,'-');
+      var file_name = [d.getFullYear(), d.getMonth()+1, d.getDate()].join("-")+"-"+file_title+".md";
+      var full_name = path.resolve(dir, file_name);
+
+      //todo insert title
+      fs.createReadStream("_templates/post.md").pipe(fs.createWriteStream(full_name)); //copy template
+
+      grunt.config('editor.src', [full_name]);
+      grunt.task.run('editor');
+      done();
+    });
+  });
 
 };
