@@ -8,11 +8,23 @@ url: "http://rabid.audio" # the base hostname & protocol for your site
 twitter_username: charlesjuliank
 github_username:  rabidaudio
 
-exclude: [deploy.sh, divshot.json, "rabidaudio.sublime-project", "rabidaudio.sublime-workspace", components]
-keep_files: [
-  #'components/MathJax/MathJax.js',
-  #'components/MathJax/config'
-]
+exclude:
+- deploy.sh
+- divshot.json
+- rabidaudio.sublime-project
+- rabidaudio.sublime-workspace
+- node_modules
+- Gruntfile.js
+- README.md
+- bower.json
+- package.json
+- components
+
+# JS files to include from components (Bower directory)
+components:
+- components/jquery/dist/jquery.js
+- components/lightbox/js/lightbox.js
+
 destination: _site/blog
 timezone: America/New_York
 

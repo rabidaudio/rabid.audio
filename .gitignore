@@ -3,3 +3,4 @@ _site
 .divshot-cache
 *.sublime-workspace
 components
+node_modules
