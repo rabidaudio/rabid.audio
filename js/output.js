@@ -9617,9 +9617,3 @@ return jQuery;
   });
 
 }).call(this);
-
-
-
-$(document).ready(function(){
-  console.log("Heeellloooo, world!");
-});

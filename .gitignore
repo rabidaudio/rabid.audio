@@ -2,5 +2,5 @@ _site
 .sass-cache
 .divshot-cache
 *.sublime-workspace
-components
+_vendor
 node_modules

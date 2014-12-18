@@ -9,7 +9,6 @@ twitter_username: charlesjuliank
 github_username:  rabidaudio
 
 exclude:
-- deploy.sh
 - divshot.json
 - rabidaudio.sublime-project
 - rabidaudio.sublime-workspace
@@ -18,12 +17,13 @@ exclude:
 - README.md
 - bower.json
 - package.json
-- components
 
-# JS files to include from components (Bower directory)
-components:
-- components/jquery/dist/jquery.js
-- components/lightbox/js/lightbox.js
+# JS files to include from vendor (Bower directory)
+vendor:
+- _vendor/jquery/dist/jquery.js
+- _vendor/lightbox/js/lightbox.js
+
+#compiled_js: js/output.js
 
 destination: _site/blog
 timezone: America/New_York

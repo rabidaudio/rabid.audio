@@ -16,9 +16,9 @@ tags: ["c", "a", "t"]
 
 title: Test Post
 author: Charles Julian Knight
-author_contact: mailto:charles@rabidaudio.com
+#author_contact: mailto:charles@rabidaudio.com
 # A url
-mathjax: true
+mathjax: false
 # Set to true if the page has LaTeX. This saves the huge script from being inserted constantly
 ---
 

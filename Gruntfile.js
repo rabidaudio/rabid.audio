@@ -1,13 +1,5 @@
 'use strict';
 
-// process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
-
-var components = [
-  //TODO pull from single source (like _config.yml)
-  'components/jquery/dist/jquery.js',
-  'components/lightbox/js/lightbox.js'
-];
-
 var LIVERELOAD_PORT = 35729;
 var SERVER_PORT = 9000;
 
@@ -24,7 +16,7 @@ module.exports = function(grunt) {
 
     //config files
     pkg: grunt.file.readJSON('package.json'),
-    config: grunt.file.readYAML('_config.yml'),
+    cfg: grunt.file.readYAML('_config.yml'),
 
     jekyll: {
       options: {
@@ -34,14 +26,12 @@ module.exports = function(grunt) {
       //Production Build
       dist: {
         options: {
-          // dest: '_site/blog',
           config: '_config.yml'
         }
       },
       //Test Build
       dev: {
         options: {
-          // dest: '_site/blog',
           config: '_config.yml',
           drafts: true
         }
@@ -54,7 +44,7 @@ module.exports = function(grunt) {
     },
 
     divshot: {
-      //no-op, compass is better
+      //don't use, connect is better (has watch, etc)
       server: {options: {}},
     },
     //the real meat
@@ -65,11 +55,11 @@ module.exports = function(grunt) {
     },
 
 
-    //js compilation
+    //js compilation (prodcution version)
     uglify: {
       dist: {
         files: {
-          'js/output.js': [components, '_src/**/*.js']
+          'js/output.js': ['<%= cfg.vendor %>', '_src/**/*.js']
         },
         options: {
           compress: true,
@@ -84,7 +74,7 @@ module.exports = function(grunt) {
         banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
       },
       dev: {
-        src: [components, '_src/**/*.js'],
+        src: ['<%= cfg.vendor %>', '_src/**/*.js'],
         dest: 'js/output.js',
       },
     },
@@ -95,14 +85,12 @@ module.exports = function(grunt) {
         livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
       },
       scripts: {
-        files: ['_src/**/*.js', 'components/**/*.js'],
+        files: ['_src/**/*.js', '_vendor/**/*.js'],
         tasks: ['devbuild'],
-        // options: { livereload: true }
       },
       content: {
-        files: ['*.md','_sass/*css','css/*css', '_drafts','_posts','_layouts', '_includes', 'images', '_plugins', '_config.yml'],
+        files: ['*.*','_sass/*css','css/*css', '_drafts/*','_posts/*','_layouts/*', '_includes/*', 'images/*', '_plugins/*', '_config.yml'],
         tasks: ['jekyll:dev'],
-        options: { livereload: true }
       },
     },
 
@@ -123,6 +111,8 @@ module.exports = function(grunt) {
         }
       }
     },
+
+    //auto open site on grunt execute
     open: {
       server: {
         path: 'http://localhost:<%= connect.options.port %>/blog'
