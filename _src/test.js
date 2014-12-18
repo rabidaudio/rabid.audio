@@ -1,1 +1,3 @@
-$(document).ready(function(){ console.log("Heeellloooo");});
+$(document).ready(function(){
+  console.log("Heeellloooo, world!");
+});

@@ -8,7 +8,17 @@ var components = [
   'components/lightbox/js/lightbox.js'
 ];
 
+var LIVERELOAD_PORT = 35729;
+var SERVER_PORT = 9000;
+
+var mountFolder = function (connect, dir) {
+    return connect.static(require('path').resolve(dir));
+};
+
 module.exports = function(grunt) {
+
+  require('time-grunt')(grunt);       //time execution
+  require('load-grunt-tasks')(grunt); //load all required packages
 
   grunt.initConfig({
 
@@ -78,15 +88,47 @@ module.exports = function(grunt) {
         dest: 'js/output.js',
       },
     },
+
+    watch: {
+      options:{
+        spawn: false,
+        livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
+      },
+      scripts: {
+        files: ['_src/**/*.js', 'components/**/*.js'],
+        tasks: ['devbuild'],
+        // options: { livereload: true }
+      },
+      content: {
+        files: ['*.md','_sass/*css','css/*css', '_drafts','_posts','_layouts', '_includes', 'images', '_plugins', '_config.yml'],
+        tasks: ['jekyll:dev'],
+        options: { livereload: true }
+      },
+    },
+
+    //serve it up
+    connect: {
+      options: {
+        port: grunt.option('port') || SERVER_PORT,
+        hostname: '0.0.0.0'
+      },
+      livereload: {
+        options: {
+          middleware: function (connect) {
+            return [
+              require('connect-livereload')({port: LIVERELOAD_PORT}),
+              mountFolder(connect, '_site')
+            ];
+          }
+        }
+      }
+    },
+    open: {
+      server: {
+        path: 'http://localhost:<%= connect.options.port %>/blog'
+      }
+    },
   });
-
-
-
-  grunt.loadNpmTasks('grunt-jekyll');
-  grunt.loadNpmTasks('grunt-contrib-jshint');
-  grunt.loadNpmTasks('grunt-divshot');
-  grunt.loadNpmTasks('grunt-contrib-uglify');
-  grunt.loadNpmTasks('grunt-contrib-concat');
 
   grunt.registerTask('devbuild', ['concat:dev','jekyll:dev']);
   grunt.registerTask('build', ['jshint', 'uglify:dist', 'jekyll:dist']);
@@ -94,7 +136,8 @@ module.exports = function(grunt) {
   grunt.registerTask('devdeploy', ['devbuild', 'divshot:push:development']);
   grunt.registerTask('deploy', ['build', 'divshot:push:production']);
 
-  grunt.registerTask('default', ['testbuild']); //then compass with watch and autobuild
+  grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'open:server', 'watch']);
+  grunt.registerTask('default', ['serve']);
 
   //todo tasks for new posts
 
