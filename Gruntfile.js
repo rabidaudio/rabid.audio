@@ -1,8 +1,9 @@
 'use strict';
 
 var LIVERELOAD_PORT = 35729;
-var SERVER_PORT = 9000;
-var fs = require('fs');
+var SERVER_PORT     = 9000;
+
+var fs   = require('fs');
 var path = require('path');
 
 var mountFolder = function (connect, dir) {
@@ -21,28 +22,12 @@ module.exports = function(grunt) {
     cfg: grunt.file.readYAML('_config.yml'),
 
     jekyll: {
-      options: {
-        bundleExec: false,
-        src : '.'
-      },
-      //Production Build
-      dist: {
-        options: {
-          config: '_config.yml'
-        }
-      },
-      //Test Build
-      dev: {
-        options: {
-          config: '_config.yml',
-          drafts: true
-        }
-      }
+      dist: {},
+      dev: { options: { drafts: true } }
     },
 
-    //linting
     jshint: {
-      all: ['_src/**/*.js']
+      src: ['_src/**/*.js']
     },
 
     divshot: {
@@ -73,7 +58,8 @@ module.exports = function(grunt) {
     concat: {
       options: {
         separator: '\n\n\n',
-        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' + '<%= grunt.template.today("yyyy-mm-dd") %> */',
+        banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
+            '<%= grunt.template.today("yyyy-mm-dd") %> */',
       },
       dev: {
         src: ['<%= cfg.vendor %>', '_src/**/*.js'],
@@ -91,12 +77,22 @@ module.exports = function(grunt) {
         tasks: ['devbuild'],
       },
       content: {
-        files: ['*.*','_sass/*css','css/*css', '_drafts/*','_posts/*','_layouts/*', '_includes/*', 'images/*', '_plugins/*', '_config.yml'],
+        files: [
+          '*.*',
+          '_sass/*css',
+          'css/*css',
+           '_drafts/*',
+           '_posts/*',
+          '_layouts/*',
+           '_includes/*',
+           'images/*',
+           '_plugins/*',
+           '_config.yml'
+         ],
         tasks: ['jekyll:dev'],
       },
     },
 
-    //serve it up
     connect: {
       options: {
         port: grunt.option('port') || SERVER_PORT,
@@ -114,18 +110,15 @@ module.exports = function(grunt) {
       }
     },
 
-    //auto open site on grunt execute
     open: {
       server: {
         path: 'http://localhost:<%= connect.options.port %>/blog'
       }
     },
 
-    //open files in editor
     editor: {
       options: {
-        //editor: '<%= pkg.editor || process.env.VISUAL || process.env.EDITOR %>'
-        editor: "subl"
+        editor: '<%= pkg.editor || process.env.VISUAL || process.env.EDITOR %>'
       },
       src: []
     }
@@ -145,11 +138,9 @@ module.exports = function(grunt) {
   //tasks for new posts
   grunt.registerTask('new', 'Start a new post or draft', function(type) {
     var done = this.async();
-    // var data = grunt.file.readYAML('_templates/post.md'); //read template
     var dir = "_drafts";
     if(type==="post"){
       dir = "_posts";
-      // data.published = true;
     }
 
     var d = new Date();
@@ -162,7 +153,6 @@ module.exports = function(grunt) {
 
       grunt.log.writeln('Creating...');
 
-      //data.title = title;
       var file_title = title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ /g,'-');
       var file_name = [d.getFullYear(), d.getMonth()+1, d.getDate()].join("-")+"-"+file_title+".md";
       var full_name = path.resolve(dir, file_name);
