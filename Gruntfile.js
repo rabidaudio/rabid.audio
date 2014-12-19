@@ -65,6 +65,10 @@ module.exports = function(grunt) {
         src: ['<%= cfg.vendor %>', '_src/**/*.js'],
         dest: 'js/output.js',
       },
+      // css: {
+      //   src: ['<%= cfg.vendor_css %>'],
+      //   dest: 'css/vendor.css'
+      // }
     },
 
     watch: {
@@ -111,8 +115,14 @@ module.exports = function(grunt) {
     },
 
     open: {
-      server: {
+      local: {
         path: 'http://localhost:<%= connect.options.port %>/blog'
+      },
+      dev: {
+        path: 'http://development.rabidaudio-blog-2.divshot.io/blog'
+      },
+      prod: {
+        path: 'http://rabid.audio/blog'
       }
     },
 
@@ -121,16 +131,32 @@ module.exports = function(grunt) {
         editor: '<%= pkg.editor || process.env.VISUAL || process.env.EDITOR %>'
       },
       src: []
+    },
+
+
+    copy: {
+      //https://github.com/sass/sass/issues/556#issuecomment-39467721
+      cssAsScss: {
+        files: [
+          {
+            expand: true,
+            src: ['_vendor/**/*.css', '!_vendor/**/*.min.css'],
+            dest: '_sass',
+            filter: 'isFile',
+            ext: ".scss"
+          }
+        ]
+      }
     }
   });
 
-  grunt.registerTask('devbuild', ['concat:dev','jekyll:dev']);
+  grunt.registerTask('devbuild', ['concat:dev', 'jekyll:dev']);
   grunt.registerTask('build', ['jshint', 'uglify:dist', 'jekyll:dist']);
 
-  grunt.registerTask('devdeploy', ['devbuild', 'divshot:push:development']);
-  grunt.registerTask('deploy', ['build', 'divshot:push:production']);
+  grunt.registerTask('devdeploy', ['devbuild', 'divshot:push:development', 'open:dev']);
+  grunt.registerTask('deploy', ['build', 'divshot:push:production', 'open:prod']);
 
-  grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'open:server', 'watch']);
+  grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'open:local', 'watch']);
   grunt.registerTask('default', ['serve']);
 
 

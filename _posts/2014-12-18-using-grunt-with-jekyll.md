@@ -1,7 +1,8 @@
 ---
 title: Using Grunt with Jekyll
+subtitle: An introduction to Node's task runner
 layout: post
-published: false
+published: true
 categories:
 tags:
 -software
@@ -286,7 +287,7 @@ But first, let's add some cool features to our existing Gruntfile.
 Right now, we have a stack of these `loadNpmTasks` commands:
 
 {% highlight javascript %}
-grunt.loadNpmTasks('grunt-jekyll);
+grunt.loadNpmTasks('grunt-jekyll');
 grunt.loadNpmTasks('grunt-contrib-jshint');
 grunt.loadNpmTasks('grunt-divshot');
 grunt.loadNpmTasks('grunt-contrib-concat');

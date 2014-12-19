@@ -9,12 +9,12 @@ twitter_username: charlesjuliank
 github_username:  rabidaudio
 
 exclude:
-- divshot.json
 - rabidaudio.sublime-project
 - rabidaudio.sublime-workspace
 - node_modules
 - Gruntfile.js
 - README.md
+- divshot.json
 - bower.json
 - package.json
 
@@ -23,7 +23,6 @@ vendor:
 - _vendor/jquery/dist/jquery.js
 - _vendor/lightbox/js/lightbox.js
 
-#compiled_js: js/output.js
 
 destination: _site/blog
 timezone: America/New_York

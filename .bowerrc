@@ -6,5 +6,8 @@
     "search": [
       "https://bower.herokuapp.com"
     ]
+  },
+  "scripts": {
+    "postinstall": "grunt copy:cssAsScss"
   }
 }

@@ -42,6 +42,21 @@
             </a>
           </li>
           {% endif %}
+
+          <li>
+            <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
+              <span class="icon  icon--rss">
+                <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" viewBox="0 0 32 32" id="RSSicon">
+                  <rect width="32" height="32" rx="6.875" ry="6.875" x="0" y="0" style="fill:#828282;fill-opacity:1" />
+                  <circle cx="68" cy="189" r="24" transform="scale(0.125,0.125)" style="fill:#ffffff" />
+                  <path d="M 20,26.625 H 15.75 A 10.25,10.25 0 0 0 5.5,16.375 v -4.25 a 14.5,14.5 0 0 1 14.5,14.5 z" style="fill:#ffffff" />
+                  <path d="M 23,26.625 A 17.5,17.5 0 0 0 5.5,9.125 V 4.75 a 21.875,21.875 0 0 1 21.875,21.875 z" style="fill:#ffffff" />
+                </svg>
+              </span>
+
+              <span class="feed">RSS/Atom Link</span>
+            </a>
+          </li>
         </ul>
       </div>
 

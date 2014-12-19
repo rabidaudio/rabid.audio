@@ -1,4 +1,18 @@
+/**
+ * My custom configuration
+ */
+.body {
+  font-family: $base-font-family;
+  font-size: medium;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font-family;
+    font-weight: 700;
+}
 
+code {
+  font-size: 85%;
+}
 
 pre {
   overflow-x: auto;
@@ -29,14 +43,27 @@ a.wikipedia {
   padding-right: 11px;
 }
 
-.post-title {
-  margin-bottom: 0px;
-  font-size: 48px;
+.post {
+  .post-title {
+    margin-bottom: 0px;
+    font-size: 48px;
+  }
+  .post-subtitle {
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  .post-meta {
+    padding-left: 10px;
+    text-align: right;
+    border-top-width: 1px;
+    border-top-color: $grey-color-light;
+    border-top-style: solid;
+    a{
+      color: $grey-color;
+    }
+  }  
 }
-.post-meta {
-  padding-left: 10px;
-  a{ color: $grey-color; }
-}
+
 
 // .site-nav {
 //   margin-top: -50px;
@@ -67,4 +94,15 @@ a.wikipedia {
 .site-header{
   border-top: 10px solid $color-darker;
   background-color: $color-lighter;
+}
+
+.post-list {
+  li {
+    margin: 0px;
+  }
+  .post-link {
+    font-size: 20px;
+    padding-left: 1em;
+    padding-bottom: 1em;
+  }
 }
