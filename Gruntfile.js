@@ -42,7 +42,7 @@ module.exports = function(grunt) {
     },
 
 
-    //js compilation (prodcution version)
+    //js compilation (production version)
     uglify: {
       dist: {
         files: {
