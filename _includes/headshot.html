@@ -2,14 +2,14 @@
   <div>
     <span class="name">{{ include.author.name }}</span>
   </div>
-  <div class="pure-g">
-    <div class="pure-u-1-4 leftcol">
+  <div class="holder">
+    <div class="leftcol">
       <div class="headshot">
         <img src="{{ include.author.img }}" alt="{{ include.author.name }}">
       </div>
     </div>
 
-    <div class="pure-u-3-4">
+    <div class="rightcol">
       <span class="minibio">{{ include.author.minibio }}</span>
       <div class="info">
         {% include social.html author=include.author %}

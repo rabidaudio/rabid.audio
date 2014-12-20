@@ -187,7 +187,7 @@ a.wikipedia {
 }
 .bio{
 
-  width: 500px;
+  overflow-y: auto;
 
   .name {
     margin-bottom: 0px;
@@ -201,8 +201,21 @@ a.wikipedia {
     color: $grey-color;
   }
 
+  .holder {
+    width: 100%;
+  }
+
   .leftcol {
     max-width: 150px;
+    float: left;
+    vertical-align: top;
+    width: 25%;
+  }
+
+  .rightcol {
+    float: left;
+    // width: 75%;
+    min-width: 200px;
   }
 
   .headshot {

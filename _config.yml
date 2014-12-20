@@ -36,7 +36,7 @@ defaults:
       layout: "post"
       author:
         name:     Charles Julian Knight
-        minibio:  'Fuck it, Ship it'
+        minibio:  'Fuck it, Ship it\n and some more'
         twitter:  charlesjuliank
         github:   rabidaudio
         email:    charles@rabidaudio.com
