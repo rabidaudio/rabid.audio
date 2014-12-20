@@ -14,8 +14,13 @@ code {
   font-size: 85%;
 }
 
-pre {
+pre, code {
   overflow-x: auto;
+  // background-color: $color-lighter;
+}
+
+code, kbd, pre, samp {
+  font-family: 'courier new', monospace;
 }
 
 div.post {
@@ -25,12 +30,12 @@ div.post {
   box-shadow: 0px 0px 6px 2px $shadow-color;
 }
 
-a {
-  color: $color-dark;
-}
-a:visited {
-  color: $color-darker;
-}
+// a {
+//   color: $color-dark;
+// }
+// a:visited {
+//   color: $color-darker;
+// }
 
 a:hover {
   text-decoration: underline;
@@ -97,10 +102,10 @@ a.wikipedia {
     background-color: inherit;
   }
 }
-.site-header{
-  border-top: 10px solid $color-darker;
-  background-color: $color-lighter;
-}
+// .site-header{
+//   border-top: 10px solid $color-darker;
+//   background-color: $color-lighter;
+// }
 
 .post-list {
   li {
@@ -108,8 +113,7 @@ a.wikipedia {
   }
   .post-link {
     font-size: 20px;
-    padding-left: 1em;
-    padding-bottom: 1em;
+    padding-left: 15px;
   }
 }
 
@@ -182,7 +186,7 @@ a.wikipedia {
     text-align: center;
     margin-bottom: 0px;
   }
-  
+
   @include media-query($on-palm) {
     ul {
       list-style-type: none;

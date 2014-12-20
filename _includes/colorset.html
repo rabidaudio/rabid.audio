@@ -1,0 +1,23 @@
+<style>
+  {% for color in include.colors %}
+    .font-color-{{ color[0] }} {
+      color: {{ color[1] }};
+    }
+    .bg-color-{{ color[0] }} {
+      color: {{ color[1] }};
+    }
+  {% endfor %}
+  pre, code {
+    background-color: {{ include.colors.lighter }};
+  }
+  a {
+    color: {{ include.colors.dark }};
+  }
+  a:visited {
+    color: {{ include.colors.darker }};
+  }
+  .site-header {
+    border-top: 10px solid {{ include.colors.darker }};
+    background-color: {{ include.colors.lighter }};
+  }
+</style>
