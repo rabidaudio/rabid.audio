@@ -3,11 +3,13 @@
     <span class="name">{{ include.author.name }}</span>
   </div>
   <div class="holder">
+    {% if include.author.img %}
     <div class="leftcol">
       <div class="headshot">
         <img src="{{ include.author.img }}" alt="{{ include.author.name }}">
       </div>
     </div>
+    {% endif %}
 
     <div class="rightcol">
       <span class="minibio">{{ include.author.minibio }}</span>
@@ -16,5 +18,12 @@
       </div>
     </div>
   </div>
-
 </div>
+
+<script>
+$(document).ready(function(){
+  // $( window ).resize(function() {
+    $('.leftcol').css('max-width', Math.min.apply(null, $('.rightcol').map(function(){ return $(this).height() }) )+'px');
+  // }).resize();
+});
+</script>

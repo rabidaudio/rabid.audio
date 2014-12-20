@@ -180,14 +180,23 @@ a.wikipedia {
   .description {
     font-style: italic;
     text-align: center;
-    vertical-align: middle;
-    line-height: $footer-height;
+    // vertical-align: middle;
+    // line-height: $footer-height;
     margin-bottom: 0px;
   }
 }
-.bio{
 
-  overflow-y: auto;
+.bio-float-right {
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0px;
+  width: 40%;
+  min-width: 300px;
+}
+
+.bio{
+  display: none;
+  overflow-y: hidden;
 
   .name {
     margin-bottom: 0px;
@@ -206,15 +215,13 @@ a.wikipedia {
   }
 
   .leftcol {
-    max-width: 150px;
+    min-width: 75px;
     float: left;
-    vertical-align: top;
     width: 25%;
   }
 
   .rightcol {
     float: left;
-    // width: 75%;
     min-width: 200px;
   }
 
@@ -226,11 +233,6 @@ a.wikipedia {
     overflow: hidden;
     border: 2px solid $grey-color-lightist;
     border-radius: 9999px;
-
-    img {
-      // width: auto;
-      // height: 100%;
-    }
   }
 }
 

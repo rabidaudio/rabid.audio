@@ -36,12 +36,13 @@ defaults:
       layout: "post"
       author:
         name:     Charles Julian Knight
-        minibio:  'Fuck it, Ship it\n and some more'
+        minibio:  
         twitter:  charlesjuliank
         github:   rabidaudio
         email:    charles@rabidaudio.com
         img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
         bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
+
 
 # Build settings
 markdown: kramdown
