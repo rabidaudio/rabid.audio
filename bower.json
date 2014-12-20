@@ -7,6 +7,7 @@
   "dependencies": {
     "lightbox": "~2.7.1",
     "jquery": "~2.1.2",
-    "pure": "~0.5.0"
+    "pure": "~0.5.0",
+    "inform": "~1.0.1"
   }
 }

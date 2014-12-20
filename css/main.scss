@@ -5,7 +5,7 @@
 
 
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:300);
-// @import url(http://fonts.googleapis.com/css?family=Montserrat:700);
+@import url(http://fonts.googleapis.com/css?family=Montserrat:700);
 
 // Our variables
 $base-font-family: 'Open Sans', Helvetica, Arial, sans-serif;
@@ -27,6 +27,7 @@ $shadow-color: #cccccc;
 $grey-color:       #828282;
 $grey-color-light: lighten($grey-color, 40%);
 $grey-color-dark:  darken($grey-color, 25%);
+$grey-color-lightist: #E8E8E8;
 
 // Irish Sea - http://paletton.com/#uid=12Q0u0k7RBG1pW649NecqtBhVo9
 $color-darker:  #439748;
@@ -66,7 +67,7 @@ $wp-img: "{{ "/images/wp-10.png" | prepend: site.baseurl }}";
 }
 
 @import "_vendor/pure/pure", "_vendor/pure/grids-responsive";
-
+@import "_vendor/inform/dist/inform";
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import

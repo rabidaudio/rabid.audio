@@ -69,11 +69,17 @@ a.wikipedia {
 //   margin-top: -50px;
 // }
 
-.site-title img {
-  width: 10%;
-  padding-top: 5px;
-  // position: absolute;
+.site-title{
+  img {
+    width: 10%;
+    padding-top: 5px;
+    // position: absolute;
+  }
+  h1 {
+    font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
+  }
 }
+
 
 @include media-query($on-palm) {
 
@@ -104,5 +110,45 @@ a.wikipedia {
     font-size: 20px;
     padding-left: 1em;
     padding-bottom: 1em;
+  }
+}
+
+.inform-notice {
+  background-color: rgba(223, 10, 10, 0.91);
+
+  a {
+    color: #ffffff;
+    text-decoration: underline;
+  }
+}
+
+.post-nav {
+  display: flex;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $grey-color-light;
+  margin-top: 40px;
+
+
+  .next {
+    width: 50%;
+    text-align: left;
+  }
+
+  .prev {
+    width: 50%;
+    text-align: right;
+  }
+}
+
+.post-content {
+  margin-bottom: inherit;
+}
+
+.post-tail {
+  text-align: center;
+  img {
+    padding: 10px;
+    width: 12px;
   }
 }

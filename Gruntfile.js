@@ -65,10 +65,6 @@ module.exports = function(grunt) {
         src: ['<%= cfg.vendor %>', '_src/**/*.js'],
         dest: 'js/output.js',
       },
-      // css: {
-      //   src: ['<%= cfg.vendor_css %>'],
-      //   dest: 'css/vendor.css'
-      // }
     },
 
     watch: {
