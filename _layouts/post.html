@@ -15,8 +15,13 @@ layout: default
   </script>
   <script>
   $(document).ready(function(){
-    $.inform($("#blogger-notice").html(), {
-      effect: "slide" //todo maybe on bottom instead? http://stackoverflow.com/questions/971123/css-fixed-to-bottom-and-centered
+    $(window).scroll(function(){
+      if( $(window).scrollTop() > $('.post').offset().top ){
+        $.inform($("#blogger-notice").html(), {
+          effect: "slide" //todo maybe on bottom instead? http://stackoverflow.com/questions/971123/css-fixed-to-bottom-and-centered
+        });
+        $(window).off('scroll');
+      }
     });
   });
 
@@ -42,24 +47,24 @@ layout: default
 
   <div class="post-tail">
 
-<!--     <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16">
-      <g transform="matrix(0,-0.50000001,0.50000001,0,-510.18111,15.999988)">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="12">
+      <g transform="matrix(-0.37500024,0,0,-0.37500024,11.999998,394.63606)">
         <rect width="22.627399" height="22.627399" x="-732.81873" y="732.81873" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" style="fill:#e8e8e8;fill-opacity:1;stroke:none" />
       </g>
     </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16">
-      <g transform="matrix(0,-0.50000001,0.50000001,0,-510.18111,15.999988)">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="12">
+      <g transform="matrix(-0.37500024,0,0,-0.37500024,11.999998,394.63606)">
         <rect width="22.627399" height="22.627399" x="-732.81873" y="732.81873" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" style="fill:#e8e8e8;fill-opacity:1;stroke:none" />
       </g>
     </svg>
-    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="16" height="16">
-      <g transform="matrix(0,-0.50000001,0.50000001,0,-510.18111,15.999988)">
+    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="12" height="12">
+      <g transform="matrix(-0.37500024,0,0,-0.37500024,11.999998,394.63606)">
         <rect width="22.627399" height="22.627399" x="-732.81873" y="732.81873" transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,0,0)" style="fill:#e8e8e8;fill-opacity:1;stroke:none" />
       </g>
-    </svg> -->
+    </svg>
+<!--     <img src="/blog/images/diamond.svg"/>
     <img src="/blog/images/diamond.svg"/>
-    <img src="/blog/images/diamond.svg"/>
-    <img src="/blog/images/diamond.svg"/>
+    <img src="/blog/images/diamond.svg"/> -->
 
   </div>
 
