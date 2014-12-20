@@ -189,17 +189,34 @@ a.wikipedia {
 
   width: 500px;
 
+  .name {
+    margin-bottom: 0px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  .minibio {
+    font-style: italic;
+    color: $grey-color;
+  }
+
+  .leftcol {
+    max-width: 150px;
+  }
+
   .headshot {
+    width: 80%;
+    height: 0;
+    padding-bottom: 80%;
     margin: auto;
-    width: 100px;
-    height: 100px;
     overflow: hidden;
     border: 2px solid $grey-color-lightist;
     border-radius: 9999px;
 
     img {
-      width: auto;
-      height: 100%;
+      // width: auto;
+      // height: 100%;
     }
   }
 }

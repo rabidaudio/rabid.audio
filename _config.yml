@@ -6,8 +6,6 @@ description: > # this means to ignore newlines until "baseurl:"
   Thoughts on music, technology, policy, startups, and anything else.
 baseurl: "/blog" # the subpath of your site, e.g. /blog/
 url: "http://rabid.audio" # the base hostname & protocol for your site
-twitter_username: charlesjuliank
-github_username:  rabidaudio
 
 exclude:
 - rabidaudio.sublime-project
@@ -37,10 +35,13 @@ defaults:
     values:
       layout: "post"
       author:
-        name: "Charles Julian Knight"
-        contact: "http://twitter.com/charlesjuliank"
-        img: http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
-        bitcoin: 1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
+        name:     Charles Julian Knight
+        minibio:  'Fuck it, Ship it'
+        twitter:  charlesjuliank
+        github:   rabidaudio
+        email:    charles@rabidaudio.com
+        img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+        bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
 
 # Build settings
 markdown: kramdown
