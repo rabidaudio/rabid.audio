@@ -180,9 +180,28 @@ a.wikipedia {
   .description {
     font-style: italic;
     text-align: center;
-    // vertical-align: middle;
-    // line-height: $footer-height;
     margin-bottom: 0px;
+  }
+  
+  @include media-query($on-palm) {
+    ul {
+      list-style-type: none;
+    }
+    li {
+      display: inline;
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+
+    .licence {
+      text-align: center;
+    }
+
+    .description {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
   }
 }
 
@@ -192,7 +211,21 @@ a.wikipedia {
   padding: 0px;
   width: 40%;
   min-width: 300px;
+
+  @include media-query($on-palm) {
+    width: 100%;
+    padding-left: 5%;
+  }
 }
+
+@include media-query($on-palm) {
+  .author-footer-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+  }
+}
+
 
 .bio{
   display: none;
