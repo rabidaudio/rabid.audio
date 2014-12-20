@@ -153,3 +153,35 @@ a.wikipedia {
     padding: 5px;
   }
 }
+
+.site-footer {
+  .wrapper {
+    padding: 0px;
+    max-width: $content-width + ($spacing-unit * 2);
+  }
+  font-size: 15px;
+  color: #828282;
+  // float: left;
+  // margin-bottom: 15px;
+  // padding-left: 15px;
+
+  ul {
+    margin-bottom: 0px;
+  }
+
+  .licence {
+    text-align: right;
+  }
+
+  .cc {
+    height: 45px;
+  }
+
+  .description {
+    font-style: italic;
+    text-align: center;
+    vertical-align: middle;
+    line-height: $footer-height;
+    margin-bottom: 0px;
+  }
+}
