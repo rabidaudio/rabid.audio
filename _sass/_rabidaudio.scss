@@ -127,7 +127,7 @@ a.wikipedia {
   border-top-width: 1px;
   border-top-style: solid;
   border-top-color: $grey-color-light;
-  margin-top: 40px;
+  margin-top: 15px;
 
 
   .next {
@@ -145,8 +145,10 @@ a.wikipedia {
   margin-bottom: inherit;
 }
 
-.post-tail {
+.dinkus {
   text-align: center;
+  padding: 10px;
+  padding-bottom: 25px;
   svg {
     padding: 5px;
   }
