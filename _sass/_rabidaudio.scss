@@ -185,3 +185,27 @@ a.wikipedia {
     margin-bottom: 0px;
   }
 }
+.bio{
+
+  width: 500px;
+
+  .headshot {
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border: 2px solid $grey-color-lightist;
+    border-radius: 9999px;
+
+    img {
+      width: auto;
+      height: 100%;
+    }
+  }
+}
+
+.social-media-list {
+  .bitcoin {
+    font-size: 7pt;
+  }
+}

@@ -36,9 +36,11 @@ defaults:
       type: "posts"
     values:
       layout: "post"
-      author: "Charles Julian Knight"
-      author_contact: "http://twitter.com/charlesjuliank"
-      author_img: http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+      author:
+        name: "Charles Julian Knight"
+        contact: "http://twitter.com/charlesjuliank"
+        img: http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+        bitcoin: 1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
 
 # Build settings
 markdown: kramdown

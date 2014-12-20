@@ -3,16 +3,17 @@ layout: default
 ---
 
 {% if page.blogger_id %} {% include outdated.html %} {% endif %}
-
+{% include headshot.html %}
 <div class="post">
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <h3 class="post-subtitle">{{ page.subtitle }}</h3>
-    <p class="post-meta"><a href="{{site.baseurl}}{{ page.url }}">{{ page.date | date: "%b %-d, %Y" }}</a>{% if page.author %}
-     | {% if page.author_contact %}
-        <a href="{{page.author_contact}}">{{ page.author }}</a>
+    <p class="post-meta"><a href="{{site.baseurl}}{{ page.url }}">{{ page.date | date: "%b %-d, %Y" }}</a>
+      {% if page.author %}
+     | {% if page.author.contact %}
+        <a href="{{page.author.contact}}">{{ page.author.name }}</a>
       {% else %}
-        {{ page.author }}
+        {{ page.author.name }}
       {% endif %}
     {% endif %}{% if page.meta %} • {{ page.meta }}{% endif %}</p>
   </header>
