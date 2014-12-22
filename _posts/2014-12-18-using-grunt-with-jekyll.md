@@ -3,9 +3,8 @@ title: Using Grunt with Jekyll
 subtitle: An introduction to Node's task runner
 layout: post
 published: true
-categories:
+category: software
 tags:
-- software
 - javascript
 - blogging
 mathjax: false

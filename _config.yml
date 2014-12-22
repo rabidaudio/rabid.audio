@@ -88,6 +88,12 @@ colors:
     main:     '#828282'
     light:    '#CCCCCC'
     lighter:  '#E8E8E8'
+  default:
+    darker:   '#000000'
+    dark:     '#424242'
+    main:     '#828282'
+    light:    '#fdfdfd'
+    lighter:  '#ffffff'
 
 colormap:
   music: red

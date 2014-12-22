@@ -9,9 +9,9 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
+  {% assign colors = site.colormap[page.category] %} {% include colorset.html colors=colors %}
 
   <script type="text/javascript" src="{{ site.jsurl | prepend: '/' | prepend: site.baseurl }}"></script>
-
   {% if page.mathjax %}
     <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
   {% endif %}

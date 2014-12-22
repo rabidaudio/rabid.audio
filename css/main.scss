@@ -35,7 +35,7 @@ $on-laptop:        800px;
 
 $footer-height:    80px;
 
-$wp-img: "{{ "/images/wp-10.png" | prepend: site.baseurl }}";
+$wp-img: "{{ "wp-10.png" | prepend: site.imgurl }}";
 
 
 
