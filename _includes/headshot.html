@@ -31,7 +31,6 @@ $('.author').click(function(e){
   $bio.slideToggle();
 });
 $(document).click(function(e){
-  console.log(e.target);
   if($bio.is(':visible') && !$(e.target).closest('.bio').length){
     e.stopPropagation();
     e.preventDefault();

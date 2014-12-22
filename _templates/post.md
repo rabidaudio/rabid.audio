@@ -4,7 +4,7 @@ subtitle:               # Roll over into the subtitle if neccessary (optional)
 date:       %DATE%      # 2008-12-14 10:30:00 +0900
 layout:     post
 published:  true
-category:   %CATEGORY%  # colored categories are: [software, hardware, music, policy]
+category:   %CATEGORY%  # colored categories are: [software, hardware, policy]
 tags:
 mathjax:    false       # enable this if you want to use LaTeX
 

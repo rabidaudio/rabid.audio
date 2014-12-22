@@ -43,7 +43,7 @@ vendor:
   - _vendor/jquery/dist/jquery.js
   - _vendor/inform/dist/inform.js
   - _vendor/javascript_utils/natural_dates.js
-  # - _vendor/javascript_utils/jquery_extensions.js
+  - _vendor/javascript_utils/jquery_extensions.js
   fonts:
     - fontawesome/fonts
 
@@ -93,23 +93,23 @@ nav:
 
 colors:
   green:      #Irish Sea - http://paletton.com/#uid=12Q0u0k7RBG1pW649NecqtBhVo9
-    darker:   '#16831C'#'#439748'
-    dark:     '#72BA76'
-    main:   '#A0D4A3'
+    darker:   '#005100'
+    dark:     '#16831C'
+    main:     '#72BA76'
     light:    '#CAE8CC'
     lighter:  '#ECF7ED'
   blue:       #Plotting - http://paletton.com/#uid=13s0u0kmww-cINsi9Earsu6u3nR
     darker:   '#003752'
-    dark:     '#0D5578' #1C6F98
+    dark:     '#0D5578'
     main:     '#367FA3'
     light:    '#579BBC'
-    lighter:  '#eef'      #86BDD7;
+    lighter:  '#EEEEFF'
   purple:
     darker:   '#28001C'
-    dark:     '#630948' #460031
-    main:   '#97397B'
-    light:    'rgb(207, 153, 191)'#''
-    lighter:  'rgb(245, 227, 240)'
+    dark:     '#630948'
+    main:     '#97397B'
+    light:    '#AE5D96'
+    lighter:  '#F5E3F0'
   grey: 
     darker:   '#424242'
     dark:     '#626262'
@@ -124,8 +124,8 @@ colors:
     lighter:  '#ffffff'
 
 colormap:
-  music: red
-  policy: purple
+  music:    default
+  policy:   grey
   hardware: green
   software: blue
 
