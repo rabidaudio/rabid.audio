@@ -41,6 +41,8 @@ vendor:
   js:
   - _vendor/jquery/dist/jquery.js
   - _vendor/inform/dist/inform.js
+  - _vendor/javascript_utils/natural_dates.js
+  - _vendor/javascript_utils/jquery_extensions.js
   fonts:
     - fontawesome/fonts
 
@@ -77,7 +79,7 @@ defaults:
         # #or simply: custom: some text
 
 footer_social:
-  email:  charles@rabidaudio.com
+  twitter: rabidaudio
   github: rabidaudio/rabid.audio
 
 nav:

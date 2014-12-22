@@ -94,7 +94,7 @@ module.exports = function(grunt) {
            '*.yml',
            '*.json'
          ],
-        tasks: ['jekyll:dev'],
+        tasks: ['devbuild'],
       },
     },
 

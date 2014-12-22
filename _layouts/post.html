@@ -6,7 +6,10 @@ layout: default
   <header class="post-header">
     <h1 class="post-title">{{ page.title }}</h1>
     <h3 class="post-subtitle">{{ page.subtitle }}</h3>
-    <p class="post-meta"><a href="{{site.baseurl}}{{ page.url }}">{{ page.date | date: "%b %-d, %Y" }}</a>
+    <p class="post-meta">
+      <a href="{{site.baseurl}}{{ page.url }}" class="date" date="{{ page.date | date_to_rfc822 }}" title="{{ page.date | date: "%b %-d, %Y, %k:%M" }}">
+        {{ page.date | date: "%b %-d, %Y" }}
+      </a>
       {% if page.author %} | <a href="#" class="author">{{ page.author.name }}</a> {% endif %}
       {% if page.meta %} • {{ page.meta }}{% endif %}
     </p>
