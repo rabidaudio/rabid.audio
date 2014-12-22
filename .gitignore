@@ -4,3 +4,4 @@ _site
 *.sublime-workspace
 _vendor
 node_modules
+assets/js/output.js
