@@ -60,11 +60,25 @@ defaults:
       author:
         name:     Charles Julian Knight
         minibio:  
-        twitter:  charlesjuliank
-        github:   rabidaudio
-        email:    charles@rabidaudio.com
         img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+        school:   Georgia Tech
+        twitter:  charlesjuliank
+        email:    charles@rabidaudio.com
+        github:   rabidaudio
+        lastfm:   rabidaudio
+        google:   +CharlesJulianKnight
+        #facebook: 
+        #linkedin: 
         bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
+        # other_site:
+        #   name: username
+        #   url:  example.com/user/username (optional)
+        #   icon: fontawesome-icon-class    (optional)
+        # #or simply: custom: some text
+
+footer_social:
+  email:  charles@rabidaudio.com
+  github: rabidaudio/rabid.audio
 
 nav:
 # -
@@ -73,15 +87,6 @@ nav:
 - 
   url: /all
   title: All Posts
-# -
-#   url: /error
-#   title: Dummy
-# -
-#   url: /error
-#   title: Dummy
-# -
-#   url: /error
-#   title: Dummy
 
 colors:
   green:      #Irish Sea - http://paletton.com/#uid=12Q0u0k7RBG1pW649NecqtBhVo9

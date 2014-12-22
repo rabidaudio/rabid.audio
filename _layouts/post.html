@@ -1,11 +1,6 @@
 ---
 layout: default
 ---
-
-
-
-
-
 {% if page.blogger_id %} {% include outdated.html %} {% endif %}
 <div class="post">
   <header class="post-header">
@@ -20,20 +15,6 @@ layout: default
       </div>
   </header>
 
-  <script type="text/javascript">
-    var $bio = $('.post-header .bio');
-    $('.author').click(function(e){
-      e.stopPropagation();
-      $bio.slideToggle();
-    });
-    $(document).click(function(e){
-      if($bio.is(':visible') && !$(e.target).closest('#menucontainer').length){
-        e.stopPropagation();
-        $bio.slideToggle();
-      }
-    });
-  </script>
-
   <article class="post-content">
     {{ content }}
   </article>
@@ -41,8 +22,12 @@ layout: default
   {% include dinkus.html %}
 
   <div class="post-nav">
-    <div class="next">{% if page.next %}<a href="{{ page.next.url | prepend: site.baseurl }}">Next: {{ page.next.title }}</a>{% endif %}</div>
-    <div class="prev">{% if page.previous %}<a href="{{ page.previous.url | prepend: site.baseurl }}">Previous: {{ page.previous.title }}</a>{% endif %}<div>
+    <div class="next">{% if page.next %}<a href="{{ page.next.url | replace: 'index.html', '' | prepend: site.baseurl }}">
+      Next: {{ page.next.title }}
+    </a>{% endif %}</div>
+    <div class="prev">{% if page.previous %}<a href="{{ page.previous.url | replace: 'index.html', '' | prepend: site.baseurl}}">
+      Previous: {{ page.previous.title }}
+    </a>{% endif %}<div>
   </div>
 
 </div>

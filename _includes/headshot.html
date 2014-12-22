@@ -21,9 +21,19 @@
 </div>
 
 <script>
-$(document).ready(function(){
-  // $( window ).resize(function() {
-    $('.leftcol').css('max-width', Math.min.apply(null, $('.rightcol').map(function(){ return $(this).height() }) )+'px');
-  // }).resize();
+//TODO find a css-friendly solution
+$('.leftcol').css('max-width', Math.min.apply(null, $('.rightcol').map(function(){ return $(this).height() }) )+'px');
+
+var $bio = $('.post-header .bio');
+$('.author').click(function(e){
+  e.stopPropagation();
+  $bio.slideToggle();
+});
+$(document).click(function(e){
+  console.log(e.target);
+  if($bio.is(':visible') && !$(e.target).closest('.bio').length){
+    e.stopPropagation();
+    $bio.slideToggle();
+  }
 });
 </script>

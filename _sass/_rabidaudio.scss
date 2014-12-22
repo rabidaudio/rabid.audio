@@ -33,7 +33,7 @@ a.wikipedia {
   padding-right: 11px;
 }
 
-i.fa {
+.fa {
   color: $grey-color;
 }
 .dinkus svg {
@@ -379,6 +379,14 @@ i.fa {
   .bitcoin {
     font-size: 7pt;
   }
+  .icon {
+    width: 22px;
+    float: left;
+    // text-align: center;
+  }
+  .icon--email {
+    font-size: 14px;
+  }
 }
 
 .header-link{
@@ -401,7 +409,11 @@ h6:hover .header-link{
   text-align: center;
   padding: 10px;
   padding-bottom: 25px;
-  svg {
-    padding: 5px;
+  .fa {
+    color: $grey-color-light;
+    letter-spacing: 5px;
   }
+  // svg {
+  //   padding: 5px;
+  // }
 }

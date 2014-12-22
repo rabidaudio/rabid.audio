@@ -1,41 +1,101 @@
 <ul class="social-media-list">
-  {% if include.author.twitter %}
-  <li>
-    <a href="https://twitter.com/{{ include.author.twitter }}">
-      <span class="icon icon--twitter">{% include twitter.svg %}</span>
-      <span class="username">{{ include.author.twitter }}</span>
-    </a>
-  </li>
-  {% endif %}
-  {% if include.author.github %}
-  <li>
-    <a href="https://github.com/{{ include.author.github }}">
-      <span class="icon  icon--github"><i class="fa fa-github"></i></span>
-      <span class="username">{{ include.author.github }}</span>
-    </a>
-  </li>
-  {% endif %}
-  {% if include.author.email and include.footer != true %}
-  <li>
-    <a href="mailto:{{ include.author.email }}">
-      <span class="icon icon--email"><i class="fa fa-envelope"></i></span>
+  <!-- http://fortawesome.github.io/Font-Awesome/cheatsheet/ -->
+{% for item in include.author %}
+  {% assign key = item[0] %}
+  {% assign val = item[1] %}
+  {% case key %}
 
-      <span class="email">{{ include.author.email }}</span>
-    </a>
-  </li>
-  {% endif %}
-  {% if include.footer %}
+  {% when 'twitter' %}
+    <li>
+      <a href="https://twitter.com/{{ val }}" target="_blank">
+        <span class="icon icon--twitter"><i class="fa fa-twitter"></i></span>
+        <span class="username">{{ val }}</span>
+      </a>
+    </li>
+  {% when 'github' %}
+    <li>
+      <a href="https://github.com/{{ val }}" target="_blank">
+        <span class="icon  icon--github"><i class="fa fa-github"></i></span>
+        <span class="username">{{ val }}</span>
+      </a>
+    </li>
+  {% when 'email' %}
+    <li>
+      <a href="mailto:{{ val }}">
+        <span class="icon icon--email"><i class="fa fa-envelope"></i></span>
+
+        <span class="email">{{ val }}</span>
+      </a>
+    </li>
+  {% when 'bitcoin' %}
+    <li>
+        <span class="icon icon--bitcoin"><i class="fa fa-bitcoin"></i></span>
+        <span class="bitcoin">{{ val }}</span>
+    </li>
+  {% when 'google' %}
+    <li>
+      <a href="https://plus.google.com/{{ val }}" target="_blank">
+        <span class="icon  icon--google"><i class="fa fa-google-plus"></i></span>
+        <span class="google">{{ val | replace_first: '+', '' }}</span>
+      </a>
+    </li>
+  {% when 'linkedin' %}
+    <li>
+      <a href="http://{{ val }}" target="_blank">
+        <span class="icon  icon--linkedin"><i class="fa fa-linkedin"></i></span>
+        <span class="linkedin">LinkedIn Profile</span>
+      </a>
+    </li>
+  {% when 'facebook' %}
+    <li>
+      <a href="https://facebook.com/{{ val }}" target="_blank">
+        <span class="icon  icon--facebook"><i class="fa fa-facebook"></i></span>
+        <span class="facebook">{{ val }}</span>
+      </a>
+    </li>
+  {% when 'reddit' %}
+    <li>
+      <a href="https://reddit.com/u/{{ val }}" target="_blank">
+        <span class="icon  icon--redit"><i class="fa fa-reddit"></i></span>
+        <span class="reddit">{{ val }}</span>
+      </a>
+    </li>
+  {% when 'lastfm' %}
+    <li>
+      <a href="https://lastfm.com/user/{{ val }}" target="_blank">
+        <span class="icon  icon--lastfm"><i class="fa fa-lastfm-square"></i></span>
+        <span class="lastfm">{{ val }}</span>
+      </a>
+    </li>
+  {% when 'school' %}
+    <li>
+      <span class="icon  icon--school"><i class="fa fa-graduation-cap"></i></span>
+      <span class="school">{{ val }}</span>
+    </li>
+  {%when 'name' or 'img' or 'minibio' %}
+    <!-- no op -->
+  {% else %}
+      {% if val.name %}
+        <li>
+          {% if val.url %}<a href="http://{{ val.url }}" target="_blank">{% endif %}
+            <span class="icon  icon--{{ key }}">
+              <i class="fa {% if val.icon %}{{ val.icon }}{% else %}{{ key | prepend: 'fa-' }}{% endif %}"></i>
+            </span>
+            <span class="{{ key }}">{{ val.name }}</span>
+          {% if val.url %}</a>{% endif %}
+        </li>
+      {% else %}
+        <li><span class="{{ key }}">{{ val }}</span></li>
+      {% endif %}
+  {% endcase %}
+{% endfor %}
+
+{% if include.footer %}
   <li>
     <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
       <span class="icon icon--rss"><i class="fa fa-rss-square"></i></span>
       <span class="feed">RSS/Atom Link</span>
     </a>
   </li>
-  {% endif %}
-  {% if include.author.bitcoin and include.footer != true %}
-  <li>
-      <span class="icon icon--bitcoin"><i class="fa fa-bitcoin"></i></span>
-      <span class="bitcoin">{{ include.author.bitcoin }}</span>
-  </li>
-  {% endif %}
+{% endif %}
 </ul>
