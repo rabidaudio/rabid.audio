@@ -4,7 +4,7 @@ email: charles@rabidaudio.com
 name: Charles Julian Knight
 description: > # this means to ignore newlines until "baseurl:"
   Thoughts on music, technology, policy, startups, and anything else.
-baseurl:  /blog # the subpath of your site, e.g. /blog/
+baseurl:  /blog
 imgurl:   /blog/assets/images/
 jsurl:    assets/js/output.js
 url: "http://rabid.audio" # the base hostname & protocol for your site
@@ -39,9 +39,8 @@ exclude:
 # JS files to include from vendor (Bower directory)
 vendor:
   js:
-  - jquery/dist/jquery.js
-  # - lightbox/js/lightbox.js
-  - inform/dist/inform.js
+#  - _vendor/jquery/dist/jquery.js
+  - _vendor/inform/dist/inform.js
   fonts:
     - fontawesome/fonts
 

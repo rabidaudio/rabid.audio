@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= cfg.jsurl %>': ['<%= bow.directory %>/<%= cfg.vendor.js %>', '<%= cfg.directories.sourcejs %>/**/*.js']
+          '<%= cfg.jsurl %>': ['<%= cfg.vendor.js %>', '<%= cfg.directories.sourcejs %>/**/*.js']
         },
         options: {
           compress: true,
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
             '<%= grunt.template.today("yyyy-mm-dd") %> */',
       },
       dev: {
-        src: ['<%= bow.directory %>/<%= cfg.vendor.js %>', '<%= cfg.directories.sourcejs %>/**/*.js'],
+        src: ['<%= cfg.vendor.js %>', '<%= cfg.directories.sourcejs %>/**/*.js'],
         dest: '<%= cfg.jsurl %>',
       },
     },
@@ -88,6 +88,8 @@ module.exports = function(grunt) {
           '<%= cfg.directories.layouts %>/**/*',
            '<%= cfg.directories.includes %>/**/*',
            '<%= cfg.directories.assets %>/**/*',
+           '!<%= cfg.directories.sourcejs %>/**/*.js',
+           '!<%= cfg.jsurl %>',
            '<%= cfg.directories.plugins %>/**/*',
            '*.yml',
            '*.json'

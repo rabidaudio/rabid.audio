@@ -54,8 +54,9 @@ $wp-img: "{{ "wp-10.png" | prepend: site.imgurl }}";
 
 @import "_vendor/pure/pure", "_vendor/pure/grids-responsive";
 @import "_vendor/inform/dist/inform";
-// @import "../_vendor/fontawesome/scss/font-awesome";
-@import "_vendor/fontawesome/css/font-awesome";
+$fa-font-path: "../assets/fonts/fontawesome/fonts";
+@import "../_vendor/fontawesome/scss/font-awesome";
+// @import "_vendor/fontawesome/css/font-awesome";
 
 
 // Import partials from `sass_dir` (defaults to `_sass`)

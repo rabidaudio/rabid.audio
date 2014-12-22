@@ -10,7 +10,7 @@
   {% if include.author.github %}
   <li>
     <a href="https://github.com/{{ include.author.github }}">
-      <span class="icon  icon--github">{% include github.svg %}</span>
+      <span class="icon  icon--github"><i class="fa fa-github"></i></span>
       <span class="username">{{ include.author.github }}</span>
     </a>
   </li>
@@ -18,7 +18,7 @@
   {% if include.author.email and include.footer != true %}
   <li>
     <a href="mailto:{{ include.author.email }}">
-      <span class="icon icon--email">{% include email-icon.svg %}</span>
+      <span class="icon icon--email"><i class="fa fa-envelope"></i></span>
 
       <span class="email">{{ include.author.email }}</span>
     </a>
@@ -27,16 +27,15 @@
   {% if include.footer %}
   <li>
     <a href="{{ "/feed.xml" | prepend: site.baseurl }}">
-      <span class="icon icon--rss">{% include rss.svg %}</span>
+      <span class="icon icon--rss"><i class="fa fa-rss-square"></i></span>
       <span class="feed">RSS/Atom Link</span>
     </a>
   </li>
   {% endif %}
   {% if include.author.bitcoin and include.footer != true %}
   <li>
-      <span class="icon icon--bitcoin">{% include bitcoin.svg %}</span>
+      <span class="icon icon--bitcoin"><i class="fa fa-bitcoin"></i></span>
       <span class="bitcoin">{{ include.author.bitcoin }}</span>
-    </a>
   </li>
   {% endif %}
 </ul>
