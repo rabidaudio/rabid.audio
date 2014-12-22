@@ -20,6 +20,8 @@ module.exports = function(grunt) {
     //config files
     pkg: grunt.file.readJSON('package.json'),
     cfg: grunt.file.readYAML('_config.yml'),
+    div: grunt.file.readJSON('divshot.json'),
+    bow: grunt.file.readJSON('.bowerrc'),
 
     jekyll: {
       dist: {},
@@ -27,7 +29,7 @@ module.exports = function(grunt) {
     },
 
     jshint: {
-      src: ['_src/**/*.js']
+      src: ['<%= cfg.directories.sourcejs %>/**/*.js']
     },
 
     divshot: {
@@ -46,7 +48,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          'js/output.js': ['<%= cfg.vendor %>', '_src/**/*.js']
+          '<%= cfg.jsurl %>': ['<%= cfg.vendor %>', '<%= cfg.directories.sourcejs %>/**/*.js']
         },
         options: {
           compress: true,
@@ -62,8 +64,8 @@ module.exports = function(grunt) {
             '<%= grunt.template.today("yyyy-mm-dd") %> */',
       },
       dev: {
-        src: ['<%= cfg.vendor %>', '_src/**/*.js'],
-        dest: 'js/output.js',
+        src: ['<%= cfg.vendor %>', '<%= cfg.directories.sourcejs %>/**/*.js'],
+        dest: '<%= cfg.jsurl %>',
       },
     },
 
@@ -73,21 +75,22 @@ module.exports = function(grunt) {
         livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
       },
       scripts: {
-        files: ['_src/**/*.js', '_vendor/**/*.js'],
+        files: ['<%= cfg.directories.sourcejs %>/**/*.js', '<%= bow.directory %>**/*.js'],
         tasks: ['devbuild'],
       },
       content: {
         files: [
           '*.*',
-          '_sass/*css',
-          'css/*css',
-           '_drafts/*',
-           '_posts/*',
-          '_layouts/*',
-           '_includes/*',
-           'images/*',
-           '_plugins/*',
-           '_config.yml'
+          '<%= cfg.directories.sass %>/*css',
+          '<%= cfg.directories.css %>/*css',
+           '<%= cfg.directories.drafts %>/*',
+           '<%= cfg.directories.posts %>/*',
+          '<%= cfg.directories.layouts %>/*',
+           '<%= cfg.directories.includes %>/*',
+           '<%= cfg.directories.assets %>/*',
+           '<%= cfg.directories.plugins %>/*',
+           '*.yml',
+           '*.json'
          ],
         tasks: ['jekyll:dev'],
       },
@@ -112,13 +115,13 @@ module.exports = function(grunt) {
 
     open: {
       local: {
-        path: 'http://localhost:<%= connect.options.port %>/blog'
+        path: 'http://localhost:<%= connect.options.port %><%= cfg.baseurl %>'
       },
       dev: {
-        path: 'http://development.rabidaudio-blog-2.divshot.io/blog'
+        path: 'http://development.<%= div.name %>.divshot.io<%= cfg.baseurl %>'
       },
       prod: {
-        path: 'http://rabid.audio/blog'
+        path: '<%= cfg.url %><%= cfg.baseurl %>'
       }
     },
 
@@ -136,8 +139,8 @@ module.exports = function(grunt) {
         files: [
           {
             expand: true,
-            src: ['_vendor/**/*.css', '!_vendor/**/*.min.css'],
-            dest: '_sass',
+            src: ['<%= bow.directory %>/**/*.css', '!<%= bow.directory %>/**/*.min.css'],
+            dest: '<%= cfg.directories.sass %>',
             filter: 'isFile',
             ext: ".scss"
           }
@@ -160,9 +163,9 @@ module.exports = function(grunt) {
   //tasks for new posts
   grunt.registerTask('new', 'Start a new post or draft', function(type) {
     var done = this.async();
-    var dir = "_drafts";
+    var dir = "<%= cfg.directories.drafts %>";
     if(type==="post"){
-      dir = "_posts";
+      dir = "<%= cfg.directories.posts %>";
     }
 
     var d = new Date();
@@ -180,7 +183,7 @@ module.exports = function(grunt) {
       var full_name = path.resolve(dir, file_name);
 
       //todo insert title
-      fs.createReadStream("_templates/post.md").pipe(fs.createWriteStream(full_name)); //copy template
+      fs.createReadStream("<%= cfg.directories.templates %>/post.md").pipe(fs.createWriteStream(full_name)); //copy template
 
       grunt.config('editor.src', [full_name]);
       grunt.task.run('editor');

@@ -4,8 +4,26 @@ email: charles@rabidaudio.com
 name: Charles Julian Knight
 description: > # this means to ignore newlines until "baseurl:"
   Thoughts on music, technology, policy, startups, and anything else.
-baseurl: "/blog" # the subpath of your site, e.g. /blog/
+baseurl:  /blog # the subpath of your site, e.g. /blog/
+imgurl:   /blog/assets/images/
+jsurl:    assets/js/output.js
 url: "http://rabid.audio" # the base hostname & protocol for your site
+
+directories:
+  assets: assets
+  outputjs: assets/js
+  sourcejs: assets/_src
+  posts: _posts
+  drafts: _drafts
+  templates: _templates
+  sass: _sass
+  css: css
+  templates: _templates
+  plugins: _plugins
+  output: _site
+  layouts: _layouts
+  includes: _includes
+
 
 exclude:
 - rabidaudio.sublime-project
@@ -43,7 +61,7 @@ defaults:
         img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
         bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
 
-colorset:
+colors:
   green:      #Irish Sea - http://paletton.com/#uid=12Q0u0k7RBG1pW649NecqtBhVo9
     darker:   '#439748'
     dark:     '#72BA76'
@@ -56,6 +74,21 @@ colorset:
     main:     '#367FA3'
     light:    '#579BBC'
     lighter:  '#eef'      #86BDD7;
+  grey: 
+    darker:   '#424242'
+    dark:     '#626262'
+    main:     '#828282'
+    light:    '#CCCCCC'
+    lighter:  '#E8E8E8'
+
+colormap:
+  music: red
+  policy: green
+  hardware: blue
+  software: yellow
 
 # Build settings
 markdown: kramdown
+
+sass:
+    style: :compressed

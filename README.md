@@ -44,6 +44,7 @@ Additions to default jekyll:
 - [Switched crappy syntax highlighting style to highlight.js's monokai](_sass/monokai.scss)
 - responsive grid from pure
 - Javascript compiling
+- warning about old blogger posts
 
 
 Immediate TODOs:
@@ -65,7 +66,11 @@ If I ever continue work on Utterson, might be the way to go
 
 - Re-setup IFTTT autotweeting
 
+- drop jquery for speed
 
+- colors for each category
+  - existing colors: blue, green
+  - existing categories: music, software, hardware, policy
 
 Licence
 =======

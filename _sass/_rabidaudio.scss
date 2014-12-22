@@ -16,7 +16,6 @@ code {
 
 pre, code {
   overflow-x: auto;
-  // background-color: $color-lighter;
 }
 
 code, kbd, pre, samp {
@@ -29,13 +28,6 @@ div.post {
   border-radius: 1px;
   box-shadow: 0px 0px 6px 2px $shadow-color;
 }
-
-// a {
-//   color: $color-dark;
-// }
-// a:visited {
-//   color: $color-darker;
-// }
 
 a:hover {
   text-decoration: underline;
@@ -69,16 +61,10 @@ a.wikipedia {
   }  
 }
 
-
-// .site-nav {
-//   margin-top: -50px;
-// }
-
 .site-title{
   img {
     width: 10%;
     padding-top: 5px;
-    // position: absolute;
   }
   h1 {
     font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
@@ -102,10 +88,6 @@ a.wikipedia {
     background-color: inherit;
   }
 }
-// .site-header{
-//   border-top: 10px solid $color-darker;
-//   background-color: $color-lighter;
-// }
 
 .post-list {
   li {
@@ -165,9 +147,6 @@ a.wikipedia {
   }
   font-size: 15px;
   color: #828282;
-  // float: left;
-  // margin-bottom: 15px;
-  // padding-left: 15px;
 
   ul {
     margin-bottom: 0px;
@@ -268,7 +247,7 @@ a.wikipedia {
     padding-bottom: 80%;
     margin: auto;
     overflow: hidden;
-    border: 2px solid $grey-color-lightist;
+    border: 2px solid $grey-color-light;
     border-radius: 9999px;
   }
 }

@@ -3,7 +3,7 @@ title:
 subtitle:           #optional (titles need to be pretty short, so roll over stuff here)   
 layout:     post
 published:  false
-categories:
+category:
 tags:
 mathjax:    false    #enable this if you want to use LaTeX
 

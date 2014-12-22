@@ -5,9 +5,9 @@ layout: post
 published: true
 categories:
 tags:
--software
--javascript
--blogging
+- software
+- javascript
+- blogging
 mathjax: false
 ---
 

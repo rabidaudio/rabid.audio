@@ -21,12 +21,11 @@ $background-color: #ffffff;
 $post-background-color: #fdfdfd;
 $brand-color:      #2a7ae2;
 
-$shadow-color: #cccccc;
+$shadow-color: {{ site.colors.grey.light }};
 
-$grey-color:       #828282;
-$grey-color-light: lighten($grey-color, 40%);
-$grey-color-dark:  darken($grey-color, 25%);
-$grey-color-lightist: #E8E8E8;
+$grey-color:       {{ site.colors.grey.main }};
+$grey-color-light: {{ site.colors.grey.lighter }};
+$grey-color-dark:  {{ site.colors.grey.darker }};
 
 // Width of the content area
 $content-width:    1000px;
