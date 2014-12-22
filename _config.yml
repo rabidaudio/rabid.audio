@@ -23,6 +23,7 @@ directories:
   output: _site
   layouts: _layouts
   includes: _includes
+  fonts: assets/fonts
 
 
 exclude:
@@ -37,9 +38,12 @@ exclude:
 
 # JS files to include from vendor (Bower directory)
 vendor:
-- _vendor/jquery/dist/jquery.js
-# - _vendor/lightbox/js/lightbox.js
-- _vendor/inform/dist/inform.js
+  js:
+  - jquery/dist/jquery.js
+  # - lightbox/js/lightbox.js
+  - inform/dist/inform.js
+  fonts:
+    - fontawesome/fonts
 
 
 destination: _site/blog

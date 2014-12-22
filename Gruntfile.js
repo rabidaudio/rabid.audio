@@ -48,7 +48,7 @@ module.exports = function(grunt) {
     uglify: {
       dist: {
         files: {
-          '<%= cfg.jsurl %>': ['<%= cfg.vendor %>', '<%= cfg.directories.sourcejs %>/**/*.js']
+          '<%= cfg.jsurl %>': ['<%= bow.directory %>/<%= cfg.vendor.js %>', '<%= cfg.directories.sourcejs %>/**/*.js']
         },
         options: {
           compress: true,
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
             '<%= grunt.template.today("yyyy-mm-dd") %> */',
       },
       dev: {
-        src: ['<%= cfg.vendor %>', '<%= cfg.directories.sourcejs %>/**/*.js'],
+        src: ['<%= bow.directory %>/<%= cfg.vendor.js %>', '<%= cfg.directories.sourcejs %>/**/*.js'],
         dest: '<%= cfg.jsurl %>',
       },
     },
@@ -145,6 +145,12 @@ module.exports = function(grunt) {
             ext: ".scss"
           }
         ]
+      },
+      fonts: {
+        expand: true,
+        cwd: '<%= bow.directory %>',
+        src: ['<%= cfg.vendor.fonts %>/*'],
+        dest: '<%= cfg.directories.fonts %>'
       }
     }
   });
@@ -182,7 +188,7 @@ module.exports = function(grunt) {
       var file_name = [d.getFullYear(), d.getMonth()+1, d.getDate()].join("-")+"-"+file_title+".md";
       var full_name = path.resolve(dir, file_name);
 
-      //todo insert title
+      //todo insert title -see grunt copy
       fs.createReadStream("<%= cfg.directories.templates %>/post.md").pipe(fs.createWriteStream(full_name)); //copy template
 
       grunt.config('editor.src', [full_name]);

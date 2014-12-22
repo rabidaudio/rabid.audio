@@ -8,6 +8,6 @@
     ]
   },
   "scripts": {
-    "postinstall": "grunt copy:cssAsScss"
+    "postinstall": "grunt copy:cssAsScss copy:fonts"
   }
 }

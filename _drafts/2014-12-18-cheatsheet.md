@@ -48,6 +48,8 @@ A [link]({% post_url 2012-11-28-the-color-of-music %}) to an existing post and {
 
 ## Header 2 (H1 is reserved for post titles)##
 
+<i class="fa fa-camera-retro"></i> 
+
 Now let's add some $$\LaTeX$$:
 
 $$ \int_{-\infty}^{\infty} Ae^{2\pi \omega (t - i)} dt $$
