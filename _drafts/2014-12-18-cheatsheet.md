@@ -15,11 +15,19 @@ tags: ["c", "a", "t"]
 # Similar to categories, one or multiple tags can be added to a post. Also like categories, tags can be specified as a YAML list or a space- separated string.
 
 title: Test Post
-author: Charles Julian Knight
-#author_contact: mailto:charles@rabidaudio.com
-# A url
+subtitle: And what a great one it is
 mathjax: false
 # Set to true if the page has LaTeX. This saves the huge script from being inserted constantly
+
+## Guest posters: uncomment and fill in as much as you like
+#author:
+#  name:     Charles Julian Knight
+#  minibio:  'Fuck it, Ship it'
+#  twitter:  charlesjuliank
+#  github:   rabidaudio
+#  email:    charles@rabidaudio.com
+#  img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+#  bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
 ---
 
 This is a demo of all styled elements in my `jekyll` (`kramdown`, with plugins and tweaks).

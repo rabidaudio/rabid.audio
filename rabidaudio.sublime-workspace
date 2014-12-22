@@ -4,6 +4,94 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"mar",
+				"margin-right"
+			],
+			[
+				"min-",
+				"min-width"
+			],
+			[
+				"ta",
+				"table-cell"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"min",
+				"min-width"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"font-s",
+				"font-style"
+			],
+			[
+				"paddin",
+				"padding"
+			],
+			[
+				"padd",
+				"padding-bottom"
+			],
+			[
+				"padding",
+				"padding-left"
+			],
+			[
+				"fil",
+				"file_name"
+			],
+			[
+				"fi",
+				"file_title"
+			],
+			[
+				"con",
+				"config"
+			],
+			[
+				"dev",
+				"devbuild"
+			],
+			[
+				"com",
+				"components"
+			],
+			[
+				"test",
+				"testbuild"
+			],
+			[
+				"backgr",
+				"background-color"
+			],
+			[
+				"rabid",
+				"rabidaudio"
+			],
+			[
 				"tem",
 				"template"
 			],
@@ -426,106 +514,62 @@
 			[
 				"mp",
 				"mp3_files"
-			],
-			[
-				"tra",
-				"track_name"
-			],
-			[
-				"alb",
-				"album_dir"
-			],
-			[
-				"ar",
-				"artist_dir"
-			],
-			[
-				"Id",
-				"ID3"
-			],
-			[
-				"has",
-				"hashRegex"
-			],
-			[
-				"conf",
-				"configName"
-			],
-			[
-				"email",
-				"emailRegex"
-			],
-			[
-				"en",
-				"enumOnOff"
-			],
-			[
-				"nu",
-				"numberOfLikes"
-			],
-			[
-				"ap",
-				"api_prefix"
-			],
-			[
-				"se",
-				"sendResponse"
-			],
-			[
-				"w",
-				"window_id"
-			],
-			[
-				"ac",
-				"active_tab"
-			],
-			[
-				"windo",
-				"window_settings"
-			],
-			[
-				"mj",
-				"mjpegReqHandler"
-			],
-			[
-				"diff",
-				"diffpatch"
-			],
-			[
-				"diffch",
-				"diffchars"
-			],
-			[
-				"ed",
-				"editor_textarea"
-			],
-			[
-				"editor",
-				"editor-textarea"
-			],
-			[
-				"Strea",
-				"streamLength"
-			],
-			[
-				"stre",
-				"stream_length"
-			],
-			[
-				"onE",
-				"onErr"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "css/main.scss",
+			"settings":
+			{
+				"buffer_size": 1520,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_sass/_rabidaudio.scss",
+			"settings":
+			{
+				"buffer_size": 3997,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_config.yml",
+			"settings":
+			{
+				"buffer_size": 1596,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "_layouts/post.html",
+			"settings":
+			{
+				"buffer_size": 1231,
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 92.0,
+		"height": 272.0,
 		"selected_items":
 		[
+			[
+				"new ",
+				"Jekyll: New draft"
+			],
+			[
+				"new",
+				"Jekyll: New draft"
+			],
+			[
+				"jek",
+				"Jekyll: New post"
+			],
 			[
 				"insta",
 				"Package Control: Install Package"
@@ -764,9 +808,76 @@
 	},
 	"file_history":
 	[
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/css/ra.css",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/header.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-04-01-location-enabled-mesh-networking.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-02-15-circular-buffer-algorithm-rates-on.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-04-30-dsp-arduino.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-11-17-interesting-case-of-digital-property.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-10-08-must-read-blog-on-music-and-piracy.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-09-21-unrelated-circuit-4-bit-adding-machine.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-08-29-wkipe-official-announcement.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-11-10-best-discoveries-of-last-12-months.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/colorset.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/footer.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/head.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/page.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/post.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/all.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/headshot.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/social.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_templates/post.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/Gruntfile.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/social_author.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_config.yml",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/_headshot.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/outdated.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/dinkus.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/asterism.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_res/diamond.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/post_indexer.rb",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-11-03-color-of-music-ii.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_src/test.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/feed.xml",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/test.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/responsivegridsystem.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/.bowerrc",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_vendor/skeleton-sass/skeleton/core/_config.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_sub_bootstrap.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_monokai.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_base.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-18-using-grunt-with-jekyll.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_sub-bootstrap.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/rabidaudio.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-02-18-swank-stupid-simple-static-webserver.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2012-09-20-microsofts-impending-software.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_site/blog/2012/09/20/microsofts-impending-software.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/package.json",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-18-cheatsheet.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-18-doc-martin.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-18-in-keeping-secrets-of-silent-earth-4.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-18-meow-youre-the-best-evar.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/new.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/.gitignore",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/README.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/cheatsheet.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/bower.json",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/css/main.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/js/test.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/deploy.sh",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/divshot.json",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/bg.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-17-format-test.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/OSMBuildings-Leaflet.debug.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/map2.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/map.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/error.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/default_author.rb",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_syntax-highlighting.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/monokai.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/wikipe_link.rb",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/css/ra.css",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/rabidaudio.sublime-project",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/index.html",
 		"/home/charles/Dropbox/Projects/blog2/rabidaudio_blog_2/cheatsheet.md",
 		"/home/charles/clubalert.me/webapp/app/scripts/templates/home.hbs",
@@ -824,74 +935,7 @@
 		"/home/charles/clubalert.me/webapp/public/scripts/collections/Club.js",
 		"/home/charles/clubalert.me/webapp/public/scripts/views/pages/Home.js",
 		"/home/charles/clubalert.me/webapp/app/scripts/collections/Clubs.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/parse-backbone.js",
-		"/home/charles/clubalert.me/webapp/.jshintrc",
-		"/home/charles/clubalert.me/keys.json",
-		"/home/charles/clubalert.me/parse-date-convert.js",
-		"/home/charles/clubalert.me/js-calendar-proxy/calendarparse.js",
-		"/home/charles/clubalert.me/js-calendar-proxy/cparse.js",
-		"/home/charles/clubalert.me/.gitignore",
-		"/home/charles/clubalert.me/js-calendar-proxy/server.js",
-		"/home/charles/js-calendar-proxy/cparse.js",
-		"/home/charles/js-calendar-proxy/server.js",
-		"/home/charles/js-calendar-proxy/calendarparse.js",
-		"/home/charles/code_for_atlanta/clerydata/api1/schools.js",
-		"/home/charles/code_for_atlanta/clerydata/api1/queries.sql",
-		"/home/charles/code_for_atlanta/clerydata/api1/db.js",
-		"/home/charles/code_for_atlanta/clerydata/api1/.gitignore",
-		"/home/charles/code_for_atlanta/clerydata/api1/package.json",
-		"/home/charles/code_for_atlanta/clerydata/api1/error.js",
-		"/home/charles/clerydata/api1/package.json",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/views/database_info.json",
-		"/home/charles/clerydata/api1/.gitignore",
-		"/home/charles/texts/result.json",
-		"/home/charles/texts/result2.json",
-		"/home/charles/texts/ends4.json",
-		"/home/charles/texts/texts.txt",
-		"/home/charles/Dropbox/Projects/Utterson/.sass-cache/fe2f0c8e21d1707e3a62a3def0565150ad8e8266/base.scssc",
-		"/home/charles/texts/ends4",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/views/posts.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/views/post.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/views/app.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/collections/post.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/models/post.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/templates/app.hbs",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/views/author.js",
-		"/home/charles/bands/app/app.js",
-		"/home/charles/bands/api_keys.rb",
-		"/home/charles/bands/lastfm.rb",
-		"/home/charles/bands/.gitignore",
-		"/home/charles/bands/mongo.rb",
-		"/home/charles/bands/echonest.rb",
-		"/home/charles/bands/echowrap/lib/echowrap/artist.rb",
-		"/home/charles/bands/nbs.rb",
-		"/home/charles/bands/songkick.rb",
-		"/home/charles/bands/rn_scrape.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client/request.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client/artist.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client.rb",
-		"/home/charles/bands/songkick_ruby/songkick_ruby.gemspec",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client/event.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client/search.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client/calendar.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client/errors.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick/client/user.rb",
-		"/home/charles/bands/songkick_ruby/lib/songkick.rb",
-		"/home/charles/bands/to_hash_monkeypatch.rb",
-		"/home/charles/bands/soundcloud.rb",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/views/main.js",
-		"/home/charles/Downloads/.org.chromium.Chromium.Bpc3ZY",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/helper/debug.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/bower_components/debug/Readme.md",
-		"/home/charles/Dropbox/Projects/Utterson/.jshintrc",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/main.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/styles/main.scss",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/collections/author.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/models/author.js",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/templates/post.hbs",
-		"/home/charles/Dropbox/Projects/Utterson/blog/scripts/templates/author.hbs",
-		"/home/charles/Dropbox/Projects/Utterson/blog/styles/main.css",
-		"/home/charles/Dropbox/Projects/Utterson/blog/data/author_store.json"
+		"/home/charles/clubalert.me/webapp/public/scripts/parse-backbone.js"
 	],
 	"find":
 	{
@@ -919,6 +963,52 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			";",
+			"#",
+			"// $color-",
+			"#",
+			"%",
+			"page",
+			"include.param",
+			"param",
+			" \n",
+			"footer-col",
+			" ... ",
+			"nowunix",
+			"'concat:css',",
+			"\";",
+			"@import \"../",
+			"../",
+			".css",
+			"css/",
+			"\" media=\"all\">",
+			"<link rel=\"stylesheet\" href=\"",
+			" !global",
+			"@import \"",
+			"\n@import \"bootstrap",
+			"@import \"",
+			"bottom",
+			"h1, h2",
+			"                     ",
+			"                   ",
+			",",
+			"','",
+			",",
+			"'",
+			"        options: {\n          spawn: false,\n          livereload: true\n        },",
+			"\n      ",
+			"\n        options: {\n          spawn: false,\n          livereload: true\n        },\n",
+			"        options: {\n          spawn: false,\n          livereload: true\n        },",
+			"ZOOM_FACTOR",
+			"roofColor",
+			"ROOF_COLOR",
+			"load",
+			"style(",
+			"style",
+			"getAllTiles",
+			"getTile",
+			".codehilite",
+			"rabidaudio_blog_2",
 			"this.dims",
 			"this.board",
 			"build",
@@ -1000,53 +1090,7 @@
 			"”",
 			"mbid",
 			"result[\"artist\"]",
-			"remote",
-			"REMOTE",
-			"remote",
-			"API_URL",
-			"username",
-			"users/",
-			"username,",
-			"users/",
-			"users",
-			"irb(main):00",
-			"\"}, ",
-			"},",
-			"Lastfm",
-			"LastFM",
-			"LASTFM",
-			"LastFM",
-			"LASTFM",
-			"LastFM",
-			"lastfm_",
-			"q",
-			"\"",
-			"this",
-			"console",
-			"View",
-			"Debug",
-			"view",
-			"this",
-			"that",
-			"\"",
-			"Templates",
-			"JST",
-			"\"",
-			"sass",
-			"\"",
-			"source\")",
-			"\"",
-			"source\")",
-			"\"",
-			"source\")",
-			"\"",
-			"{\n",
-			"\"",
-			"handlebars",
-			"watch",
-			"handlebars",
-			"dist",
-			"JST"
+			"remote"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1097,8 +1141,119 @@
 	"groups":
 	[
 		{
+			"selected": 3,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "css/main.scss",
+					"settings":
+					{
+						"buffer_size": 1520,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								76,
+								76
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "_sass/_rabidaudio.scss",
+					"settings":
+					{
+						"buffer_size": 3997,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1576,
+								1576
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "_config.yml",
+					"settings":
+					{
+						"buffer_size": 1596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1550,
+								1550
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 225.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "_layouts/post.html",
+					"settings":
+					{
+						"buffer_size": 1231,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								75,
+								75
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jekyll/Syntaxes/HTML (Jekyll).tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -1152,16 +1307,236 @@
 		"selected_items":
 		[
 			[
+				"mesh",
+				"_posts/2013-04-01-location-enabled-mesh-networking.html"
+			],
+			[
+				"circular",
+				"_posts/2013-02-15-circular-buffer-algorithm-rates-on.html"
+			],
+			[
+				"arduino",
+				"_posts/2013-04-30-dsp-arduino.html"
+			],
+			[
+				"intrestin",
+				"_posts/2011-11-17-interesting-case-of-digital-property.html"
+			],
+			[
+				"must",
+				"_posts/2011-10-08-must-read-blog-on-music-and-piracy.html"
+			],
+			[
+				"unrelate",
+				"_posts/2010-09-21-unrelated-circuit-4-bit-adding-machine.html"
+			],
+			[
+				"wkipe",
+				"_posts/2013-08-29-wkipe-official-announcement.html"
+			],
+			[
+				"disco",
+				"_drafts/2014-11-10-best-discoveries-of-last-12-months.html"
+			],
+			[
+				"colo",
+				"_includes/colorset.html"
+			],
+			[
+				"header",
+				"_includes/header.html"
+			],
+			[
+				"hea",
+				"_includes/head.html"
+			],
+			[
+				"post",
+				"_layouts/post.html"
+			],
+			[
+				"page",
+				"_layouts/page.html"
+			],
+			[
+				"post.md",
+				"_templates/post.md"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"soca",
+				"_includes/social.html"
+			],
+			[
+				"con",
+				"_config.yml"
+			],
+			[
+				"conf",
+				"_config.yml"
+			],
+			[
+				"soc",
+				"_includes/social.html"
+			],
+			[
+				"foot",
+				"_includes/footer.html"
+			],
+			[
+				"dinkus",
+				"_includes/dinkus.html"
+			],
+			[
+				"diam",
+				"_res/diamond.svg"
+			],
+			[
+				"all",
+				"all.html"
+			],
+			[
+				"color-of",
+				"_posts/2014-11-03-color-of-music-ii.html"
+			],
+			[
+				"confi",
+				"_config.yml"
+			],
+			[
+				"fee",
+				"feed.xml"
+			],
+			[
+				"config",
+				"_config.yml"
+			],
+			[
+				".bowe",
+				".bowerrc"
+			],
+			[
+				"grun",
+				"Gruntfile.js"
+			],
+			[
+				"test",
+				"test.html"
+			],
+			[
+				"_config",
+				"_vendor/skeleton-sass/skeleton/core/_config.scss"
+			],
+			[
+				"rabid",
+				"_sass/_rabidaudio.scss"
+			],
+			[
+				"mono",
+				"_sass/_monokai.scss"
+			],
+			[
+				"boostra",
+				"_vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"
+			],
+			[
+				"grunt-with",
+				"_posts/2014-12-18-using-grunt-with-jekyll.md"
+			],
+			[
+				"swank",
+				"_posts/2014-02-18-swank-stupid-simple-static-webserver.html"
+			],
+			[
+				"micro",
+				"_posts/2012-09-20-microsofts-impending-software.html"
+			],
+			[
+				"base",
+				"_sass/_base.scss"
+			],
+			[
+				"head",
+				"_includes/head.html"
+			],
+			[
+				"main.",
+				"css/main.scss"
+			],
+			[
+				"packa",
+				"package.json"
+			],
+			[
+				"cheat",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				"pa",
+				"package.json"
+			],
+			[
+				"pack",
+				"package.json"
+			],
+			[
+				"gitig",
+				".gitignore"
+			],
+			[
+				"rab",
+				"_sass/rabidaudio.scss"
+			],
+			[
+				"cheatsh",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				"bowerr",
+				".bowerrc"
+			],
+			[
+				"bowerrc",
+				".bowerrc"
+			],
+			[
+				"bower",
+				"bower.json"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"chea",
+				"cheatsheet.md"
+			],
+			[
+				"_src",
+				"_src/test.js"
+			],
+			[
+				"di",
+				"divshot.json"
+			],
+			[
+				"depl",
+				"deploy.sh"
+			],
+			[
+				"error",
+				"error.md"
+			],
+			[
 				"myro",
 				"webapp/app/scripts/myrouter.js"
 			],
 			[
 				"user",
 				"webapp/app/scripts/models/User.js"
-			],
-			[
-				"page",
-				"webapp/app/scripts/views/pages/Page.js"
 			],
 			[
 				"page.",
@@ -1174,10 +1549,6 @@
 			[
 				"user.js",
 				"webapp/app/scripts/models/User.js"
-			],
-			[
-				"grunt",
-				"webapp/Gruntfile.js"
 			],
 			[
 				"club",
@@ -1220,10 +1591,6 @@
 				"webapp/app/scripts/views/Page.js"
 			],
 			[
-				"pack",
-				"package.json"
-			],
-			[
 				"read",
 				"README.md"
 			],
@@ -1242,10 +1609,6 @@
 			[
 				"main.js",
 				"webapp/app/scripts/main.js"
-			],
-			[
-				"rea",
-				"README.md"
 			],
 			[
 				"alert",
@@ -1286,10 +1649,6 @@
 			[
 				"post.js",
 				"blog/scripts/models/post.js"
-			],
-			[
-				"post",
-				"blog/scripts/views/post.js"
 			],
 			[
 				"posts.",
@@ -1458,178 +1817,6 @@
 			[
 				"trans",
 				"application/models/Transcriber.php"
-			],
-			[
-				"mytest",
-				"application/controllers/MytestController.php"
-			],
-			[
-				"transcri",
-				"application/models/Transcriber.php"
-			],
-			[
-				"admin",
-				"application/controllers/AdminEditorController.php"
-			],
-			[
-				"create_payments",
-				"migrations/20140409235618_create_payments_table.php"
-			],
-			[
-				"getnotesact",
-				"library/GetNotes/Controller/Action.php"
-			],
-			[
-				"getnotescontroller",
-				"library/GetNotes/Controller/Action.php"
-			],
-			[
-				"transcriberco",
-				"application/controllers/TranscriberController.php"
-			],
-			[
-				"transcriberget",
-				"application/views/scripts/transcriber/get.phtml"
-			],
-			[
-				"paymnts",
-				"application/models/DbTable/Payments.php"
-			],
-			[
-				"paypal",
-				"application/library/Paypal.php"
-			],
-			[
-				".md",
-				"development_setup.md"
-			],
-			[
-				"36",
-				"node_modules/lame/deps/mpg123/src/libmpg123/dct36_3dnow.S"
-			],
-			[
-				".gitig",
-				".gitignore"
-			],
-			[
-				"compo",
-				"composer.json"
-			],
-			[
-				"twi",
-				"application/library/Twilio.php"
-			],
-			[
-				"hellp",
-				"application/library/HelloSign.php"
-			],
-			[
-				"hello",
-				"application/library/HelloSign.php"
-			],
-			[
-				"hellos",
-				"application/library/HelloSign.php"
-			],
-			[
-				"twili",
-				"application/library/Twilio.php"
-			],
-			[
-				"applica",
-				"application/configs/application.ini"
-			],
-			[
-				"composer",
-				"composer.json"
-			],
-			[
-				"jobs-",
-				"application/views/scripts/admin-editor/jobs-pending.phtml"
-			],
-			[
-				"adminuser",
-				"application/modules/admin/views/scripts/users/get.phtml"
-			],
-			[
-				"transcrberm",
-				"application/models/TranscriberMapper.php"
-			],
-			[
-				"usermapper",
-				"application/models/UserMapper.php"
-			],
-			[
-				"transcriber",
-				"application/modules/admin/controllers/TranscribersController.php"
-			],
-			[
-				"dbtableorders",
-				"application/models/DbTable/Orders.php"
-			],
-			[
-				"adminc",
-				"application/controllers/AdminsController.php"
-			],
-			[
-				"comments",
-				"migrations/20140320031336_add_graded_to_order_status_id_comments.php"
-			],
-			[
-				"createpayments",
-				"migrations/20140409235618_create_payments_table.php"
-			],
-			[
-				".git",
-				".gitignore"
-			],
-			[
-				"user.",
-				"application/models/User.php"
-			],
-			[
-				"orders.",
-				"application/models/DbTable/Orders.php"
-			],
-			[
-				"orderslist",
-				"application/views/scripts/_lists/_ordersList.phtml"
-			],
-			[
-				"transcriber/",
-				"application/views/scripts/transcriber/index.phtml"
-			],
-			[
-				"models/tra",
-				"application/models/Transcriber.php"
-			],
-			[
-				"test",
-				"application/controllers/TestsController.php"
-			],
-			[
-				"applicat",
-				"application/configs/application.ini"
-			],
-			[
-				"getnotes/mail",
-				"library/GetNotes/Mailer.php"
-			],
-			[
-				"models/inv",
-				"application/models/Invitation.php"
-			],
-			[
-				"mailer/inv",
-				"application/views/scripts/mailer/transcriber-invite.html.phtml"
-			],
-			[
-				"mailer/new",
-				"application/views/scripts/mailer/new-transcriber.html.phtml"
-			],
-			[
-				"transcribersco",
-				"modules/admin/controllers/TranscribersController.php"
 			]
 		],
 		"width": 0.0

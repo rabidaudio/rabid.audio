@@ -1,5 +1,6 @@
 ---
-title:      
+title:   
+subtitle:           #optional (titles need to be pretty short, so roll over stuff here)   
 layout:     post
 published:  false
 categories:
@@ -9,7 +10,7 @@ mathjax:    false    #enable this if you want to use LaTeX
 ## Guest posters: uncomment and fill in as much as you like
 #author:
 #  name:     Charles Julian Knight
-#  minibio:  '"Fuck it, Ship it"'
+#  minibio:  'Fuck it, Ship it'
 #  twitter:  charlesjuliank
 #  github:   rabidaudio
 #  email:    charles@rabidaudio.com
