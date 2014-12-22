@@ -22,13 +22,6 @@ code, kbd, pre, samp {
   font-family: 'courier new', monospace;
 }
 
-div.post {
-  background-color: $post-background-color;
-  padding: 1em;
-  border-radius: 1px;
-  box-shadow: 0px 0px 6px 2px $shadow-color;
-}
-
 a:hover {
   text-decoration: underline;
 }
@@ -40,11 +33,65 @@ a.wikipedia {
   padding-right: 11px;
 }
 
+i.fa {
+  color: $grey-color;
+}
+.dinkus svg {
+  fill: $grey-color-light;
+}
+
+@import "rabidaudio/header";
+
+/**
+ * Content
+*/
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
+    > li {
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+
+
+/** 
+ * Post
+*/
+
 .post {
+  background-color: $post-background-color;
+  padding: 1em;
+  border-radius: 1px;
+  box-shadow: 0px 0px 6px 2px $shadow-color;
+
   .post-title {
-    margin-bottom: 0px;
-    font-size: 48px;
+    letter-spacing: -1px;
+    line-height: 1;
+    font-size: 3em;
+    @include media-query($on-palm) {
+      font-size: 1.7em;
+    }
   }
+
   .post-subtitle {
     margin-top: 15px;
     margin-bottom: 0px;
@@ -58,35 +105,11 @@ a.wikipedia {
     a{
       color: $grey-color;
     }
-  }  
-}
-
-.site-title{
-  img {
-    width: 10%;
-    padding-top: 5px;
-  }
-  h1 {
-    font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
   }
 }
 
-
-@include media-query($on-palm) {
-
-  body{
-    background-color: $post-background-color;
-  }
-
-  .wrapper {
-    padding: 0px;
-  }
-  div.post {
-    padding: .25em;
-    border-radius: 1px;
-    box-shadow: none;
-    background-color: inherit;
-  }
+.post-content {
+  margin-bottom: inherit;
 }
 
 .post-list {
@@ -127,18 +150,42 @@ a.wikipedia {
   }
 }
 
-.post-content {
-  margin-bottom: inherit;
+.post-header {
+    margin-bottom: $spacing-unit;
 }
 
-.dinkus {
-  text-align: center;
-  padding: 10px;
-  padding-bottom: 25px;
-  svg {
-    padding: 5px;
-  }
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
 }
+
+
+/**
+ * Footer
+*/
 
 .site-footer {
   .wrapper {
@@ -184,17 +231,69 @@ a.wikipedia {
   }
 }
 
-.bio-float-right {
-  margin-left: auto;
-  margin-right: 0;
-  padding: 0px;
-  width: 40%;
-  min-width: 300px;
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: $spacing-unit 0;
+}
 
-  @include media-query($on-palm) {
-    width: 100%;
-    padding-left: 5%;
-  }
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $grey-color;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+    width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+    width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+    width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
 }
 
 @include media-query($on-palm) {
@@ -205,10 +304,14 @@ a.wikipedia {
   }
 }
 
-
+/**
+ * Other
+*/
 .bio{
   display: none;
   overflow-y: hidden;
+  position: absolute;
+  padding: 0px 10px 0px 10px;
 
   .name {
     margin-bottom: 0px;
@@ -230,6 +333,7 @@ a.wikipedia {
     min-width: 75px;
     float: left;
     width: 25%;
+    padding-bottom: 5px;
   }
 
   .rightcol {
@@ -254,14 +358,27 @@ a.wikipedia {
   }
 }
 
+.bio-float-right {
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0px;
+  width: 40%;
+  min-width: 300px;
+  margin-top: -12px;
+
+  @include media-query($on-palm) {
+    width: 100%;
+    padding-left: 5%;
+    .bio {
+      background-color: #FFFFFF;
+    }
+  }
+}
+
 .social-media-list {
   .bitcoin {
     font-size: 7pt;
   }
-}
-
-i.fa {
-  color: $grey-color;
 }
 
 .header-link{
@@ -278,4 +395,13 @@ h2:hover .header-link, h3:hover .header-link,
 h4:hover .header-link, h5:hover .header-link,
 h6:hover .header-link{
   opacity:1;
+}
+
+.dinkus {
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 25px;
+  svg {
+    padding: 5px;
+  }
 }

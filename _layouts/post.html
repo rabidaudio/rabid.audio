@@ -21,9 +21,16 @@ layout: default
   </header>
 
   <script type="text/javascript">
+    var $bio = $('.post-header .bio');
     $('.author').click(function(e){
-      e.preventDefault();
-      $('.bio').slideToggle();
+      e.stopPropagation();
+      $bio.slideToggle();
+    });
+    $(document).click(function(e){
+      if($bio.is(':visible') && !$(e.target).closest('#menucontainer').length){
+        e.stopPropagation();
+        $bio.slideToggle();
+      }
     });
   </script>
 

@@ -81,7 +81,7 @@ module.exports = function(grunt) {
       content: {
         files: [
           '*.*',
-          '<%= cfg.directories.sass %>/*css',
+          '<%= cfg.directories.sass %>/**/*css',
           '<%= cfg.directories.css %>/*css',
            '<%= cfg.directories.drafts %>/**/*',
            '<%= cfg.directories.posts %>/**/*',

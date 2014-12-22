@@ -39,7 +39,7 @@ exclude:
 # JS files to include from vendor (Bower directory)
 vendor:
   js:
-#  - _vendor/jquery/dist/jquery.js
+  - _vendor/jquery/dist/jquery.js
   - _vendor/inform/dist/inform.js
   fonts:
     - fontawesome/fonts
@@ -73,6 +73,15 @@ nav:
 - 
   url: /all
   title: All Posts
+# -
+#   url: /error
+#   title: Dummy
+# -
+#   url: /error
+#   title: Dummy
+# -
+#   url: /error
+#   title: Dummy
 
 colors:
   green:      #Irish Sea - http://paletton.com/#uid=12Q0u0k7RBG1pW649NecqtBhVo9
@@ -114,10 +123,6 @@ colormap:
 
 # Build settings
 markdown: kramdown
-kramdown:
-  auto_ids: true
-  math_engine: mathjax
-  input: GFM
 
 sass:
     style: :compressed

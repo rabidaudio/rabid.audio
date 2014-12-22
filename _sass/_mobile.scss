@@ -1,0 +1,60 @@
+@include media-query($on-palm) {
+
+  div.post {
+    padding: .25em;
+    border-radius: 1px;
+    box-shadow: none;
+    background-color: inherit;
+  }
+  pre, code {
+    background-color: $background-color !important;
+  }
+
+  h3, h4, h5, h6 {
+    font-size: 1em;
+  }
+  h1 {
+    font-size: 1.8em;
+  }
+  h2 {
+    font-size: 1.5em;
+  }
+
+  .site-nav {
+    @include media-query($on-palm) {
+      position: absolute;
+      top: 5px;
+      right: 30px;
+      background-color: $background-color;
+      border: 1px solid $grey-color-light;
+      border-radius: 5px;
+      text-align: right;
+
+      .menu-icon {
+        display: block;
+        float: right;
+        width: 36px;
+        height: 26px;
+        line-height: 0;
+        padding-top: 10px;
+        text-align: center;
+      }
+
+      .trigger {
+        clear: both;
+        display: none;
+      }
+
+      &:hover .trigger {
+        display: block;
+        padding-bottom: 5px;
+      }
+
+      .page-link {
+        display: block;
+        padding: 5px 10px;
+        font-size: 1.2em;
+      }
+    }
+  }
+}

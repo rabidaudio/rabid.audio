@@ -33,6 +33,7 @@ $content-width:    1000px;
 $on-palm:          600px;
 $on-laptop:        800px;
 
+$header-height:    55px;
 $footer-height:    80px;
 
 $wp-img: "{{ "wp-10.png" | prepend: site.imgurl }}";
@@ -62,7 +63,7 @@ $fa-font-path: "../assets/fonts/fontawesome/fonts";
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
         "base",
-        "layout",
         "monokai",
-        "rabidaudio"
+        "rabidaudio",
+        "mobile"
 ;
