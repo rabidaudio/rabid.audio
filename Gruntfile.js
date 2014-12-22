@@ -80,7 +80,6 @@ module.exports = function(grunt) {
       },
       content: {
         files: [
-          '*.*',
           '<%= cfg.directories.sass %>/**/*css',
           '<%= cfg.directories.css %>/*css',
            '<%= cfg.directories.drafts %>/**/*',
@@ -90,12 +89,17 @@ module.exports = function(grunt) {
            '<%= cfg.directories.assets %>/**/*',
            '!<%= cfg.directories.sourcejs %>/**/*.js',
            '!<%= cfg.jsurl %>',
-           '<%= cfg.directories.plugins %>/**/*',
-           '*.yml',
-           '*.json'
+           '<%= cfg.directories.plugins %>/**/*'
          ],
         tasks: ['devbuild'],
       },
+      configFiles: {
+        files: [ 'Gruntfile.js', '*.yml', '*.json' ],
+        options: {
+          reload: true
+        },
+        tasks: ['devbuild']
+      }
     },
 
     connect: {
@@ -153,6 +157,9 @@ module.exports = function(grunt) {
         cwd: '<%= bow.directory %>',
         src: ['<%= cfg.vendor.fonts %>/*'],
         dest: '<%= cfg.directories.fonts %>'
+      },
+      newPost: {
+        src: ['<%= cfg.directories.templates%>/post.md'],
       }
     }
   });
@@ -177,25 +184,39 @@ module.exports = function(grunt) {
     }
 
     var d = new Date();
-
-    require('readline').createInterface({
+    var df = [d.getMonth()+1,
+               d.getDate(),
+               d.getFullYear()].join('/')+' '+
+              [d.getHours(),
+               d.getMinutes(),
+               d.getSeconds()].join(':');
+    var rl = require('readline').createInterface({
       input: process.stdin,
       output: process.stdout
-    }).question("Title of the post: ", function(title){
-      if(!title) return grunt.fail.warn("No title specified");
+    });
+    rl.question("Category (other): ", function(category){
+      if(!category) category = "other";
+      rl.question("Title of the post: ", function(title){
+        if(!title) return grunt.fail.warn("No title specified");
 
-      grunt.log.writeln('Creating...');
+        grunt.log.writeln('Creating...');
 
-      var file_title = title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ /g,'-');
-      var file_name = [d.getFullYear(), d.getMonth()+1, d.getDate()].join("-")+"-"+file_title+".md";
-      var full_name = path.resolve(dir, file_name);
+        var file_title = title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ /g,'-');
+        var file_name = [d.getFullYear(), d.getMonth()+1, d.getDate()].join("-")+"-"+file_title+".md";
+        var full_name = path.resolve(dir, file_name);
 
-      //todo insert title -see grunt copy
-      fs.createReadStream("<%= cfg.directories.templates %>/post.md").pipe(fs.createWriteStream(full_name)); //copy template
+        //todo insert title -see grunt copy
+        // fs.createReadStream("<%= cfg.directories.templates %>/post.md").pipe(fs.createWriteStream(full_name)); //copy template
+        grunt.config('copy.newPost.dest', full_name);
+        grunt.config('copy.newPost.options.process', function (content, srcpath) {
+          return content.replace(/%TITLE%/g, title).replace(/%DATE%/g, df).replace(/%CATEGORY%/g, category);
+        });
+        grunt.task.run('copy:newPost');
 
-      grunt.config('editor.src', [full_name]);
-      grunt.task.run('editor');
-      done();
+        grunt.config('editor.src', [full_name]);
+        grunt.task.run('editor');
+        done();
+      });
     });
   });
 

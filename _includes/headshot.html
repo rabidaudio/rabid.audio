@@ -27,12 +27,14 @@ $('.leftcol').css('max-width', Math.min.apply(null, $('.rightcol').map(function(
 var $bio = $('.post-header .bio');
 $('.author').click(function(e){
   e.stopPropagation();
+  e.preventDefault();
   $bio.slideToggle();
 });
 $(document).click(function(e){
   console.log(e.target);
   if($bio.is(':visible') && !$(e.target).closest('.bio').length){
     e.stopPropagation();
+    e.preventDefault();
     $bio.slideToggle();
   }
 });

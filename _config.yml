@@ -108,8 +108,8 @@ colors:
     darker:   '#28001C'
     dark:     '#630948' #460031
     main:   '#97397B'
-    light:    'rgb(207, 153, 191)'
-    lighter:  'rgb(247, 213, 237)'
+    light:    'rgb(207, 153, 191)'#''
+    lighter:  'rgb(245, 227, 240)'
   grey: 
     darker:   '#424242'
     dark:     '#626262'

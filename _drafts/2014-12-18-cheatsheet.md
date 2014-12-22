@@ -26,7 +26,7 @@ tags: ["c", "a", "t"]
 
 mathjax: false
 # Set to true if the page has LaTeX. This saves the huge script from being inserted constantly
-color: blue
+color: purple
 ---
 
 This is a demo of all styled elements in my `jekyll` (`kramdown`, with plugins and tweaks).
