@@ -1,5 +1,6 @@
 ---
-layout: default
+layout: page
+permalink: /error/
 ---
 
 # Sorry to do this, but... #

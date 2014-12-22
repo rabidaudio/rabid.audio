@@ -3,8 +3,8 @@
   <div class="wrapper">
 
     <a class="site-title" href="{{ site.baseurl }}/">
-      <h1>RabidAudio</h1>
       <!-- <img src="{{ site.baseurl }}/images/drawing.png" alt="{{ site.title }}"> -->
+      <h1>RabidAudio</h1>
     </a>
 
     <nav class="site-nav">
@@ -17,7 +17,7 @@
       </a>
 
       <div class="trigger">
-        {% for page in site.pages %}
+        {% for page in site.nav %}
           {% if page.title %}
           <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}

@@ -61,6 +61,14 @@ defaults:
         img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
         bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
 
+nav:
+# -
+#   url: /about
+#   title: About
+- 
+  url: /all
+  title: All Posts
+
 colors:
   green:      #Irish Sea - http://paletton.com/#uid=12Q0u0k7RBG1pW649NecqtBhVo9
     darker:   '#439748'
