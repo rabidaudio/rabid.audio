@@ -123,10 +123,11 @@ a.wikipedia {
 }
 
 .inform-notice {
-  background-color: rgba(223, 10, 10, 0.91);
+  color: #000000;
+  // background-color: rgba(223, 10, 10, 0.91);
 
   a {
-    color: #ffffff;
+    // color: #ffffff;
     text-decoration: underline;
   }
 }
@@ -416,4 +417,12 @@ h6:hover .header-link{
   // svg {
   //   padding: 5px;
   // }
+}
+
+noscript div {
+  text-align: center;
+  width: 100%;
+  padding: 10px;
+  margin-top: -30px;
+  margin-bottom: 30px;
 }

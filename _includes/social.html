@@ -9,68 +9,67 @@
     <li>
       <a href="https://twitter.com/{{ val }}" target="_blank">
         <span class="icon icon--twitter"><i class="fa fa-twitter"></i></span>
-        <span class="username">{{ val }}</span>
+        <span class="username" title="twitter">{{ val }}</span>
       </a>
     </li>
   {% when 'github' %}
     <li>
       <a href="https://github.com/{{ val }}" target="_blank">
         <span class="icon  icon--github"><i class="fa fa-github"></i></span>
-        <span class="username">{{ val }}</span>
+        <span class="username" title="github">{{ val }}</span>
       </a>
     </li>
   {% when 'email' %}
     <li>
       <a href="mailto:{{ val }}">
         <span class="icon icon--email"><i class="fa fa-envelope"></i></span>
-
-        <span class="email">{{ val }}</span>
+        <span class="email" title="email">{{ val }}</span>
       </a>
     </li>
   {% when 'bitcoin' %}
     <li>
         <span class="icon icon--bitcoin"><i class="fa fa-bitcoin"></i></span>
-        <span class="bitcoin">{{ val }}</span>
+        <span class="bitcoin" title="bitcoin">{{ val }}</span>
     </li>
   {% when 'google' %}
     <li>
       <a href="https://plus.google.com/{{ val }}" target="_blank">
         <span class="icon  icon--google"><i class="fa fa-google-plus"></i></span>
-        <span class="google">{{ val | replace_first: '+', '' }}</span>
+        <span class="google" title="google">{{ val | replace_first: '+', '' }}</span>
       </a>
     </li>
   {% when 'linkedin' %}
     <li>
       <a href="http://{{ val }}" target="_blank">
         <span class="icon  icon--linkedin"><i class="fa fa-linkedin"></i></span>
-        <span class="linkedin">LinkedIn Profile</span>
+        <span class="linkedin" title="linkedin">LinkedIn Profile</span>
       </a>
     </li>
   {% when 'facebook' %}
     <li>
       <a href="https://facebook.com/{{ val }}" target="_blank">
         <span class="icon  icon--facebook"><i class="fa fa-facebook"></i></span>
-        <span class="facebook">{{ val }}</span>
+        <span class="facebook" title="facebook">{{ val }}</span>
       </a>
     </li>
   {% when 'reddit' %}
     <li>
       <a href="https://reddit.com/u/{{ val }}" target="_blank">
         <span class="icon  icon--redit"><i class="fa fa-reddit"></i></span>
-        <span class="reddit">{{ val }}</span>
+        <span class="reddit" title="reddit">{{ val }}</span>
       </a>
     </li>
   {% when 'lastfm' %}
     <li>
       <a href="https://lastfm.com/user/{{ val }}" target="_blank">
         <span class="icon  icon--lastfm"><i class="fa fa-lastfm-square"></i></span>
-        <span class="lastfm">{{ val }}</span>
+        <span class="lastfm" title="lastfm">{{ val }}</span>
       </a>
     </li>
   {% when 'school' %}
     <li>
       <span class="icon  icon--school"><i class="fa fa-graduation-cap"></i></span>
-      <span class="school">{{ val }}</span>
+      <span class="school" title="school">{{ val }}</span>
     </li>
   {%when 'name' or 'img' or 'minibio' %}
     <!-- no op -->
@@ -85,7 +84,7 @@
           {% if val.url %}</a>{% endif %}
         </li>
       {% else %}
-        <li><span class="{{ key }}">{{ val }}</span></li>
+        <li><span class="{{ key }}" title="{{ key }}">{{ val }}</span></li>
       {% endif %}
   {% endcase %}
 {% endfor %}
