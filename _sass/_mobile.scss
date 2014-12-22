@@ -6,8 +6,8 @@
     box-shadow: none;
     background-color: inherit;
   }
-  pre, code {
-    background-color: $background-color !important;
+  code {
+    background-color: $background-color;
   }
 
   h3, h4, h5, h6 {

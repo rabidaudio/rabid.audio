@@ -1,27 +1,18 @@
 <header class="site-header">
-
   <div class="wrapper">
-
     <a class="site-title" href="{{ site.baseurl }}/">
-      <!-- <img src="{{ site.baseurl }}/images/drawing.png" alt="{{ site.title }}"> -->
+      <!-- <img src="{{ "drawing.png" | prepend: site.imgurl }}" alt="{{ site.title }}"> -->
       <h1>RabidAudio</h1>
     </a>
-
-    <!-- <div> -->
-      <nav class="site-nav">
-        <a href="#" class="menu-icon"><i class="fa fa-list-ul"></i>
-        </a>
-
-        <div class="trigger">
-          {% for page in site.nav %}
-            {% if page.title %}
-            <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-            {% endif %}
-          {% endfor %}
-        </div>
-      </nav>
-    <!-- </div> -->
-
+    <nav class="site-nav">
+      <a href="#" class="menu-icon"><i class="fa fa-list-ul"></i></a>
+      <div class="trigger">
+        {% for page in site.nav %}
+          {% if page.title %}
+          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </nav>
   </div>
-
 </header>
