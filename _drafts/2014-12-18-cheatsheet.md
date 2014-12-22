@@ -5,18 +5,15 @@ layout: post
 title: Test Post
 subtitle: And what a great one it is
 
-#permalink: cats
-# If you need your processed blog post URLs to be something other than the default /year/month/day/title.html then you can set this variable and it will be used as the final URL.
-
 ## Guest posters: uncomment and fill in as much as you like
-#author:
-#  name:     Charles Julian Knight
-#  minibio:  'Fuck it, Ship it'
-#  twitter:  charlesjuliank
-#  github:   rabidaudio
-#  email:    charles@rabidaudio.com
-#  img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
-#  bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
+author:
+  name:     Charles Julian Knight
+  minibio:  'Fuck it, Ship it'
+  twitter:  charlesjuliank
+  github:   rabidaudio
+  email:    charles@rabidaudio.com
+  img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+  bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
 
 published: true
 # Set to false if you don’t want a specific post to show up when the site is generated.
@@ -27,8 +24,9 @@ category: hardware
 tags: ["c", "a", "t"]
 # Similar to categories, one or multiple tags can be added to a post. Also like categories, tags can be specified as a YAML list or a space- separated string.
 
-mathjax: false
+mathjax: true
 # Set to true if the page has LaTeX. This saves the huge script from being inserted constantly
+color: blue
 ---
 
 This is a demo of all styled elements in my `jekyll` (`kramdown`, with plugins and tweaks).

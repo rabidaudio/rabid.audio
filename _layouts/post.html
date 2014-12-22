@@ -34,8 +34,8 @@ layout: default
   {% include dinkus.html %}
 
   <div class="post-nav">
-    <div class="next">{% if page.next %}<a href="/blog/{{ page.next.url }}">Next: {{ page.next.title }}</a>{% endif %}</div>
-    <div class="prev">{% if page.previous %}<a href="/blog/{{ page.previous.url }}">Previous: {{ page.previous.title }}</a>{% endif %}<div>
+    <div class="next">{% if page.next %}<a href="{{ page.next.url | prepend: site.baseurl }}">Next: {{ page.next.title }}</a>{% endif %}</div>
+    <div class="prev">{% if page.previous %}<a href="{{ page.previous.url | prepend: site.baseurl }}">Previous: {{ page.previous.title }}</a>{% endif %}<div>
   </div>
 
 </div>

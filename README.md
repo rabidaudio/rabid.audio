@@ -5,10 +5,12 @@ http://rabid.audio/blog
 Set up
 ------
 
-    gem install jekyll rouge (maybe some others too?)
+    gem install jekyll (maybe some others too?)
     npm install -g grunt-cli divshot
     npm install --dev
     bower install
+
+also python pygments (`pip` or however)
 
 run
 ---

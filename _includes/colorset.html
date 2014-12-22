@@ -8,6 +8,7 @@
   {% endif %}
   pre, code {
     background-color: {{ colors.lighter }};
+    color: {{ colors.darker }};
   }
   a {
     color: {{ colors.dark }};
@@ -16,7 +17,22 @@
     color: {{ colors.darker }};
   }
   .site-header {
-    border-top: 10px solid {{ colors.darker }};
+    border-top: 10px solid {{ colors.dark }};
+    background-color: {{ colors.light }};
+  }
+  body {
     background-color: {{ colors.lighter }};
+  }
+  .headshot {
+    border: 2px solid {{ colors.dark }};
+  }
+  h1, h2, h3, h4, h5 {
+    color: {{colors.darker }};
+  }
+  .dinkus svg rect {
+    fill: {{ colors.main }};
+  }
+  blockquote {
+    border-left: 4px solid {{ colors.main }};
   }
 </style>

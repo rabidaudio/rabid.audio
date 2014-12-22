@@ -1,6 +1,6 @@
 {
   "name": "rabidaudio-blog-2",
   "root": "_site",
-  "clean_urls": true,
+  "clean_urls": false,
   "error_page": "/blog/error"
 }

@@ -156,10 +156,6 @@ a.wikipedia {
     text-align: right;
   }
 
-  .cc {
-    height: 45px;
-  }
-
   .description {
     font-style: italic;
     text-align: center;
@@ -247,8 +243,14 @@ a.wikipedia {
     padding-bottom: 80%;
     margin: auto;
     overflow: hidden;
-    border: 2px solid $grey-color-light;
+    // border: 2px solid $grey-color-light;
     border-radius: 9999px;
+
+    img {
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
   }
 }
 

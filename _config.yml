@@ -52,6 +52,8 @@ defaults:
       type: "posts"
     values:
       layout: "post"
+      category: other
+      permalink: :categories/:title/index.html
       author:
         name:     Charles Julian Knight
         minibio:  
@@ -71,17 +73,23 @@ nav:
 
 colors:
   green:      #Irish Sea - http://paletton.com/#uid=12Q0u0k7RBG1pW649NecqtBhVo9
-    darker:   '#439748'
+    darker:   '#16831C'#'#439748'
     dark:     '#72BA76'
-    normal:   '#A0D4A3'
+    main:   '#A0D4A3'
     light:    '#CAE8CC'
     lighter:  '#ECF7ED'
   blue:       #Plotting - http://paletton.com/#uid=13s0u0kmww-cINsi9Earsu6u3nR
-    darker:   '#0D5578'
-    dark:     '#1C6F98'
+    darker:   '#003752'
+    dark:     '#0D5578' #1C6F98
     main:     '#367FA3'
     light:    '#579BBC'
     lighter:  '#eef'      #86BDD7;
+  purple:
+    darker:   '#28001C'
+    dark:     '#630948' #460031
+    main:   '#97397B'
+    light:    'rgb(207, 153, 191)'
+    lighter:  'rgb(247, 213, 237)'
   grey: 
     darker:   '#424242'
     dark:     '#626262'
@@ -97,9 +105,9 @@ colors:
 
 colormap:
   music: red
-  policy: green
-  hardware: blue
-  software: yellow
+  policy: purple
+  hardware: green
+  software: blue
 
 # Build settings
 markdown: kramdown
