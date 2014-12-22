@@ -111,6 +111,10 @@ colormap:
 
 # Build settings
 markdown: kramdown
+kramdown:
+  auto_ids: true
+  math_engine: mathjax
+  input: GFM
 
 sass:
     style: :compressed

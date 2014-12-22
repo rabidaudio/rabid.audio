@@ -24,7 +24,7 @@ category: hardware
 tags: ["c", "a", "t"]
 # Similar to categories, one or multiple tags can be added to a post. Also like categories, tags can be specified as a YAML list or a space- separated string.
 
-mathjax: true
+mathjax: false
 # Set to true if the page has LaTeX. This saves the huge script from being inserted constantly
 color: blue
 ---
