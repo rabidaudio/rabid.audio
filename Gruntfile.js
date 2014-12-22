@@ -184,12 +184,18 @@ module.exports = function(grunt) {
     }
 
     var d = new Date();
-    var df = [d.getMonth()+1,
-               d.getDate(),
-               d.getFullYear()].join('/')+' '+
+    var tz = -1*(Math.floor( d.getTimezoneOffset() / 60)*100 + (d.getTimezoneOffset() % 60));
+    if(tz>=0){
+      tz = '+'+(tz.toString().length < 3 ? "0" : "")+tz;
+    }else{
+      tz = '-'+(tz.toString().length < 3 ? "0" : "")+Math.abs(tz);
+    }
+    var df = [ d.getFullYear(),
+               d.getMonth()+1,
+               d.getDate(),].join('-')+' '+
               [d.getHours(),
                d.getMinutes(),
-               d.getSeconds()].join(':');
+               d.getSeconds()].join(':') +' '+tz;
     var rl = require('readline').createInterface({
       input: process.stdin,
       output: process.stdout
