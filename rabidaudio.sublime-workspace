@@ -4,16 +4,68 @@
 		"selected_items":
 		[
 			[
+				"k",
+				"keyCode"
+			],
+			[
+				"ke",
+				"keyListeners"
+			],
+			[
+				"key",
+				"keyListeners"
+			],
+			[
+				"tem",
+				"template"
+			],
+			[
+				"dire",
+				"directories"
+			],
+			[
+				"grey-colo",
+				"grey-color-light"
+			],
+			[
+				"mar",
+				"margin-bottom"
+			],
+			[
+				"table",
+				"table-cell"
+			],
+			[
+				"font",
+				"font-size"
+			],
+			[
+				"direc",
+				"directory"
+			],
+			[
+				"d",
+				"directory"
+			],
+			[
+				"ex",
+				"expand"
+			],
+			[
+				"read",
+				"readYAML"
+			],
+			[
+				"fi",
+				"file"
+			],
+			[
 				"pa",
 				"padding-bottom"
 			],
 			[
 				"pad",
 				"padding-top"
-			],
-			[
-				"mar",
-				"margin-right"
 			],
 			[
 				"min-",
@@ -64,10 +116,6 @@
 				"file_name"
 			],
 			[
-				"fi",
-				"file_title"
-			],
-			[
 				"con",
 				"config"
 			],
@@ -90,10 +138,6 @@
 			[
 				"rabid",
 				"rabidaudio"
-			],
-			[
-				"tem",
-				"template"
 			],
 			[
 				"Page",
@@ -288,16 +332,8 @@
 				"undefined"
 			],
 			[
-				"key",
-				"key_string"
-			],
-			[
 				"es",
 				"escape"
-			],
-			[
-				"ke",
-				"key_string"
 			],
 			[
 				"school",
@@ -478,76 +514,41 @@
 			[
 				"post",
 				"postsView"
-			],
-			[
-				"high",
-				"highlight"
-			],
-			[
-				"Handle",
-				"Handlebars"
-			],
-			[
-				"togg",
-				"toggleVisible"
-			],
-			[
-				"rend",
-				"rendered"
-			],
-			[
-				"template",
-				"template_id"
-			],
-			[
-				"pat",
-				"pathToString"
-			],
-			[
-				"pr",
-				"properSort"
-			],
-			[
-				"pro",
-				"proper_path"
-			],
-			[
-				"mp",
-				"mp3_files"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "css/main.scss",
-			"settings":
-			{
-				"buffer_size": 1520,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "_sass/_rabidaudio.scss",
-			"settings":
-			{
-				"buffer_size": 3997,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "_config.yml",
 			"settings":
 			{
-				"buffer_size": 1596,
+				"buffer_size": 3085,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "_layouts/post.html",
+			"file": "assets/_src/keyboard_shortcuts.js",
 			"settings":
 			{
-				"buffer_size": 1231,
+				"buffer_size": 667,
+				"line_ending": "Unix",
+				"name": "$(document).ready(function(){"
+			}
+		},
+		{
+			"file": "Gruntfile.js",
+			"settings":
+			{
+				"buffer_size": 6547,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 1743,
 				"line_ending": "Unix"
 			}
 		}
@@ -555,9 +556,21 @@
 	"build_system": "",
 	"command_palette":
 	{
-		"height": 272.0,
+		"height": 192.0,
 		"selected_items":
 		[
+			[
+				"markd",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"ma",
+				"Markdown Preview: Preview in Browser"
+			],
 			[
 				"new ",
 				"Jekyll: New draft"
@@ -640,10 +653,6 @@
 			],
 			[
 				"mar",
-				"Markdown Preview: Preview in Browser"
-			],
-			[
-				"mark",
 				"Markdown Preview: Preview in Browser"
 			],
 			[
@@ -808,134 +817,134 @@
 	},
 	"file_history":
 	[
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/header.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_vendor/javascript_utils/natural_dates.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/divshot.json",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-18-using-grunt-with-jekyll.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-22-sss.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-22-alsdf.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-22-mewg.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-22-asdfasdf.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/.gitignore",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_templates/post.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_vendor/javascript_utils/jquery_extensions.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/headshot.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-11-03-color-of-music-ii.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-09-12-new-blog-on-way.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-06-08-wearable-lighty-shirty-thingy.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-02-18-swank-stupid-simple-static-webserver.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-01-28-temporary-solution.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-01-03-a-little-thing.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-08-29-wkipe-official-announcement.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-08-13-discrete-potentiometer.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-05-12-lastfm-api-genre-influences.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-04-30-dsp-arduino.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-04-01-location-enabled-mesh-networking.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-02-15-circular-buffer-algorithm-rates-on.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-04-30-dsp-arduino.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2012-11-28-the-color-of-music.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2012-09-20-microsofts-impending-software.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2012-08-19-chorded-keyboard.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2012-07-26-not-cloud-hive.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-11-18-fun-with-lastfm-api.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-11-17-interesting-case-of-digital-property.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-10-26-patents.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-10-08-must-read-blog-on-music-and-piracy.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-08-08-car-stereo-2.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-06-10-genre-analysis.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-06-07-car-stereo-1-and-more.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2011-03-31-kittyserv-30.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-11-29-wearable-computing.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-09-21-unrelated-circuit-4-bit-adding-machine.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2013-08-29-wkipe-official-announcement.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-11-10-best-discoveries-of-last-12-months.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/colorset.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/footer.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/head.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/page.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/post.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/all.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/headshot.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/social.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_templates/post.md",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/Gruntfile.js",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/social_author.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-08-18-server-isues.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-07-12-site-launch.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-06-21-effects-pedals-15.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-05-14-effects-pedals-1.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-05-03-music-and-piracy-new-direction.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-04-07-buoyancy.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-02-08-welcome.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-03-11-creative-commons.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2010-02-24-butch-walker.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_config.yml",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-18-cheatsheet.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/colorset.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_mobile.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/rabidaudio/_header.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_rabidaudio.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/css/main.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/Gruntfile.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-22-asdf.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-22-12.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-22-xx.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-22-the-shiz.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-22-test.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/post.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/social.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/head.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/default.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/header.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/assets/_src/dinkus_to_top.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/dinkus.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/assets/js/output.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_vendor/modernizr/modernizr.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/assets/_src/natural_date_replacements.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/human_dates.rb",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/wikipe_link.rb",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/footer.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/all.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/cc.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/assets/_res/drawing.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_layout.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/assets/_src/header_anchors.js",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_base.scss",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/hyper_headers.rb",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/README.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/.bowerrc",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/diamond2.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/twitter.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/email-icon.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/github.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/bitcoin.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/assets/images/cc.svg",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/index.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_site/blog/error.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/error.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/about.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/bower.json",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/LICENCE",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-21-bleg.md",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-11-10-best-discoveries-of-last-12-months.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/page.html",
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/social_author.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/_headshot.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/outdated.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_includes/dinkus.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_layouts/asterism.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_res/diamond.svg",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/post_indexer.rb",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-11-03-color-of-music-ii.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_src/test.js",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/feed.xml",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/test.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/responsivegridsystem.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/.bowerrc",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_vendor/skeleton-sass/skeleton/core/_config.scss",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_sub_bootstrap.scss",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_monokai.scss",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_base.scss",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-18-using-grunt-with-jekyll.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_sub-bootstrap.scss",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/rabidaudio.scss",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-02-18-swank-stupid-simple-static-webserver.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2012-09-20-microsofts-impending-software.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_site/blog/2012/09/20/microsofts-impending-software.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/package.json",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-18-cheatsheet.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-18-doc-martin.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-18-in-keeping-secrets-of-silent-earth-4.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts/2014-12-18-meow-youre-the-best-evar.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/new.md",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/.gitignore",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/README.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/cheatsheet.md",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/bower.json",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/css/main.scss",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/js/test.js",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/deploy.sh",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/divshot.json",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/bg.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_posts/2014-12-17-format-test.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/OSMBuildings-Leaflet.debug.js",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/map2.html",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/map.html",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/error.md",
 		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/default_author.rb",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_syntax-highlighting.scss",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/monokai.scss",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_plugins/wikipe_link.rb",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/css/ra.css",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/rabidaudio.sublime-project",
-		"/home/charles/Dropbox/Projects/blog2/rabid.audio/index.html",
-		"/home/charles/Dropbox/Projects/blog2/rabidaudio_blog_2/cheatsheet.md",
-		"/home/charles/clubalert.me/webapp/app/scripts/templates/home.hbs",
-		"/home/charles/clubalert.me/webapp/app/scripts/models/Page.js",
-		"/home/charles/clubalert.me/webapp/Gruntfile.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/models/_Models.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/models/Club.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/helpers/go.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/pages/Signin.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/_Views.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/Alert.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/BaseView.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/pages/Page.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/pages/Signup.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/router.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/pages/UserPage.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/_Pages.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/UserPage.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/Signin.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/Signup.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/models/User.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/views/Page.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/collections/Club.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/models/Alert.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/helpers/alert.js",
-		"/home/charles/clubalert.me/webserver.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/helpers/debug.js",
-		"/home/charles/clubalert.me/README.md",
-		"/home/charles/clubalert.me/package.json",
-		"/home/charles/clubalert.me/node_modules/express/index.js",
-		"/home/charles/clubalert.me/webapp/.bowerrc",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/Signin.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/Signup.js",
-		"/home/charles/clubalert.me/webapp/package.json",
-		"/home/charles/clubalert.me/webapp/bower.json",
-		"/home/charles/clubalert.me/webapp/public/index.html",
-		"/home/charles/clubalert.me/webapp/public/scripts/main.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/models/User.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/router.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/Page.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/Alert.js",
-		"/home/charles/clubalert.me/webapp/public/styles/header.css",
-		"/home/charles/clubalert.me/webapp/public/styles/main.scss",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/UserPage.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/models/Alert.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/models/Page.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/_View.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/models/Club.js",
-		"/home/charles/clubalert.me/webapp/public/styles/main.css",
-		"/home/charles/clubalert.me/webapp/public/styles/signin.css",
-		"/home/charles/clubalert.me/server.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/pages/Default.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/pages/Signup.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/pages/Signin.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/collections/Club.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/views/pages/Home.js",
-		"/home/charles/clubalert.me/webapp/app/scripts/collections/Clubs.js",
-		"/home/charles/clubalert.me/webapp/public/scripts/parse-backbone.js"
+		"/home/charles/Dropbox/Projects/blog2/rabid.audio/_sass/_syntax-highlighting.scss"
 	],
 	"find":
 	{
@@ -943,9 +952,11 @@
 	},
 	"find_in_files":
 	{
-		"height": 0.0,
+		"height": 90.0,
 		"where_history":
 		[
+			"/home/charles/Dropbox/Projects/blog2/rabid.audio",
+			"/home/charles/Dropbox/Projects/blog2/rabid.audio/_drafts",
 			"/home/charles/bands/songkick_ruby/lib",
 			"/home/charles/Dropbox/Projects/Utterson/blog/scripts",
 			"",
@@ -963,6 +974,38 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"template",
+			"span",
+			"+",
+			"facebook",
+			"include.author.email",
+			"include.author.github",
+			"menu-",
+			"border-top",
+			"42px",
+			"36px",
+			".post-con",
+			",",
+			";",
+			"svg",
+			"<svg",
+			"fg.vendor.js",
+			"cfg.vendor",
+			"/*",
+			"fill=\"#FFF\"",
+			"normal",
+			"#",
+			"'#",
+			"include",
+			"'#",
+			"grey-color-lightist",
+			"$grey-color-lightest",
+			"_posts",
+			"_sass",
+			"cfg.sourcejs",
+			"/images/",
+			"] (",
+			"`",
 			";",
 			"#",
 			"// $color-",
@@ -1058,39 +1101,7 @@
 			"^\\s+[a-zA-Z]",
 			"(source_text.*[^\"],)\\n\\s+",
 			"(source_text.*\\\\\",)\\n\\s+",
-			"(source_text.*[^\"],)\\n\\s+",
-			"(summary.*[^\"],)\\n\\s+",
-			"(summary.*[^\"],)\\n",
-			"(summary.*[^\"],)$",
-			"summary.*[^\"],$",
-			"\"",
-			"\"title\": \"\"(.*)\"\",",
-			"\"",
-			"False",
-			"True",
-			"([\\{\\[])'",
-			"'([,\\n:\\}\\]])",
-			"'([,\\n:])",
-			" '",
-			"u\"",
-			"'",
-			" '",
-			"':",
-			"[ :]\\'[,\\n]",
-			"[ :]'[,\\n]",
-			"'",
-			"u\"",
-			"todo",
-			"Todo",
-			"todo",
-			"Todos",
-			"JST",
-			"title",
-			"tags",
-			"”",
-			"mbid",
-			"result[\"artist\"]",
-			"remote"
+			"(source_text.*[^\"],)\\n\\s+"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1146,72 +1157,18 @@
 			[
 				{
 					"buffer": 0,
-					"file": "css/main.scss",
-					"settings":
-					{
-						"buffer_size": 1520,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								76,
-								76
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "_sass/_rabidaudio.scss",
-					"settings":
-					{
-						"buffer_size": 3997,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1576,
-								1576
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
 					"file": "_config.yml",
 					"settings":
 					{
-						"buffer_size": 1596,
+						"buffer_size": 3085,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1550,
-								1550
+								1046,
+								1046
 							]
 						],
 						"settings":
@@ -1221,35 +1178,90 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 225.0,
+						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "_layouts/post.html",
+					"buffer": 1,
+					"file": "assets/_src/keyboard_shortcuts.js",
 					"settings":
 					{
-						"buffer_size": 1231,
+						"buffer_size": 667,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								75,
-								75
+								470,
+								470
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Jekyll/Syntaxes/HTML (Jekyll).tmLanguage",
+							"auto_name": "$(document).ready(function(){",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Gruntfile.js",
+					"settings":
+					{
+						"buffer_size": 6547,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4942,
+								4942
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 2655.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "README.md",
+					"settings":
+					{
+						"buffer_size": 1743,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1102,
+								1102
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Jekyll/Syntaxes/Markdown (Jekyll).tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -1296,6 +1308,10 @@
 	{
 		"height": 100.0
 	},
+	"output.markdown":
+	{
+		"height": 100.0
+	},
 	"replace":
 	{
 		"height": 62.0
@@ -1306,6 +1322,274 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"natural",
+				"_vendor/javascript_utils/natural_dates.js"
+			],
+			[
+				"read",
+				"README.md"
+			],
+			[
+				"div",
+				"divshot.json"
+			],
+			[
+				"grun",
+				"Gruntfile.js"
+			],
+			[
+				"post",
+				"_templates/post.md"
+			],
+			[
+				"grunt-with",
+				"_posts/2014-12-18-using-grunt-with-jekyll.md"
+			],
+			[
+				"giti",
+				".gitignore"
+			],
+			[
+				"jquery",
+				"_vendor/javascript_utils/jquery_extensions.js"
+			],
+			[
+				"postm",
+				"_templates/post.md"
+			],
+			[
+				"_con",
+				"_config.yml"
+			],
+			[
+				"conf",
+				"_config.yml"
+			],
+			[
+				"post.md",
+				"_templates/post.md"
+			],
+			[
+				"gr",
+				"Gruntfile.js"
+			],
+			[
+				"heash",
+				"_includes/headshot.html"
+			],
+			[
+				"soci",
+				"_includes/social.html"
+			],
+			[
+				"hea",
+				"_includes/head.html"
+			],
+			[
+				"defa",
+				"_layouts/default.html"
+			],
+			[
+				"head",
+				"_includes/header.html"
+			],
+			[
+				"din",
+				"_includes/dinkus.html"
+			],
+			[
+				"out",
+				"assets/js/output.js"
+			],
+			[
+				"confi",
+				"_config.yml"
+			],
+			[
+				"he",
+				"_includes/head.html"
+			],
+			[
+				"nat",
+				"_vendor/javascript_utils/natural_dates.js"
+			],
+			[
+				"jquer",
+				"_vendor/javascript_utils/jquery_extensions.js"
+			],
+			[
+				"natur",
+				"assets/_src/natural_date_replacements.js"
+			],
+			[
+				"soc",
+				"_includes/social.html"
+			],
+			[
+				"headsh",
+				"_includes/headshot.html"
+			],
+			[
+				"po",
+				"_layouts/post.html"
+			],
+			[
+				"foo",
+				"_includes/footer.html"
+			],
+			[
+				"all",
+				"all.html"
+			],
+			[
+				"cc.svg",
+				"_includes/cc.svg"
+			],
+			[
+				"lay",
+				"_sass/_layout.scss"
+			],
+			[
+				"base",
+				"_sass/_base.scss"
+			],
+			[
+				"rea",
+				"README.md"
+			],
+			[
+				"ra",
+				"_sass/_rabidaudio.scss"
+			],
+			[
+				"color",
+				"_includes/colorset.html"
+			],
+			[
+				"bowerrc",
+				".bowerrc"
+			],
+			[
+				"grunt",
+				"Gruntfile.js"
+			],
+			[
+				"cc.sv",
+				"_includes/cc.svg"
+			],
+			[
+				"foot",
+				"_includes/footer.html"
+			],
+			[
+				"emai",
+				"_includes/email-icon.svg"
+			],
+			[
+				"gru",
+				"Gruntfile.js"
+			],
+			[
+				"chea",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				"def",
+				"_layouts/default.html"
+			],
+			[
+				"cheat",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				"2014-in",
+				"_posts/2014-12-18-using-grunt-with-jekyll.md"
+			],
+			[
+				"cheatsheet",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				"rabi",
+				"_sass/_rabidaudio.scss"
+			],
+			[
+				"main",
+				"css/main.scss"
+			],
+			[
+				"defau",
+				"_layouts/default.html"
+			],
+			[
+				"cheatshee",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				"grunt-wi",
+				"_posts/2014-12-18-using-grunt-with-jekyll.md"
+			],
+			[
+				"default",
+				"_layouts/default.html"
+			],
+			[
+				"ab",
+				"about.md"
+			],
+			[
+				"header",
+				"_includes/header.html"
+			],
+			[
+				"rabid",
+				"_sass/_rabidaudio.scss"
+			],
+			[
+				"colorset",
+				"_includes/colorset.html"
+			],
+			[
+				"rabud",
+				"_sass/_rabidaudio.scss"
+			],
+			[
+				"scss",
+				"css/main.scss"
+			],
+			[
+				"cheatshe",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				"readme",
+				"README.md"
+			],
+			[
+				"cheatsh",
+				"_drafts/2014-12-18-cheatsheet.md"
+			],
+			[
+				".bo",
+				".bowerrc"
+			],
+			[
+				"bower",
+				"bower.json"
+			],
+			[
+				"di",
+				"divshot.json"
+			],
+			[
+				"co",
+				"_config.yml"
+			],
+			[
+				"ind",
+				"index.html"
+			],
 			[
 				"mesh",
 				"_posts/2013-04-01-location-enabled-mesh-networking.html"
@@ -1343,28 +1627,8 @@
 				"_includes/colorset.html"
 			],
 			[
-				"header",
-				"_includes/header.html"
-			],
-			[
-				"hea",
-				"_includes/head.html"
-			],
-			[
-				"post",
-				"_layouts/post.html"
-			],
-			[
 				"page",
 				"_layouts/page.html"
-			],
-			[
-				"post.md",
-				"_templates/post.md"
-			],
-			[
-				"grunt",
-				"Gruntfile.js"
 			],
 			[
 				"soca",
@@ -1375,18 +1639,6 @@
 				"_config.yml"
 			],
 			[
-				"conf",
-				"_config.yml"
-			],
-			[
-				"soc",
-				"_includes/social.html"
-			],
-			[
-				"foot",
-				"_includes/footer.html"
-			],
-			[
 				"dinkus",
 				"_includes/dinkus.html"
 			],
@@ -1395,16 +1647,8 @@
 				"_res/diamond.svg"
 			],
 			[
-				"all",
-				"all.html"
-			],
-			[
 				"color-of",
 				"_posts/2014-11-03-color-of-music-ii.html"
-			],
-			[
-				"confi",
-				"_config.yml"
 			],
 			[
 				"fee",
@@ -1419,20 +1663,12 @@
 				".bowerrc"
 			],
 			[
-				"grun",
-				"Gruntfile.js"
-			],
-			[
 				"test",
 				"test.html"
 			],
 			[
 				"_config",
 				"_vendor/skeleton-sass/skeleton/core/_config.scss"
-			],
-			[
-				"rabid",
-				"_sass/_rabidaudio.scss"
 			],
 			[
 				"mono",
@@ -1443,10 +1679,6 @@
 				"_vendor/bootstrap-sass-official/assets/stylesheets/_bootstrap.scss"
 			],
 			[
-				"grunt-with",
-				"_posts/2014-12-18-using-grunt-with-jekyll.md"
-			],
-			[
 				"swank",
 				"_posts/2014-02-18-swank-stupid-simple-static-webserver.html"
 			],
@@ -1455,24 +1687,12 @@
 				"_posts/2012-09-20-microsofts-impending-software.html"
 			],
 			[
-				"base",
-				"_sass/_base.scss"
-			],
-			[
-				"head",
-				"_includes/head.html"
-			],
-			[
 				"main.",
 				"css/main.scss"
 			],
 			[
 				"packa",
 				"package.json"
-			],
-			[
-				"cheat",
-				"_drafts/2014-12-18-cheatsheet.md"
 			],
 			[
 				"pa",
@@ -1491,36 +1711,12 @@
 				"_sass/rabidaudio.scss"
 			],
 			[
-				"cheatsh",
-				"_drafts/2014-12-18-cheatsheet.md"
-			],
-			[
 				"bowerr",
 				".bowerrc"
 			],
 			[
-				"bowerrc",
-				".bowerrc"
-			],
-			[
-				"bower",
-				"bower.json"
-			],
-			[
-				"rea",
-				"README.md"
-			],
-			[
-				"chea",
-				"cheatsheet.md"
-			],
-			[
 				"_src",
 				"_src/test.js"
-			],
-			[
-				"di",
-				"divshot.json"
 			],
 			[
 				"depl",
@@ -1591,16 +1787,8 @@
 				"webapp/app/scripts/views/Page.js"
 			],
 			[
-				"read",
-				"README.md"
-			],
-			[
 				"index.ht",
 				"webapp/app/index.html"
-			],
-			[
-				"ind",
-				"node_modules/express/index.js"
 			],
 			[
 				"re",
@@ -1645,178 +1833,6 @@
 			[
 				"post.j",
 				"blog/scripts/models/post.js"
-			],
-			[
-				"post.js",
-				"blog/scripts/models/post.js"
-			],
-			[
-				"posts.",
-				"blog/scripts/views/posts.js"
-			],
-			[
-				"post.",
-				"blog/scripts/models/post.js"
-			],
-			[
-				"author.js",
-				"blog/scripts/models/author.js"
-			],
-			[
-				"posts.js",
-				"app/scripts/collections/posts.js"
-			],
-			[
-				"posts.j",
-				"app/scripts/views/posts.js"
-			],
-			[
-				"internal",
-				"internal.h"
-			],
-			[
-				"st.h",
-				"include/ruby/st.h"
-			],
-			[
-				"ruby.h",
-				"include/ruby/ruby.h"
-			],
-			[
-				"appl",
-				"config/application.rb"
-			],
-			[
-				"env.",
-				"features/support/env.rb"
-			],
-			[
-				"to_payments",
-				"migrations/20140506224933_add_paypal_correlation_id_to_payments.php"
-			],
-			[
-				"payments",
-				"application/models/DbTable/Payments.php"
-			],
-			[
-				"util",
-				"application/library/Util.php"
-			],
-			[
-				"appli",
-				"application/configs/application.ini"
-			],
-			[
-				"admined",
-				"application/controllers/AdminEditorController.php"
-			],
-			[
-				"payment",
-				"application/models/DbTable/Payments.php"
-			],
-			[
-				"mytes",
-				"application/controllers/MytestController.php"
-			],
-			[
-				"feat",
-				"application/library/EnabledFeatures.php"
-			],
-			[
-				"transc",
-				"application/controllers/TranscriberController.php"
-			],
-			[
-				"dbtablepaym",
-				"application/models/DbTable/Payments.php"
-			],
-			[
-				"transcr",
-				"application/models/Transcriber.php"
-			],
-			[
-				"admincontr",
-				"application/controllers/AdminEditorController.php"
-			],
-			[
-				"adminco",
-				"application/controllers/AdminsController.php"
-			],
-			[
-				"dbtablepayments",
-				"application/models/DbTable/Payments.php"
-			],
-			[
-				"vendor/bin/phinx",
-				"vendor/robmorgan/phinx/src/Phinx/Db/Adapter/MysqlAdapter.php"
-			],
-			[
-				"phinx",
-				"vendor/robmorgan/phinx/src/Phinx/Console/PhinxApplication.php"
-			],
-			[
-				"completed_to",
-				"migrations/20140501225723_add_completed_to_payments.php"
-			],
-			[
-				"app",
-				"application/configs/application.ini"
-			],
-			[
-				"payme",
-				"application/controllers/PaymentController.php"
-			],
-			[
-				"log/mai",
-				"var/log/mail.log"
-			],
-			[
-				"admintransc",
-				"application/modules/admin/controllers/TranscribersController.php"
-			],
-			[
-				"paymentc",
-				"application/controllers/PaymentController.php"
-			],
-			[
-				"order",
-				"application/models/DbTable/Orders.php"
-			],
-			[
-				"transcriercon",
-				"application/controllers/TranscriberController.php"
-			],
-			[
-				"editor",
-				"application/views/scripts/transcriber/editor.phtml"
-			],
-			[
-				"clientc",
-				"application/controllers/ClientController.php"
-			],
-			[
-				"editor.p",
-				"application/views/scripts/transcriber/editor.phtml"
-			],
-			[
-				"_pages_edit",
-				"application/views/scripts/_pages/_editorMain.phtml"
-			],
-			[
-				"editor.ph",
-				"application/views/scripts/transcriber/editor.phtml"
-			],
-			[
-				"editorfilesplayer",
-				"public/editor/files/player.js"
-			],
-			[
-				"getnotescont",
-				"library/GetNotes/Controller/Action.php"
-			],
-			[
-				"trans",
-				"application/models/Transcriber.php"
 			]
 		],
 		"width": 0.0

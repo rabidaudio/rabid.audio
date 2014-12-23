@@ -47,6 +47,8 @@ Additions to default jekyll:
 - responsive grid from pure
 - Javascript compiling
 - warning about old blogger posts
+- human readable dates
+- 
 
 
 Immediate TODOs:
