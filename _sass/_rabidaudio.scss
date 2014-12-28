@@ -114,11 +114,16 @@ a.wikipedia {
 
 .post-list {
   li {
-    margin: 0px;
+    margin-bottom: 15px;
   }
   .post-link {
     font-size: 20px;
     padding-left: 15px;
+  }
+  .post-tags {
+    font-style: italic;
+    padding-left: 15px;
+    color: $grey-color;
   }
 }
 
