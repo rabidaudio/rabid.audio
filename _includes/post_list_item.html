@@ -1,0 +1,7 @@
+{% assign post = includes.post %}
+<span class="post-meta date" date="{{ post.date | date_to_rfc822 }}" title="{{ post.date | date: "%b %-d, %Y, %k:%M" }}">
+    {{ post.date | date: "%b %-d, %Y" }}
+</span>
+<a class="post-link" href="{{ post.url | replace: 'index.html', '' | prepend: site.baseurl }}">{{ post.title }}</a>
+{% assign l = post.tags | size %}
+{% if l > 0 %}{% include colored_tags.html tags=post.tags %}{% endif %}

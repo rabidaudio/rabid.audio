@@ -73,10 +73,10 @@ a.wikipedia {
 */
 
 .post {
-  // background-color: $post-background-color;
+  background-color: $post-background-color;
   padding: 1em;
-  // border-radius: 1px;
-  // box-shadow: 0px 0px 6px 2px $shadow-color;
+  border-radius: 1px;
+  box-shadow: 0px 0px 6px 2px $shadow-color;
 
   .post-title {
     letter-spacing: -1px;
@@ -98,20 +98,23 @@ a.wikipedia {
     border-top-color: $grey-color-light;
     border-top-style: solid;
     font-size: $small-font-size;
-    a{
-      // color: $grey-color;
+  }
+  .post-tags {
+    float: left;
+    @include media-query($on-palm) {
+      width: 100%;
+      text-align: left;
     }
   }
-  .post-categories {
-    text-transform: uppercase;
-    float: left;
-  }
-  .post-category {
-    padding: 0.1em 1em;
-    color: #fff;
-    font-size: 70%;
-  }
+}
 
+.post-tags {
+  text-transform: uppercase;
+}
+.post-tag {
+  padding: 0.1em 1em;
+  color: #fff;
+  font-size: 10px;
 }
 
 .post-content {
@@ -127,19 +130,12 @@ a.wikipedia {
     font-size: 20px;
     padding-left: 15px;
   }
-  .post-tags {
-    font-style: italic;
-    padding-left: 15px;
-    color: $grey-color;
-  }
 }
 
 .inform-notice {
   color: #000000;
-  // background-color: rgba(223, 10, 10, 0.91);
 
   a {
-    // color: #ffffff;
     text-decoration: underline;
   }
 }
@@ -344,9 +340,11 @@ a.wikipedia {
 
   .leftcol {
     min-width: 75px;
+    max-width: 100px;
     float: left;
     width: 25%;
     padding-bottom: 5px;
+    width: 75px;
   }
 
   .rightcol {

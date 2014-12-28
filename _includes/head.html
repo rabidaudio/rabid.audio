@@ -18,10 +18,10 @@
   {% endif %}
 
   <style type="text/css">
-    .post-category { background-color: {{ site.colors.grey.main }} }
+    .post-tag { background-color: {{ site.colors.grey.main }} }
     {% for category in site.tagmap %}{% assign cat = category[0]  %}
       {% for tag in category[1] %}{% assign c = site.colormap[cat] %}{% assign main = site.colors[c] %}
-        .category--{{ tag | slugify }} { background-color: {{ main.main }}}
+        .tag--{{ tag | slugify }} { background-color: {{ main.main }}}
       {% endfor %}
     {% endfor %}
   </style>
