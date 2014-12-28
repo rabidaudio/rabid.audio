@@ -89,7 +89,9 @@ module.exports = function(grunt) {
            '<%= cfg.directories.assets %>/**/*',
            '!<%= cfg.directories.sourcejs %>/**/*.js',
            '!<%= cfg.jsurl %>',
-           '<%= cfg.directories.plugins %>/**/*'
+           '<%= cfg.directories.plugins %>/**/*',
+           '*.md',
+           '*.html'
          ],
         tasks: ['devbuild'],
       },

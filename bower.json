@@ -10,7 +10,8 @@
     "pure": "~0.5.0",
     "inform": "~1.0.1",
     "fontawesome": "~4.2.0",
-    "javascript_utils": "git@github.com:rabidaudio/javascript_utils.git",
-    "modernizr": "~2.8.3"
+    "javascript_utils": "git@github.com:rabidaudio/javascript-utils.git",
+    "modernizr": "~2.8.3",
+    "natural-dates": "~0.1.2"
   }
 }
