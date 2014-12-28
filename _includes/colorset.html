@@ -6,6 +6,9 @@
     {% assign colors = site.colors.default %}
     /* No suitable color found: {{ include.colors }} */
   {% endif %}
+  body {
+    /*background-color: {{ colors.lighter }};*/
+  }
   pre, code {
     background-color: {{ colors.lighter }};
     color: {{ colors.darker }};
@@ -15,36 +18,45 @@
       background-color: #ffffff;
     }
   }
+  h1, h2, h3, h4, h5 {
+    color: {{colors.darker }};
+  }
   a {
     color: {{ colors.dark }};
   }
   a:visited {
     color: {{ colors.darker }};
   }
+  blockquote {
+    border-left: 4px solid {{ colors.main }};
+  }
   .site-header {
     border-top: 10px solid {{ colors.dark }};
     background-color: {{ colors.light }};
   }
-  body {
-    background-color: {{ colors.lighter }};
-  }
   .headshot {
     border: 2px solid {{ colors.dark }};
   }
-  h1, h2, h3, h4, h5 {
-    color: {{colors.darker }};
-  }
-/*  .dinkus svg rect {
-    fill: {{ colors.main }};
-  }*/
-  
-  blockquote {
-    border-left: 4px solid {{ colors.main }};
-  }
+
   .menu-icon i.fa {
     color: {{ colors.main }};
   }
   .bio {
     background-color: {{ colors.lighter }};
   }
+
+
+  /* tag colors */
+/*  .category--software {
+    background-color: {{ site.colors.blue.main }};
+  }
+  .category--hardware {
+    background-color: {{ site.colors.purple.main }};
+  }
+  .category--music {
+    background-color: #df2d4f;
+  }
+  .category--policy {
+    background-color: {{ site.colors.green.main }};
+  }*/
 </style>

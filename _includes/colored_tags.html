@@ -1,0 +1,5 @@
+<span class="post-categories">
+  {% for tag in include.tags %}
+    <span class="post-category category--{{ tag | slugify }}">{{ tag }}</span>
+  {% endfor %}
+</span>

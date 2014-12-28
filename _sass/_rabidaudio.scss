@@ -62,11 +62,6 @@ a.wikipedia {
     }
 }
 
-.post-meta {
-    font-size: $small-font-size;
-    color: $grey-color;
-}
-
 .post-link {
     display: block;
     font-size: 24px;
@@ -78,10 +73,10 @@ a.wikipedia {
 */
 
 .post {
-  background-color: $post-background-color;
+  // background-color: $post-background-color;
   padding: 1em;
-  border-radius: 1px;
-  box-shadow: 0px 0px 6px 2px $shadow-color;
+  // border-radius: 1px;
+  // box-shadow: 0px 0px 6px 2px $shadow-color;
 
   .post-title {
     letter-spacing: -1px;
@@ -102,14 +97,26 @@ a.wikipedia {
     border-top-width: 1px;
     border-top-color: $grey-color-light;
     border-top-style: solid;
+    font-size: $small-font-size;
     a{
-      color: $grey-color;
+      // color: $grey-color;
     }
   }
+  .post-categories {
+    text-transform: uppercase;
+    float: left;
+  }
+  .post-category {
+    padding: 0.1em 1em;
+    color: #fff;
+    font-size: 70%;
+  }
+
 }
 
 .post-content {
   margin-bottom: inherit;
+  line-height: 25px;
 }
 
 .post-list {

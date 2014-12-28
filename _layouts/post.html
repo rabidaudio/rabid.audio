@@ -7,10 +7,11 @@ layout: default
     <h1 class="post-title">{{ page.title }}</h1>
     <h3 class="post-subtitle">{{ page.subtitle }}</h3>
     <p class="post-meta">
+      {% include colored_tags.html tags=page.tags %}
       <a href="{{ page.url | prepend: site.baseurl | replace: 'index.html', '' }}" class="date" date="{{ page.date | date_to_rfc822 }}" title="{{ page.date | date: "%b %-d, %Y, %k:%M" }}">
         {{ page.date | date: "%b %-d, %Y" }}
       </a>
-      {% if page.author %} | <a href="mailto:{{ page.author.email }}" class="author">{{ page.author.name }}</a>
+      {% if page.author %} by <a href="mailto:{{ page.author.email }}" class="author">{{ page.author.name }}</a>
       {% else %} [unpublished] {% endif %}
     </p>
       <div class="bio-float-right">

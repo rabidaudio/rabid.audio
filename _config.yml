@@ -60,6 +60,7 @@ defaults:
       layout: "post"
       category: other
       permalink: :categories/:title/index.html
+      color: blue     #TODO remove
       author:
         name:     Charles Julian Knight
         minibio:  
@@ -122,12 +123,45 @@ colors:
     main:     '#828282'
     light:    '#fdfdfd'
     lighter:  '#ffffff'
+  red:
+    main:     '#df2d4f'
 
 colormap:
-  music:    default
-  policy:   grey
-  hardware: green
+  music:    red
+  policy:   green
+  hardware: purple
   software: blue
+
+#map tags from blogger to categories
+tagmap:
+  music:
+    - genre
+    - last.fm
+    - music
+    - new music
+    - RIAA
+    - car audio
+  policy:
+    - free software movement
+    - piracy
+    - soapbox
+    - tech policy
+  software:
+    - computing
+    - dsp
+    - Android
+    - networking
+    - server
+    - software
+    - web development
+    - windows
+    - javascript
+  hardware:
+    - arduino
+    - bluetooth
+    - electronics
+    - wearables
+
 
 # Build settings
 markdown: kramdown

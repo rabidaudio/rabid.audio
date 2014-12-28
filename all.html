@@ -14,7 +14,7 @@ permalink: /all/
         </span>
         <a class="post-link" href="{{ post.url | replace: 'index.html', '' | prepend: site.baseurl }}">{{ post.title }}</a>
         {% assign l = post.tags | size %}
-        {% if l > 0 %}<span class="post-tags">{{ post.tags | array_to_sentence_string }}</span>{% endif %}
+        {% if l > 0 %}{% include colored_tags.html tags=post.tags %}{% endif %}
       </li>
     {% endfor %}
   </ul>
