@@ -171,6 +171,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('devdeploy', ['devbuild', 'divshot:push:development', 'open:dev']);
   grunt.registerTask('deploy', ['build', 'divshot:push:production', 'open:prod']);
+  grunt.registerTask('depall', ['devdeploy', 'deploy']);
 
   grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'open:local', 'watch']);
   grunt.registerTask('default', ['serve']);

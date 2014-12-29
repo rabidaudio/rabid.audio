@@ -9,8 +9,8 @@ $.fn.onSwipe = function(start_callback, stop_callback){
         var dy = (touchend.pageY - touchstart.pageY)/(eup.originalEvent.timeStamp - edown.originalEvent.timeStamp);
         stop_callback(dx, dy, edown, eup);
       });
+      start_callback(touchstart, edown);
     });
-    start_callback(touchstart, edown);
 };
 
 $(document).ready(function(){
