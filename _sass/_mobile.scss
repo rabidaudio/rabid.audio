@@ -75,34 +75,34 @@
   }
 }
 
-@include media-query(925px) {
-  .site-footer {
+// @include media-query(925px) {
+//   .site-footer {
 
-    .licence {
-      text-align: center;
-    }
+//     .licence {
+//       text-align: center;
+//     }
 
-    .description {
-      padding-top: 30px;
-      padding-bottom: 30px;
-    }
+//     .description {
+//       padding-top: 30px;
+//       padding-bottom: 30px;
+//     }
 
-    .author-footer-wrapper {
-      width: 250px;
-      margin-right: auto;
-      margin-left: auto;
-    }
+//     .author-footer-wrapper {
+//       width: 250px;
+//       margin-right: auto;
+//       margin-left: auto;
+//     }
 
-    .social-media-list {
-      ul {
-        list-style-type: none;
-      }
-      li {
-        // display: inline;
-        display: list-item;
-        padding-left: 10px;
-        padding-right: 10px;
-      }
-    }
-  }
-}
+//     .social-media-list {
+//       ul {
+//         list-style-type: none;
+//       }
+//       li {
+//         // display: inline;
+//         display: list-item;
+//         padding-left: 10px;
+//         padding-right: 10px;
+//       }
+//     }
+//   }
+// }

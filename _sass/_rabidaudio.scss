@@ -241,6 +241,7 @@ a.wikipedia {
   padding: $spacing-unit 0;
   font-size: 15px;
   color: #828282;
+  text-align: center;
 
   .wrapper {
     padding: 0px;
@@ -252,41 +253,46 @@ a.wikipedia {
       margin-bottom: $spacing-unit / 2;
   }
 
-  ul {
+  ul.social-media-list {
     margin-bottom: 0px;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin: 5px 0px 5px 0px;
+    }
   }
 
   .licence {
-    text-align: right;
+    text-align: center;
   }
 
   .description {
     font-style: italic;
-    text-align: center;
-    margin-bottom: 0px;
+    margin-bottom: 15px;
   }
 }
 
-.contact-list,
-.social-media-list {
-    list-style: none;
-    margin-left: 0;
-}
+// .contact-list,
+// .social-media-list {
+//     list-style: none;
+//     // margin-left: 0;
+// }
 
-.footer-col-wrapper {
-    font-size: 15px;
-    color: $grey-color;
-    margin-left: -$spacing-unit / 2;
-    @extend %clearfix;
-}
+// .footer-col-wrapper {
+//     font-size: 15px;
+//     color: $grey-color;
+//     margin-left: -$spacing-unit / 2;
+//     @extend %clearfix;
+// }
 
-@include media-query($on-palm) {
-  .author-footer-wrapper {
-    margin-left: auto;
-    margin-right: auto;
-    width: 100%;
-  }
-}
+// @include media-query($on-palm) {
+//   .author-footer-wrapper {
+//     margin-left: auto;
+//     margin-right: auto;
+//     width: 100%;
+//   }
+// }
 
 /**
  * Other
