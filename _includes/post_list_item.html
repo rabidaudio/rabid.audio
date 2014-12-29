@@ -1,7 +1,20 @@
 {% assign post = includes.post %}
-<span class="post-meta date" date="{{ post.date | date_to_rfc822 }}" title="{{ post.date | date: "%b %-d, %Y, %k:%M" }}">
-    {{ post.date | date: "%b %-d, %Y" }}
-</span>
-<a class="post-link" href="{{ post.url | replace: 'index.html', '' | prepend: site.baseurl }}">{{ post.title }}</a>
-{% assign l = post.tags | size %}
-{% if l > 0 %}{% include colored_tags.html tags=post.tags %}{% endif %}
+<a class="post-link" href="{{ post.url | replace: 'index.html', '' | prepend: site.baseurl }}">
+  <div class="post-list-container post-container--{{ post.category | slugify }}">
+    <h1 class="post-title">{{ post.title }}</h1>
+    <div class="subtitle-container">
+      <span class="post-meta date" date="{{ post.date | date_to_rfc822 }}" title="{{ post.date | date: "%b %-d, %Y, %k:%M" }}">
+          {{ post.date | date: "%b %-d, %Y" }}
+      </span>
+    </div>
+    <div class="post-excerpt">
+      {% if post.blogger_orig_url or true %}
+      <p>{{ post.content | replace: '<br />', ' ' | strip_html | truncate: site.post_excerpt_truncate, '...' }}</p>
+      {% else %}
+      {{ post.excerpt | truncate: site.post_excerpt_truncate, '...'  }}
+      {% endif %}
+    </div>
+    {% assign l = post.tags | size %}
+    {% if l > 0 %}<div>{% include colored_tags.html tags=post.tags %}</div>{% endif %}
+  </div>
+</a>

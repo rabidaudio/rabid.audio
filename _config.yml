@@ -8,6 +8,7 @@ baseurl:  /blog
 imgurl:   /blog/assets/images/
 jsurl:    assets/js/output.js
 url: "http://rabid.audio" # the base hostname & protocol for your site
+post_excerpt_truncate: 300
 
 directories:
   assets: assets
@@ -124,7 +125,11 @@ colors:
     light:    '#fdfdfd'
     lighter:  '#ffffff'
   red:
-    main:     '#df2d4f'
+    darker:   '#97011E'
+    dark:     '#BF0E30'
+    main:     '#DF2D4F'
+    light:    '#EE5371'
+    lighter:  '#F37B93'
 
 colormap:
   music:    red

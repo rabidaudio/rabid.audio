@@ -44,19 +44,18 @@
   .bio {
     background-color: {{ colors.lighter }};
   }
+  a.read-more {
+    color: {{ colors.dark }};
+  }
 
-
-  /* tag colors */
-/*  .category--software {
-    background-color: {{ site.colors.blue.main }};
+  .post-list-container {
+    background-color: {{ site.colors.grey.main }};
   }
-  .category--hardware {
-    background-color: {{ site.colors.purple.main }};
-  }
-  .category--music {
-    background-color: #df2d4f;
-  }
-  .category--policy {
-    background-color: {{ site.colors.green.main }};
-  }*/
+  {% for i in site.colormap %}
+    {% assign c = i[1] %}
+    /* {{ c }} */
+    .post-container--{{ i[0] | slugify }} {
+      background-color: {{ site.colors.[c].main }};
+    }
+  {% endfor %}
 </style>

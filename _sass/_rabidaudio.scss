@@ -46,31 +46,77 @@ a.wikipedia {
  * Content
 */
 .page-content {
-    padding: $spacing-unit 0;
+  padding: $spacing-unit 0;
+}
+.full-page {
+  padding: 0px;
+  background-color: #000000;
+  @include media-query($on-palm) {
+    padding-left: 10px;
+    padding-right: 10px;
+    width: auto;
+  }
 }
 
 .page-heading {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .post-list {
-    margin-left: 0;
-    list-style: none;
+  margin-left: 0;
+  list-style: none;
 
-    > li {
-        margin-bottom: $spacing-unit;
+  .post-list-container {
+    padding: 10px;
+    height: 170px;
+    overflow-y: hidden;
+    color: $mellow-white;
+    margin: 8px;
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+
+  .post-title {
+    font-size: 20px;
+    margin: 0px;
+    color: $mellow-white;
+    font-size: 20px;
+  }
+
+  .subtitle-container {
+    margin-top: -15px;
+  }
+
+  .post-excerpt {
+    font-size: 15px;
+    text-align: justify;
+    padding-right: 10px;
+    height: 6em;
+    overflow-y: hidden;
+    p {
+      margin-bottom: 0px;
     }
+    p:after {
+      content: "";
+      display: inline-block;
+      width: 100%;
+    }
+  }
+  .date {
+    font-size: 14px;
+    vertical-align: middle;
+  }
 }
-
-.post-link {
-    display: block;
-    font-size: 24px;
-}
-
 
 /** 
  * Post
 */
+
+.post-link {
+    font-size: 24px;
+}
 
 .post {
   background-color: $post-background-color;
@@ -120,16 +166,6 @@ a.wikipedia {
 .post-content {
   margin-bottom: inherit;
   line-height: 25px;
-}
-
-.post-list {
-  li {
-    margin-bottom: 15px;
-  }
-  .post-link {
-    font-size: 20px;
-    padding-left: 15px;
-  }
 }
 
 .inform-notice {

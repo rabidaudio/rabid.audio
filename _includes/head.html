@@ -21,7 +21,7 @@
     .post-tag { background-color: {{ site.colors.grey.main }} }
     {% for category in site.tagmap %}{% assign cat = category[0]  %}
       {% for tag in category[1] %}{% assign c = site.colormap[cat] %}{% assign main = site.colors[c] %}
-        .tag--{{ tag | slugify }} { background-color: {{ main.main }}}
+        .tag--{{ tag | slugify }} { background-color: {{ main.dark }}}
       {% endfor %}
     {% endfor %}
   </style>
