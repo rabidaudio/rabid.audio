@@ -73,6 +73,13 @@
       text-align: center;
     }
   }
+  .site-footer .social-media-list {
+    display: inline-block;
+
+    li {
+      display: list-item;
+    }
+  }
 }
 
 // @include media-query(925px) {

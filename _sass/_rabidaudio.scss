@@ -253,13 +253,14 @@ a.wikipedia {
       margin-bottom: $spacing-unit / 2;
   }
 
-  ul.social-media-list {
-    margin-bottom: 0px;
+  .social-media-list {
+    margin-bottom: 15px;
+    margin-left: 0px;
     list-style: none;
 
     li {
       display: inline-block;
-      margin: 5px 0px 5px 0px;
+      margin: 5px;
     }
   }
 
@@ -333,13 +334,17 @@ a.wikipedia {
     min-width: 200px;
   }
 
+  .social-media-list {
+    list-style: none;
+    margin-left: 0px;
+  }
+
   .headshot {
     width: 80%;
     height: 0;
     padding-bottom: 80%;
     margin: auto;
     overflow: hidden;
-    // border: 2px solid $grey-color-light;
     border-radius: 9999px;
 
     img {
@@ -373,7 +378,7 @@ a.wikipedia {
   }
   .icon {
     width: 22px;
-    float: left;
+    // float: left;
     // text-align: center;
   }
   .icon--email {
