@@ -1,5 +1,9 @@
 @include media-query($on-palm) {
 
+  .page-content {
+    overflow: hidden; //fix overflow of viewport from bad blogger posts
+  }
+
   div.post {
     padding: .25em;
     border-radius: 1px;
@@ -54,6 +58,50 @@
         display: block;
         padding: 5px 10px;
         font-size: 1.2em;
+      }
+    }
+  }
+  .post-nav {
+    display: block;
+    .next {
+      width: 100%;
+      text-align: center;
+    }
+
+    .prev {
+      width: 100%;
+      text-align: center;
+    }
+  }
+}
+
+@include media-query(925px) {
+  .site-footer {
+
+    .licence {
+      text-align: center;
+    }
+
+    .description {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+
+    .author-footer-wrapper {
+      width: 250px;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    .social-media-list {
+      ul {
+        list-style-type: none;
+      }
+      li {
+        // display: inline;
+        display: list-item;
+        padding-left: 10px;
+        padding-right: 10px;
       }
     }
   }

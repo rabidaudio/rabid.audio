@@ -26,12 +26,12 @@ layout: default
   {% include dinkus.html %}
 
   <div class="post-nav">
+    <div class="prev">{% if page.previous %}<a href="{{ page.previous.url | replace: 'index.html', '' | prepend: site.baseurl}}">
+      Previous: {{ page.previous.title }}
+    </a>{% endif %}</div>
     <div class="next">{% if page.next %}<a href="{{ page.next.url | replace: 'index.html', '' | prepend: site.baseurl }}">
       Next: {{ page.next.title }}
     </a>{% endif %}</div>
-    <div class="prev">{% if page.previous %}<a href="{{ page.previous.url | replace: 'index.html', '' | prepend: site.baseurl}}">
-      Previous: {{ page.previous.title }}
-    </a>{% endif %}<div>
   </div>
 
 </div>

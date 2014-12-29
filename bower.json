@@ -12,6 +12,7 @@
     "fontawesome": "~4.2.0",
     "javascript_utils": "git@github.com:rabidaudio/javascript-utils.git",
     "modernizr": "~2.8.3",
-    "natural-dates": "~0.1.2"
+    "natural-dates": "~0.1.2",
+    "jquery.finger": "~0.1.2"
   }
 }

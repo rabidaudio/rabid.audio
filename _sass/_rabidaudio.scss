@@ -10,6 +10,10 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
+img {
+  -webkit-user-drag: none;
+}
+
 code {
   font-size: 85%;
 }
@@ -186,12 +190,12 @@ a.wikipedia {
 
   .next {
     width: 50%;
-    text-align: left;
+    text-align: right;
   }
 
   .prev {
     width: 50%;
-    text-align: right;
+    text-align: left;
   }
 }
 
@@ -233,12 +237,20 @@ a.wikipedia {
 */
 
 .site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+  font-size: 15px;
+  color: #828282;
+
   .wrapper {
     padding: 0px;
     max-width: $content-width + ($spacing-unit * 2);
   }
-  font-size: 15px;
-  color: #828282;
+
+  .footer-heading {
+      font-size: 18px;
+      margin-bottom: $spacing-unit / 2;
+  }
 
   ul {
     margin-bottom: 0px;
@@ -253,37 +265,6 @@ a.wikipedia {
     text-align: center;
     margin-bottom: 0px;
   }
-
-  @include media-query($on-palm) {
-    ul {
-      list-style-type: none;
-    }
-    li {
-      display: inline;
-      padding-left: 10px;
-      padding-right: 10px;
-    }
-
-    .licence {
-      text-align: center;
-    }
-
-    .description {
-      padding-top: 30px;
-      padding-bottom: 30px;
-    }
-
-  }
-}
-
-.site-footer {
-    border-top: 1px solid $grey-color-light;
-    padding: $spacing-unit 0;
-}
-
-.footer-heading {
-    font-size: 18px;
-    margin-bottom: $spacing-unit / 2;
 }
 
 .contact-list,
@@ -297,48 +278,6 @@ a.wikipedia {
     color: $grey-color;
     margin-left: -$spacing-unit / 2;
     @extend %clearfix;
-}
-
-.footer-col {
-    float: left;
-    margin-bottom: $spacing-unit / 2;
-    padding-left: $spacing-unit / 2;
-}
-
-.footer-col-1 {
-    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
-    width:         calc(35% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-2 {
-    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
-    width:         calc(20% - (#{$spacing-unit} / 2));
-}
-
-.footer-col-3 {
-    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
-    width:         calc(45% - (#{$spacing-unit} / 2));
-}
-
-@include media-query($on-laptop) {
-    .footer-col-1,
-    .footer-col-2 {
-        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
-        width:         calc(50% - (#{$spacing-unit} / 2));
-    }
-
-    .footer-col-3 {
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
-}
-
-@include media-query($on-palm) {
-    .footer-col {
-        float: none;
-        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
-        width:         calc(100% - (#{$spacing-unit} / 2));
-    }
 }
 
 @include media-query($on-palm) {
@@ -460,9 +399,6 @@ h6:hover .header-link{
     color: $grey-color-light;
     letter-spacing: 5px;
   }
-  // svg {
-  //   padding: 5px;
-  // }
 }
 
 noscript div {

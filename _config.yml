@@ -40,9 +40,10 @@ exclude:
 # JS files to include from vendor (Bower directory)
 vendor:
   js:
-  # - _vendor/modernizr/modernizr.js
+  - _vendor/modernizr/modernizr.js
   - _vendor/jquery/dist/jquery.js
   - _vendor/inform/dist/inform.js
+  - _vendor/jquery.finger/dist/jquery.finger.js
   - _vendor/natural-dates/natural_dates.js
   - _vendor/javascript_utils/jquery_extensions.js
   fonts:
