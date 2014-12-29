@@ -7,45 +7,45 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl:  /blog
 imgurl:   /blog/assets/images/
 jsurl:    assets/js/output.js
-url: "http://rabid.audio" # the base hostname & protocol for your site
+url: "http://rabid.audio"
 post_excerpt_truncate: 300
 
 directories:
-  assets: assets
-  outputjs: assets/js
-  sourcejs: assets/_src
-  posts: _posts
-  drafts: _drafts
-  templates: _templates
-  sass: _sass
-  css: css
-  templates: _templates
-  plugins: _plugins
-  output: _site
-  layouts: _layouts
-  includes: _includes
-  fonts: assets/fonts
+  assets    : assets
+  outputjs  : assets/js
+  sourcejs  : assets/_src
+  posts     : _posts
+  drafts    : _drafts
+  templates : _templates
+  sass      : _sass
+  css       : css
+  templates : _templates
+  plugins   : _plugins
+  output    : _site
+  layouts   : _layouts
+  includes  : _includes
+  fonts     : assets/fonts
 
 
 exclude:
-- rabidaudio.sublime-project
-- rabidaudio.sublime-workspace
-- node_modules
-- Gruntfile.js
-- README.md
-- divshot.json
-- bower.json
-- package.json
+  - rabidaudio.sublime-project
+  - rabidaudio.sublime-workspace
+  - node_modules
+  - Gruntfile.js
+  - README.md
+  - divshot.json
+  - bower.json
+  - package.json
 
 # JS files to include from vendor (Bower directory)
 vendor:
   js:
-  - _vendor/modernizr/modernizr.js
-  - _vendor/jquery/dist/jquery.js
-  - _vendor/inform/dist/inform.js
-  - _vendor/jquery.finger/dist/jquery.finger.js
-  - _vendor/natural-dates/natural_dates.js
-  - _vendor/javascript_utils/jquery_extensions.js
+    - _vendor/modernizr/modernizr.js
+    - _vendor/jquery/dist/jquery.js
+    - _vendor/inform/dist/inform.js
+    - _vendor/jquery.finger/dist/jquery.finger.js
+    - _vendor/natural-dates/natural_dates.js
+    - _vendor/javascript_utils/jquery_extensions.js
   fonts:
     - fontawesome/fonts
 
@@ -138,7 +138,7 @@ colormap:
   hardware: purple
   software: blue
 
-#map tags from blogger to categories
+#map tags to categories
 tagmap:
   music:
     - genre
@@ -173,4 +173,4 @@ tagmap:
 markdown: kramdown
 
 sass:
-    style: :compressed
+  style: :compressed

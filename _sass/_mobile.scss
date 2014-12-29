@@ -4,6 +4,7 @@
     overflow: hidden; //fix overflow of viewport from bad blogger posts
   }
 
+  //alter post to conserve space, change backgrounds
   div.post {
     padding: .25em;
     border-radius: 1px;
@@ -24,50 +25,50 @@
     font-size: 1.5em;
   }
 
+  //header
   .site-nav {
-    @include media-query($on-palm) {
-      position: absolute;
-      top: 5px;
-      right: 30px;
-      background-color: $background-color;
-      border: 1px solid $grey-color-light;
-      border-radius: 5px;
-      text-align: right;
+    position: absolute;
+    top: 5px;
+    right: 30px;
+    background-color: $background-color;
+    border: 1px solid $grey-color-light;
+    border-radius: 5px;
+    text-align: right;
 
-      .menu-icon {
-        display: block;
-        float: right;
-        width: 36px;
-        height: 26px;
-        line-height: 0;
-        padding-top: 10px;
-        text-align: center;
-      }
+    .menu-icon {
+      display: block;
+      float: right;
+      width: 36px;
+      height: 26px;
+      line-height: 0;
+      padding-top: 10px;
+      text-align: center;
+    }
 
-      .trigger {
-        clear: both;
-        display: none;
-      }
+    .trigger {
+      clear: both;
+      display: none;
+    }
 
-      &:hover .trigger {
-        display: block;
-        padding-bottom: 5px;
-      }
+    &:hover .trigger {
+      display: block;
+      padding-bottom: 5px;
+    }
 
-      .page-link {
-        display: block;
-        padding: 5px 10px;
-        font-size: 1.2em;
-      }
+    .page-link {
+      display: block;
+      padding: 5px 10px;
+      font-size: 1.2em;
     }
   }
+
+  //footer
   .post-nav {
     display: block;
     .next {
       width: 100%;
       text-align: center;
     }
-
     .prev {
       width: 100%;
       text-align: center;
@@ -81,35 +82,3 @@
     }
   }
 }
-
-// @include media-query(925px) {
-//   .site-footer {
-
-//     .licence {
-//       text-align: center;
-//     }
-
-//     .description {
-//       padding-top: 30px;
-//       padding-bottom: 30px;
-//     }
-
-//     .author-footer-wrapper {
-//       width: 250px;
-//       margin-right: auto;
-//       margin-left: auto;
-//     }
-
-//     .social-media-list {
-//       ul {
-//         list-style-type: none;
-//       }
-//       li {
-//         // display: inline;
-//         display: list-item;
-//         padding-left: 10px;
-//         padding-right: 10px;
-//       }
-//     }
-//   }
-// }

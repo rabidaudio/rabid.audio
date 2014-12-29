@@ -76,6 +76,16 @@ If I ever continue work on Utterson, might be the way to go
   - existing colors: blue, green
   - existing categories: music, software, hardware, policy
 
+
+Good post notes
+---------------
+
+- Keep titles less than 32 characters, making use of the subtitle when neccessary
+- add one category per post. Known categories are: `[software, hardware, policy, music]`
+- add as many tags as desired to a post. Reuse existing tags (see [`_config.yaml`](_config.yaml))
+- map new tags to a category for proper color coding
+
+
 Licence
 =======
 
