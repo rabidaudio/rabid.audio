@@ -62,7 +62,11 @@ Future ideas:
 
 - Lightbox for images
 
+- switch to using require.js (or similar)
+
 - Add resume
+
+- Comments? (probably needs a backend, but might be doable with firebase)
 
 - pretty backgrounds: Maps, canvas renders, ?
 

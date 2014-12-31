@@ -36,6 +36,11 @@
   }
 
   //header
+  .site-title {
+    width: 100%;
+    text-align: center;
+  }
+
   .site-nav {
     position: absolute;
     top: $mobile-nav-spacing-top;
