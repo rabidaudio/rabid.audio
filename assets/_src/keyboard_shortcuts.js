@@ -18,4 +18,4 @@ key('j', function(){
 
 key('g+a', function(){
   $('a[name=all-posts]')[0].click();
-})
+});
