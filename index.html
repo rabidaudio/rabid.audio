@@ -1,6 +1,121 @@
 ---
-layout: page
+layout: full-blank
 ---
+<style>
+  .home {
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+  }
+  .albumart-bg {
+    /*opacity: 0;*/
+  }
+  .albumart {
+    width: 100%;
+    background-color: white;
+    image-rendering: optimizeSpeed;
+/*    -webkit-filter: grayscale(70%);
+    -moz-filter: grayscale(70%);
+    filter: grayscale(70%);*/
+  }
+  .home-content-container {
+    position: absolute;
+    width: 100%;
+    height: 75%; 
+    top: 0px;
+    display: table;
+  }
+  .home-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .site-title {
+    float: none;
+  }
+  .site-nav {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  .page-link {
+    vertical-align: initial;
+    color: #ffffff;
+  }
+  .trigger {
 
-<div class="home">
+  }
+  .home-content-box {
+    background-color: rgba(24, 24, 24, 0.72);
+    border-radius: 5px;
+    color: white;
+    min-width: 280px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(24, 24, 24, 0.72);
+  }
+  .home-content-box h1 {
+    color: white;
+  }
+  .welcome-message {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .header-content {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  /*
+mobile
+
+home-content-container {
+  width: 90%;
+margin-left: 5%;
+}
+fix site-nav
+
+  */
+</style>
+<section class="home">
+  <div class="albumart-bg pure-g">
+    {% for i in (0..99) %}
+    <div class="pure-u-4-24 pure-u-sm-3-24 pure-u-lg-2-24">
+      <img class="albumart albumart-img--{{ i }}"/>
+    </div>
+    {% endfor %}
+  </div>
+<!--   <div class="home-content-container">
+    <div class="header-content home-content-box">
+      <h1>RabidAudio</h1>
+    </div>
+  </div> -->
+  <div class="home-content-container">
+    <div class="home-content">
+      <div class="welcome-message home-content-box">
+        <div class="header">
+          <a class="site-title" href="{{ site.baseurl }}/">
+            <h1>RabidAudio</h1>
+          </a>
+          <p class="description">{{ site.description }}</p>
+          <nav class="site-nav">
+            <a href="#" class="menu-icon"><i class="fa fa-list-ul"></i></a>
+            <div class="trigger">
+              {% for page in site.nav %}
+                {% if page.title %}
+                <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </nav>
+        </div>
+<!--         <div class="form bg-selector">
+          <input type="text" placeholder="last.fm username" class="input-lfm-username">
+        </div> -->
+      <div>
+    </div>
+  </div>
 </div>
+<script>{% include album_art.js %}</script>

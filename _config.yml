@@ -37,15 +37,20 @@ exclude:
   - bower.json
   - package.json
 
-# JS files to include from vendor (Bower directory)
+# JS files to include from Bower directory in desired order
 vendor:
   js:
-    - _vendor/modernizr/modernizr.js
+    # - _vendor/modernizr/modernizr.js
+    # - _vendor/requirejs/require.js
     - _vendor/jquery/dist/jquery.js
+    # - _vendor/underscore/underscore.js
+    # - _vendor/imagesloaded/imagesloaded.pkgd.js
     - _vendor/inform/dist/inform.js
-    - _vendor/jquery.finger/dist/jquery.finger.js
+    # - _vendor/lightbox/js/lightbox.js
+    - _vendor/javascript-last.fm-api/lastfm-api.js
     - _vendor/natural-dates/natural_dates.js
-    - _vendor/javascript_utils/jquery_extensions.js
+    - _vendor/javascript_utils/rand_subset.js
+    # - _vendor/javascript_utils/jquery_extensions.js
   fonts:
     - fontawesome/fonts
 
@@ -62,20 +67,19 @@ defaults:
       layout: "post"
       category: other
       permalink: :categories/:title/index.html
-      color: blue     #TODO remove
       author:
-        name:     Charles Julian Knight
-        minibio:  
-        img:      http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
-        school:   Georgia Tech
-        twitter:  charlesjuliank
-        email:    cjk@rabid.audio
-        github:   rabidaudio
-        lastfm:   rabidaudio
-        google:   +CharlesJulianKnight
-        #facebook: 
-        #linkedin: 
-        bitcoin:  1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
+        name     : Charles Julian Knight
+        # minibio  :
+        img      : http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+        school   : Georgia Tech
+        twitter  : charlesjuliank
+        email    : cjk@rabid.audio
+        github   : rabidaudio
+        lastfm   : rabidaudio
+        google   : +CharlesJulianKnight
+        # facebook :
+        # linkedin :
+        bitcoin  : 1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
         # other_site:
         #   name: username
         #   url:  example.com/user/username (optional)
@@ -87,9 +91,9 @@ footer_social:
   github: rabidaudio/rabid.audio
 
 nav:
-# -
-#   url: /about
-#   title: About
+-
+  url: /about
+  title: About
 - 
   url: /all
   title: All Posts
@@ -126,11 +130,11 @@ colors:
     light:    '#fdfdfd'
     lighter:  '#ffffff'
   red:
-    darker:   '#97011E'
+    darker:   '#7E0018'
     dark:     '#BF0E30'
     main:     '#DF2D4F'
     light:    '#EE5371'
-    lighter:  '#F37B93'
+    lighter:  '#FFD7DF'
 
 colormap:
   music:    red
