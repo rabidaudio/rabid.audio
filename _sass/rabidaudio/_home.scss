@@ -1,0 +1,76 @@
+/**
+*   Special homepage styling
+*/
+
+.home {
+  height: 100%;
+  position: absolute;
+  overflow: hidden;
+
+  .albumart {
+    width: 100%;
+    background-color: white;
+    image-rendering: optimizeSpeed;
+/*    -webkit-filter: grayscale(70%);
+    -moz-filter: grayscale(70%);
+    filter: grayscale(70%);*/
+  }
+  .home-content-container {
+    position: absolute;
+    width: 100%;
+    height: 75%; 
+    top: 0px;
+    display: table;
+  }
+  .home-content {
+    display: table-cell;
+    vertical-align: middle;
+  }
+  .site-title {
+    float: none;
+  }
+  .site-nav {
+    float: none;
+    width: 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  .page-link {
+    vertical-align: initial;
+    color: #ffffff;
+  }
+  .home-content-box {
+    background-color: rgba(24, 24, 24, 0.72);
+    border-radius: 5px;
+    color: white;
+    min-width: 280px;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(24, 24, 24, 0.72);
+  }
+  .home-content-box h1 {
+    color: white;
+  }
+  .welcome-message {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .header-content {
+    width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+  /*
+mobile
+
+home-content-container {
+  width: 90%;
+margin-left: 5%;
+}
+fix site-nav
+
+  */

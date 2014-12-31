@@ -43,13 +43,11 @@ vendor:
     # - _vendor/modernizr/modernizr.js
     # - _vendor/requirejs/require.js
     - _vendor/jquery/dist/jquery.js
-    # - _vendor/underscore/underscore.js
-    # - _vendor/imagesloaded/imagesloaded.pkgd.js
     - _vendor/inform/dist/inform.js
     # - _vendor/lightbox/js/lightbox.js
     - _vendor/javascript-last.fm-api/lastfm-api.js
     - _vendor/natural-dates/natural_dates.js
-    - _vendor/javascript_utils/rand_subset.js
+    # - _vendor/javascript_utils/rand_subset.js
     # - _vendor/javascript_utils/jquery_extensions.js
   fonts:
     - fontawesome/fonts
@@ -91,9 +89,9 @@ footer_social:
   github: rabidaudio/rabid.audio
 
 nav:
--
-  url: /about
-  title: About
+# -
+#   url: /about
+#   title: About
 - 
   url: /all
   title: All Posts

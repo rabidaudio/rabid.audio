@@ -1,88 +1,10 @@
 ---
 layout: full-blank
 ---
-<style>
-  .home {
-    height: 100%;
-    position: absolute;
-    overflow: hidden;
-  }
-  .albumart-bg {
-    /*opacity: 0;*/
-  }
-  .albumart {
-    width: 100%;
-    background-color: white;
-    image-rendering: optimizeSpeed;
-/*    -webkit-filter: grayscale(70%);
-    -moz-filter: grayscale(70%);
-    filter: grayscale(70%);*/
-  }
-  .home-content-container {
-    position: absolute;
-    width: 100%;
-    height: 75%; 
-    top: 0px;
-    display: table;
-  }
-  .home-content {
-    display: table-cell;
-    vertical-align: middle;
-  }
-  .site-title {
-    float: none;
-  }
-  .site-nav {
-    float: none;
-    width: 100%;
-    max-width: 100%;
-    text-align: center;
-  }
-  .page-link {
-    vertical-align: initial;
-    color: #ffffff;
-  }
-  .trigger {
-
-  }
-  .home-content-box {
-    background-color: rgba(24, 24, 24, 0.72);
-    border-radius: 5px;
-    color: white;
-    min-width: 280px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: rgba(24, 24, 24, 0.72);
-  }
-  .home-content-box h1 {
-    color: white;
-  }
-  .welcome-message {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-  }
-  .header-content {
-    width: 70%;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  /*
-mobile
-
-home-content-container {
-  width: 90%;
-margin-left: 5%;
-}
-fix site-nav
-
-  */
-</style>
 <section class="home">
   <div class="albumart-bg pure-g">
     {% for i in (0..99) %}
-    <div class="pure-u-4-24 pure-u-sm-3-24 pure-u-lg-2-24">
+    <div class="pure-u-4-24 pure-u-md-3-24 pure-u-xl-2-24">
       <img class="albumart albumart-img--{{ i }}"/>
     </div>
     {% endfor %}
@@ -96,9 +18,9 @@ fix site-nav
     <div class="home-content">
       <div class="welcome-message home-content-box">
         <div class="header">
-          <a class="site-title" href="{{ site.baseurl }}/">
+          <span class="site-title" href="{{ site.baseurl }}/">
             <h1>RabidAudio</h1>
-          </a>
+          </span>
           <p class="description">{{ site.description }}</p>
           <nav class="site-nav">
             <a href="#" class="menu-icon"><i class="fa fa-list-ul"></i></a>
@@ -118,4 +40,44 @@ fix site-nav
     </div>
   </div>
 </div>
-<script>{% include album_art.js %}</script>
+<script>
+  var LASTFM_USERNAME = "{{ site.defaults[0].values.author.lastfm }}";
+  var IMAGE_QUALITY = 2; //0-3
+
+  function grab_from_query_string( prop ){
+  //http://www.netlobo.com/url_query_string_javascript.html
+      prop = prop.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+      var regex = new RegExp( "[\\?&]"+prop+"=([^&#]*)" );
+      var results = regex.exec( window.location.href );
+      if( results == null ) return null; else return results[1];
+  }
+
+  $(document).ready(function(){
+    new LastFM({
+        apiKey: '7906a0f41ca90b95bce3ca35f6f245df',
+    }).user.getTopAlbums({
+      user:   (grab_from_query_string('user')   || LASTFM_USERNAME),
+      period: (grab_from_query_string('period') || '6month'),
+      limit: 100
+    }, {
+      error: function(code, message){ console.error(message); },
+      success: function(data){
+        data.topalbums.album.forEach(function(album,index){
+          $('.albumart-img--'+index)
+            .hide()
+            .attr('src', album.image[IMAGE_QUALITY]['#text'])
+            .attr('title', album.artist.name+" - "+album.name)
+            .attr('mbid', album.mbid)
+            //when image is ready, fade in
+            .load(function(){ $(this).fadeIn(700); });
+        });
+      }
+    });
+    $('.input-lfm-username').keypress(function(e){
+      if(e.keyCode === 13){
+        window.location.search = "user="+$(this).val()
+          +"&period="+(grab_from_query_string('period') || '6month');
+      }
+    });
+  });
+</script>

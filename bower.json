@@ -2,7 +2,7 @@
   "name": "rabid.audio",
   "version": "0.0.0",
   "homepage": "rabid.audio",
-  "license": "CC-3.0-BY-SA",
+  "license": "MIT",
   "private": true,
   "dependencies": {
     "lightbox": "~2.7.1",
@@ -13,8 +13,6 @@
     "javascript_utils": "git@github.com:rabidaudio/javascript-utils.git",
     "modernizr": "~2.8.3",
     "natural-dates": "~0.1.2",
-    "javascript-last.fm-api": "git@github.com:molefrog/lastfm-api.git",
-    "underscore": "~1.7.0",
-    "imagesloaded": "~3.1.8"
+    "javascript-last.fm-api": "git@github.com:molefrog/lastfm-api.git"
   }
 }
