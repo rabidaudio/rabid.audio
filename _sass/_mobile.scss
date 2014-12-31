@@ -2,6 +2,7 @@
 
   .page-content {
     overflow: hidden; //fix overflow of viewport from bad blogger posts
+    padding-bottom: 0px;
   }
 
   //alter post to conserve space, change backgrounds
@@ -10,6 +11,10 @@
     border-radius: 1px;
     box-shadow: none;
     background-color: inherit;
+
+    .post-title {
+      font-size: 1.7em;
+    }
   }
   code {
     background-color: $background-color;
@@ -23,6 +28,11 @@
   }
   h2 {
     font-size: 1.5em;
+  }
+
+  .all{
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
   //header

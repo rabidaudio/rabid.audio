@@ -1,0 +1,109 @@
+/** 
+ * Post
+*/
+
+.post {
+  background-color: $post-background-color;
+  padding: 1em;
+  border-radius: 1px;
+  box-shadow: 0px 0px 6px 2px $shadow-color;
+
+  .post-title {
+    letter-spacing: -1px;
+    line-height: 1;
+    font-size: 3em;
+  }
+
+  .post-header {
+      margin-bottom: $spacing-unit;
+  }
+
+  .post-content {
+    margin-bottom: inherit;
+    line-height: 25px;
+  }
+
+  .post-subtitle {
+    margin-top: 15px;
+    margin-bottom: 0px;
+  }
+  .post-meta {
+    padding-left: 10px;
+    text-align: right;
+    border-top-width: 1px;
+    border-top-color: $grey-color-light;
+    border-top-style: solid;
+    font-size: $small-font-size;
+  }
+  .post-tags {
+    float: left;
+    @include media-query($on-palm) {
+      width: 100%;
+      text-align: left;
+    }
+  }
+}
+
+.post-nav {
+  display: flex;
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: $grey-color-light;
+  margin-top: 15px;
+
+
+  .next {
+    width: 50%;
+    text-align: right;
+  }
+
+  .prev {
+    width: 50%;
+    text-align: left;
+  }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
+        }
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
+        }
+    }
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
+            font-size: 18px;
+        }
+    }
+}
+
+.post-tags {
+  text-transform: uppercase;
+}
+.post-tag {
+  padding: 0.1em 1em;
+  color: #fff;
+  font-size: 10px;
+}
+
+.inform-notice {
+  color: #000000;
+  a {
+    text-decoration: underline;
+    color: #000000;
+  }
+}

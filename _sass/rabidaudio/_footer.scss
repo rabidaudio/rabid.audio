@@ -1,0 +1,37 @@
+/**
+ * Footer
+*/
+
+.site-footer {
+  border-top: 1px solid $grey-color-light;
+  padding: $spacing-unit 0;
+  font-size: 15px;
+  color: #828282;
+  text-align: center;
+
+  .wrapper {
+    padding: 0px;
+    max-width: $content-width + ($spacing-unit * 2);
+  }
+
+  .footer-heading {
+      font-size: 18px;
+      margin-bottom: $spacing-unit / 2;
+  }
+
+  .social-media-list {
+    margin-bottom: 15px;
+    margin-left: 0px;
+    list-style: none;
+
+    li {
+      display: inline-block;
+      margin: 5px;
+    }
+  }
+
+  .description {
+    font-style: italic;
+    margin-bottom: 15px;
+  }
+}

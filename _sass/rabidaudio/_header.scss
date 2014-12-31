@@ -3,23 +3,17 @@
  */
 .site-header {
   border-bottom: 1px solid $grey-color-light;
-  // min-height: 56px;
   position: relative;
 }
 
 .site-title {
   font-size: 1.5em;
-  // line-height: normal;
   float: left;
   h1{
     letter-spacing: -2px;
     margin-bottom: 0px;
     font-family: 'Montserrat', 'Open Sans', Arial, sans-serif;
     font-variant: small-caps;
-  }
-  img {
-    width: 10%;
-    padding-top: 5px;
   }
 }
 

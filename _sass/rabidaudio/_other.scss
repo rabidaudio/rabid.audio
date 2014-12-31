@@ -1,0 +1,136 @@
+/**
+ * Other
+*/
+
+/* Author info */
+
+.bio{
+  display: none;
+  overflow-y: hidden;
+  position: absolute;
+  padding: 0px 10px 0px 10px;
+
+  .name {
+    margin-bottom: 0px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+  }
+
+  .minibio {
+    font-style: italic;
+    color: $grey-color;
+  }
+
+  .holder {
+    width: 100%;
+  }
+
+  .leftcol {
+    min-width: 75px;
+    max-width: 100px;
+    float: left;
+    width: 25%;
+    padding-bottom: 5px;
+    width: 75px;
+  }
+
+  .rightcol {
+    float: left;
+    min-width: 200px;
+  }
+
+  .social-media-list {
+    list-style: none;
+    margin-left: 0px;
+  }
+
+  .headshot {
+    width: 80%;
+    height: 0;
+    padding-bottom: 80%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 9999px;
+
+    img {
+      -webkit-filter: grayscale(100%);
+      -moz-filter: grayscale(100%);
+      filter: grayscale(100%);
+    }
+  }
+}
+
+.bio-float-right {
+  margin-left: auto;
+  margin-right: 0;
+  padding: 0px;
+  width: 40%;
+  min-width: 300px;
+  margin-top: -12px;
+
+  @include media-query($on-palm) {
+    width: 100%;
+    padding-left: 5%;
+    .bio {
+      background-color: #FFFFFF;
+    }
+  }
+}
+.social-media-list {
+  .bitcoin {
+    font-size: 7pt;
+  }
+  .icon {
+    width: 22px;
+  }
+  .icon--email {
+    font-size: 14px;
+  }
+}
+
+
+/* Header hyperlinks */
+
+.header-link{
+  position:relative;
+  left:0.5em;
+  opacity:0;
+  font-size:0.8em;
+  -webkit-transition:opacity 0.2s ease-in-out 0.1s;
+  -moz-transition:opacity 0.2s ease-in-out 0.1s;
+  -o-transition:opacity 0.2s ease-in-out 0.1s;
+  transition:opacity 0.2s ease-in-out 0.1s;
+}
+h2:hover .header-link, h3:hover .header-link,
+h4:hover .header-link, h5:hover .header-link,
+h6:hover .header-link{
+  opacity:1;
+}
+
+
+/* Misc */
+
+.dinkus {
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 25px;
+  .fa {
+    color: $grey-color-light;
+    letter-spacing: 5px;
+  }
+}
+
+a.wikipedia {
+  background-position: top right;
+  background-image: url($wp-img);
+  background-repeat: no-repeat;
+  padding-right: 11px;
+}
+
+.fa {
+  color: $grey-color;
+}
+.dinkus svg {
+  fill: $grey-color-light;
+}

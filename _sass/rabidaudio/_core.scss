@@ -1,0 +1,39 @@
+/**
+*   Core
+*/
+.body {
+  font-family: $base-font-family;
+  font-size: medium;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: $header-font-family;
+    font-weight: 700;
+}
+
+img {
+  -webkit-user-drag: none; //for purposes of swipe
+}
+
+code {
+  font-size: 85%;
+}
+
+pre, code {
+  overflow-x: auto;
+}
+
+code, kbd, pre, samp {
+  font-family: 'courier new', monospace;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+noscript div {
+  text-align: center;
+  width: 100%;
+  padding: 10px 0px 10px 0px;
+  margin-top: -30px;
+  margin-bottom: 30px;
+}
