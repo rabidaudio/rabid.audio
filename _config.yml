@@ -89,9 +89,9 @@ footer_social:
   github: rabidaudio/rabid.audio
 
 nav:
-# -
-#   url: /about
-#   title: About
+-
+  url: /about
+  title: About
 - 
   url: /all
   title: All Posts

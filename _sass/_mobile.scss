@@ -38,16 +38,16 @@
   //header
   .site-nav {
     position: absolute;
-    top: 5px;
-    right: 30px;
+    top: $mobile-nav-spacing-top;
+    left: $mobile-nav-spacing-left;
     background-color: $background-color;
     border: 1px solid $grey-color-light;
     border-radius: 5px;
-    text-align: right;
+    text-align: left;
 
     .menu-icon {
       display: block;
-      float: right;
+      float: left;
       width: 36px;
       height: 26px;
       line-height: 0;
@@ -89,6 +89,22 @@
 
     li {
       display: list-item;
+    }
+  }
+
+  // homepage
+  .home {
+    .site-nav {
+      width: auto;
+      background-color: rgba(24,24,24,0.72);
+      border-width: 2px;
+      border-style: solid;
+      border-color: rgba(24,24,24,0.72);
+      text-align: left;
+
+      i.fa {
+        color: #ffffff;
+      }
     }
   }
 }

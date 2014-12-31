@@ -1,19 +1,13 @@
 ---
 layout: full-blank
 ---
+<script type="text/template" class="album-art-template">
+<div class="pure-u-4-24 pure-u-md-3-24 pure-u-xl-2-24">
+  <img class="albumart albumart-img--%INDEX%"/>
+</div>
+</script>
 <section class="home">
-  <div class="albumart-bg pure-g">
-    {% for i in (0..99) %}
-    <div class="pure-u-4-24 pure-u-md-3-24 pure-u-xl-2-24">
-      <img class="albumart albumart-img--{{ i }}"/>
-    </div>
-    {% endfor %}
-  </div>
-<!--   <div class="home-content-container">
-    <div class="header-content home-content-box">
-      <h1>RabidAudio</h1>
-    </div>
-  </div> -->
+  <div class="albumart-bg pure-g"></div>
   <div class="home-content-container">
     <div class="home-content">
       <div class="welcome-message home-content-box">
@@ -32,11 +26,17 @@ layout: full-blank
               {% endfor %}
             </div>
           </nav>
+          <nav class="lastfm-button home-content-box">
+            <div class="trigger">
+              <div>These are the top albums from <span class="lastfm-username"></span>. Enter another username here:</div>
+              <div class="lfm-username-input-container">
+                <input type="text" placeholder="last.fm username" class="lfm-username-input">
+              </div>
+            </div>
+            <a href="#" class="lfm-menu-icon"><i class="fa fa-lastfm"></i></a>
+          </nav>
         </div>
-<!--         <div class="form bg-selector">
-          <input type="text" placeholder="last.fm username" class="input-lfm-username">
-        </div> -->
-      <div>
+      </div>
     </div>
   </div>
 </div>
@@ -53,30 +53,43 @@ layout: full-blank
   }
 
   $(document).ready(function(){
+    var lfm_username = (grab_from_query_string('user')   || LASTFM_USERNAME);
+    var period = (grab_from_query_string('period') || '6month');
+    
+    // $('.albumart').parent().css('min-height', $('.albumart').first().parent().width());
     new LastFM({
         apiKey: '7906a0f41ca90b95bce3ca35f6f245df',
     }).user.getTopAlbums({
-      user:   (grab_from_query_string('user')   || LASTFM_USERNAME),
-      period: (grab_from_query_string('period') || '6month'),
+      user:   lfm_username,
+      period: period,
       limit: 100
     }, {
       error: function(code, message){ console.error(message); },
       success: function(data){
-        data.topalbums.album.forEach(function(album,index){
-          $('.albumart-img--'+index)
-            .hide()
+        var template = $('.album-art-template').html();
+        data.topalbums.album.forEach(function(album, index){
+          $('.albumart-bg').append(template.replace('%INDEX%', index));
+          var el = $('.albumart-img--'+index);
+          //temporarily set div min-height so that they keep their size while the image swaps
+          el.parent().css('min-height', el.parent().width());
+          el.fadeOut(0)
             .attr('src', album.image[IMAGE_QUALITY]['#text'])
             .attr('title', album.artist.name+" - "+album.name)
             .attr('mbid', album.mbid)
-            //when image is ready, fade in
-            .load(function(){ $(this).fadeIn(700); });
+            .load(function(){
+              //fade in and remove the div height fix
+              $(this)
+                .fadeIn(700)
+                .parent().css('min-height', 0);
+            });
         });
       }
     });
-    $('.input-lfm-username').keypress(function(e){
+    $('.lastfm-username').text(lfm_username);
+    $('.lfm-username-input').keypress(function(e){
       if(e.keyCode === 13){
         window.location.search = "user="+$(this).val()
-          +"&period="+(grab_from_query_string('period') || '6month');
+          +"&period="+period;
       }
     });
   });
