@@ -54,7 +54,8 @@ Additions to default jekyll:
 Immediate TODOs:
 
 - Fix About page
-- Make a real homepage
+- ~~Make a real homepage~~
+- self-generating `all` pages for each category
 
 
 Future ideas:
@@ -72,7 +73,7 @@ If I ever continue work on Utterson, might be the way to go
 
 - drop jquery for speed
 
-- colors for each category
+- ~~colors for each category~~
   - existing colors: blue, green
   - existing categories: music, software, hardware, policy
 

@@ -43,6 +43,7 @@ vendor:
     # - _vendor/modernizr/modernizr.js
     # - _vendor/requirejs/require.js
     - _vendor/jquery/dist/jquery.js
+    - _vendor/keymaster/keymaster.js
     - _vendor/inform/dist/inform.js
     # - _vendor/lightbox/js/lightbox.js
     - _vendor/javascript-last.fm-api/lastfm-api.js
@@ -89,9 +90,9 @@ footer_social:
   github: rabidaudio/rabid.audio
 
 nav:
--
-  url: /about
-  title: About
+# -
+#   url: /about
+#   title: About
 - 
   url: /all
   title: All Posts
