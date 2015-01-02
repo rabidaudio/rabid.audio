@@ -28,7 +28,7 @@ layout: full-blank
           </nav>
           <nav class="lastfm-button home-content-box">
             <div class="trigger">
-              <div>These are the top albums from <span class="lastfm-username"></span>. Enter another username here:</div>
+              <div>These are the top albums from <span class="lastfm-username">{{ site.defaults[0].values.author.lastfm }}</span>. Enter another username here:</div>
               <div class="lfm-username-input-container">
                 <input type="text" placeholder="last.fm username" class="lfm-username-input">
               </div>
@@ -43,6 +43,7 @@ layout: full-blank
 <script>
   var LASTFM_USERNAME = "{{ site.defaults[0].values.author.lastfm }}";
   var IMAGE_QUALITY = 2; //0-3
+  var SCROLL_SPEED = 10000;
 
   function grab_from_query_string( prop ){
   //http://www.netlobo.com/url_query_string_javascript.html
@@ -55,58 +56,40 @@ layout: full-blank
   $(document).ready(function(){
     var lfm_username = (grab_from_query_string('user')   || LASTFM_USERNAME);
     var period = (grab_from_query_string('period') || '6month');
-    
-    // $('.albumart').parent().css('min-height', $('.albumart').first().parent().width());
-    new LastFM({
-        apiKey: '7906a0f41ca90b95bce3ca35f6f245df',
-    }).user.getTopAlbums({
-      user:   lfm_username,
-      period: period,
-      limit: 100
-    }, {
+    new LastFM({ apiKey: '7906a0f41ca90b95bce3ca35f6f245df', })
+    .user.getTopAlbums({user: lfm_username, period: period, limit: 100}, {
       error: function(code, message){ console.error(message); },
       success: function(data){
+        if(data.topalbums.total === "0") return;
+        $(window).load(move_row); //only turn on scrolling if there is content
+        var albums = data.topalbums.album;
+        while(albums.length < 75) albums = albums.concat(albums);
         var template = $('.album-art-template').html();
-        data.topalbums.album.forEach(function(album, index){
+        albums.forEach(function(album, index){
           $('.albumart-bg').append(template.replace('%INDEX%', index));
           var el = $('.albumart-img--'+index);
           //temporarily set div min-height so that they keep their size while the image swaps
           el.parent().css('min-height', el.parent().width());
-          el.fadeOut(0)
+          el.fadeOut(0).attr('mbid', album.mbid)
             .attr('src', album.image[IMAGE_QUALITY]['#text'])
             .attr('title', album.artist.name+" - "+album.name)
-            .attr('mbid', album.mbid)
-            .load(function(){
-              //fade in and remove the div height fix
-              $(this)
-                .fadeIn(700)
-                .parent().css('min-height', 0);
-            });
-        });
-      }
-    });
+            .load(function(){//fade in and remove the div height fix
+              $(this).fadeIn(700).parent().css('min-height', 0);  
+    });});}});
     $('.lastfm-username').text(lfm_username);
-    $('.lfm-username-input').keypress(function(e){
-      if(e.keyCode === 13){
-        window.location.search = "user="+$(this).val()
-          +"&period="+period;
-      }
+    $('.lfm-username-input').keypress(function(e){ //redirect with new username
+      if(e.keyCode === 13) window.location.search = "user="+$(this).val()+"&period="+period;
     });
   });
-  $(window).load(move_row);
 
   function move_row(){
     var art = $('.albumart').first();
-    var bg = $('.albumart-bg');
-    var scroll_dist = art.width();
-    bg.animate({
-      top: '-='+scroll_dist
-    }, 10000, "linear", function(){
-      var scroll_dist = art.width();
+    var bg  = $('.albumart-bg');
+    bg.animate({ top: '-='+art.width()}, SCROLL_SPEED, "linear", function(){
+      var scroll_dist = art.width();//resize may have happened
       var row_size = Math.round( $(document).width() / scroll_dist );
-      console.log(row_size);
       bg.css('top', 0).append(bg.children(":lt("+row_size+")"));
-      move_row(); // go around again
+      setTimeout(move_row, 0); // go around again
     });
   }
 </script>
