@@ -169,12 +169,12 @@ module.exports = function(grunt) {
   grunt.registerTask('devbuild', ['concat:dev', 'jekyll:dev']);
   grunt.registerTask('build', ['jshint', 'uglify:dist', 'jekyll:dist']);
 
-  grunt.registerTask('devdeploy', ['devbuild', 'divshot:push:development', 'open:dev']);
-  grunt.registerTask('deploy', ['build', 'divshot:push:production', 'open:prod']);
+  grunt.registerTask('devdeploy', ['devbuild', 'divshot:push:development']);
+  grunt.registerTask('deploy', ['build', 'divshot:push:production']);
   grunt.registerTask('depall', ['devdeploy', 'deploy']);
 
-  grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'open:local', 'watch']);
-  grunt.registerTask('default', ['serve']);
+  grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'watch']);
+  grunt.registerTask('default', ['serve', 'open:local']);
 
 
 
