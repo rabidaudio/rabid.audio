@@ -8,6 +8,11 @@
   position: absolute;
   overflow: hidden;
 
+  .albumart-bg {
+    position: absolute;
+    top: 0px;
+  }
+
   .albumart {
     width: 100%;
     background-color: white;

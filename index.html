@@ -93,4 +93,20 @@ layout: full-blank
       }
     });
   });
+  $(window).load(move_row);
+
+  function move_row(){
+    var art = $('.albumart').first();
+    var bg = $('.albumart-bg');
+    var scroll_dist = art.width();
+    bg.animate({
+      top: '-='+scroll_dist
+    }, 10000, "linear", function(){
+      var scroll_dist = art.width();
+      var row_size = Math.round( $(document).width() / scroll_dist );
+      console.log(row_size);
+      bg.css('top', 0).append(bg.children(":lt("+row_size+")"));
+      move_row(); // go around again
+    });
+  }
 </script>
