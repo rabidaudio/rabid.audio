@@ -3,7 +3,7 @@
 */
 
 .site-footer {
-  border-top: 1px solid $grey-color-light;
+  border-top: 1px solid $grey-color-lighter;
   padding: $spacing-unit 0;
   font-size: 15px;
   color: #828282;
@@ -33,5 +33,9 @@
   .description {
     font-style: italic;
     margin-bottom: 15px;
+  }
+
+  .licence a:hover {
+    text-decoration: none;
   }
 }

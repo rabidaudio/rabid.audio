@@ -8,11 +8,7 @@
       </span>
     </div>
     <div class="post-excerpt">
-      {% if post.blogger_orig_url or true %}
       <p>{{ post.content | replace: '<br />', ' ' | strip_html | truncate: site.post_excerpt_truncate, '...' }}</p>
-      {% else %}
-      {{ post.excerpt | truncate: site.post_excerpt_truncate, '...'  }}
-      {% endif %}
     </div>
     {% assign l = post.tags | size %}
     {% if l > 0 %}<div>{% include colored_tags.html tags=post.tags %}</div>{% endif %}

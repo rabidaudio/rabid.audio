@@ -27,11 +27,13 @@ $mellow-white:     #f2f2f2;
 $brand-color:      #2a7ae2;
 $background-color: $post-background-color;
 
-$shadow-color: {{ site.colors.grey.light }};
+$grey-color:         {{ site.colors.grey.main }};
+$grey-color-lighter: {{ site.colors.grey.lighter }};
+$grey-color-light:   {{ site.colors.grey.light }};
+$grey-color-darker:  {{ site.colors.grey.darker }};
+$grey-color-dark:    {{ site.colors.grey.dark }};
 
-$grey-color:       {{ site.colors.grey.main }};
-$grey-color-light: {{ site.colors.grey.lighter }};
-$grey-color-dark:  {{ site.colors.grey.darker }};
+$shadow-color: $grey-color-light;
 
 // Width of the content area
 $content-width:    1000px;

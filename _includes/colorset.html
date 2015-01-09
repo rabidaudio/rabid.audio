@@ -56,7 +56,7 @@
     }
   {% endfor %}
 
-  .post-tag { background-color: {{ site.colors.grey.main }} }
+  .post-tag { background-color: {{ site.colors.grey.dark }} }
   {% for category in site.tagmap %}{% assign cat = category[0]  %}
     {% for tag in category[1] %}{% assign c = site.colormap[cat] %}{% assign main = site.colors[c] %}
       .tag--{{ tag | slugify }} { background-color: {{ main.dark }}}

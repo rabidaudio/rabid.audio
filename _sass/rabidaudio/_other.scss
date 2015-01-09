@@ -122,15 +122,15 @@ h6:hover .header-link{
 }
 
 a.wikipedia {
-  background-position: top right;
+  background-position: top left;
   background-image: url($wp-img);
   background-repeat: no-repeat;
-  padding-right: 11px;
+  padding-left: 11px;
 }
 
 .fa {
   color: $grey-color;
 }
 .dinkus svg {
-  fill: $grey-color-light;
+  fill: $grey-color-lighter;
 }

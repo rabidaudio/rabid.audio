@@ -47,8 +47,7 @@ Additions to default jekyll:
 - responsive grid from pure
 - Javascript compiling
 - warning about old blogger posts
-- human readable dates
-- 
+- [human readable dates](assets/_src/natural_date_replacements.js)
 
 
 Immediate TODOs:
@@ -61,24 +60,19 @@ Immediate TODOs:
 Future ideas:
 
 - Lightbox for images
-
 - switch to using require.js (or similar)
-
 - Add resume
-
 - Comments? (probably needs a backend, but might be doable with firebase)
-
 - pretty backgrounds: Maps, canvas renders, ?
-
-- All of jekyll build stuff and `grunt` could be replaced with `gulp` and would be much more effective.
-If I ever continue work on Utterson, might be the way to go
+- All of jekyll build stuff could be replaced with `grunt` or `gulp` which would be much more effective.
+    If I ever continue work on Utterson, might be the way to go
 
 - Re-setup IFTTT autotweeting
 
 - drop jquery for speed
 
 - ~~colors for each category~~
-  - existing colors: blue, green
+  - existing colors: blue, green, red, purple
   - existing categories: music, software, hardware, policy
 
 
