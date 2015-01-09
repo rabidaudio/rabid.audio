@@ -137,15 +137,6 @@ module.exports = function(grunt) {
         path: '<%= cfg.url %><%= cfg.baseurl %>'
       }
     },
-
-    editor: {
-      options: {
-        editor: '<%= pkg.editor || process.env.VISUAL || process.env.EDITOR %>'
-      },
-      src: []
-    },
-
-
     copy: {
       //https://github.com/sass/sass/issues/556#issuecomment-39467721
       cssAsScss: {
@@ -170,11 +161,113 @@ module.exports = function(grunt) {
       }
     },
 
+    configure_new_page: {
+      options: {
+        questions: [
+          {
+            name:     "title",
+            message:  "Title",
+            validate: function(input){
+              if(  input === ""   ) { return "No title specified"; }
+              if(input.length > 33) { return "Title too long";     }
+              return true;
+            }
+          },
+          {
+            type:     "confirm",
+            name:     "published",
+            message:  "Mark as published",
+            default:  false,
+          },
+          {
+            type:     "confirm",
+            name:     "mathjax",
+            message:  "Include Mathjax",
+            default:  false
+          }
+        ],
+      },
+      page: {
+        questions: [
+          {
+            type:     "list",
+            name:     "layout",
+            message:  "Layout",
+            default:  "page",
+            choices:  function(){
+              return _.map(fs.readdirSync('<%= cfg.directories.layouts %>'), function(layout){
+                return path.basename(layout, '.html'); //strip '.html'
+              });
+            }
+          },
+          {
+            name:     "permalink",
+            message:  "Permalink",
+            default:  function(answers){ return "/"+slugify(answers.title.toLowerCase())+"/"; }
+          }
+        ]
+      },
+      post: {
+        questions: [
+          {
+            name:     "subtitle",
+            message:  "Subtitle",
+          },
+
+          {
+            name:     "date",
+            message:  "Date",
+            default:  grunt.template.today("yyyy-mm-dd HH:MM:ss o"),
+          },
+          {
+            type:     "list",
+            name:     "category",
+            message:  "Select a category",
+            choices:  function(){ return _.chain('<%= cfg.colormap %>').keys().unshift("other").value(); }
+          },
+          {
+            type:     "checkbox",
+            name:     "tags",
+            message:  "Select tags",
+            filter:   function(result){ return _.map(result, chalk.stripColor); }, //remove color from returned values
+            choices:  function(answers){
+              //complicated underscore to get a list of all tags with the tags of this category first, correctly colored if possible
+              return _.chain('<%= cfg.tagmap %>')
+                .map(function(tags, category){
+                  var colormap = '<%= cfg.colormap %>';
+                  var color = colormap[category];
+                  return _.map(tags, function(tag){
+                    if(chalk[color] !== undefined && chalk.supportsColor){ tag = chalk[color](tag); } //colorize
+                    return [category, tag];
+                  });
+                })                                                                    //an array of arrays of pairs like [category, value]
+                .flatten("shallow")                                                   //an array of pairs like [category, value]
+                .sortBy(function(pairs){ return !(pairs[0] === answers.category); })  //an array of pairs sorted by category
+                .map(function(pairs){ return pairs[1]; }) //grab tag
+                .value(); //an array of tags
+            }
+          },
+          {
+            type:     "confirm",
+            name:     "draft",
+            message:  "Store as draft", //todo: promote to post task
+            default:  true,
+          },
+        ]
+      },
+    },
     handlebars_to_static: {
       post_template: {
         src: ['<%= cfg.directories.templates%>/post.md'],
-        dest: ''
+        dest: '<%= new_page.dest %>',
+        data: '<%= new_page.data %>'
       }
+    },
+    editor: {
+      options: {
+        editor: '<%= pkg.editor || process.env.VISUAL || process.env.EDITOR %>'
+      },
+      src: ['<%= new_page.dest %>']
     },
   });
 
@@ -189,141 +282,74 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['serve', 'open:local']);
 
   //tasks for new posts
-  grunt.registerTask('configure_new_page', 'desc', function(layout) {
+  grunt.registerTask('configure_new_page', 'Initalize new page', function() {
 
-    var this_task   = this; //grunt.task.current;
-    var done        = this_task.async();
-    var type        = layout || "draft"; //this_task.args[0] || "draft";
-    var now         = new Date();
-    var date_string = grunt.template.today("yyyy-mm-dd HH:MM:ss o"); //2008-12-14 10:30:00 +0900
+    /*
+
+new:(template)
+new -> page
+
+
+
+Requirements:
+
+src file dependant on task
+data dependant on task
+global or task helpers
+data returnable by object, JSON file, or asyncable function
+
+new_page: {
+  options:{
+    questions: [...], //included for all tasks
+
+  },
+  post: {
+    src: '<%= cfg.directories.templates %>/post.md.hbs',
+    helpers: ['<%= cfg.directories.templates %>/post.*.hbs'],
+    questions: [...],
+    dest: funtion(answers){ ... }
+  },
+  page: {
+    src: '<%= cfg.directories.templates %>/post.md.hbs',
+    helpers: ['<%= cfg.directories.templates %>/post.*.hbs'],
+    questions: [...],
+    dest: funtion(answers){ ... }
+  }
+}
+
+task then
+  _extends from global
+  executes questions
+  executes dest and captures
+  compiles handlebars including all fancy HB stuff
+  saves to dest
+  
+    */
+
+    console.log(this.options());
+    return;
+
+    var done        = this.async();
+    var type        = this.args[0] || "post";
+    // var date_string = grunt.template.today("yyyy-mm-dd HH:MM:ss o"); //2008-12-14 10:30:00 +0900
     var cfg         = grunt.config.data.cfg;
 
-    var isPost    = function(info){ return (info.layout === "post"); }
-    var isNotPost = function(info){ return !isPost(info);            }
+    var isPost    = (type == "post");  //function(info){ return (info.layout === "post"); }
+    var isNotPost = !isPost;            //function(info){ return !isPost(info);            }
 
-    inquirer.prompt([
-      {
-        type:     "list",
-        name:     "layout",
-        message:  "Layout",
-        default:  layout || "post",
-        choices:  function(){
-          return _.map(fs.readdirSync(cfg.directories.layouts), function(layout){
-            return path.basename(layout, '.html'); //strip '.html'
-          });
-        }
-      },
-      {
-        name:     "title",
-        message:  "Title",
-        validate: function(input){
-          if(  input === ""   ) { return "No title specified"; }
-          if(input.length > 33) { return "Title too long";     }
-          return true;
-        }
-      },
-      {
-        name:     "subtitle",
-        message:  "Subtitle",
-        when:     isPost
-      },
-      {
-        name:     "permalink",
-        message:  "Permalink",
-        when:     isNotPost,
-        default:  function(answers){ return "/"+slugify(answers.title.toLowerCase())+"/"; }
-      },
-      {
-        name:     "date",
-        message:  "Date",
-        when:     isPost,
-        default:  date_string,
-      },
-      {
-        type:     "list",
-        name:     "category",
-        message:  "Select a category",
-        when:     isPost,
-        choices:  function(){ return _.chain(cfg.colormap).keys().unshift("other").value(); }
-      },
-      {
-        type:     "checkbox",
-        name:     "tags",
-        message:  "Select tags",
-        when:     isPost,
-        filter:   function(result){ return _.map(result, chalk.stripColor); }, //remove color from returned values
-        choices:  function(answers){
-          //complicated underscore to get a list of all tags with the tags of this category first, correctly colored if possible
-          return _.chain(cfg.tagmap)
-            .map(function(tags, category){
-              var color = cfg.colormap[category];
-              return _.map(tags, function(tag){
-                if(chalk[color] !== undefined && chalk.supportsColor){ tag = chalk[color](tag); } //colorize
-                return [category, tag];
-              });
-            })                                                                    //an array of arrays of pairs like [category, value]
-            .flatten("shallow")                                                   //an array of pairs like [category, value]
-            .sortBy(function(pairs){ return !(pairs[0] === answers.category); })  //an array of pairs sorted by category
-            .map(function(pairs){ return pairs[1]; }) //grab tag
-            .value(); //an array of tags
-        }
-      },
-      {
-        type:     "confirm",
-        name:     "draft",
-        message:  "Store as draft", //todo: promote to post task
-        default:  true,
-        when:     isPost
-      },
-      {
-        type:     "confirm",
-        name:     "published",
-        message:  "Mark as published",
-        default:  false,
-      },
-      {
-        type:     "confirm",
-        name:     "mathjax",
-        message:  "Include Mathjax",
-        default:  false
-      },
-    ], function(answers) {
+    // inquirer.prompt([
 
-        var dir        = (answers.draft ? cfg.directories.drafts : cfg.directories.posts);
-        var file_title = slugify(answers.title).toLowerCase();
-        var file_name  = grunt.template.today("yyyy-mm-dd-")+file_title+".md";
-        var full_name  = path.resolve(dir, file_name);
+    // ], function(answers) {
+    //     var dir        = (answers.draft ? cfg.directories.drafts : cfg.directories.posts);
+    //     var file_title = slugify(answers.title).toLowerCase();
+    //     var file_name  = grunt.template.today("yyyy-mm-dd-")+file_title+".md";
+    //     var full_name  = path.resolve(dir, file_name);
 
-        grunt.config('handlebars_to_static.post_template.options.file_context',function(){return {
-          dest: full_name,
-          data: answers
-        };});
-        // grunt.config('handlebars_to_static.post_template.dest', full_name);
-        // console.log(grunt.config.data.handlebars_to_static);
-        done();
-    });
+    //     grunt.config.set('new_page.data', answers);
+    //     grunt.config.set('new_page.dest', full_name);
+    //     done();
+    // });
   });
 
-  grunt.registerTask('new', ['configure_new_page', 'handlebars_to_static']);
-
-  // function dateString(d){
-  //   var timezone = -1*(Math.floor( d.getTimezoneOffset() / 60)*100 + (d.getTimezoneOffset() % 60));
-  //   if(timezone>=0){
-  //     timezone = '+'+(timezone.toString().length < 4 ? "0" : "")+timezone;
-  //   }else{
-  //     timezone = '-'+(Math.abs(timezone).toString().length < 4 ? "0" : "")+Math.abs(timezone);
-  //   }
-  //   return  [
-  //             d.getFullYear(),
-  //             d.getMonth()+1,
-  //             d.getDate()
-  //           ].join('-')
-  //           +' '+
-  //           [
-  //             d.getHours(),
-  //             d.getMinutes(),
-  //             d.getSeconds()
-  //           ].join(':')
-  //           +' '+timezone;
-  // }
+  grunt.registerTask('new', ['configure_new_page', 'handlebars_to_static', 'editor']);
 };
