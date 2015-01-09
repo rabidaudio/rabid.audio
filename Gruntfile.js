@@ -3,8 +3,11 @@
 var LIVERELOAD_PORT = 35729;
 var SERVER_PORT     = 9000;
 
-var fs   = require('fs');
-var path = require('path');
+var fs          = require('fs');
+var path        = require('path');
+var async       = require('async');
+var inquirer    = require("inquirer");
+var chalk = require('chalk');
 
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
@@ -14,6 +17,7 @@ module.exports = function(grunt) {
 
   require('time-grunt')(grunt);       //time execution
   require('load-grunt-tasks')(grunt); //load all required packages
+  var _ = grunt.util._;
 
   grunt.initConfig({
 
@@ -163,7 +167,84 @@ module.exports = function(grunt) {
       newPost: {
         src: ['<%= cfg.directories.templates%>/post.md'],
       }
-    }
+    },
+
+    handlebars_to_static: {
+      post_template: {
+        options:{
+            file_context: function(src, dest, context){
+
+              var this_task = grunt.task.current;
+              var done = this_task.async();
+              var dir = "<%= cfg.directories.drafts %>";
+              var type = this_task.args[0] || "draft";
+              if(type==="post"){
+                dir = "<%= cfg.directories.posts %>";
+              }
+              var now = new Date();
+              var full_date_string = dateString(now);
+              var file_info = {};
+
+              // async.mapSeries([
+
+              // ], ask, function(err, answers){
+              //   var title    = answers[0];
+              //   var subtitle = answers[1] || "";
+              //   var category = answers[2] || "other";
+              //   var tags     = answers[3].split(",") || [];
+
+              //   if(!title) return grunt.fail.warn("No title specified");
+
+              //   grunt.log.writeln('Creating...');
+
+              //   var file_title = title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ /g,'-');
+              //   var file_name = [now.getFullYear(), now.getMonth()+1, now.getDate()].join("-")+"-"+file_title+".md";
+              //   var full_name = path.resolve(dir, file_name);
+              //   var tag_string = tags.reduce(function(prev, current, index, array){ return prev+"- "+current+"\n"; }, "");
+
+              //   grunt.config('handlebars_to_static.post_template.dest', full_name);
+              //   grunt.config('handlebars_to_static.post_template.options.file_context', function(){
+              //     return {
+              //       data: { title: "1234" }
+              //     };
+              //   });
+              //   grunt.task.run('handlebars_to_static:post_template');
+
+              //   // grunt.config('copy.newPost.dest', full_name);
+              //   // grunt.config('copy.newPost.options.process', function (content, srcpath) {
+              //   //   result = replaceAll(content, {
+              //   //     "%TITLE"     : title,
+              //   //     "%SUBTITLE%" : subtitle,
+              //   //     "%DATE%"     : full_date_string,
+              //   //     "%CATEGORY%" : category,
+              //   //     "%TAGS%"     : tag_string
+              //   //   });
+              //   //   console.log(result);
+              //   //   return result;
+              //   // });
+              //   // console.log(grunt.config('copy.newPost'));
+              //   // grunt.task.run('copy:newPost');
+
+              //   // grunt.config('editor.src', [full_name]);
+              //   // grunt.task.run('editor');
+              //   done();
+
+              // });
+
+
+                return {
+                    data: {
+                      title: "1234",
+                      tags: ["one", "two"]
+                    },
+                    dest: "x.md"
+                }
+            }
+        },
+        src: ['<%= cfg.directories.templates%>/post.md'],
+        dest: ''
+      }
+    },
   });
 
   grunt.registerTask('devbuild', ['concat:dev', 'jekyll:dev']);
@@ -180,53 +261,134 @@ module.exports = function(grunt) {
 
   //tasks for new posts
   grunt.registerTask('new', 'Start a new post or draft', function(type) {
-    var done = this.async();
-    var dir = "<%= cfg.directories.drafts %>";
-    if(type==="post"){
-      dir = "<%= cfg.directories.posts %>";
-    }
+              var done = this.async();
+              var cfg = grunt.config.data.cfg;
 
-    var d = new Date();
-    var tz = -1*(Math.floor( d.getTimezoneOffset() / 60)*100 + (d.getTimezoneOffset() % 60));
-    if(tz>=0){
-      tz = '+'+(tz.toString().length < 3 ? "0" : "")+tz;
-    }else{
-      tz = '-'+(tz.toString().length < 3 ? "0" : "")+Math.abs(tz);
-    }
-    var df = [ d.getFullYear(),
-               d.getMonth()+1,
-               d.getDate(),].join('-')+' '+
-              [d.getHours(),
-               d.getMinutes(),
-               d.getSeconds()].join(':') +' '+tz;
-    var rl = require('readline').createInterface({
-      input: process.stdin,
-      output: process.stdout
-    });
-    rl.question("Category (other): ", function(category){
-      if(!category) category = "other";
-      rl.question("Title of the post: ", function(title){
-        if(!title) return grunt.fail.warn("No title specified");
+              var isPost    = function(info){ return (info.layout === "post"); }
+              var isNotPost = function(info){ return !isPost(info); }
 
-        grunt.log.writeln('Creating...');
-
-        var file_title = title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ /g,'-');
-        var file_name = [d.getFullYear(), d.getMonth()+1, d.getDate()].join("-")+"-"+file_title+".md";
-        var full_name = path.resolve(dir, file_name);
-
-        //todo insert title -see grunt copy
-        // fs.createReadStream("<%= cfg.directories.templates %>/post.md").pipe(fs.createWriteStream(full_name)); //copy template
-        grunt.config('copy.newPost.dest', full_name);
-        grunt.config('copy.newPost.options.process', function (content, srcpath) {
-          return content.replace(/%TITLE%/g, title).replace(/%DATE%/g, df).replace(/%CATEGORY%/g, category);
-        });
-        grunt.task.run('copy:newPost');
-
-        grunt.config('editor.src', [full_name]);
-        grunt.task.run('editor');
-        done();
-      });
-    });
+              inquirer.prompt([
+                {
+                  type:     "list",
+                  name:     "layout",
+                  message:  "Layout",
+                  default:  "post",
+                  choices:  function(){
+                    return _.map(fs.readdirSync(cfg.directories.layouts), function(layout){
+                      return path.basename(layout, '.html'); //strip '.html'
+                    });
+                  }
+                },
+                {
+                  name:     "title",
+                  message:  "Title",
+                  validate: function(input){
+                    if(  input === ""   ) {   return "No title specified"; }
+                    if(input.length > 33) {   return "Title too long";     }
+                    return true;
+                  }
+                },
+                {
+                  name:     "subtitle",
+                  message:  "Subtitle",
+                  when:     isPost
+                },
+                {
+                  name:     "permalink",
+                  message:  "Permalink",
+                  when:     isNotPost,
+                  default:  function(answers){ return "/"+require('slugify')(answers.title.toLowerCase())+"/"; }
+                },
+                {
+                  type:     "list",
+                  name:     "category",
+                  message:  "Select a category",
+                  when:     isPost,
+                  choices:  function(){
+                    return _.chain(cfg.colormap).keys().unshift("other").value();
+                  }
+                },
+                {
+                  type:     "checkbox",
+                  name:     "tags",
+                  message:  "Select tags",
+                  when:     isPost,
+                  filter:   function(result){ return _.map(result, chalk.stripColor); }, //remove color from returned values
+                  choices:  function(answers){
+                    //complicated underscore to get a list of all tags with the tags of this category first, correctly colored if possible
+                    return _.chain(cfg.tagmap)
+                      .map(function(tags, category){
+                        var color = cfg.colormap[category];
+                        return _.map(tags, function(tag){
+                          if(chalk[color] !== undefined && chalk.supportsColor){ tag = chalk[color](tag); } //colorize
+                          return [category, tag];
+                        });
+                      })                                                                    //an array of arrays of pairs like [category, value]
+                      .flatten("shallow")                                                   //an array of pairs like [category, value]
+                      .sortBy(function(pairs){ return !(pairs[0] === answers.category); })  //an array of pairs sorted by category
+                      .map(function(pairs){ return pairs[1]; }) //grab tag
+                      .value(); //an array of tags
+                  }
+                },
+                {
+                  type:     "confirm",
+                  name:     "draft",
+                  message:  "Store as draft", //todo: promote to post task
+                  default:  true,
+                  when:     isPost
+                },
+                {
+                  type:     "confirm",
+                  name:     "published",
+                  message:  "Mark as published",
+                  default:  false,
+                },
+                {
+                  type:     "confirm",
+                  name:     "mathjax",
+                  message:  "Include Mathjax",
+                  default:  false
+                },
+              ], function(answers) {
+                  console.log(answers);
+                  done();
+              });
   });
 
+  // function ask(question, callback){
+  //   readline.question(question, function(result){
+  //     callback(null, result);
+  //   });
+  // }
+
+  // function replaceAll(source, replacements){
+  //   for( search in replacements ){
+  //     if(replacements.hasOwnProperty(search)){
+  //       source = source.replace(new RegExp(search, "g"), replacements[search]);
+  //       console.log(source);
+  //     }
+  //   }
+  //   return source;
+  // }
+
+  function dateString(d){
+    var timezone = -1*(Math.floor( d.getTimezoneOffset() / 60)*100 + (d.getTimezoneOffset() % 60));
+    if(timezone>=0){
+      timezone = '+'+(timezone.toString().length < 4 ? "0" : "")+timezone;
+    }else{
+      timezone = '-'+(timezone.toString().length < 4 ? "0" : "")+Math.abs(timezone);
+    }
+    return  [
+              d.getFullYear(),
+              d.getMonth()+1,
+              d.getDate()
+            ].join('-')
+            +' '+
+            [
+              d.getHours(),
+              d.getMinutes(),
+              d.getSeconds()
+            ].join(':')
+            +' '+timezone;
+  }
 };

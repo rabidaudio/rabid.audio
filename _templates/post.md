@@ -1,12 +1,20 @@
 ---
-title:      %TITLE%     # Titles shouldn't be more than 33 chars for good formatting.
-subtitle:               # Roll over into the subtitle if neccessary (optional)
-date:       %DATE%      # 2008-12-14 10:30:00 +0900
-layout:     post
-published:  true
-category:   %CATEGORY%  # colored categories are: [software, hardware, policy]
+#                           Titles shouldn't be more than 33 chars for good formatting.
+title:      {{ title }}
+#                           Roll over into the subtitle if neccessary (optional)
+subtitle:   {{ subtitle }}
+#                           2008-12-14 10:30:00 +0900
+date:       {{ date }}
+layout:     {{ layout }}
+published:  {{ published }}
+#                           colored categories are: [software, hardware, policy]
+category:   {{ category }}
 tags:
-mathjax:    false       # enable this if you want to use LaTeX
+{{#each tags}}
+- {{ this }}
+{{/each}}
+#                           enable this if you want to use LaTeX
+mathjax:    {{ mathjax }}
 
 #######################################################
 ## Guest posters: uncomment and fill in as much or as little as you like, in the order you want them to appear.
