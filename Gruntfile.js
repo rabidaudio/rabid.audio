@@ -8,6 +8,7 @@ var path     = require('path');
 var async    = require('async');
 var inquirer = require("inquirer");
 var chalk    = require('chalk');
+var slugify  = require('slug');
 
 var mountFolder = function (connect, dir) {
     return connect.static(require('path').resolve(dir));
@@ -188,13 +189,13 @@ module.exports = function(grunt) {
   grunt.registerTask('default', ['serve', 'open:local']);
 
   //tasks for new posts
-  grunt.registerTask('new', 'Start a new post or draft', function(layout) {
+  grunt.registerTask('configure_new_page', 'desc', function(layout) {
 
     var this_task   = this; //grunt.task.current;
     var done        = this_task.async();
     var type        = layout || "draft"; //this_task.args[0] || "draft";
     var now         = new Date();
-    var date_string = dateString(now);
+    var date_string = grunt.template.today("yyyy-mm-dd HH:MM:ss o"); //2008-12-14 10:30:00 +0900
     var cfg         = grunt.config.data.cfg;
 
     var isPost    = function(info){ return (info.layout === "post"); }
@@ -230,7 +231,7 @@ module.exports = function(grunt) {
         name:     "permalink",
         message:  "Permalink",
         when:     isNotPost,
-        default:  function(answers){ return "/"+require('slugify')(answers.title.toLowerCase())+"/"; }
+        default:  function(answers){ return "/"+slugify(answers.title.toLowerCase())+"/"; }
       },
       {
         name:     "date",
@@ -289,8 +290,8 @@ module.exports = function(grunt) {
     ], function(answers) {
 
         var dir        = (answers.draft ? cfg.directories.drafts : cfg.directories.posts);
-        var file_title = answers.title.toLowerCase().replace(/[^a-z0-9 -]/g, '').replace(/ /g,'-');
-        var file_name  = [now.getFullYear(), now.getMonth()+1, now.getDate()].join("-")+"-"+file_title+".md";
+        var file_title = slugify(answers.title).toLowerCase();
+        var file_name  = grunt.template.today("yyyy-mm-dd-")+file_title+".md";
         var full_name  = path.resolve(dir, file_name);
 
         grunt.config('handlebars_to_static.post_template.options.file_context',function(){return {
@@ -298,30 +299,31 @@ module.exports = function(grunt) {
           data: answers
         };});
         // grunt.config('handlebars_to_static.post_template.dest', full_name);
-        console.log(grunt.config.data.handlebars_to_static);
-        grunt.task.run('handlebars_to_static:post_template');
+        // console.log(grunt.config.data.handlebars_to_static);
         done();
     });
   });
 
-  function dateString(d){
-    var timezone = -1*(Math.floor( d.getTimezoneOffset() / 60)*100 + (d.getTimezoneOffset() % 60));
-    if(timezone>=0){
-      timezone = '+'+(timezone.toString().length < 4 ? "0" : "")+timezone;
-    }else{
-      timezone = '-'+(Math.abs(timezone).toString().length < 4 ? "0" : "")+Math.abs(timezone);
-    }
-    return  [
-              d.getFullYear(),
-              d.getMonth()+1,
-              d.getDate()
-            ].join('-')
-            +' '+
-            [
-              d.getHours(),
-              d.getMinutes(),
-              d.getSeconds()
-            ].join(':')
-            +' '+timezone;
-  }
+  grunt.registerTask('new', ['configure_new_page', 'handlebars_to_static']);
+
+  // function dateString(d){
+  //   var timezone = -1*(Math.floor( d.getTimezoneOffset() / 60)*100 + (d.getTimezoneOffset() % 60));
+  //   if(timezone>=0){
+  //     timezone = '+'+(timezone.toString().length < 4 ? "0" : "")+timezone;
+  //   }else{
+  //     timezone = '-'+(Math.abs(timezone).toString().length < 4 ? "0" : "")+Math.abs(timezone);
+  //   }
+  //   return  [
+  //             d.getFullYear(),
+  //             d.getMonth()+1,
+  //             d.getDate()
+  //           ].join('-')
+  //           +' '+
+  //           [
+  //             d.getHours(),
+  //             d.getMinutes(),
+  //             d.getSeconds()
+  //           ].join(':')
+  //           +' '+timezone;
+  // }
 };
