@@ -19,13 +19,13 @@ Live-reload development watch server:
 
     grunt serve
 
-develoment server:
+develoment:
 
     grunt devbuild
     grunt devdeploy
 
 
-production server:
+production:
 
     grunt build
     grunt deploy
@@ -48,13 +48,18 @@ Additions to default jekyll:
 - Javascript compiling
 - warning about old blogger posts
 - [human readable dates](assets/_src/natural_date_replacements.js)
-
+- [keyboard shortcuts](assets/_src/keyboard_shortcuts.js)
+- [page swipe naviagation on mobile](assets/_src/page_swipe.js)
+- [FontAwesome](http://fontawesome.io/)
+- tags grouped and colored by category
+- Last.FM album art home page
 
 Immediate TODOs:
 
 - Fix About page
 - ~~Make a real homepage~~
 - self-generating `all` pages for each category
+- A way to include JS libs on a per-page basis (require-js??)
 
 
 Future ideas:
