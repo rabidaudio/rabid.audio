@@ -1,0 +1,28 @@
+
+.img-wrapper {
+  position: relative;
+}
+.img-description {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  // display: none;
+  background-color:black;
+  color: white;
+   opacity:0.6;
+}
+img.left {
+  float: left;
+  max-width: 200px;
+  padding: 20px;
+}
+img.right {
+  float: right;
+  max-width: 200px;
+  padding: 20px;
+}
+// img.center {
+//   max-width: 100%;
+//   max-height: 400px;
+//   text-align: center;
+// }

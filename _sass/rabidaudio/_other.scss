@@ -122,10 +122,10 @@ h6:hover .header-link{
 }
 
 a.wikipedia {
-  background-position: top left;
+  background-position: top right;
   background-image: url($wp-img);
   background-repeat: no-repeat;
-  padding-left: 11px;
+  padding-right: 11px;
 }
 
 .fa {
