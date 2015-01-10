@@ -43,6 +43,7 @@ vendor:
     # - _vendor/modernizr/modernizr.js
     # - _vendor/requirejs/require.js
     - _vendor/jquery/dist/jquery.js
+    - _vendor/jquery-color/jquery.color.js
     - _vendor/keymaster/keymaster.js
     - _vendor/inform/dist/inform.js
     # - _vendor/lightbox/js/lightbox.js
@@ -172,8 +173,8 @@ tagmap:
     - electronics
     - wearables
     - analog
-    - 555
-
+    - 555 timer
+    
 
 # Build settings
 markdown: kramdown
