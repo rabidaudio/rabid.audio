@@ -41,6 +41,7 @@ layout: full-blank
   </div>
 </div>
 <script>
+(function($){
   var LASTFM_USERNAME = "{{ site.defaults[0].values.author.lastfm }}";
   var IMAGE_QUALITY = 2; //0-3
   var SCROLL_SPEED = 10000;
@@ -92,4 +93,5 @@ layout: full-blank
       setTimeout(move_row, 0); // go around again
     });
   }
+})(jQuery);
 </script>

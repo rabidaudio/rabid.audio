@@ -1,5 +1,7 @@
-<span class="post-tags">
+<ul class="post-tags">
   {% for tag in include.tags %}
-    <span class="post-tag tag--{{ tag | slugify }}">{{ tag }}</span>
+    <li>
+      <span class="post-tag tag--{{ tag | slugify }}">{{ tag }}</span>
+    </li>
   {% endfor %}
-</span>
+</ul>

@@ -4,13 +4,35 @@ published: true
 title: All Posts
 permalink: /all/
 ---
-
 <div class="all">
   <ul class="post-list pure-g">
     {% for post in site.posts %}
-      <li class="post-list-item pure-u-1 pure-u-sm-1-2 pure-u-md-1-3">
+      <li class="post-list-item pure-u-1 pure-u-md-1-2 pure-u-xl-1-3">
         {% include post_list_item.html post=post %}
       </li>
     {% endfor %}
   </ul>
 </div>
+<script>
+(function($){
+  $(document).ready(function(){
+    //todo for mobile, auto do with one in center   767
+    var animate_time = 400;
+    var page = $('.page-content');
+    var current_color = page.css('background-color');
+    $('.post-list-container').mouseenter(function(){
+      var this_color = $(this).css('background-color');
+      page.animate({'background-color': this_color}, {duration: animate_time, queue: false});
+      $('.post-list-container').not(this).each(function(){
+        $(this).animate({'opacity': 0}, {duration: animate_time, queue: false});
+      });
+      $(this).mouseleave(function(){
+        page.animate({'background-color': current_color}, {duration: animate_time, queue: false});
+        $('.post-list-container').not(this).each(function(){
+          $(this).animate({'opacity': 1}, {duration: animate_time, queue: false});
+        });
+      });
+    });
+  });
+})(jQuery);
+</script>

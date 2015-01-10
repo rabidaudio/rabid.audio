@@ -15,6 +15,7 @@
 
 .post-list {
   margin-left: 0;
+  padding: 15px;
   list-style: none;
 
   .post-link {
@@ -22,11 +23,11 @@
   }
 
   .post-list-container {
-    padding: 10px;
-    height: 170px;
-    overflow-y: hidden;
+    padding: 15px;
+    height: 218px;
+    overflow: hidden;
     color: $mellow-white;
-    margin: 8px;
+    margin: 15px;
   }
 
   a:hover {
@@ -47,8 +48,9 @@
     font-size: 15px;
     text-align: justify;
     padding-right: 10px;
-    height: 6em;
-    overflow-y: hidden;
+    height: 130px;
+    overflow: hidden;
+    padding-top: 7px;
     p {
       margin-bottom: 0px;
     }
