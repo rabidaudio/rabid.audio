@@ -171,6 +171,8 @@ tagmap:
     - bluetooth
     - electronics
     - wearables
+    - analog
+    - 555
 
 
 # Build settings
