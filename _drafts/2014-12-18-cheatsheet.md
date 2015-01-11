@@ -138,12 +138,12 @@ Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, 
 
 Suspendisse lectus leo, consectetur in tempor sit amet, placerat quis neque. Etiam luctus porttitor lorem, sed suscipit est rutrum non. Curabitur lobortis nisl a enim congue semper. Aenean commodo ultrices imperdiet. Vestibulum ut justo vel sapien venenatis tincidunt. Phasellus eget dolor sit amet ipsum dapibus condimentum vitae quis lectus. Aliquam ut massa in turpis dapibus convallis. Praesent elit lacus, vestibulum at malesuada et, ornare et est. Ut augue nunc, sodales ut euismod non, adipiscing vitae orci. Mauris ut placerat justo. Mauris in ultricies enim. Quisque nec est eleifend nulla ultrices egestas quis ut quam. Donec sollicitudin lectus a mauris pulvinar id aliquam urna cursus. Cras quis ligula sem, vel elementum mi. Phasellus non ullamcorper urna.
 
-{% i http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg source=Wikimedia fleft small %}
-{% i http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg source="Wikimedia http://commons.wikimedia.org/wiki/File:Triac.svg" fright small %}
+{% i http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg cite=Wikimedia fleft small %}
+{% i http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg cite="Wikimedia | http://commons.wikimedia.org/wiki/File:Triac.svg" fright small %}
 
 Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In euismod ultrices facilisis. Vestibulum porta sapien adipiscing augue congue id pretium lectus molestie. Proin quis dictum nisl. Morbi id quam sapien, sed vestibulum sem. Duis elementum rutrum mauris sed convallis. Proin vestibulum magna mi. Aenean tristique hendrerit magna, ac facilisis nulla hendrerit ut. Sed non tortor sodales quam auctor elementum. Donec hendrerit nunc eget elit pharetra pulvinar. Suspendisse id tempus tortor. Aenean luctus, elit commodo laoreet commodo, justo nisi consequat massa, sed vulputate quam urna quis eros. Donec vel.
 
-{% i http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg source="Wikimedia http://commons.wikimedia.org/wiki/File:Triac.svg CC-BY-SA-30" something=else center small caption="Who new this was so0000o awesome" %}
+{% i http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg cite="Wikipedia, The Free Encyclopedia What whaaaat? | http://commons.wikimedia.org/wiki/File:Triac.svg | CC-BY-SA-30" something=else and="truely so much more" center small caption="Who new this was so0000o awesome" class="i added some" %}
 
 ---
 
