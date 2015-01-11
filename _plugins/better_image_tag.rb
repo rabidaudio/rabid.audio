@@ -1,4 +1,5 @@
 require 'nokogiri'
+
 module Jekyll
   class BetterImageTag < Liquid::Tag
 
@@ -14,10 +15,10 @@ module Jekyll
     def initialize(tag_name, markup, tokens)
       super
       if markup.strip =~ SYNTAX
-        @src     = $1
-        @options = {}
-        @classes = ['img-wrapper']
-        @source  = {}
+        @src        = $1
+        @attributes = {}
+        classes    = ['img-wrapper']
+        @citation     = {}
         if defined?($2) && $2 != ''
           # Split along 3 possible forms -- key="<quoted list>", key=value, or key
           $2.scan(/(?:\w="[^"]*"|\w=\w|\w)+/) do |opt|
@@ -28,16 +29,15 @@ module Jekyll
                 value.gsub!(/"/, "")
                 value = value.split
               end
-              @options[key.to_sym] = value
+              @attributes[key.to_sym] = value
             else
-              @classes.push key
+              classes.push key
             end
           end
-          @caption = @options[:caption]
-          @source[:name], @source[:link], @source[:license] = @options[:source] if @options[:source].is_a? Array
-          @source[:name] = @options[:source] if @options[:source].is_a? String
+          @citation[:name], @citation[:link], @citation[:license] = @attributes[:source] if @attributes[:source].is_a? Array
+          @citation[:name] = @attributes[:source] if @attributes[:source].is_a? String
         end
-        @options[:linenos] = "inline" if @options.key?(:linenos) and @options[:linenos] == true
+        @attributes[:linenos] = "inline" if @attributes.key?(:linenos) and @attributes[:linenos] == true
       else
         throw SyntaxError.new <<-eos
 Syntax Error in tag 'i' while parsing the following markup:
@@ -45,18 +45,61 @@ Syntax Error in tag 'i' while parsing the following markup:
 Valid syntax: {% i source [<classes>] [<attributes=values>] %}
 eos
       end
-      @src = IMG_SRC + @src unless IMG_SRC.nil? || @src.match(/^https?:\/\//)
-      p @src
-      p @options
-      p @classes
-      p @caption
-      p @source
-      puts "\n\n"
+      @src = IMG_SRC + @src unless IMG_SRC.nil? or @src.match(/^https?:\/\//)
+      @attributes[:class]=classes.join(" ")
+      if @attributes[:caption]
+        @attributes[:caption] = @attributes[:caption].join(" ") #put it back together
+        # @attributes[:title]   = @attributes[:caption] if @attributes[:title].nil?
+        # @attributes[:alt]     = @attributes[:caption] if @attributes[:alt].nil?
+      end
+      # p @src
+      # p @attributes
+      # p @classes
+      # p @citation
+      # puts "\n\n"
     end
 
     def render(context)
-      "<div class='#{@classes.join(' ')}'><img src='#{@src}'></div>"
+      ImageBlock.new(@src, @attributes, @citation).to_html
     end
+  end
+end
+
+class ImageBlock
+  def initialize(src, attrs={}, citation=nil)
+    @doc = Nokogiri::HTML::DocumentFragment.parse ""
+
+    Nokogiri::HTML::Builder.with(@doc) do |doc|
+        doc.div(attrs) {
+
+          # image and hover link
+          doc.a(class: 'img-description-link'){
+            doc.img(src: src)
+            
+            #caption block
+            doc.div(class: 'img-description'){
+              doc.div attrs[:caption]
+            } unless attrs[:caption].nil?
+          }
+
+          # citation block
+          doc.div(class: 'img-citation'){
+            if citation[:link]
+              doc.a(href: citation[:link], title: "License: #{(citation[:license] or "unknown")}") {
+                doc.text citation[:name]
+              }
+            else
+              doc.span(title: "License: #{(citation[:license] or "unknown")}") {
+                doc.text citation[:name]
+              }
+            end
+          } unless citation.nil?
+        }
+    end
+  end 
+
+  def to_html
+    @doc.to_html
   end
 end
 

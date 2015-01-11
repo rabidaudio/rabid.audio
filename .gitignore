@@ -5,3 +5,4 @@ _site
 _vendor
 node_modules
 assets/js/output.js
+Gemfile.lock
