@@ -33,9 +33,9 @@ technical reference material.
 
 #### Prerequisites
 
-Physics II and (Introduction to Philosophy or any Literature) and (Proof Structures or Symbolic Logic)
+_Physics II_ and (_Introduction to Philosophy_ or any _Literature_) and (_Proof Structures_ or _Symbolic Logic_)
 
-Recommended: Modern Physics, (Modern Literature or Late Modern Philosophy)
+Recommended: _Modern Physics_, (_Modern Literature_ or _Late Modern Philosophy_)
 
 #### Outline
 
@@ -98,7 +98,7 @@ Timeline:
 1887      | {% wkipe Michaelson-Morely experiment %}
 1892-1906 | {% wkipe Lorentz transformations %}
 1905      | {% wkipe Special relativity %}
-1911      | {% wkipe twin paradox %}
+1911      | {% wkipe Twin paradox %}
 1916      | {% wkipe General relativity %}
 
 Reading:

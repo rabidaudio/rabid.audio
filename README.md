@@ -59,6 +59,7 @@ Immediate TODOs:
 - A way to include JS libs on a per-page basis (require-js??)
 - Mobile scrolling for /all/
 - update Gruntfile with less janky generator
+- Add spellcheck to grunt tasks
 
 Future ideas:
 
