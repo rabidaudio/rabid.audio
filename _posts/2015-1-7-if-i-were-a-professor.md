@@ -28,7 +28,7 @@ around to completing my latest challenge from a few weeks ago. My prompt and res
 
 Case studies of the development of discoveries in physics and mathematics from the early 20th century which revolutionized their fields. 
 Analysis of theorems, experiments, and their historical, philosophical, and cultural context and ramifications. Special attention will
-be given to how these discoveries disrupted the modernist world view. For each, a relevant non-technical literary work will acompany
+be given to how these discoveries disrupted the modernist world view. For each, a relevant non-technical literary work will accompany
 technical reference material.
 
 #### Prerequisites
@@ -122,7 +122,7 @@ Reading:
 - Double slit experiment
 - Millikan and Rutherford
 - The Schrödinger equation
-- Heisenburg Uncertainty
+- Heisenberg Uncertainty
 - The Manhattan Project and the atomic bomb
 
 - Aristotle's elements through the luminiferous aether
