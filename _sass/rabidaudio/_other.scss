@@ -120,6 +120,9 @@ h6:hover .header-link{
     color: $grey-color-light;
     letter-spacing: 5px;
   }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 a.wikipedia {
