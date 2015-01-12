@@ -1,28 +1,36 @@
 .post {
-  img {
+  .img-wrapper img {
     width: 100%;
   }
   // special image classes
-  .img-wrapper.fleft {
-    float: left;
-  }
-  .img-wrapper.fright {
-    float: right;
-  }
   .img-wrapper.right {
     margin-left: auto;
+    margin-bottom: 40px;
   }
   .img-wrapper.left {
     margin-right: auto;
+    margin-bottom: 40px;
   }
   .img-wrapper.center {
     margin: auto;
+    margin-bottom: 40px;
+  }
+  .img-wrapper.float.left {
+    margin: 20px; //overwrite .left margin
+    float: left;
+  }
+  .img-wrapper.float.right {
+    margin: 20px; //overwrite .right margin
+    float: right;
+  }
+  .img-wrapper.tiny {
+    width: 50px;
   }
   .img-wrapper.xsmall {
-    width: 75px;
+    width: 100px;
   }
   .img-wrapper.small {
-    width: 150px;
+    width: 200px;
   }
   .img-wrapper.medium {
     width: 300px;
@@ -31,6 +39,9 @@
    width: 500px;
   }
   .img-wrapper.xlarge {
+    width: 600px;
+  }
+  .img-wrapper.full {
     width: 100%;
   }
 }
@@ -39,6 +50,7 @@
 .img-wrapper {
   position: relative;
   margin: 20px;
+  max-width: 100%;
 }
 .img-description {
   background-color:black;

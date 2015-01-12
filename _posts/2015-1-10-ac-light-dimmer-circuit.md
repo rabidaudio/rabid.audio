@@ -12,11 +12,13 @@ tags:
 mathjax:    true       # enable this if you want to use LaTeX
 ---
 
+### Intro
+
 One of my new years resolutions is to accomplish something in a side project every week, whether that means
 a major step in a big project or the completion of a smaller project (another is to blog more, so these
 work together nicely). Here's this week's.
 
-![NOT lamp](http://www.ikea.com/us/en/images/products/not-floor-uplight-black__0085594_PE213371_S4.JPG){:class="right" source="IKEA"}
+{% i http://www.ikea.com/us/en/images/products/not-floor-uplight-black__0085594_PE213371_S4.JPG float right small cite="IKEA|http://www.ikea.com/us/en/catalog/products/10139879/|© Inter IKEA Systems B.V. 1999 - 2014" caption="NOT is a lamp, is it not?" %}
 
 When I moved into my old apartment, I bought [the cheapest floor lamp in Ikea](http://www.ikea.com/us/en/catalog/products/10139879/).
 Part of the reason it is so cheap is that the wire runs along the outside of the pole, which doesn't look particularly attractive.
@@ -27,6 +29,8 @@ One consequence of this was I lost the power switch to the lamp. At the time it 
 moved, the only way to turn it on and off is to use the plug. I was considering a few quick electrical ways to fix this, and
 at the time I had just started playing with app development, so I decided I'd make a app+bluetooth-controlled switch for it. Then,
 If I'm going to that much trouble anyway, why not make an AC dimmer while I'm at it?
+
+### AC Transistors
 
 It turns out AC dimmers are a little more complicated than I had suspected.
 [This Stack Exchange answer](http://electronics.stackexchange.com/a/35686) was the main source of design, but I had to do some
@@ -41,7 +45,7 @@ fast (so fast that you can't see the individual pulses) and changing the ratio o
 Typically switching is done using transistors. But while BJT and MOSFET switching operation is somewhat straightforward, switching
 AC signals is a bit less to. To do so, you use a {% wkipe TRIAC %}.
 
-![SCR circit symbol](http://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Thyristor_circuit_symbol.svg/480px-Thyristor_circuit_symbol.svg.png){:width="100px" class="left" source="Wikimedia"}
+{%i http://upload.wikimedia.org/wikipedia/commons/9/93/Thyristor_circuit_symbol.svg xsmall float left caption="SCR circit symbol" cite="Wikimedia|http://commons.wikimedia.org/wiki/File:Thyristor_circuit_symbol.svg|CC BY-SA 3.0" %}
 
 To understand the operation of a triac, you first need to understand {% wkipe Silicon-controlled rectifiers %}. SCRs are three pin
 transistors which act somewhat like a gate-controlled diode (as their circuit symbol suggests). An SCR is normally nonconductive,
@@ -50,17 +54,19 @@ gate and the device is forward-biased, it begins conducting. Here's were it gets
 remain conductive no matter what happens to the gate, causing it to act like a latch of sorts. The only way for it to return to a
 non-conductive state is for the bias to fall to zero, at which point it returns to the non-conductive state.
 
-![TRIAC circit symbol](http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg){:width="100px" class="left" source="Wikimedia"}
+{%i http://upload.wikimedia.org/wikipedia/commons/d/d1/Triac.svg float left xsmall caption="TRIAC circit symbol" cite="Wikimedia|http://commons.wikimedia.org/wiki/File:Triac.svg|Public Domain" %}
 
 A triac works like two SCRs connected in anti-parallel, allowing the gate to control the conductivity in both directions. Each time
 the the signal alternates directions, one of the SCRs will be reversed-biased and the device will return to its non-conductive mode.
+
+### Dimmer circuit
+
 So to use it as a dimmer, we need to trigger the gate in the middle of each half-cycle. Triggering at the beginning of the half-cycle
 means the signal is conducted for most of the time, and the light will be bright, while triggering near the end of the half-cycle means
 the light is switched off for all but a very brief period of time, making it appear dim.
 
-![A dimmed AC signal](http://upload.wikimedia.org/wikipedia/commons/e/ec/Dimmer_60_volts.png){:source="Wikimedia"}
+{% i http://upload.wikimedia.org/wikipedia/commons/e/ec/Dimmer_60_volts.png xlarge center caption="A dimmed AC signal" cite="Wikimedia|http://en.wikipedia.org/wiki/File:Dimmer_60_volts.png|CC BY-SA 3.0" %}
 
-![Optocoupler](http://i.stack.imgur.com/WIHIr.png){:source="Stack Exchange" class="left"}
 The problem here is you need to know when a new half-cycle starts, which is the purpose of a zero-cross detector. According to the
 Stack Exchange post, zero-cross detection is done using an optocoulpler such as the
 [TCET1600](http://www.vishay.com/docs/83538/tcet1600.pdf) that I used. Inside this chip are LEDs and phototransistors. When an AC
@@ -68,11 +74,15 @@ signal is connected in this configuration, the output is a short pulse at every 
 transistor stops shorting the output to ground). It also has the benefit of acting as an {% wkipe optoisolator %}, protecting the
 low-power digital circuitry from the power mains.
 
+{% i http://i.stack.imgur.com/WIHIr.png center medium caption=Optocoupler cite="Stack Exchange|http://electronics.stackexchange.com/questions/35685/digital-dimmer-with-microcontroller/35686#35686|CC BY-SA 3.0" %}
+
+### Dim level control
+
 The post suggests using a microprocessor to control the delay between this signal and triggering the triac. However, since the delay
 needs to be between 0 and $$ \frac{1}{60Hz}\frac{1}{2} \approx $$ 8.3 ms for a full range of dimming. With an arduino, you can
 delay integer multiples of 1ms, which doesn't give you very much control over the brightness.
 
-![555 monostable](http://upload.wikimedia.org/wikipedia/commons/1/19/555_Monostable.svg){:source="Wikimedia" class="right"}
+{% i http://upload.wikimedia.org/wikipedia/commons/1/19/555_Monostable.svg small float right caption="555 in monostable mode" cite="Wikimedia|http://commons.wikimedia.org/wiki/File:555_Monostable.svg|Public Domain" %}
 
 Instead, I decided to use a {% wkipe 555 timer %} in monostable mode. The signal time is $$ t=RC\ln(3)\approx 1.1RC $$. With a
 10K potentiometer, the desired capacitance is $$ 0.76 \mu F \approx 0.86 \mu F $$. I didn't have one of exactly this value on hand
@@ -85,7 +95,9 @@ it suggests using the [MOC3051](https://www.fairchildsemi.com/datasheets/MO/MOC3
 Since the MOC3051's triac is a little sensitive to high voltages, we use it to trigger a second higher power triac (in this case,
 a [BT136](http://www.nxp.com/documents/data_sheet/BT136_SERIES.pdf)).
 
-![Output stage](http://i.stack.imgur.com/puXQb.png){:source="Stack Exchange"}
+{% i http://i.stack.imgur.com/puXQb.png large center caption="Output stage" cite="Stack Exchange|http://electronics.stackexchange.com/questions/35685/digital-dimmer-with-microcontroller/35686#35686|CC BY-SA 3.0" %}
+
+### Next steps
 
 With all of this together, you can see the input and output signals on the oscilloscope in the video below. To finish the project,
 I need:
@@ -94,5 +106,7 @@ I need:
 - To replace the resistor with the PWM output of a microprocessor
 - A bluetooth module for the microprocessor
 - A snazzy case (maybe whip up an Eagle schematic and print a board?)
+
+### Video!
 
 {% youtube http://youtu.be/MvwS5ucSz_4 %}
