@@ -1,5 +1,5 @@
 (function(){
-  console.clog = (function(m, s){(navigator.vendor.match(/^Goog/) && s ? this.log('%c'+m, s) : this.log(m));}).bind(console);
+  console.clog = (function(m,s){(navigator.vendor.match(/^Goog/) && s ? this.log('%c'+m,s) : this.log(m));}).bind(console);
 
   console.clog('Welcome!', 'font-size: large;');
   console.clog(

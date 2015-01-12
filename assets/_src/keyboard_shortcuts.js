@@ -7,15 +7,18 @@
 *
 *   TODO: go to category, search
 */
+(function($, defineShortcut){
 
-key('k', function(){
-  $('.next a')[0].click();
-});
+  defineShortcut('k', function(){
+    $('.next a')[0].click();
+  });
 
-key('j', function(){
-  $('.prev a')[0].click();
-});
+  defineShortcut('j', function(){
+    $('.prev a')[0].click();
+  });
 
-key('g+a', function(){
-  $('a[name=all-posts]')[0].click();
-});
+  defineShortcut('g+a', function(){
+    $('a[name=all-posts]')[0].click();  //todo hacky
+  });
+  
+})(jQuery, key);
