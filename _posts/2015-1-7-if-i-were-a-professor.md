@@ -1,7 +1,7 @@
 ---
 title:      If I Were a Professor     # Titles shouldn't be more than 33 chars for good formatting.
 subtitle:   Syllabus for a hypothetical course
-date:       2015-1-7 21:10:38 -500      # 2008-12-14 10:30:00 +0900
+date:       2015-01-12 01:04:00 -500      # 2008-12-14 10:30:00 +0900
 layout:     post
 published:  true
 category:   other  # colored categories are: [software, hardware, policy]
@@ -43,7 +43,9 @@ Recommended: Modern Physics, (Modern Literature or Late Modern Philosophy)
 
 ##### Part 1 - Gödel's Incompleteness Theorems
 
-Result: No set of axioms can be both consistent and complete. Mathematics cannot be derived through logic alone.
+Result:
+
+    No set of axioms can be both consistent and complete. Mathematics cannot be derived through logic alone.
 
 Timeline:
 
@@ -61,24 +63,34 @@ Reading:
 
 ##### Part 2 - Quantum Mechanics
 
-Result: 1. The universe is not continuous but is actually composed of discrete elements, and position and motion of these elements is not absolute but probabilistic. 
+Result:
+
+    The universe is not continuous but is actually composed of discrete elements, and position and motion of these elements is not absolute but probabilistic. 
 
 Timeline: 
 
-- todo
+500 BC    | {% wkipe Atomism#Greek_atomism | Democritus' atomic theory %}
+1805      | {% wkipe Double-slit experiment %}
+1905      | {% wkipe The photoelectric effect %}
+1909      | Millikan's {% wkipe oil-drop experiment %}
+1911      | Rutherford's {% wkipe gold foil experiment %}
+1913      | {% wkipe Bohr model | Bohr's model of the atom  %}
+1924      | Pauli's {% wkipe Pauli exclusion principle | exclusion principle %}
+1925-1926 | {% wkipe Schrödinger's equation %}
+1927      | Heisenburg's {% wkipe uncertainty principle %}
+1943      | {% wkipe The Manhattan Project %}
 
 Reading:
 
-- _Copenhagen_, Michael Frayn (play)
 - _Quantum Physics of Atoms, Molecules, Solids, Nuclei, and Particles_, Robert Eisberg and Robert Resnick (selected chapters)
+- _Copenhagen_, Michael Frayn (play)
 
-Democritus' atomic theory
-Bohr model of atom
-Schroedinger
 
 ##### Part 3 - Special Relativity
 
-Result: Time and space are not absolute but relative to observer's frame of reference.
+Result:
+
+    Time and space are not absolute but relative to observer's frame of reference.
 
 Timeline:
 
@@ -93,26 +105,30 @@ Reading:
 
 - _The Evolution of Physics_, Albert Einstein and Leopold Infeld
 - _Spacetime Physics_, Edwin F. Taylor and John Archibald Wheeler (selected chapters)
-
-
-#### Outcomes
-
-Students will
-
-- Draw parallels to 
-- Apply theorems to solve problems
-- Be able to articulate the conceptual 
+- _Mostly Harmless_, Douglas Adams
 
 
 #### Schedule
 
-Class | Topic
-------|------
-Introduction - Modernism and Postmodernism
+- Introduction - Modernism and Postmodernism
 
-Principia Mathematica and ZF Set Theory
-Selected Proofs
-Infinite Sets and the Barber's paradox
-Completeness Theorem
-Incompleteness theorems
-Incompleteness theorems (cont.)
+- Principia Mathematica and ZF Set Theory
+- Selected Proofs
+- Infinite Sets and the Barber's paradox
+- Completeness Theorem
+- Incompleteness theorems
+
+- Greek Atomism through the plum pudding model
+- Double slit experiment
+- Millikan and Rutherford
+- The Schrödinger equation
+- Heisenburg Uncertainty
+- The Manhattan Project and the atomic bomb
+
+- Aristotle's elements through the luminiferous aether
+- Maxwell's Equations
+- Michaelson-Morely experiment
+- Lorentz transformations
+- The Twin Paradox
+- Special Relativity
+- General Relativity (as time permits)
