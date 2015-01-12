@@ -5,7 +5,7 @@ http://rabid.audio/blog
 Set up
 ------
 
-    gem install jekyll (maybe some others too?)
+    bundle install
     npm install -g grunt-cli divshot
     npm install --dev
     bower install
@@ -53,6 +53,7 @@ Additions to default jekyll:
 - [FontAwesome](http://fontawesome.io/)
 - tags grouped and colored by category
 - Last.FM album art home page
+- [Special image tag](#improved-image-tag)
 
 Immediate TODOs:
 
@@ -71,15 +72,26 @@ Future ideas:
 - pretty backgrounds: Maps, canvas renders, ?
 - All of jekyll build stuff could be replaced with `grunt` or `gulp` which would be much more effective.
     If I ever continue work on Utterson, might be the way to go
-
 - Re-setup IFTTT autotweeting
-
 - drop jquery for speed
-
 - ~~colors for each category~~
   - existing colors: blue, green, red, purple
   - existing categories: music, software, hardware, policy
 
+
+Improved Image Tag
+------------------
+
+    {% i cat.jpg %}                     # automatically prefixes with imgurl from _config.yaml
+    {% i cat.jpg float left xsmall %}   # attaching css classes
+    {% i cat.jpg id="adorable" %}       # attaching HTML attributes
+    {% i cat.jpg caption="How cute!" %} # pretty image captions (also updates alt text)
+
+There's also a `cite` option:
+
+    {% i http://example.com/images/cat.jpg cite="Example Site" %}
+    {% i http://example.com/images/cat.jpg cite="Example Site | http://example.com/pages/my_pets.html" %}
+    {% i http://example.com/images/cat.jpg cite="Example Site | http://example.com/pages/my_pets.html | CC BY-SA 3.0" %}
 
 Good post notes
 ---------------
