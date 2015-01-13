@@ -7,7 +7,6 @@
   padding: 1em;
   border-radius: 1px;
   box-shadow: 0px 0px 6px 2px $shadow-color;
-//  width: 700px; //shrink for readability
   
   a {
     font-weight: bold;
@@ -30,24 +29,12 @@
   .post-content {
     margin-bottom: inherit;
     line-height: 28px;
-    
-    //margin-right: 50px;
-    //margin-left: 75px;
-    //max-width: 72%;
-//    margin-left: 8px;
-//    max-width: 640px;
- //   margin:auto;
-margin-left: 50px;
-margin-right: 50px;
-    
-    p, pre, code {
-        //max-width: 640px;
-    }
+    margin-left: 50px;
+    margin-right: 50px;
     font-size: 1.125em;
   }
 
   .post-subtitle {
-    //margin-top: 15px;
     margin-bottom: 0px;
   }
   .post-meta {
