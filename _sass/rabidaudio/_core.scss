@@ -8,6 +8,7 @@
 h1, h2, h3, h4, h5, h6 {
     font-family: $header-font-family;
     font-weight: 700;
+    margin-bottom: 1em;
 }
 
 img {
@@ -21,6 +22,11 @@ code {
 pre, code {
   overflow-x: auto;
   line-height: initial;
+}
+
+blockquote {
+    color: $grey-color-darker;
+    font-style: normal;
 }
 
 code, kbd, pre, samp {

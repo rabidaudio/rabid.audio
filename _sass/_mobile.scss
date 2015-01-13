@@ -6,7 +6,7 @@
   }
 
   //alter post to conserve space, change backgrounds
-  div.post {
+  .post {
     padding: .25em;
     border-radius: 1px;
     box-shadow: none;
@@ -14,6 +14,15 @@
 
     .post-title {
       font-size: 1.7em;
+    }
+    
+    .post-content {
+        margin-left: 0;
+        margin-right: 0;
+        font-size: 1em;
+    }
+    .post-meta div {
+        text-align: left;
     }
   }
   code {

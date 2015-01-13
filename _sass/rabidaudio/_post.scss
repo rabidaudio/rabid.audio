@@ -20,23 +20,34 @@
     letter-spacing: -1px;
     line-height: 1;
     font-size: 3em;
+    margin-bottom: 0.3em;
   }
 
   .post-header {
-      margin-bottom: 45px;
+      margin-bottom: 25px;
   }
 
   .post-content {
     margin-bottom: inherit;
-    line-height: 25px;
+    line-height: 28px;
     
-    margin-right: 50px;
-    margin-left: 75px;
-    max-width: 72%;
+    //margin-right: 50px;
+    //margin-left: 75px;
+    //max-width: 72%;
+//    margin-left: 8px;
+//    max-width: 640px;
+ //   margin:auto;
+margin-left: 50px;
+margin-right: 50px;
+    
+    p, pre, code {
+        //max-width: 640px;
+    }
+    font-size: 1.125em;
   }
 
   .post-subtitle {
-    margin-top: 15px;
+    //margin-top: 15px;
     margin-bottom: 0px;
   }
   .post-meta {
@@ -79,26 +90,26 @@
     margin-bottom: $spacing-unit;
 
     h2 {
-        font-size: 32px;
+        font-size: 2em;
 
         @include media-query($on-laptop) {
-            font-size: 28px;
+            font-size: 1.75em;
         }
     }
 
     h3 {
-        font-size: 26px;
+        font-size: 1.63em;
 
         @include media-query($on-laptop) {
-            font-size: 22px;
+            font-size: 1.4em;
         }
     }
 
     h4 {
-        font-size: 20px;
+        font-size: 1.25em;
 
         @include media-query($on-laptop) {
-            font-size: 18px;
+            font-size: 1.125em;
         }
     }
 }
