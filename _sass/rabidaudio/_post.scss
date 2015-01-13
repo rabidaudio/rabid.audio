@@ -23,12 +23,16 @@
   }
 
   .post-header {
-      margin-bottom: $spacing-unit;
+      margin-bottom: 45px;
   }
 
   .post-content {
     margin-bottom: inherit;
     line-height: 25px;
+    
+    margin-right: 50px;
+    margin-left: 75px;
+    max-width: 72%;
   }
 
   .post-subtitle {
