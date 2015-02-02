@@ -174,7 +174,8 @@ tagmap:
     - wearables
     - analog
     - 555 timer
-    
+    - jfet
+    - triac
 
 # Build settings
 markdown: kramdown

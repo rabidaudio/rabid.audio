@@ -9,6 +9,7 @@ tags:
 - electronics
 - analog
 - 555 timer
+- triac
 mathjax:    true       # enable this if you want to use LaTeX
 ---
 
