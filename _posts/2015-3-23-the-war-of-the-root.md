@@ -1,6 +1,6 @@
 ---
 title:      The War of the Root     # Titles shouldn't be more than 33 chars for good formatting.
-subtitle:   DNS Root Athority and why it matters            # Roll over into the subtitle if neccessary (optional)
+subtitle:   DNS Root Authority and why it matters            # Roll over into the subtitle if necessary (optional)
 date:       2015-3-23 23:55:53 -400      # 2008-12-14 10:30:00 +0900
 layout:     post
 published:  true
@@ -8,6 +8,7 @@ category:   policy  # colored categories are: [software, hardware, policy]
 tags:
 - internet
 - DNS
+- tech policy
 mathjax:    false       # enable this if you want to use LaTeX
 ---
 
@@ -19,7 +20,7 @@ The Domain Name System (DNS) is what maps domain names like [www.google.com](htt
 
 A domain name is broken into a hierarchy. First, your computer sends a request to the root DNS server(s), asking for the location of the `.com` DNS server. It will respond with the IP address of the server that knows all `.com` domains. You make a request to this server, and it responds with the IP address for `google.com`'s DNS server. A request to this server responds with the address for `www.google.com`, and so on as necessary. There is some caching and some more advanced things going on, but that's how it works in essence. 
 
-In the beginning, the ownership of the Root DNS servers, as well as the international TLD servers (`.com`, `.net`, `.org`, etc.) and the control of allocations of domain names and IP addresses was all governed by {% wkipe IANA %} (which was actually just {% wkipe Jon Postel | this guy Jon %}). In 1998, the US government formed {% wkipe ICANN %} and pressured Postel into transfering the duties of IANA to ICANN.
+In the beginning, the ownership of the Root DNS servers, as well as the international TLD servers (`.com`, `.net`, `.org`, etc.) and the control of allocations of domain names and IP addresses was all governed by {% wkipe IANA %} (which was actually just {% wkipe Jon Postel | this guy Jon %}). In 1998, the US government formed {% wkipe ICANN %} and pressured Postel into transferring the duties of IANA to ICANN.
 
 If you're interested the full story, check out Chapter 3 of [*Who Controls the Internet?*](https://global.oup.com/academic/product/who-controls-the-internet-9780195340648) by Jack Goldsmith and [Tim Wu](https://twitter.com/superwuster), my favorite book on internet policy.
 
@@ -29,11 +30,11 @@ In addition to the above tasks, ICANN is responsible for the creation of all the
 
 Censorship is also a major concern. The best way to take down a site is to actually confiscate the servers hosting the content.Some censorship is also done with the help of telecoms, which actually refuse to route connections to blocked IP addresses. 
 
-However, servers are phyisical objects and are subject to the jurisdiction they reside in. Also only China and Iran (that we know of) actually block network connections through ISPs (which can be countered using [Tor](http://a.wki.pe/Tor)).
+However, servers are physical objects and are subject to the jurisdiction they reside in. Also only China and Iran (that we know of) actually block network connections through ISPs (which can be countered using [Tor](http://a.wki.pe/Tor)).
 
 Most of the time, "taking down" a site can be done by simply revoking a domain name, as was the case with {% wkipe Wikileaks %} and in the ongoing battle with {% wkipe The Pirate Bay %}. The site is still live in that if you went to the IP address, you'd still see the content. However, even users savvy enough to know what an IP address is still almost surely don't know the specific address of the server in question.
 
-In this sense, athority over namespacing the internet includes the power to influence and even block content.
+In this sense, authority over namespacing the internet includes the power to influence and even block content.
 
 
 ### So what will happen if ICANN becomes an international body?
