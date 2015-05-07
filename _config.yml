@@ -78,8 +78,8 @@ defaults:
         lastfm   : rabidaudio
         google   : +CharlesJulianKnight
         # facebook :
-        # linkedin :
-        bitcoin  : 1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
+        linkedin : https://www.linkedin.com/in/charlesjulianknight
+        # bitcoin  : 1MCeQwp6yuL5qG54Bpn97H93ucspApbgtZ
         # other_site:
         #   name: username
         #   url:  example.com/user/username (optional)
