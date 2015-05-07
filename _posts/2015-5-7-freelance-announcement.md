@@ -41,7 +41,7 @@ a circuit), something I'll post about soon. All of these align conveniently with
 explosion of crowdfunding and the coming explosion of the {% wkipe Internet of Things %}.
 So bring me all your "smart-_x_" ideas or prototypes and I'll bring them to market.
 
-### Startup
+### Startups
 
 After the many student entrepreneur courses and clubs I participated in, combined with my experience
 at [Flashpoint](http://flashpoint.gatech.edu) and a few projects on my own, I have a bit of experience
@@ -49,6 +49,10 @@ in the business side of things, like how to learn what your customer wants, how 
 concepts elegantly, how to handle founder equity, or how (and when!) to obtain intellectual property
 protection. If you're looking to build a repeatable customer discovery or customer
 acquisition process, or if you just want some honest startup advice, let me know. 
+
+I also want to specialize my work (technical and non-technical) to startups. If you can sell me
+on the viability of the company, I'll be willing to take partial or occasionally complete payment in
+equity. 
 
 ### Software
 
