@@ -27,9 +27,11 @@ layout: default
 
   {% include dinkus.html %}
 
-  {% include comments.html %}
+  {% if page.blogger_id == null %}
+    {% include comments.html %}
 
-  {% include dinkus.html %}
+    {% include dinkus.html %}
+  {% endif %}
 
   <div class="post-nav">
     <div class="prev">{% if page.previous %}<a href="{{ page.previous.url | replace: 'index.html', '' | prepend: site.baseurl}}">
