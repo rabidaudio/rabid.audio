@@ -1,17 +1,4 @@
-// $(document).ready(function(){
-//   $("h2, h3, h4, h5, h6").each(function(i, el) {
-//     var $el, icon, id;
-//     $el = $(el);
-//     id = $el.attr('id');
-//     icon = '<i class="fa fa-link"></i>';
-//     if (id) {
-//       return $el.prepend($("<a />").addClass("header-link").attr("href", "#" + id).html(icon));
-//     }
-//   });
-// });
-
 //https://github.com/jekyll/jekyll/blob/cba586f06fc7878fee888997b1465b6712e68d6a/site/_includes/anchor_links.html
-// no jquery :D
 (function(){
   var anchorForId = function (id) {
     var anchor = document.createElement("a");
