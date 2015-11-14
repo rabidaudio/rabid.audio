@@ -9,7 +9,11 @@
   <link rel="stylesheet" href="{{ "/css/main.css" | prepend: site.baseurl }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/atom+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
-  {% if page.color %}{% assign colors = page.color %}{% else %}{% assign colors = site.colormap[page.category] %}{% endif %}
+  {% if site.colorpages %}
+    {% if page.color %}{% assign colors = page.color %}{% else %}{% assign colors = site.colormap[page.category] %}{% endif %}
+  {% else %}
+    {% assign colors = site.colormap['default'] %}
+  {% endif %}
   {% include colorset.html colors=colors %}
 
   <script type="text/javascript" src="{{ site.jsurl | prepend: '/' | prepend: site.baseurl }}"></script>

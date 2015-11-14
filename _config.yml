@@ -5,6 +5,7 @@ name: Charles Julian Knight
 description: > # this means to ignore newlines until "baseurl:"
   Thoughts on music, technology, policy, startups, and anything else.
 baseurl:  /blog
+assetsurl: /blog/assets/
 imgurl:   /blog/assets/images/
 jsurl:    assets/js/output.js
 url: "http://rabid.audio"
@@ -137,10 +138,12 @@ colors:
     lighter:  '#FFD7DF'
 
 colormap:
-  music:    red
+  music:    purple
   policy:   green
-  hardware: purple
+  hardware: red
   software: blue
+
+colorpages: false
 
 #map tags to categories
 tagmap:
@@ -151,6 +154,8 @@ tagmap:
     - new music
     - RIAA
     - car audio
+    - bass
+    - effects
   policy:
     - free software movement
     - piracy
