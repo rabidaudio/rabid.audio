@@ -51,7 +51,7 @@ module.exports = function(grunt) {
           '<%= cfg.jsurl %>': ['<%= cfg.vendor.js %>', '<%= cfg.directories.sourcejs %>/**/*.js']
         },
         options: {
-          compress: true,
+          compress: {},
         }
       }
     },
