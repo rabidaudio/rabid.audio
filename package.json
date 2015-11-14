@@ -27,5 +27,6 @@
     "load-grunt-tasks": "^1.0.0",
     "time-grunt": "^1.0.0"
   },
-  "editor": "subl"
+  "editor": "subl",
+  "dependencies": {}
 }

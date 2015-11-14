@@ -56,7 +56,6 @@ Immediate TODOs:
 - Fix About page
 - self-generating `all` pages for each category
 - A way to include JS libs on a per-page basis (require-js??)
-- Mobile scrolling for /all/
 - update Gruntfile with less janky generator
 - Add spellcheck to grunt tasks
 - remove divshot stuff
@@ -65,16 +64,13 @@ Future ideas:
 
 - Lightbox for images
 - Add resume
-- Comments? (probably needs a backend, but might be doable with firebase)
 - pretty backgrounds: Maps, canvas renders, ?
 - All of jekyll build stuff could be replaced with `grunt` or `gulp` which would be much more effective.
     - If I ever continue work on Utterson, might be the way to go
     - A Yeoman generator might be the shiz
 - Re-setup IFTTT autotweeting
 - drop jquery for speed
-- ~~colors for each category~~
-  - existing colors: blue, green, red, purple
-  - existing categories: music, software, hardware, policy
+- improve design + readability
 
 
 Improved Image Tag

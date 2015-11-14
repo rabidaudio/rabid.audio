@@ -20,7 +20,6 @@ module.exports = function(grunt) {
     //config files
     pkg: grunt.file.readJSON('package.json'),
     cfg: grunt.file.readYAML('_config.yml'),
-    div: grunt.file.readJSON('divshot.json'),
     bow: grunt.file.readJSON('.bowerrc'),
 
     jekyll: {
@@ -31,18 +30,6 @@ module.exports = function(grunt) {
     jshint: {
       src: ['<%= cfg.directories.sourcejs %>/**/*.js']
     },
-
-    divshot: {
-      //don't use, connect is better (has watch, etc)
-      server: {options: {}},
-    },
-    //the real meat
-    'divshot:push':{
-      //options from divshot.json
-      development: {},
-      production: {}
-    },
-
 
     //js compilation (production version)
     uglify: {
@@ -168,11 +155,6 @@ module.exports = function(grunt) {
 
   grunt.registerTask('devbuild', ['concat:dev', 'jekyll:dev']);
   grunt.registerTask('build', ['jshint', 'uglify:dist', 'jekyll:dist']);
-
-  // grunt.registerTask('devdeploy', ['devbuild', 'divshot:push:development']);
-  // grunt.registerTask('deploy', ['build', 'divshot:push:production']);
-  // grunt.registerTask('depall', ['devdeploy', 'deploy']);
-
   grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'watch']);
   grunt.registerTask('default', ['serve', 'open:local']);
 
