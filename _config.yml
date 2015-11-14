@@ -22,7 +22,7 @@ directories:
   css       : css
   templates : _templates
   plugins   : _plugins
-  output    : _site
+  output    : ../rabidaudio.github.io
   layouts   : _layouts
   includes  : _includes
   fonts     : assets/fonts
@@ -56,7 +56,7 @@ vendor:
     - fontawesome/fonts
 
 
-destination: _site/blog
+destination: ../rabidaudio.github.io/blog
 timezone: America/New_York
 
 defaults:
