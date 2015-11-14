@@ -54,17 +54,16 @@ Additions to default jekyll:
 Immediate TODOs:
 
 - Fix About page
-- ~~Make a real homepage~~
 - self-generating `all` pages for each category
 - A way to include JS libs on a per-page basis (require-js??)
 - Mobile scrolling for /all/
 - update Gruntfile with less janky generator
 - Add spellcheck to grunt tasks
+- remove divshot stuff
 
 Future ideas:
 
 - Lightbox for images
-- switch to using require.js (or similar)
 - Add resume
 - Comments? (probably needs a backend, but might be doable with firebase)
 - pretty backgrounds: Maps, canvas renders, ?

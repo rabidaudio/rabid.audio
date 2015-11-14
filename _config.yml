@@ -50,6 +50,7 @@ vendor:
     # - _vendor/lightbox/js/lightbox.js
     - _vendor/javascript-last.fm-api/lastfm-api.js
     - _vendor/natural-dates/natural_dates.js
+    - _vendor/quick-comments/build/quick-comments.min.js
     # - _vendor/javascript_utils/rand_subset.js
     # - _vendor/javascript_utils/jquery_extensions.js
   fonts:

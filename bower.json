@@ -16,6 +16,7 @@
     "javascript-last.fm-api": "git@github.com:molefrog/lastfm-api.git",
     "keymaster": "~1.6.3",
     "jquery-color": "~2.1.2",
-    "firebase": "~2.1.0"
+    "firebase": "~2.1.0",
+    "quick-comments": "~0.9.1"
   }
 }

@@ -1,0 +1,97 @@
+<qcomment></qcomment>
+<style>
+.qc-header {
+  font-size: .75em;
+  margin: 30px 30px 0px 30px;
+}
+.qc-user{
+  font-size: .7em;
+  float: left;
+}
+.qc-signin {
+  font-size: .9em;
+}
+.avatar {
+  width: 3em;
+  height: 0;
+  padding-bottom: 3em;
+  position: relative;
+  overflow: hidden;
+  border-radius: 9999px;
+  margin-left: 1em;
+  margin-right: 1em;
+  float: left;
+}
+.avatar img {
+  width: 100%;
+  bottom: 0px;
+  position: absolute;
+}
+.qc-new-body {
+  line-height: inherit;
+}
+.qc-new .submit {
+  margin: 5px 0px;
+  float: right;
+}
+.qc-login-opts li {
+  padding: 0em 0.5em;
+}
+.qc-login-opts {
+  display: inline-flex;
+  list-style: none;
+}
+.qc-comment fieldset {
+  border-width: 0px;
+}
+.qc-comments {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: #E8E8E8;
+}
+.qc-comments:empty {
+  border-top-style: hidden;
+}
+qcomment hr {
+  border-color: rgba(255, 255, 255, 0);
+  margin: 0;
+}
+.qc-signin {
+  font-size: 0em;
+}
+.provider {
+  margin: 0px 10px;
+}
+.provider:before {
+   font-family: FontAwesome; 
+    font-size: 30px; 
+    display: inline-block;
+}
+.provider:before:hover {
+  font-size: 33px;
+}
+.provider.facebook:before {
+  content: '\f09a';
+}
+.provider.google:before {
+  content: '\f1a0';
+}
+.provider.github:before {
+  content: '\f09b';
+}
+.provider.twitter:before {
+  content: '\f099';
+}
+.qc-login-opts {
+  margin-left: 0px;
+  margin-top: 10px;
+}
+</style>
+<script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+  new QC({
+    firebase: new Firebase('https://cjk-blog.firebaseio.com')
+  });
+});
+</script>
