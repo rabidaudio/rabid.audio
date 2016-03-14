@@ -40,7 +40,7 @@
     </li>
   {% when 'linkedin' %}
     <li>
-      <a href="http://{{ val }}" target="_blank">
+      <a href="https://{{ val }}" target="_blank">
         <span class="icon  icon--linkedin"><i class="fa fa-linkedin"></i></span>
         <span class="linkedin" title="linkedin">LinkedIn Profile</span>
       </a>
@@ -76,7 +76,7 @@
   {% else %}
       {% if val.name %}
         <li>
-          {% if val.url %}<a href="http://{{ val.url }}" target="_blank">{% endif %}
+          {% if val.url %}<a href="https://{{ val.url }}" target="_blank">{% endif %}
             <span class="icon  icon--{{ key }}">
               <i class="fa {% if val.icon %}{{ val.icon }}{% else %}{{ key | prepend: 'fa-' }}{% endif %}"></i>
             </span>

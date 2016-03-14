@@ -72,7 +72,7 @@ defaults:
       author:
         name     : Charles Julian Knight
         # minibio  :
-        img      : http://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
+        img      : https://www.gravatar.com/avatar/e3f99640d60577f72086b54087423593.png?s=200
         school   : Georgia Tech
         twitter  : charlesjuliank
         email    : cjk@rabidaudio.com

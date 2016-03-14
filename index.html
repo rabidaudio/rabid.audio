@@ -70,14 +70,18 @@ layout: full-blank
           $('.albumart-bg').append(template.replace('%INDEX%', index));
           var el = $('.albumart-img--'+index);
           //temporarily set div min-height so that they keep their size while the image swaps
+          var imgUrl = album.image[IMAGE_QUALITY]['#text'];
+          if(location.protocol.match(/https/)){
+            imgUrl.replace('http:', 'https:');
+          }
           el.parent().css('min-height', el.parent().width());
           el.fadeOut(0).attr('mbid', album.mbid)
-            .attr('src', album.image[IMAGE_QUALITY]['#text'])
+            .attr('src', imgUrl)
             .attr('title', album.artist.name+" - "+album.name)
             .load(function(){//fade in and remove the div height fix
               $(this).fadeIn(700).parent().css('min-height', 0);  
     });});}});
-    $('.lastfm-username').text(lfm_username).attr('href', 'http://last.fm/user/'+lfm_username);
+    $('.lastfm-username').text(lfm_username).attr('href', 'https://last.fm/user/'+lfm_username);
     $('.lfm-username-input').keypress(function(e){ //redirect with new username
       if(e.keyCode === 13) window.location.search = "user="+$(this).val()+"&period="+period;
     });
