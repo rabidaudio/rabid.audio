@@ -57,7 +57,7 @@ layout: full-blank
   $(document).ready(function(){
     var lfm_username = (grab_from_query_string('user')   || LASTFM_USERNAME);
     var period = (grab_from_query_string('period') || '6month');
-    new LastFM({ apiKey: '7906a0f41ca90b95bce3ca35f6f245df', })
+    new LastFM({ apiKey: '7906a0f41ca90b95bce3ca35f6f245df', apiUrl: "//ws.audioscrobbler.com/2.0/"})
     .user.getTopAlbums({user: lfm_username, period: period, limit: 100}, {
       error: function(code, message){ console.error(message); },
       success: function(data){
