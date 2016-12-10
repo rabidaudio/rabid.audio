@@ -4,14 +4,15 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title><%= config.title %></title>
-    <meta name="description" content="">
+    <meta name="description" content="<%= config.description || '' %>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="canonical" href="<%= config.page.url %>">
+  <link rel="alternate" type="application/atom+xml" title="<%= config.title %>" href="<%= config.page.url + '/feed.xml' %>" />
   </head>
   <body>
-    <div id="container"></div>
+    <div id="container" class="page-content full-page"></div>
     <script src="<%= bundle %>"></script>
     <%_ if (!debug && config.trackingID) { _%>
     <script>
