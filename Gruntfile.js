@@ -27,9 +27,9 @@ module.exports = function(grunt) {
       dev: { options: { drafts: true } }
     },
 
-    jshint: {
-      src: ['<%= cfg.directories.sourcejs %>/**/*.js']
-    },
+    // jshint: {
+    //   src: ['<%= cfg.directories.sourcejs %>/**/*.js']
+    // },
 
     //js compilation (production version)
     uglify: {
@@ -154,7 +154,7 @@ module.exports = function(grunt) {
   });
 
   grunt.registerTask('devbuild', ['concat:dev', 'jekyll:dev']);
-  grunt.registerTask('build', ['jshint', 'uglify:dist', 'jekyll:dist']);
+  grunt.registerTask('build', ['uglify:dist', 'jekyll:dist']);
   grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'watch']);
   grunt.registerTask('default', ['serve', 'open:local']);
 
