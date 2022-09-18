@@ -11,3 +11,10 @@ rabid.audio
     </li>
   {% endfor %}
 </ul>
+
+<!-- Loop pedal output -->
+<!-- LM13700 writeup -->
+<!-- splitter pedal -->
+<!-- chorus pedal -->
+<!-- bass pedal wiring? -->
+<!-- big muff tone hack? -->

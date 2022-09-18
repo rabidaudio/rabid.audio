@@ -11,6 +11,9 @@ reference:
     name: Log converters
   - file: spice_ref.pdf
     name: SPICE Quick Reference
+  # - https://aisynthesis.com/how-to-get-started-in-synth-diy/
+  # - https://www.schmitzbits.de/index.html
+  # - http://www5b.biglobe.ne.jp/~houshu/synth/
 schematics:
   - file: Synbal.pdf
     name: Synbal analog drum symbol
