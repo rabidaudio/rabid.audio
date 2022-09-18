@@ -17,18 +17,18 @@ This is a work in progress; different modules are at different stages of develop
 
 | Module             | Status         |
 | ------------------ | -------------- |
-| [CLK](synth/clk) | Breadboarding  |
+| [CLK](synth/clk)   | Breadboarding  |
 | VCA                | PCB Design     |
 | ADSR               | Schematic      |
 | VCO                | Schematic      |
 | VCF                | Schematic      |
-| [UTIL](synth/util)               | Needs revision |
+| [UTIL](synth/util) | Needs revision |
 
 ## Utilities
 
 In the process of building these modules, I've also built some tools to assist.
 
-- Headphone breakout board
+- [Headphone breakout board](/2020/03/15/headphone-breakout)
 - Breadboard supply adapter
 - Transistor matcher
 

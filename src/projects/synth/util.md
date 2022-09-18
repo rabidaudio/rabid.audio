@@ -12,7 +12,7 @@ This is a Eurorack synth module which combines a collection of common tools for 
 
 This was the first module I designed.
 
-![populated PCB -halfwidth](/images/util_image.jpg )
+![populated PCB -halfwidth](/images/util_image.jpg)
 
 ### TODO
 
@@ -29,7 +29,7 @@ When `A_IN` is disconnected, `OUT` is a constant voltage output based on the pos
 
 ### Buffer / Scaler
 
-When `A_IN` is supplied, it's value is buffered to `OUT`. The knob position linearly adjusts the output gain. At the center position, `OUT` is the same as `A_IN`. At the full-left position, `OUT` is off. At the full-right position, the value of `A_IN` is doubled. 
+When `A_IN` is supplied, it's value is buffered to `OUT`. The knob position linearly adjusts the output gain. At the center position, `OUT` is the same as `A_IN`. At the full-left position, `OUT` is off. At the full-right position, the value of `A_IN` is doubled.
 
 ### Adder
 

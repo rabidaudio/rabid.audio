@@ -165,10 +165,10 @@ datasheets:
     description: Stereo 3.5mm jack
     notes: >
       These are very easy to find. They are stereo with plug switches for both tip and sleeve.
-      I've designed [a breakout board for these](https://github.com/rabidaudio/synthesizer/tree/master/hp_breakout).
+      I've designed [a breakout board for these](/2020/03/15/headphone-breakout).
       However I've started to prefer the Thonkiconn jacks instead as they are vertical
       and match the Alpha 9mm pot height.
-    category: pot
+    category: jack
   - file: EG.pdf
     name: EG2301
     description: DPDT slide switch

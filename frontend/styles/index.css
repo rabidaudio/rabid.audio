@@ -97,12 +97,12 @@ main img {
   max-width: 100%;
 }
 
-img[alt$="-fullwidth"]{
-  width:  100%;
+img[alt$="-fullwidth"] {
+  width: 100%;
   display: block;
 }
 
-img[alt$="-halfwidth"]{
-  width:  50%;
+img[alt$="-halfwidth"] {
+  width: 50%;
   display: block;
 }
