@@ -1,0 +1,49 @@
+---
+layout: default
+title: Resources
+---
+
+<%# TODO: this could use some styling %>
+
+<h1>Reference</h1>
+
+<ul>
+<% site.data.resources['reference'].each do |reference| %>
+  <li><a href="/resources/reference/<%= reference['file'] %>"><%= reference['name'] %></a></li>
+<% end %>
+</ul>
+
+<h1>Schematics</h1>
+
+<ul>
+<% site.data.resources['schematics'].each do |schematic| %>
+  <li><a href="/resources/schematics/<%= schematic['file'] %>"><%= schematic['name'] %></a></li>
+<% end %>
+</ul>
+
+
+
+<h1>Datasheets</h1>
+
+<% site.data.resources['datasheets'].group_by { |d| d['category'] || 'other' }.sort.each do |category, datasheets| %>
+  <h2 id="<%= category %>"><%= category.upcase %></h2>
+
+  <% datasheets.each do |datasheet| %>
+    <h3 id="<%= datasheet['name'] %>"><%= datasheet['name'] %></h3>
+
+    <p><%= datasheet['description'] %></p>
+
+    <% if datasheet['notes'] %>
+      <p class="note">
+        <%= markdownify(datasheet['notes']) %>
+      </p>
+    <% end %>
+
+    <% if datasheet['file'] %>
+      <p><a href="/resources/datasheets/<%= datasheet['file'] %>" target="_blank">Datasheet</a></p>
+    <% end %>
+    <% if datasheet['link'] %>
+      <p><a href="<%= datasheet['link'] %>" target="_blank">Purchase</a></p>
+    <% end %>
+  <% end %>
+<% end %>

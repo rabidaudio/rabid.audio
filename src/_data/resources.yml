@@ -1,0 +1,247 @@
+reference:
+  - file: Construction_Details_A-100.pdf
+    name: A-100 (Eurorack) case specifications
+  - file: ElectroSmash - Bucket Brigade Devices_ MN3007.pdf
+    name: Bucket-Brigade Devices (BBD)
+  - file: exponential.pdf
+    name: Exponential voltage control
+  - file: transistor-matching.pdf
+    name: Transistor Matching
+  - file: snoa641b.pdf
+    name: Log converters
+  - file: spice_ref.pdf
+    name: SPICE Quick Reference
+schematics:
+  - file: Synbal.pdf
+    name: Synbal analog drum symbol
+  - file: electro-harmonix_bass-micro-synthesizer.pdf_1.png
+    name: EHX Bass Micro-Synth
+  - file: VCA__KOMPLETTE_UNTERLAGEN__MSC175.pdf
+    name: Lindhof VCA
+  - file: Roland_RE201_space_echo.pdf
+    name: Roland Space Echo
+  - file: lepers_schems.pdf
+    name: Two dozen classic schematics
+datasheets:
+  - file: 2N5457-D.PDF
+    name: 2N5457
+    description: N-Channel JFET
+    category: transistor
+  - file: 2N7000-D.PDF
+    name: 2N7000
+    description: N-Channel MOSTFET
+    category: transistor
+  - file: 73758.pdf
+    name: PC817X
+    description: Photocoupler
+    notes: Useful for MIDI
+    category: digital
+  - file: 74LS74.pdf
+    name: DM74LS74
+    description: Dual Flip-Flop
+    category: digital
+  - file: AOI4286.pdf
+    name: AOD4286/AOI4286
+    description: 100V N-Channel MOSFET
+    category: transistor
+  - file: ads1110.pdf
+    name: ADS1110
+    description: 16-bit ADC
+    category: adc
+  - file: Alpha 9mm Vertical - Linear Taper B1K-B500K.pdf
+    name: Alpha 9mm pot
+    description: 9mm pot
+    notes: Popular in Eurorack. Come in Single/Dual and Linear/Audio taper.
+    link: https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/
+    category: pot
+  - file: DUAL GANG - RD902F-40-15R1-A50K-0057.pdf
+    name: Alpha 9mm pot (dual gang)
+    category: pot
+  - file: bs250.pdf
+    name: BS250
+    description: 60V P-Channel MOSFET
+    category: transistor
+  - file: cd4066.pdf
+    ame: CD4066
+    description: Quad Bilateral Switch
+    notes: >
+      I don't like using these. They have weird voltage requirements, and
+      when the switch is off they connect the output to VSS (which is the
+      negative rail in most dual-ended power supply circuits). I prefer
+      the [DG403](#DG403).
+    category: digital
+  - file: dac8571.pdf
+    name: DAC8571
+    description: 16-bit DAC
+    category: dac
+  - file: dg403.pdf
+    name: DG403
+    description: Dual SPDT Bilateral Switch
+    notes: These only come in SMD packages but they are better than the CD4066.
+    category: digital
+  - file: dmmt5401.pdf
+    name: DMMT5401
+    description: PNP matched-pair BJT
+    notes: These can be a lot more useful than hand-matching transistors, but they are SMD.
+    category: transistor
+  - file: dmmt5551.pdf
+    name: DMMT5551
+    description: NPN matched-pair BJT
+    notes: These can be a lot more useful than hand-matching transistors, but they are SMD.
+    category: transistor
+  - file: ht16K33v110.pdf
+    name: HT16K33
+    description: 16*8 LED Controller Driver
+    notes: >
+      Used by many 7- and 14-segment display modules, for example
+      [Sparkfun](https://learn.sparkfun.com/tutorials/sparkfun-qwiic-alphanumeric-display-hookup-guide)
+      and [Adafruit](https://learn.adafruit.com/adafruit-led-backpack/).
+      [Adafruit Arduino Library](https://github.com/adafruit/Adafruit_LED_Backpack)
+    category: led
+  - file: lm13700.pdf
+    name: LM13700
+    description: Dual Operational Transconductance Amplifier (OTA)
+    notes: >
+      This is the heart of most of my voltage-controlled designs.
+      See my writeup on the chip.
+    category: analog
+  - file: lm317.pdf
+    name: LM317
+    description: 1.5A adjustable voltage regulator
+    notes: >
+      Output voltage is set with a pair of external resistors.
+      For a hard-coded 5V output with no extra parts, use the [LM7805](#LM7805).
+    category: regulator
+  - file: lm337.pdf
+    name: LM337
+    description: Negative adjustable voltage regulator
+    notes: Same as LM317 but for negative voltages
+    category: regulator
+  - file: lm7805.pdf
+    name: LM7805
+    description: 1.5A 5V voltage regulator
+    notes: Output fixed to 5V
+    category: regulator
+  - file: lm555.pdf
+    name: "555"
+    description: Multi-purpose timer
+    notes: >
+      Ubiquitous timer. Can be used as a delay, square wave oscillator, etc.
+      [Calculator](https://www.allaboutcircuits.com/tools/555-timer-astable-circuit/)
+    category: digital
+  - file: tl071.pdf
+    name: TL07x
+    description: General purpose JFET Operational Amplifier (Op-amp)
+    notes: >
+      This is my go-to op-amp. Solid, easy to use, audio quality.
+      Comes in single, dual, and quad packages. Note that the power supply pins
+      on the TL074 are opposite what you'd expect!
+
+      They don't make good comparators because they aren't rail-to-rail, and they
+      have pretty high power supply requirements so they may not be usable in all
+      situations.
+    category: analog
+  - file: tle2426.pdf
+    name: TLE2426
+    description: '"Rail Splitter" virtual ground'
+    notes: >
+      Given a power input, these will output a stable voltage half-way between them.
+      This is very useful for creating dual-ended power supplies needed for most op-amp
+      circuits in situations where your power supply is limited (e.g. a 9V stompbox).
+    category: regulator
+  - file: tlv5620.pdf
+    name: TLV5620
+    description: Quad 8-bit DAC
+    category: dac
+  - file: Datasheet MTS series.pdf
+    name: MTS mini toggle switch
+    description: 13mm toggle switches with comparable hight to Alpha 9mm pots
+    category: switch
+  - file: EDG4.pdf
+    name: 35RAPC4BHN3
+    description: Stereo 3.5mm jack
+    notes: >
+      These are very easy to find. They are stereo with plug switches for both tip and sleeve.
+      I've designed [a breakout board for these](https://github.com/rabidaudio/synthesizer/tree/master/hp_breakout).
+      However I've started to prefer the Thonkiconn jacks instead as they are vertical
+      and match the Alpha 9mm pot height.
+    category: pot
+  - file: EG.pdf
+    name: EG2301
+    description: DPDT slide switch
+    notes: >
+      Just a little shorter than Alpha 9mm pots but if you
+      seat them a little high they'll do fine.
+    category: pot
+  - file: FQP13N06L.pdf
+    name: FQP13N
+    description: 60 V N-Channel MOSTFET
+    category: transistor
+  - file: J109-D.PDF
+    name: J175
+    description: 25V N-Channel JFET
+    category: transistor
+  - file: J17x,MMBFJ17x.pdf
+    name: J175
+    description: 30V P-Channel JFET
+    category: transistor
+  - file: MAX5134-MAX5137.pdf
+    name: MAX5134
+    description: 16-bit SPI DAC
+    category: dac
+  - file: MAX5215-MAX5217.pdf
+    name: MAX5215
+    description: 16-bit I2C DAC
+    category: dac
+  - file: MD100AM2B-15A10K-6H_spec.pdf
+    name: MD100AM2B
+    description: Motorized slide potentiometer
+    notes: >
+      These are used in DAW controllers where the sliders can sync with the software.
+      Haven't found a use for them (yet).
+    category: pot
+  - file: MN3102.pdf
+    name: MN3102
+    description: Clock driver for BDD
+    notes: >
+      Paired with an MN3207. Technically you can generate the clocks yourself,
+      but you also need a `14/15*Vdd` power input so you might as well use it.
+    category: analog
+  - file: MN3207.pdf
+    name: MN3207
+    description: 1024-stage BBD
+    notes: Supports delays from 2.56ms to 51.2ms
+    category: analog
+  - file: PDB18.pdf
+    name: Bourns PDB18
+    description: Mini instrument potentiometers
+    notes: Used in guitars. Available in linear and audio taper in several configurations.
+    category: pot
+  - file: ptv09.pdf
+    name: Bourns PTV09
+    description: 9mm potentiometer
+    notes: Competitor to the Alpha ones
+    category: pot
+  - file: SM460281N-10mm-7-segement.pdf
+    name: SM460281N
+    description: 10mm 7-segment display
+    category: led
+  - file: SN74LS155-D.PDF
+    name: SN74LS155
+    description: Dual 1-4 demultiplexer
+    category: digital
+  - file: Thonkiconn_Jack_Datasheet.pdf
+    description: Thonkiconn 3.5mm jack
+    notes: Very popular in Eurorack
+    link: https://www.thonk.co.uk/shop/thonkiconn/
+    category: jack
+  - file: VTL5C vactrol.pdf
+    name: VTL5C
+    description: Vactrol
+    notes: A vactrol is an LED coupled to a light-dependent resistor.
+    category: analog
+  - file: Xvive5C3 Non-RoHs (1).pdf
+    name: Xvive5C3
+    description: Vactrol
+    notes: A vactrol is an LED coupled to a light-dependent resistor.
+    category: analog
