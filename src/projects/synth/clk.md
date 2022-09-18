@@ -64,7 +64,7 @@ The code uses [PlatformIO](https://platformio.org/) for build tooling. Separate 
 
 Rather than a potentiometer, the knob control is an 8-position continuous turn rotary switch with fixed size resistors between each pole, forming a sort of discrete potentiometer.
 
-![Rotary schematic](/images/clock_module_discrete_potentiometer.png)
+![Rotary schematic -halfwidth](/images/clock_module_discrete_potentiometer.png)
 
 This is attached to an ADC input on the ATTiny, and some logic is used to convert this back into an integer switch position, thus only requiring one I/O pin.
 

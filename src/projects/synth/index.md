@@ -17,12 +17,12 @@ This is a work in progress; different modules are at different stages of develop
 
 | Module             | Status         |
 | ------------------ | -------------- |
-| [CLK](synth/clock) | Breadboarding  |
+| [CLK](synth/clk) | Breadboarding  |
 | VCA                | PCB Design     |
 | ADSR               | Schematic      |
 | VCO                | Schematic      |
 | VCF                | Schematic      |
-| UTIL               | Needs revision |
+| [UTIL](synth/util)               | Needs revision |
 
 ## Utilities
 
