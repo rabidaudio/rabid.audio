@@ -8,34 +8,36 @@
 //
 // Shipped with Bridgetown v1.1.0
 
-const path = require("path")
-const fsLib = require("fs")
-const fs = fsLib.promises
-const { pathToFileURL, fileURLToPath } = require("url")
-const glob = require("glob")
-const postcss = require("postcss")
-const postCssImport = require("postcss-import")
-const readCache = require("read-cache")
+const path = require("path");
+const fsLib = require("fs");
+const fs = fsLib.promises;
+const { pathToFileURL, fileURLToPath } = require("url");
+const glob = require("glob");
+const postcss = require("postcss");
+const postCssImport = require("postcss-import");
+const readCache = require("read-cache");
 
 // Detect if an NPM package is available
-const moduleAvailable = name => {
+const moduleAvailable = (name) => {
   try {
-    require.resolve(name)
-    return true
-  } catch (e) { }
-  return false
-}
+    require.resolve(name);
+    return true;
+  } catch (e) {}
+  return false;
+};
 
 // Generate a Source Map URL (used by the Sass plugin)
-const generateSourceMappingURL = sourceMap => {
-  const data = Buffer.from(JSON.stringify(sourceMap), "utf-8").toString("base64")
-  return `/*# sourceMappingURL=data:application/json;charset=utf-8;base64,${data} */`
-}
+const generateSourceMappingURL = (sourceMap) => {
+  const data = Buffer.from(JSON.stringify(sourceMap), "utf-8").toString(
+    "base64"
+  );
+  return `/*# sourceMappingURL=data:application/json;charset=utf-8;base64,${data} */`;
+};
 
 // Import Sass if available
-let sass
+let sass;
 if (moduleAvailable("sass")) {
-  sass = require("sass")
+  sass = require("sass");
 }
 
 // Glob plugin derived from:
@@ -49,7 +51,10 @@ const importGlobPlugin = () => ({
         return; // Ignore unresolvable paths
       }
 
-      const adjustedPath = args.path.replace(/^bridgetownComponents\//, "../../src/_components/")
+      const adjustedPath = args.path.replace(
+        /^bridgetownComponents\//,
+        "../../src/_components/"
+      );
 
       return {
         path: adjustedPath,
@@ -58,74 +63,86 @@ const importGlobPlugin = () => ({
           path: adjustedPath,
           resolveDir: args.resolveDir,
         },
-      }
-    })
+      };
+    });
 
     build.onLoad({ filter: /.*/, namespace: "import-glob" }, async (args) => {
-      const files = glob.sync(args.pluginData.path, {
-        cwd: args.pluginData.resolveDir,
-      }).sort()
+      const files = glob
+        .sync(args.pluginData.path, {
+          cwd: args.pluginData.resolveDir,
+        })
+        .sort();
 
       const importerCode = `
         ${files
           .map((module, index) => `import * as module${index} from '${module}'`)
-          .join(';')}
+          .join(";")}
         const modules = {${files
-          .map((module, index) => `
-            "${module.replace("../../src/_components/", "")}": module${index},`)
+          .map(
+            (module, index) => `
+            "${module.replace("../../src/_components/", "")}": module${index},`
+          )
           .join("")}
         };
         export default modules;
-      `
+      `;
 
-      return { contents: importerCode, resolveDir: args.pluginData.resolveDir }
-    })
+      return { contents: importerCode, resolveDir: args.pluginData.resolveDir };
+    });
   },
-})
+});
 
 // Plugin for PostCSS
 const postCssPlugin = (options, configuration) => ({
   name: "postcss",
   async setup(build) {
     // Process .css files with PostCSS
-    build.onLoad({ filter: (configuration.filter || /\.css$/) }, async (args) => {
-      const additionalFilePaths = []
-      const css = await fs.readFile(args.path, "utf8")
+    build.onLoad({ filter: configuration.filter || /\.css$/ }, async (args) => {
+      const additionalFilePaths = [];
+      const css = await fs.readFile(args.path, "utf8");
 
       // Configure import plugin so PostCSS can properly resolve `@import`ed CSS files
       const importPlugin = postCssImport({
-        filter: itemPath => !itemPath.startsWith("/"), // ensure it doesn't try to import source-relative paths
-        load: async filename => {
-          let contents = await readCache(filename, "utf-8")
-          const filedir = path.dirname(filename)
-          // We'll want to track any imports later when in watch mode:          
-          additionalFilePaths.push(filename)
+        filter: (itemPath) => !itemPath.startsWith("/"), // ensure it doesn't try to import source-relative paths
+        load: async (filename) => {
+          let contents = await readCache(filename, "utf-8");
+          const filedir = path.dirname(filename);
+          // We'll want to track any imports later when in watch mode:
+          additionalFilePaths.push(filename);
 
           // We need to transform `url(...)` in imported CSS so the filepaths are properly
           // relative to the entrypoint. Seems icky to have to hack this! C'est la vie...
-          contents = contents.replace(/url\(['"]?\.\/(.*?)['"]?\)/g, (_match, p1) => {
-            const relpath = path.relative(args.path, path.resolve(filedir, p1)).replace(/^\.\.\//, "")
-            return `url("${relpath}")`
-          })
-          return contents
-        }
-      })
+          contents = contents.replace(
+            /url\(['"]?\.\/(.*?)['"]?\)/g,
+            (_match, p1) => {
+              const relpath = path
+                .relative(args.path, path.resolve(filedir, p1))
+                .replace(/^\.\.\//, "");
+              return `url("${relpath}")`;
+            }
+          );
+          return contents;
+        },
+      });
 
       // Process the file through PostCSS
-      const result = await postcss([importPlugin, ...options.plugins]).process(css, {
-        map: true,
-        ...options.options,
-        from: args.path,
-      });
+      const result = await postcss([importPlugin, ...options.plugins]).process(
+        css,
+        {
+          map: true,
+          ...options.options,
+          from: args.path,
+        }
+      );
 
       return {
         contents: result.css,
         loader: "css",
         watchFiles: [args.path, ...additionalFilePaths],
-      }
-    })
+      };
+    });
   },
-})
+});
 
 // Plugin for Sass
 const sassPlugin = (options) => ({
@@ -134,57 +151,65 @@ const sassPlugin = (options) => ({
     // Process .scss and .sass files with Sass
     build.onLoad({ filter: /\.(sass|scss)$/ }, async (args) => {
       if (!sass) {
-        console.error("error: Sass is not installed. Try running `yarn add sass` and then building again.")
-        return
+        console.error(
+          "error: Sass is not installed. Try running `yarn add sass` and then building again."
+        );
+        return;
       }
 
-      const modulesFolder = pathToFileURL("node_modules/")
+      const modulesFolder = pathToFileURL("node_modules/");
 
       const localOptions = {
-        importers: [{
-          // An importer that redirects relative URLs starting with "~" to
-          // `node_modules`.
-          findFileUrl(url) {
-            if (!url.startsWith('~')) return null
-            return new URL(url.substring(1), modulesFolder)
-          }
-        }],
+        importers: [
+          {
+            // An importer that redirects relative URLs starting with "~" to
+            // `node_modules`.
+            findFileUrl(url) {
+              if (!url.startsWith("~")) return null;
+              return new URL(url.substring(1), modulesFolder);
+            },
+          },
+        ],
         sourceMap: true,
-        ...options
-      }
-      const result = sass.compile(args.path, localOptions)
+        ...options,
+      };
+      const result = sass.compile(args.path, localOptions);
 
       const watchPaths = result.loadedUrls
-        .filter((x) => x.protocol === "file:" && !x.pathname.startsWith(modulesFolder.pathname))
-        .map((x) => x.pathname)
+        .filter(
+          (x) =>
+            x.protocol === "file:" &&
+            !x.pathname.startsWith(modulesFolder.pathname)
+        )
+        .map((x) => x.pathname);
 
-      let cssOutput = result.css.toString()
+      let cssOutput = result.css.toString();
 
       if (result.sourceMap) {
-        const basedir = process.cwd()
-        const sourceMap = result.sourceMap
+        const basedir = process.cwd();
+        const sourceMap = result.sourceMap;
 
-        const promises = sourceMap.sources.map(async source => {
-          const sourceFile = await fs.readFile(fileURLToPath(source), "utf8")
-          return sourceFile
-        })
-        sourceMap.sourcesContent = await Promise.all(promises)
+        const promises = sourceMap.sources.map(async (source) => {
+          const sourceFile = await fs.readFile(fileURLToPath(source), "utf8");
+          return sourceFile;
+        });
+        sourceMap.sourcesContent = await Promise.all(promises);
 
-        sourceMap.sources = sourceMap.sources.map(source => {
-          return path.relative(basedir, fileURLToPath(source))
-        })
+        sourceMap.sources = sourceMap.sources.map((source) => {
+          return path.relative(basedir, fileURLToPath(source));
+        });
 
-        cssOutput += '\n' + generateSourceMappingURL(sourceMap)
+        cssOutput += "\n" + generateSourceMappingURL(sourceMap);
       }
 
       return {
         contents: cssOutput,
         loader: "css",
         watchFiles: [args.path, ...watchPaths],
-      }
-    })
+      };
+    });
   },
-})
+});
 
 // Set up defaults and generate frontend bundling manifest file
 const bridgetownPreset = (outputFolder) => ({
@@ -192,108 +217,141 @@ const bridgetownPreset = (outputFolder) => ({
   async setup(build) {
     // Ensure any imports anywhere starting with `/` are left verbatim
     // so they can be used in-browser for actual `src` repo files
-    build.onResolve({ filter: /^\// }, args => {
-      return { path: args.path, external: true }
-    })
+    build.onResolve({ filter: /^\// }, (args) => {
+      return { path: args.path, external: true };
+    });
 
     build.onStart(() => {
-      console.log("esbuild: frontend bundling started...")
-    })
+      console.log("esbuild: frontend bundling started...");
+    });
 
     // Generate the final output manifest
     build.onEnd(async (result) => {
       if (!result.metafile) {
-        console.warn("esbuild: build process error, cannot write manifest")
-        return
+        console.warn("esbuild: build process error, cannot write manifest");
+        return;
       }
 
-      const manifest = {}
-      const entrypoints = []
+      const manifest = {};
+      const entrypoints = [];
 
       // We don't need `frontend/` cluttering up everything
-      const stripPrefix = (str) => str.replace(/^frontend\//, "")
+      const stripPrefix = (str) => str.replace(/^frontend\//, "");
 
       // For calculating the file size of bundle output
       const fileSize = (path) => {
-        const { size } = fsLib.statSync(path)
-        const i = Math.floor(Math.log(size) / Math.log(1024))
-        return (size / Math.pow(1024, i)).toFixed(2) * 1 + ['B', 'KB', 'MB', 'GB', 'TB'][i]
-      }
+        const { size } = fsLib.statSync(path);
+        const i = Math.floor(Math.log(size) / Math.log(1024));
+        return (
+          (size / Math.pow(1024, i)).toFixed(2) * 1 +
+          ["B", "KB", "MB", "GB", "TB"][i]
+        );
+      };
 
       // Let's loop through all the various outputs
       for (const key in result.metafile.outputs) {
-        const value = result.metafile.outputs[key]
-        const inputs = Object.keys(value.inputs)
-        const pathShortener = new RegExp(`^${outputFolder}\\/_bridgetown\\/static\\/`, "g")
-        const outputPath = key.replace(pathShortener, "")
+        const value = result.metafile.outputs[key];
+        const inputs = Object.keys(value.inputs);
+        const pathShortener = new RegExp(
+          `^${outputFolder}\\/_bridgetown\\/static\\/`,
+          "g"
+        );
+        const outputPath = key.replace(pathShortener, "");
 
         if (value.entryPoint) {
           // We have an entrypoint!
-          manifest[stripPrefix(value.entryPoint)] = outputPath
-          entrypoints.push([outputPath, fileSize(key)])
-        } else if (key.match(/index(\.js)?\.[^-.]*\.css/) && inputs.find(item => item.match(/\.(s?css|sass)$/))) {
+          manifest[stripPrefix(value.entryPoint)] = outputPath;
+          entrypoints.push([outputPath, fileSize(key)]);
+        } else if (
+          key.match(/index(\.js)?\.[^-.]*\.css/) &&
+          inputs.find((item) => item.match(/\.(s?css|sass)$/))
+        ) {
           // Special treatment for index.css
-          manifest[stripPrefix(inputs.find(item => item.match(/\.(s?css|sass)$/)))] = outputPath
-          entrypoints.push([outputPath, fileSize(key)])
+          manifest[
+            stripPrefix(inputs.find((item) => item.match(/\.(s?css|sass)$/)))
+          ] = outputPath;
+          entrypoints.push([outputPath, fileSize(key)]);
         } else if (inputs.length > 0) {
           // Naive implementation, we'll just grab the first input and hope it's accurate
-          manifest[stripPrefix(inputs[0])] = outputPath
+          manifest[stripPrefix(inputs[0])] = outputPath;
         }
       }
 
-      const manifestFolder = path.join(process.cwd(), ".bridgetown-cache", "frontend-bundling")
-      await fs.mkdir(manifestFolder, { recursive: true })
-      await fs.writeFile(path.join(manifestFolder, "manifest.json"), JSON.stringify(manifest))
+      const manifestFolder = path.join(
+        process.cwd(),
+        ".bridgetown-cache",
+        "frontend-bundling"
+      );
+      await fs.mkdir(manifestFolder, { recursive: true });
+      await fs.writeFile(
+        path.join(manifestFolder, "manifest.json"),
+        JSON.stringify(manifest)
+      );
 
-      console.log("esbuild: frontend bundling complete!")
-      console.log("esbuild: entrypoints processed:")
-      entrypoints.forEach(entrypoint => {
-        const [entrypointName, entrypointSize] = entrypoint
-        console.log(`         - ${entrypointName}: ${entrypointSize}`)
-      })
-    })
-  }
-})
+      console.log("esbuild: frontend bundling complete!");
+      console.log("esbuild: entrypoints processed:");
+      entrypoints.forEach((entrypoint) => {
+        const [entrypointName, entrypointSize] = entrypoint;
+        console.log(`         - ${entrypointName}: ${entrypointSize}`);
+      });
+    });
+  },
+});
 
 // Load the PostCSS config from postcss.config.js or whatever else is a supported location/format
-const postcssrc = require("postcss-load-config")
-const postCssConfig = postcssrc.sync()
+const postcssrc = require("postcss-load-config");
+const postCssConfig = postcssrc.sync();
 
 module.exports = (outputFolder, esbuildOptions) => {
-  esbuildOptions.plugins = esbuildOptions.plugins || []
+  esbuildOptions.plugins = esbuildOptions.plugins || [];
   // Add the PostCSS & glob plugins to the top of the plugin stack
-  esbuildOptions.plugins.unshift(postCssPlugin(postCssConfig, esbuildOptions.postCssPluginConfig || {}))
-  if (esbuildOptions.postCssPluginConfig) delete esbuildOptions.postCssPluginConfig
-  esbuildOptions.plugins.unshift(importGlobPlugin())
+  esbuildOptions.plugins.unshift(
+    postCssPlugin(postCssConfig, esbuildOptions.postCssPluginConfig || {})
+  );
+  if (esbuildOptions.postCssPluginConfig)
+    delete esbuildOptions.postCssPluginConfig;
+  esbuildOptions.plugins.unshift(importGlobPlugin());
   // Add the Sass plugin
-  esbuildOptions.plugins.push(sassPlugin(esbuildOptions.sassOptions || {}))
+  esbuildOptions.plugins.push(sassPlugin(esbuildOptions.sassOptions || {}));
   // Add the Bridgetown preset
-  esbuildOptions.plugins.push(bridgetownPreset(outputFolder))
+  esbuildOptions.plugins.push(bridgetownPreset(outputFolder));
 
   // esbuild, take it away!
-  require("esbuild").build({
-    bundle: true,
-    loader: {
-      ".jpg": "file",
-      ".png": "file",
-      ".gif": "file",
-      ".svg": "file",
-      ".woff": "file",
-      ".woff2": "file",
-      ".ttf": "file",
-      ".eot": "file",
-    },
-    resolveExtensions: [".tsx", ".ts", ".jsx", ".js", ".css", ".scss", ".sass", ".json", ".js.rb"],
-    nodePaths: ["frontend/javascript", "frontend/styles"],
-    watch: process.argv.includes("--watch"),
-    minify: process.argv.includes("--minify"),
-    sourcemap: true,
-    target: "es2016",
-    entryPoints: ["frontend/javascript/index.js"],
-    entryNames: "[dir]/[name].[hash]",
-    outdir: path.join(process.cwd(), `${outputFolder}/_bridgetown/static`),
-    publicPath: "/_bridgetown/static",
-    metafile: true,
-    ...esbuildOptions,
-  }).catch(() => process.exit(1))
-}
+  require("esbuild")
+    .build({
+      bundle: true,
+      loader: {
+        ".jpg": "file",
+        ".png": "file",
+        ".gif": "file",
+        ".svg": "file",
+        ".woff": "file",
+        ".woff2": "file",
+        ".ttf": "file",
+        ".eot": "file",
+      },
+      resolveExtensions: [
+        ".tsx",
+        ".ts",
+        ".jsx",
+        ".js",
+        ".css",
+        ".scss",
+        ".sass",
+        ".json",
+        ".js.rb",
+      ],
+      nodePaths: ["frontend/javascript", "frontend/styles"],
+      watch: process.argv.includes("--watch"),
+      minify: process.argv.includes("--minify"),
+      sourcemap: true,
+      target: "es2016",
+      entryPoints: ["frontend/javascript/index.js"],
+      entryNames: "[dir]/[name].[hash]",
+      outdir: path.join(process.cwd(), `${outputFolder}/_bridgetown/static`),
+      publicPath: "/_bridgetown/static",
+      metafile: true,
+      ...esbuildOptions,
+    })
+    .catch(() => process.exit(1));
+};

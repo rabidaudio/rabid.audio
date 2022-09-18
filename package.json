@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "esbuild": "node esbuild.config.js --minify",
-    "esbuild-dev": "node esbuild.config.js --watch"
+    "esbuild-dev": "node esbuild.config.js --watch",
+    "lint:fix": "prettier -w ."
   },
   "devDependencies": {
     "esbuild": "^0.14.39",

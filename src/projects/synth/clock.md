@@ -1,10 +1,9 @@
 ---
 layout: default
-title:  "Synthesizer - Clock module"
+title: "Synthesizer - Clock module"
 categories:
   - project
   - synthesizer
 ---
 
 # Clock Module
-

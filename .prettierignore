@@ -1,0 +1,9 @@
+output
+.bridgetown-cache
+.bridgetown-metadata
+.bridgetown-webpack
+node_modules
+bower_components
+vendor
+package.json
+
