@@ -29,7 +29,7 @@ This is a work in progress; different modules are at different stages of develop
 In the process of building these modules, I've also built some tools to assist.
 
 - [Headphone breakout board](/2020/03/15/headphone-breakout)
-- Breadboard supply adapter
+- [Breadboard supply adapter](/2020/05/25/breadboard-psu)
 - Transistor matcher
 
 ## Source

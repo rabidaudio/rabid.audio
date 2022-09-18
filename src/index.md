@@ -12,9 +12,21 @@ rabid.audio
   {% endfor %}
 </ul>
 
+<!-- projects -->
+
 <!-- Loop pedal output -->
-<!-- LM13700 writeup -->
 <!-- splitter pedal -->
 <!-- chorus pedal -->
+
+<!-- post ideas -->
+
+<!-- LM13700 writeup -->
 <!-- bass pedal wiring? -->
 <!-- big muff tone hack? -->
+<!-- dual ended power supply -->
+<!-- magnet wire prototyping -->
+<!-- gear: psu, iron, multimeter, scope -->
+<!-- bare mcu programming -->
+<!-- plastic vintage tone -->
+<!-- debugging techniques -->
+<!-- time domain and frequency domain -->
