@@ -2,21 +2,21 @@
 layout: default
 ---
 
-rabid.audio
+# Projects
 
-<ul>
-  {% for post in collections.posts.resources %}
-    <li>
-      <a href="{{ post.relative_url }}">{{ post.data.title }}</a>
-    </li>
-  {% endfor %}
-</ul>
+## [Synth](/projects/synth)
 
-<!-- projects -->
-
-<!-- Loop pedal output -->
 <!-- splitter pedal -->
 <!-- chorus pedal -->
+<!-- gameboy synth -->
+<!-- hapticmetronome -->
+<!-- LastFM -->
+
+# Posts
+
+{% for post in collections.posts.resources %}
+  <p><a href="{{ post.relative_url }}">{{ post.data.title }}</a></p>
+{% endfor %}
 
 <!-- post ideas -->
 

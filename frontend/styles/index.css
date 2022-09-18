@@ -106,3 +106,7 @@ img[alt$="-halfwidth"] {
   width: 50%;
   display: block;
 }
+
+pre {
+  white-space: break-spaces;
+}
