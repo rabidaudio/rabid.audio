@@ -1,0 +1,443 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Resources | rabid.audio</title>
+
+<meta name="description" content="Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oxygen&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/_bridgetown/static/index.25VAQKNR.css" />
+<script src="/_bridgetown/static/index.LQD2JBNB.js" defer></script>
+<script type="module">let lastmod = 0
+function startReloadConnection() {
+  const evtSource = new EventSource("/_bridgetown/live_reload")
+  evtSource.onmessage = event => {
+    if (event.data == "reloaded!") {
+      location.reload()
+    } else {
+      const newmod = Number(event.data)
+      if (lastmod > 0 && newmod > 0 && lastmod < newmod) {
+        location.reload()
+      } else {
+        lastmod = newmod
+      }
+    }
+  }
+  evtSource.onerror = event => {
+    if (evtSource.readyState === 2) {
+      // reconnect with new object
+      evtSource.close()
+      console.warn("Live reload: attempting to reconnect in 3 seconds...")
+
+      setTimeout(() => startReloadConnection(), 3000)
+    }
+  }
+}
+setTimeout(() => {
+  startReloadConnection()
+}, 500)
+</script>
+
+  </head>
+  <body class="default ">
+    <!-- <header>
+  <img src="/images/logo.svg" alt="Logo" />
+</header> -->
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/projects">All Projects</a></li>
+    <li><a href="/projects/synth">Synthesizer</a></li>
+    <li><a href="/resources">Resources</a></li>
+
+    <!-- <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li> -->
+  </ul>
+</nav>
+
+
+    <main>
+      
+<h1>Reference</h1>
+
+<ul>
+  <li><a href="/resources/reference/Construction_Details_A-100.pdf">A-100 (Eurorack) case specifications</a></li>
+  <li><a href="/resources/reference/ElectroSmash - Bucket Brigade Devices_ MN3007.pdf">Bucket-Brigade Devices (BBD)</a></li>
+  <li><a href="/resources/reference/exponential.pdf">Exponential voltage control</a></li>
+  <li><a href="/resources/reference/transistor-matching.pdf">Transistor Matching</a></li>
+  <li><a href="/resources/reference/snoa641b.pdf">Log converters</a></li>
+  <li><a href="/resources/reference/spice_ref.pdf">SPICE Quick Reference</a></li>
+</ul>
+
+<h1>Schematics</h1>
+
+<ul>
+  <li><a href="/resources/schematics/Synbal.pdf">Synbal analog drum symbol</a></li>
+  <li><a href="/resources/schematics/electro-harmonix_bass-micro-synthesizer.pdf_1.png">EHX Bass Micro-Synth</a></li>
+  <li><a href="/resources/schematics/VCA__KOMPLETTE_UNTERLAGEN__MSC175.pdf">Lindhof VCA</a></li>
+  <li><a href="/resources/schematics/Roland_RE201_space_echo.pdf">Roland Space Echo</a></li>
+  <li><a href="/resources/schematics/lepers_schems.pdf">Two dozen classic schematics</a></li>
+</ul>
+
+
+
+<h1>Datasheets</h1>
+
+  <h2 id="adc">ADC</h2>
+
+    <h3 id="ADS1110">ADS1110</h3>
+
+    <p>16-bit ADC</p>
+
+
+      <p><a href="/resources/datasheets/ads1110.pdf" target="_blank">Datasheet</a></p>
+  <h2 id="analog">ANALOG</h2>
+
+    <h3 id="LM13700">LM13700</h3>
+
+    <p>Dual Operational Transconductance Amplifier (OTA)</p>
+
+      <p class="note">
+        <p>This is the heart of most of my voltage-controlled designs. See my writeup on the chip.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/lm13700.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="TL07x">TL07x</h3>
+
+    <p>General purpose JFET Operational Amplifier (Op-amp)</p>
+
+      <p class="note">
+        <p>This is my go-to op-amp. Solid, easy to use, audio quality. Comes in single, dual, and quad packages. Note that the power supply pins on the TL074 are opposite what you’d expect!
+They don’t make good comparators because they aren’t rail-to-rail, and they have pretty high power supply requirements so they may not be usable in all situations.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/tl071.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="MN3102">MN3102</h3>
+
+    <p>Clock driver for BDD</p>
+
+      <p class="note">
+        <p>Paired with an MN3207. Technically you can generate the clocks yourself, but you also need a <code class="highlighter-rouge">14/15*Vdd</code> power input so you might as well use it.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/MN3102.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="MN3207">MN3207</h3>
+
+    <p>1024-stage BBD</p>
+
+      <p class="note">
+        <p>Supports delays from 2.56ms to 51.2ms</p>
+      </p>
+
+      <p><a href="/resources/datasheets/MN3207.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="VTL5C">VTL5C</h3>
+
+    <p>Vactrol</p>
+
+      <p class="note">
+        <p>A vactrol is an LED coupled to a light-dependent resistor.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/VTL5C vactrol.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="Xvive5C3">Xvive5C3</h3>
+
+    <p>Vactrol</p>
+
+      <p class="note">
+        <p>A vactrol is an LED coupled to a light-dependent resistor.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/Xvive5C3 Non-RoHs (1).pdf" target="_blank">Datasheet</a></p>
+  <h2 id="dac">DAC</h2>
+
+    <h3 id="DAC8571">DAC8571</h3>
+
+    <p>16-bit DAC</p>
+
+
+      <p><a href="/resources/datasheets/dac8571.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="TLV5620">TLV5620</h3>
+
+    <p>Quad 8-bit DAC</p>
+
+
+      <p><a href="/resources/datasheets/tlv5620.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="MAX5134">MAX5134</h3>
+
+    <p>16-bit SPI DAC</p>
+
+
+      <p><a href="/resources/datasheets/MAX5134-MAX5137.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="MAX5215">MAX5215</h3>
+
+    <p>16-bit I2C DAC</p>
+
+
+      <p><a href="/resources/datasheets/MAX5215-MAX5217.pdf" target="_blank">Datasheet</a></p>
+  <h2 id="digital">DIGITAL</h2>
+
+    <h3 id="PC817X">PC817X</h3>
+
+    <p>Photocoupler</p>
+
+      <p class="note">
+        <p>Useful for MIDI</p>
+      </p>
+
+      <p><a href="/resources/datasheets/73758.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="DM74LS74">DM74LS74</h3>
+
+    <p>Dual Flip-Flop</p>
+
+
+      <p><a href="/resources/datasheets/74LS74.pdf" target="_blank">Datasheet</a></p>
+    <h3 id=""></h3>
+
+    <p>Quad Bilateral Switch</p>
+
+      <p class="note">
+        <p>I don’t like using these. They have weird voltage requirements, and when the switch is off they connect the output to VSS (which is the negative rail in most dual-ended power supply circuits). I prefer the <a href="#DG403">DG403</a>.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/cd4066.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="DG403">DG403</h3>
+
+    <p>Dual SPDT Bilateral Switch</p>
+
+      <p class="note">
+        <p>These only come in SMD packages but they are better than the CD4066.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/dg403.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="555">555</h3>
+
+    <p>Multi-purpose timer</p>
+
+      <p class="note">
+        <p>Ubiquitous timer. Can be used as a delay, square wave oscillator, etc. <a href="https://www.allaboutcircuits.com/tools/555-timer-astable-circuit/">Calculator</a></p>
+      </p>
+
+      <p><a href="/resources/datasheets/lm555.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="SN74LS155">SN74LS155</h3>
+
+    <p>Dual 1-4 demultiplexer</p>
+
+
+      <p><a href="/resources/datasheets/SN74LS155-D.PDF" target="_blank">Datasheet</a></p>
+  <h2 id="jack">JACK</h2>
+
+    <h3 id="35RAPC4BHN3">35RAPC4BHN3</h3>
+
+    <p>Stereo 3.5mm jack</p>
+
+      <p class="note">
+        <p>These are very easy to find. They are stereo with plug switches for both tip and sleeve. I’ve designed <a href="/2020/03/15/headphone-breakout">a breakout board for these</a>. However I’ve started to prefer the Thonkiconn jacks instead as they are vertical and match the Alpha 9mm pot height.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/EDG4.pdf" target="_blank">Datasheet</a></p>
+    <h3 id=""></h3>
+
+    <p>Thonkiconn 3.5mm jack</p>
+
+      <p class="note">
+        <p>Very popular in Eurorack</p>
+      </p>
+
+      <p><a href="/resources/datasheets/Thonkiconn_Jack_Datasheet.pdf" target="_blank">Datasheet</a></p>
+      <p><a href="https://www.thonk.co.uk/shop/thonkiconn/" target="_blank">Purchase</a></p>
+  <h2 id="led">LED</h2>
+
+    <h3 id="HT16K33">HT16K33</h3>
+
+    <p>16*8 LED Controller Driver</p>
+
+      <p class="note">
+        <p>Used by many 7- and 14-segment display modules, for example <a href="https://learn.sparkfun.com/tutorials/sparkfun-qwiic-alphanumeric-display-hookup-guide">Sparkfun</a> and <a href="https://learn.adafruit.com/adafruit-led-backpack/">Adafruit</a>. <a href="https://github.com/adafruit/Adafruit_LED_Backpack">Adafruit Arduino Library</a></p>
+      </p>
+
+      <p><a href="/resources/datasheets/ht16K33v110.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="SM460281N">SM460281N</h3>
+
+    <p>10mm 7-segment display</p>
+
+
+      <p><a href="/resources/datasheets/SM460281N-10mm-7-segement.pdf" target="_blank">Datasheet</a></p>
+  <h2 id="pot">POT</h2>
+
+    <h3 id="Alpha 9mm pot">Alpha 9mm pot</h3>
+
+    <p>9mm pot</p>
+
+      <p class="note">
+        <p>Popular in Eurorack. Come in Single/Dual and Linear/Audio taper.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/Alpha 9mm Vertical - Linear Taper B1K-B500K.pdf" target="_blank">Datasheet</a></p>
+      <p><a href="https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/" target="_blank">Purchase</a></p>
+    <h3 id="Alpha 9mm pot (dual gang)">Alpha 9mm pot (dual gang)</h3>
+
+    <p></p>
+
+
+      <p><a href="/resources/datasheets/DUAL GANG - RD902F-40-15R1-A50K-0057.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="EG2301">EG2301</h3>
+
+    <p>DPDT slide switch</p>
+
+      <p class="note">
+        <p>Just a little shorter than Alpha 9mm pots but if you seat them a little high they’ll do fine.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/EG.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="MD100AM2B">MD100AM2B</h3>
+
+    <p>Motorized slide potentiometer</p>
+
+      <p class="note">
+        <p>These are used in DAW controllers where the sliders can sync with the software. Haven’t found a use for them (yet).</p>
+      </p>
+
+      <p><a href="/resources/datasheets/MD100AM2B-15A10K-6H_spec.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="Bourns PDB18">Bourns PDB18</h3>
+
+    <p>Mini instrument potentiometers</p>
+
+      <p class="note">
+        <p>Used in guitars. Available in linear and audio taper in several configurations.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/PDB18.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="Bourns PTV09">Bourns PTV09</h3>
+
+    <p>9mm potentiometer</p>
+
+      <p class="note">
+        <p>Competitor to the Alpha ones</p>
+      </p>
+
+      <p><a href="/resources/datasheets/ptv09.pdf" target="_blank">Datasheet</a></p>
+  <h2 id="regulator">REGULATOR</h2>
+
+    <h3 id="LM317">LM317</h3>
+
+    <p>1.5A adjustable voltage regulator</p>
+
+      <p class="note">
+        <p>Output voltage is set with a pair of external resistors. For a hard-coded 5V output with no extra parts, use the <a href="#LM7805">LM7805</a>.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/lm317.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="LM337">LM337</h3>
+
+    <p>Negative adjustable voltage regulator</p>
+
+      <p class="note">
+        <p>Same as LM317 but for negative voltages</p>
+      </p>
+
+      <p><a href="/resources/datasheets/lm337.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="LM7805">LM7805</h3>
+
+    <p>1.5A 5V voltage regulator</p>
+
+      <p class="note">
+        <p>Output fixed to 5V</p>
+      </p>
+
+      <p><a href="/resources/datasheets/lm7805.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="TLE2426">TLE2426</h3>
+
+    <p>&quot;Rail Splitter&quot; virtual ground</p>
+
+      <p class="note">
+        <p>Given a power input, these will output a stable voltage half-way between them. This is very useful for creating dual-ended power supplies needed for most op-amp circuits in situations where your power supply is limited (e.g. a 9V stompbox).</p>
+      </p>
+
+      <p><a href="/resources/datasheets/tle2426.pdf" target="_blank">Datasheet</a></p>
+  <h2 id="switch">SWITCH</h2>
+
+    <h3 id="MTS mini toggle switch">MTS mini toggle switch</h3>
+
+    <p>13mm toggle switches with comparable hight to Alpha 9mm pots</p>
+
+
+      <p><a href="/resources/datasheets/Datasheet MTS series.pdf" target="_blank">Datasheet</a></p>
+  <h2 id="transistor">TRANSISTOR</h2>
+
+    <h3 id="2N5457">2N5457</h3>
+
+    <p>N-Channel JFET</p>
+
+
+      <p><a href="/resources/datasheets/2N5457-D.PDF" target="_blank">Datasheet</a></p>
+    <h3 id="2N7000">2N7000</h3>
+
+    <p>N-Channel MOSTFET</p>
+
+
+      <p><a href="/resources/datasheets/2N7000-D.PDF" target="_blank">Datasheet</a></p>
+    <h3 id="AOD4286/AOI4286">AOD4286/AOI4286</h3>
+
+    <p>100V N-Channel MOSFET</p>
+
+
+      <p><a href="/resources/datasheets/AOI4286.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="BS250">BS250</h3>
+
+    <p>60V P-Channel MOSFET</p>
+
+
+      <p><a href="/resources/datasheets/bs250.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="DMMT5401">DMMT5401</h3>
+
+    <p>PNP matched-pair BJT</p>
+
+      <p class="note">
+        <p>These can be a lot more useful than hand-matching transistors, but they are SMD.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/dmmt5401.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="DMMT5551">DMMT5551</h3>
+
+    <p>NPN matched-pair BJT</p>
+
+      <p class="note">
+        <p>These can be a lot more useful than hand-matching transistors, but they are SMD.</p>
+      </p>
+
+      <p><a href="/resources/datasheets/dmmt5551.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="FQP13N">FQP13N</h3>
+
+    <p>60 V N-Channel MOSTFET</p>
+
+
+      <p><a href="/resources/datasheets/FQP13N06L.pdf" target="_blank">Datasheet</a></p>
+    <h3 id="J175">J175</h3>
+
+    <p>25V N-Channel JFET</p>
+
+
+      <p><a href="/resources/datasheets/J109-D.PDF" target="_blank">Datasheet</a></p>
+    <h3 id="J175">J175</h3>
+
+    <p>30V P-Channel JFET</p>
+
+
+      <p><a href="/resources/datasheets/J17x,MMBFJ17x.pdf" target="_blank">Datasheet</a></p>
+
+    </main>
+
+    <footer>
+  Contact me at <a href="mailto:cjk@rabidaudio.com">cjk@rabidaudio.com</a>
+</footer>
+
+  </body>
+</html>

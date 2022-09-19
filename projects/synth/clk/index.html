@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Synthesizer - Clock module | rabid.audio</title>
+
+<meta name="description" content="Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oxygen&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/_bridgetown/static/index.25VAQKNR.css" />
+<script src="/_bridgetown/static/index.LQD2JBNB.js" defer></script>
+<script type="module">let lastmod = 0
+function startReloadConnection() {
+  const evtSource = new EventSource("/_bridgetown/live_reload")
+  evtSource.onmessage = event => {
+    if (event.data == "reloaded!") {
+      location.reload()
+    } else {
+      const newmod = Number(event.data)
+      if (lastmod > 0 && newmod > 0 && lastmod < newmod) {
+        location.reload()
+      } else {
+        lastmod = newmod
+      }
+    }
+  }
+  evtSource.onerror = event => {
+    if (evtSource.readyState === 2) {
+      // reconnect with new object
+      evtSource.close()
+      console.warn("Live reload: attempting to reconnect in 3 seconds...")
+
+      setTimeout(() => startReloadConnection(), 3000)
+    }
+  }
+}
+setTimeout(() => {
+  startReloadConnection()
+}, 500)
+</script>
+
+  </head>
+  <body class="default ">
+    <!-- <header>
+  <img src="/images/logo.svg" alt="Logo" />
+</header> -->
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/projects">All Projects</a></li>
+    <li><a href="/projects/synth">Synthesizer</a></li>
+    <li><a href="/resources">Resources</a></li>
+
+    <!-- <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li> -->
+  </ul>
+</nav>
+
+
+    <main>
+      <h1 id="clk">CLK</h1>
+
+<p>This is a clock Eurorack synth module designed to drive sequencers, drum machines, arpeggiators, etc.</p>
+
+<p>It’s entirely digital, which makes it an easier module to build since most of the complexity is in software.</p>
+
+<p><a href="https://github.com/rabidaudio/synthesizer/tree/clock/clock">Source files</a></p>
+
+<p>Status: In development. Working on a breadboard, most features software features have been implemented. Awaiting parts to begin PCB layout.</p>
+
+<h3 id="todo">TODO</h3>
+
+<ul>
+  <li>Switch timer to phase-correct PWM mode to reduce glitches</li>
+  <li>Store settings in EEPROM</li>
+  <li>Add CV input</li>
+  <li>Verify on breadboard with ATTiny85 in place of ATMega</li>
+  <li>Design and print PCB</li>
+  <li>Design panel cuts and decals</li>
+  <li>Assemble PCB and verify</li>
+  <li>Cut and decal panel</li>
+</ul>
+
+<h2 id="features">Features</h2>
+
+<ul>
+  <li>15 to 300 BPM</li>
+  <li>Tap-tempo input</li>
+  <li>CV input for controlling clock speed</li>
+  <li>Swing control, up to triplets up or back</li>
+  <li>A separate subdivision output which can trigger at an integer multiple of the clock speed</li>
+  <li>Efficient 3HP size</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<ul>
+  <li>Turn the knob to control the BPM. LEDs display the current BPM, and decimal points blink with the outputs.</li>
+  <li>Apply a unipolar voltage from 0-5V to the CV input to adjust the clock speed. 0V is no additional increase in rate over the knob setting. Each 1V is 64 additional BPM, capped at 300 BPM.</li>
+  <li>Tap the tap-tempo button two or more times to set the BPM directly. This effects the base BPM before the CV is applied.</li>
+  <li>Hold the tap-tempo button and turn the knob to control the subdivisions. LEDs display the subdivision setting.</li>
+  <li>Hold the swing button and turn the knob to control the amount of swing. LEDs display the swing amount from -127 to 127.</li>
+  <li>Press both the tap-tempo button and swing button at the same time to reset the subdivision counter and pause the clock. LEDs display <code class="highlighter-rouge">000</code>.</li>
+  <li>Hold both the tap-tempo button and swing button at the same time for 2 seconds to perform a factory reset, returning the BPM, subdivision, and swing settings to the defaults.</li>
+</ul>
+
+<h2 id="design">Design</h2>
+
+<p>The ATTiny84 is used as the core microprocessor. I often use the ATTiny85 for small microprocessor needs, but here I need a bit more I/O and memory. All I/O pins are utilized in this design.</p>
+
+<p><code class="highlighter-rouge">Timer1</code> is a 16-bit timer which is used as the clock core. This way the main loop is free to focus on user input without worrying about timing or performance; <code class="highlighter-rouge">Timer1</code> will interrupt when it’s time to trigger a clock signal. It counts from 0 up to the value in register <code class="highlighter-rouge">OCR1A</code>, at which point an interrupt is issued and the timer restarts. We bring the clock pin high when the timer is at 0. We use <code class="highlighter-rouge">OCR1B</code> as a second interrupt at 313 to bring the clock signal low again, creating a fixed pulse width of 20ms.</p>
+
+<p>The formula for timer frequency is <code class="highlighter-rouge">16_000_000/((OCR1A+1)*1024)</code> where <code class="highlighter-rouge">16_000_000</code> represents the the 16MHz system clock of the ATTiny and <code class="highlighter-rouge">1024</code> is the pre-scaler setting For a 16-bit timer this gives a possible frequency range from 5208 Hz to 0.238Hz. See <a href="http://ww1.microchip.com/downloads/en/devicedoc/Atmel-7701_Automotive-Microcontrollers-ATtiny24-44-84_Datasheet.pdf">the datasheet</a> for a more thorough explanation of AVR timers.</p>
+
+<p>Rather than doing this heavy floating-point math on-device, these were <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vRYF0LwfJ1-PHLnWnM49WWA0hqCR1MDAl3SorFMbPlyfnnnua1AY_6QSFmG-xYukErxw6XOodOVI3JO/pubhtml">pre-generated</a> and loaded into flash as a lookup table.</p>
+
+<p>The timer has a maximum error of 0.03% for pulses less than 5 Hz (300 BPM) and less than 0.13% for the maximum pulse rate of 20 Hz.</p>
+
+<p><img src="/images/clock_module_bpm_error.png" alt="BPM vs Error" /></p>
+
+<p>The code uses <a href="https://platformio.org/">PlatformIO</a> for build tooling. Separate C++ classes encapsulate logic of each of the components, using header-only files to simplify file structure.</p>
+
+<p>Rather than a potentiometer, the knob control is an 8-position continuous turn rotary switch with fixed size resistors between each pole, forming a sort of discrete potentiometer.</p>
+
+<p><img src="/images/clock_module_discrete_potentiometer.png" alt="Rotary schematic -halfwidth" /></p>
+
+<p>This is attached to an ADC input on the ATTiny, and some logic is used to convert this back into an integer switch position, thus only requiring one I/O pin.</p>
+
+<p>Swing works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At <code class="highlighter-rouge">0</code>, the beats are even and there is no swing. At maximum value the swing beats are triplets.</p>
+
+<p>The 7-segment displays are driven by the <a href="resources#HT16K33">HT16K33</a> LED driver. LED states are set using I2C. Without it, 30 I/O pins would be required to drive the display.</p>
+
+    </main>
+
+    <footer>
+  Contact me at <a href="mailto:cjk@rabidaudio.com">cjk@rabidaudio.com</a>
+</footer>
+
+  </body>
+</html>

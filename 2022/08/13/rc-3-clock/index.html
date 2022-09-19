@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Loop pedal clock output | rabid.audio</title>
+
+<meta name="description" content="Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oxygen&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/_bridgetown/static/index.25VAQKNR.css" />
+<script src="/_bridgetown/static/index.LQD2JBNB.js" defer></script>
+<script type="module">let lastmod = 0
+function startReloadConnection() {
+  const evtSource = new EventSource("/_bridgetown/live_reload")
+  evtSource.onmessage = event => {
+    if (event.data == "reloaded!") {
+      location.reload()
+    } else {
+      const newmod = Number(event.data)
+      if (lastmod > 0 && newmod > 0 && lastmod < newmod) {
+        location.reload()
+      } else {
+        lastmod = newmod
+      }
+    }
+  }
+  evtSource.onerror = event => {
+    if (evtSource.readyState === 2) {
+      // reconnect with new object
+      evtSource.close()
+      console.warn("Live reload: attempting to reconnect in 3 seconds...")
+
+      setTimeout(() => startReloadConnection(), 3000)
+    }
+  }
+}
+setTimeout(() => {
+  startReloadConnection()
+}, 500)
+</script>
+
+  </head>
+  <body class="post ">
+    <!-- <header>
+  <img src="/images/logo.svg" alt="Logo" />
+</header> -->
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/projects">All Projects</a></li>
+    <li><a href="/projects/synth">Synthesizer</a></li>
+    <li><a href="/resources">Resources</a></li>
+
+    <!-- <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li> -->
+  </ul>
+</nav>
+
+
+    <main>
+      <h1>Loop pedal clock output</h1>
+
+<p>For a song I was working on, I really wanted to sync up a recorded bass loop with a drum machine. Unfortunately, MIDI is a feature only available on the more expensive loop pedals, not my lowly Boss RC-3.</p>
+
+<p>I googled for a solution and ran across a post on Reddit that referenced a defunct blog post. The Wayback Machine didn’t archive the images but from <a href="https://web.archive.org/web/20180818065127/http://luxmonday.com/2018/07/26/modifying-a-boss-rc-3-to-add-a-korg-sync-output/">the text</a> I was able to put together enough information to recreate it. The original user found two test pads on the PCB that dipped in voltage when the tempo LEDs blinked.</p>
+
+<p>I connected these and a 3.3V power line to an ATTiny85, using two analog inputs to read the LED blinks. A state machine waits through the startup process where the LEDs blink a few times, and through one complete bar to get the tempo information before outputting clock signals to a 3.5mm jack. I also 4x’ed the clock frequency to output 16th notes instead of quarter notes.</p>
+
+<blockquote class="twitter-tweet"><p lang="en" dir="ltr">Wanted my loop pedal to sync with my drum machine but the RC-3 doesn&#39;t have MIDI so I hacked it to output a clock signal 1/ <a href="https://t.co/OSuETAM5EN">pic.twitter.com/OSuETAM5EN</a></p>&mdash; Julian (@okay_sure_cool) <a href="https://twitter.com/okay_sure_cool/status/1558580820289458179?ref_src=twsrc%5Etfw">August 13, 2022</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<p>The source code for this is pretty simple. Feel free to use it as you see fit!</p>
+
+<div class="language-cpp highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kt">size_t</span> <span class="n">initializationState</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// 0-3=waiting for first three startup beats, 4=waiting for real beat 1, 5=counting beats while waiting for next beat 1, 6=initialized</span>
+<span class="kt">bool</span> <span class="n">wasTriggering</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span> <span class="c1">// was A or B triggered on the last tick</span>
+<span class="kt">uint32_t</span> <span class="n">lastBeatAt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// the micros at which the last beat started</span>
+<span class="kt">uint32_t</span> <span class="n">lastSubdivisionAt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// the micros at which the last subdivision started</span>
+<span class="kt">uint32_t</span> <span class="n">subdivisionLength</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// the number of micros between subdivisions</span>
+<span class="kt">uint8_t</span> <span class="n">subdivision</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// which subdivision we're on</span>
+<span class="kt">uint32_t</span> <span class="n">pulseStartedAt</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="c1">// micros at which the previous pulse started</span>
+
+<span class="k">const</span> <span class="kt">uint16_t</span> <span class="n">THRESHOLD</span> <span class="o">=</span> <span class="mi">550</span><span class="p">;</span> <span class="c1">// 550/1024*3.1 = 1.66V</span>
+<span class="k">const</span> <span class="kt">uint32_t</span> <span class="n">PULSE_LENGTH</span> <span class="o">=</span> <span class="mi">20000</span><span class="p">;</span>
+<span class="k">const</span> <span class="kt">size_t</span> <span class="n">LED_PIN</span> <span class="o">=</span> <span class="mi">1</span><span class="p">;</span> <span class="c1">// change to 13 for MEGA</span>
+<span class="k">const</span> <span class="kt">size_t</span> <span class="n">SUBDIVISIONS</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span> <span class="p">{</span>
+<span class="c1">//   Serial.begin(9600);</span>
+   <span class="n">pinMode</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="kt">void</span> <span class="n">loop</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kt">uint32_t</span> <span class="n">now</span> <span class="o">=</span> <span class="n">micros</span><span class="p">();</span>
+  <span class="kt">uint16_t</span> <span class="n">a</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">A2</span><span class="p">);</span> <span class="c1">// 1 beat</span>
+  <span class="kt">uint16_t</span> <span class="n">b</span> <span class="o">=</span> <span class="n">analogRead</span><span class="p">(</span><span class="n">A3</span><span class="p">);</span> <span class="c1">// off beats</span>
+  <span class="kt">bool</span> <span class="n">aTriggered</span> <span class="o">=</span> <span class="n">a</span> <span class="o">&lt;</span> <span class="n">THRESHOLD</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">bTriggered</span> <span class="o">=</span> <span class="n">b</span> <span class="o">&lt;</span> <span class="n">THRESHOLD</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">nowTriggering</span> <span class="o">=</span> <span class="n">aTriggered</span> <span class="o">||</span> <span class="n">bTriggered</span><span class="p">;</span>
+
+  <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="n">wasTriggering</span> <span class="o">&amp;&amp;</span> <span class="n">nowTriggering</span><span class="p">)</span> <span class="p">{</span>
+    <span class="c1">// a new beat detected</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">initializationState</span> <span class="o">&lt;</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">aTriggered</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// got startup beat</span>
+      <span class="n">initializationState</span><span class="o">++</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">initializationState</span> <span class="o">==</span> <span class="mi">4</span> <span class="o">&amp;&amp;</span> <span class="n">aTriggered</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// first real beat</span>
+      <span class="n">lastBeatAt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+      <span class="n">initializationState</span> <span class="o">=</span> <span class="mi">5</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">initializationState</span> <span class="o">==</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="n">bTriggered</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// got off-beat</span>
+      <span class="n">lastBeatAt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="k">if</span> <span class="p">(</span><span class="n">initializationState</span> <span class="o">==</span> <span class="mi">6</span> <span class="o">||</span> <span class="p">(</span><span class="n">initializationState</span> <span class="o">==</span> <span class="mi">5</span> <span class="o">&amp;&amp;</span> <span class="n">aTriggered</span><span class="p">))</span> <span class="p">{</span>
+      <span class="c1">// new beat, start pulsing</span>
+      <span class="n">initializationState</span> <span class="o">=</span> <span class="mi">6</span><span class="p">;</span> <span class="c1">// initialized</span>
+      <span class="n">subdivisionLength</span> <span class="o">=</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">lastBeatAt</span><span class="p">)</span> <span class="o">/</span> <span class="n">SUBDIVISIONS</span><span class="p">;</span>
+      <span class="n">lastBeatAt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+      <span class="n">lastSubdivisionAt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+      <span class="n">subdivision</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+      <span class="n">pulseStartedAt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span> <span class="c1">// trigger quarter-period pulse</span>
+    <span class="p">}</span>
+  <span class="p">}</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">initializationState</span> <span class="o">==</span> <span class="mi">6</span> <span class="o">&amp;&amp;</span> <span class="n">subdivision</span> <span class="o">&lt;</span> <span class="n">SUBDIVISIONS</span> <span class="o">&amp;&amp;</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">lastSubdivisionAt</span><span class="p">)</span> <span class="o">&gt;</span> <span class="n">subdivisionLength</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pulseStartedAt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span> <span class="c1">// trigger quarter-period pulse</span>
+    <span class="n">lastSubdivisionAt</span> <span class="o">=</span> <span class="n">now</span><span class="p">;</span>
+    <span class="n">subdivision</span><span class="o">++</span><span class="p">;</span>
+  <span class="p">}</span>
+  <span class="n">wasTriggering</span> <span class="o">=</span> <span class="n">nowTriggering</span><span class="p">;</span>
+  <span class="kt">bool</span> <span class="n">pulse</span> <span class="o">=</span> <span class="nb">false</span><span class="p">;</span>
+  <span class="k">if</span> <span class="p">(</span><span class="n">initializationState</span> <span class="o">==</span> <span class="mi">6</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">pulse</span> <span class="o">=</span> <span class="p">(</span><span class="n">now</span> <span class="o">-</span> <span class="n">pulseStartedAt</span><span class="p">)</span> <span class="o">&lt;</span> <span class="n">PULSE_LENGTH</span><span class="p">;</span>
+    <span class="n">digitalWrite</span><span class="p">(</span><span class="n">LED_PIN</span><span class="p">,</span> <span class="n">pulse</span><span class="p">);</span>
+  <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+
+    </main>
+
+    <footer>
+  Contact me at <a href="mailto:cjk@rabidaudio.com">cjk@rabidaudio.com</a>
+</footer>
+
+  </body>
+</html>

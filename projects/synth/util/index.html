@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>Synthesizer - Clock module | rabid.audio</title>
+
+<meta name="description" content="Write an awesome description for your new site here. It will appear in your document head meta (for Google search results) and in your feed.xml site description." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oxygen&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/_bridgetown/static/index.25VAQKNR.css" />
+<script src="/_bridgetown/static/index.LQD2JBNB.js" defer></script>
+<script type="module">let lastmod = 0
+function startReloadConnection() {
+  const evtSource = new EventSource("/_bridgetown/live_reload")
+  evtSource.onmessage = event => {
+    if (event.data == "reloaded!") {
+      location.reload()
+    } else {
+      const newmod = Number(event.data)
+      if (lastmod > 0 && newmod > 0 && lastmod < newmod) {
+        location.reload()
+      } else {
+        lastmod = newmod
+      }
+    }
+  }
+  evtSource.onerror = event => {
+    if (evtSource.readyState === 2) {
+      // reconnect with new object
+      evtSource.close()
+      console.warn("Live reload: attempting to reconnect in 3 seconds...")
+
+      setTimeout(() => startReloadConnection(), 3000)
+    }
+  }
+}
+setTimeout(() => {
+  startReloadConnection()
+}, 500)
+</script>
+
+  </head>
+  <body class="default ">
+    <!-- <header>
+  <img src="/images/logo.svg" alt="Logo" />
+</header> -->
+
+<nav>
+  <ul>
+    <li><a href="/">Home</a></li>
+    
+    <li><a href="/projects">All Projects</a></li>
+    <li><a href="/projects/synth">Synthesizer</a></li>
+    <li><a href="/resources">Resources</a></li>
+
+    <!-- <li><a href="/about">About</a></li>
+    <li><a href="/posts">Posts</a></li> -->
+  </ul>
+</nav>
+
+
+    <main>
+      <h1 id="util">UTIL</h1>
+
+<p>This is a Eurorack synth module which combines a collection of common tools for transforming signals, either control voltages or audio signals. While there are several distinct utilities, most are not mutually-exclusive.</p>
+
+<p>This was the first module I designed.</p>
+
+<p><img src="/images/util_image.jpg" alt="populated PCB -halfwidth" /></p>
+
+<h3 id="todo">TODO</h3>
+
+<ul>
+  <li>Correct some noise</li>
+  <li>Design a Revision-B PCB</li>
+  <li>Assemble PCB</li>
+  <li>Cut and decal panel</li>
+</ul>
+
+<h2 id="usage">Usage</h2>
+
+<h3 id="source">Source</h3>
+
+<p>When <code class="highlighter-rouge">A_IN</code> is disconnected, <code class="highlighter-rouge">OUT</code> is a constant voltage output based on the position of the knob. <code class="highlighter-rouge">OUT</code> is 0V when the knob is in the center position, and adjusts up to +/- 10V.</p>
+
+<h3 id="buffer--scaler">Buffer / Scaler</h3>
+
+<p>When <code class="highlighter-rouge">A_IN</code> is supplied, it’s value is buffered to <code class="highlighter-rouge">OUT</code>. The knob position linearly adjusts the output gain. At the center position, <code class="highlighter-rouge">OUT</code> is the same as <code class="highlighter-rouge">A_IN</code>. At the full-left position, <code class="highlighter-rouge">OUT</code> is off. At the full-right position, the value of <code class="highlighter-rouge">A_IN</code> is doubled.</p>
+
+<h3 id="adder">Adder</h3>
+
+<p>When <code class="highlighter-rouge">B_IN</code> is supplied, it’s value is added to <code class="highlighter-rouge">A_IN</code> before applying scaling.</p>
+
+<h3 id="inverter">Inverter</h3>
+
+<p><code class="highlighter-rouge">~OUT</code> is always the inverse of <code class="highlighter-rouge">OUT</code>.</p>
+
+<h3 id="gate">Gate</h3>
+
+<p>When <code class="highlighter-rouge">GATE</code> is supplied with a digital voltage, it allows disabling <code class="highlighter-rouge">OUT</code> (and <code class="highlighter-rouge">~OUT</code>) at logic-low (0V). An LED indicates when the gate is open. When <code class="highlighter-rouge">GATE</code> is not supplied, the outputs are always enabled, and the LED remains off.</p>
+
+<h3 id="digital-logic">Digital logic</h3>
+
+<p>Digital <code class="highlighter-rouge">OR</code> can be implemented by summing signals on <code class="highlighter-rouge">A_IN</code> and <code class="highlighter-rouge">B_IN</code> With the knob at the 1/4 position. Digital <code class="highlighter-rouge">AND</code> can be implemented by applying one signal to <code class="highlighter-rouge">A_IN</code> and one to <code class="highlighter-rouge">GATE</code> with the knob at the 1/2 position.</p>
+
+<h1 id="design">Design</h1>
+
+<p>A summing inverting amplifier with a variable feedback resistor handles the adder, inverter, and scalar. A connection on either A or B toggles an analog switch selecting between a constant voltage source and the summing output. Another analog switch controlled by the gate allows that signal to be toggled before it is buffered in both an inverted and re-inverted back to positive outputs.</p>
+
+<p><img src="/images/util_schematic.png" alt="schematic" /></p>
+
+<p>This manages to use an extreme minimum number of parts, requiring only one quad op-amp and one dual analog switch. Some switching and transistor trickery is used to configure the behavior depending on what patches are connected.</p>
+
+    </main>
+
+    <footer>
+  Contact me at <a href="mailto:cjk@rabidaudio.com">cjk@rabidaudio.com</a>
+</footer>
+
+  </body>
+</html>
