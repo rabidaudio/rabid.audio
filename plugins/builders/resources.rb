@@ -1,4 +1,4 @@
-require 'debug'
+# require 'debug'
 
 class Builders::Resources < SiteBuilder
   def build
