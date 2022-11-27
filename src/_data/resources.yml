@@ -228,6 +228,7 @@ datasheets:
   - file: SM460281N-10mm-7-segement.pdf
     name: SM460281N
     description: 10mm 7-segment display
+    notes: Doesn't have a pin for the decimal place
     category: led
   - file: SN74LS155-D.PDF
     name: SN74LS155
@@ -248,3 +249,12 @@ datasheets:
     description: Vactrol
     notes: A vactrol is an LED coupled to a light-dependent resistor.
     category: analog
+  - file: rm.pdf
+    name: RM subminiature rotary switch
+    category: switch
+  - file: PEC11R.pdf
+    name: Bourns 12mm incremental rotary encoder
+    category: switch
+  - file: pec11h.pdf
+    name: Bourns 11mm incremental rotary encoder
+    category: switch
