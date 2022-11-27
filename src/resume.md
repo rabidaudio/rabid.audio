@@ -1,30 +1,45 @@
 ---
 layout: plain
 stylesheets:
-- resume.css
+- github-markdown-css/github-markdown.css
 page_class: markdown-body
 ---
 
+<style>
+main {
+  margin: 10px;
+}
+
+@media print {
+  main {
+    font-size: 0.7em;
+    margin: 0;
+  }
+  .markdown-body h1, .markdown-body h2, .markdown-body h3,
+  .markdown-body h4, .markdown-body h5, .markdown-body h6 {
+    margin-top: 17px;
+    margin-bottom: 8px;
+  }
+}
+</style>
+
 # Charles Julian Knight
 
-> 709 Killian St. SE<br/>
-> Atlanta, GA 30312<br/>
-> 404.316.3749<br/>
-> [cjk@rabidaudio.com](mailto:cjk@rabidaudio.com)
+> 709 Killian St. SE Atlanta, GA 30312<br/>
+> 404.316.3749 | [cjk@rabidaudio.com](mailto:cjk@rabidaudio.com)
 
 ## Education
 
-#### Georgia Institute of Technology - Atlanta, GA
-- B.S. in Electrical Engineering, Fall 2012 - Spring 2015
+__Georgia Institute of Technology__ - Atlanta, GA<br/>
+B.S. in Electrical Engineering, Fall 2012 - Spring 2015
 
-#### Berry College - Rome, GA
-- B.A. Dual-Degree Program, Fall 2009 - Spring 2012
+__Berry College__ - Rome, GA<br/>
+B.A. Dual-Degree Program, Fall 2009 - Spring 2012
 
 ## Experience
 
 ### Co-founder & Chief Technical Officer, [FIXD Automotive](https://www.fixdapp.com)
-> August 2015 - Present<br/>
-> Atlanta
+__August 2015 - Present__ | Atlanta
 
 FIXD Automotive is a company that makes car ownership as easy and affordable as possible for the everyday driver. The flagship product is a Bluetooth [OBD-II](https://en.wikipedia.org/wiki/On-board_diagnostics) sensor and mobile app that diagnoses car problems, explaining error codes in simple language. While there, the company grew rapidly, being the [fastest growing lower middle-market company in Georgia](https://www.acg.org/atlanta-60) in 2018. As of Q4 2022 it has grown to 50 employees, graduated from [ATDC](https://atdc.org/), and sold around 2 million units, all while remaining profitable and never raising any outside capital.
 
@@ -40,8 +55,7 @@ FIXD Automotive is a company that makes car ownership as easy and affordable as 
 - Set policies and ensured compliance around IT security and user privacy. As Data Protection Officer, brought company into compliance with [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) and [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act), and automated customer data deletion requests.
 
 ### Lead Software Engineer, [TechJect](http://techject.com/)
-> May 2015 - August 2015<br/>
-> Atlanta
+__May 2015 - August 2015__ | Atlanta
 
 Returned to TechJect after completing my undergrad program. Lead a team of 3 software engineers. The team overcame several technical challenges:
 
@@ -59,8 +73,7 @@ After completing my undergraduate degree, I founded a technology development con
 -->
 
 ### Electrical & Computer Engineer, [TechJect](http://techject.com/)
-> May 2014 - December 2014<br/>
-> Atlanta
+__May 2014 - December 2014__ | Atlanta
 
 TechJect designed consumer drones, including the [Robot Dragonfly](https://www.indiegogo.com/projects/robot-dragonfly-micro-aerial-vehicle), which was the first crowd-funded project to break $1 million in funding. The company was run and largely staffed by Electrical Engineering PhDs. Joined the company as the only non-firmware software engineer while still in undergrad.
 
@@ -71,15 +84,13 @@ TechJect designed consumer drones, including the [Robot Dragonfly](https://www.i
 
 
 ### Developer, [GetNotes](http://www.getnotes.co/)
-> January 2014 - June 2014<br/>
-> Atlanta
+__January 2014 - June 2014__ | Atlanta
 
 Joined an [Atlanta Ventures](http://www.atlantaventures.com/)-funded startup during their progress through the [Flashpoint accelerator](http://flashpoint.co/) at Georgia Tech. The company offered crowd-sourced audio-to-text transcription as a service. Worked directly with the CTO to build and manage a web application in the [Zend PHP Framework](https://framework.zend.com/). Implemented new application features and patched bugs in a rapid development cycle. Advised on technologies and company direction, lead initial research into machine-learning algorithms for automated transcription. Through the Flashpoint program, learned a rigorous customer discovery processes.
 
 
 ### Distributed Systems/AIX Co-Op, [Norfolk Southern Corporation](http://www.nscorp.com/content/nscorp/en.html)
-> September 2012 - August 2013<br/>
-> Atlanta
+__September 2012 - August 2013__ | Atlanta
 
 Worked on a number of different projects over two co-op sessions.
 
@@ -90,8 +101,7 @@ Worked on a number of different projects over two co-op sessions.
 
 
 ### Student Supervisor, Technical Support Desk, [Berry College OIT](https://www.berry.edu/oit/bits)
-> Aug 2009 - April 2012<br/>
-> Mount Berry, Georgia
+__Aug 2009 - April 2012__ | Mount Berry, Georgia
 
 Provided technical support for faculty, staff, and students via phone, email, and in person. Created and managed service requests and directed departmental calls.
 
@@ -120,14 +130,14 @@ Solo submission for Georgia Tech Invention Studio hackathon that served as precu
 ## Organizations
 
 #### Volunteer, [Code for Atlanta](http://http://codeforatlanta.org/)
-> January 2017 - March 2020
+__January 2017 - March 2020__
 
 Code For Atlanta, a local brigade of Code for America, is a group of civic-minded technologists, designers, and topic experts using our skills to improve Atlanta and the world. As a Project Lead volunteer, lead teams working on various projects during our regular hack nights.
 
 <!-- Atlanta Maker Faire volunteer? 2014,2015,2016,2018? -->
 
 #### Organizer, [Startup Exchange](http://www.startup.exchange/)
-> August 2013 - May 2015
+__August 2013 - May 2015__
 
 Startup Exchange is a student organization to foster entrepreneurship and hacker culture at Georgia Tech. Co-founded the Maker team. Developed and maintained the website, taught classes on web development with [Ruby on Rails](http://rubyonrails.org/) to students, organized three and attended over a dozen hackathons.
 

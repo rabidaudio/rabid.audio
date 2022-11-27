@@ -13,4 +13,3 @@
 - redirect rabidaudio.com and charlesjulianknight.com
 - create Links page
 - verify Mastodon via meta tags
-
