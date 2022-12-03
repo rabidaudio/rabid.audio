@@ -1,15 +1,18 @@
 :root {
   --body-background: #f2f2f2;
   --body-color: #444;
-  --heading-color: black;
-  --action-color: #d01040;
+  --accent-color: #d01040;
+  /* --heading-color: black; */
+  --heading-color: var(--accent-color);
+  --font-default: "Oxygen", "Helvetica Neue", "Helvetica", BlinkMacSystemFont,
+  -apple-system, "Arial", sans-serif;
+  --font-mono: "Cutive Mono", monospace;
 }
 
 body {
   background: var(--body-background);
   color: var(--body-color);
-  font-family: "Oxygen", "Helvetica Neue", "Helvetica", BlinkMacSystemFont,
-    -apple-system, "Arial", sans-serif;
+  font-family: var(--font-default);
   margin: 0 8px;
   font-size: 108%;
   line-height: 1.5;
@@ -21,12 +24,15 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "Cutive Mono", monospace;
+  font-family: var(--font-mono); 
+  color: var(--accent-color);
 }
 
 a {
-  font-family: "Cutive Mono", monospace;
-  color: var(--action-color);
+  /* font-family: var(--font-mono); */
+  font-family: var(--font-default);
+  
+  color: var(--body-color);
   text-decoration: underline;
 }
 
