@@ -2,6 +2,7 @@
   --body-background: #f2f2f2;
   --body-color: #444;
   --accent-color: #d01040;
+  --on-accent-color: #fff;
   /* --heading-color: black; */
   --heading-color: var(--accent-color);
   --font-default: "Oxygen", "Helvetica Neue", "Helvetica", BlinkMacSystemFont,
@@ -13,9 +14,10 @@ body {
   background: var(--body-background);
   color: var(--body-color);
   font-family: var(--font-default);
-  margin: 0 8px;
+  margin: 0;
   font-size: 108%;
   line-height: 1.5;
+  min-width: 320px;
 }
 
 h1,
@@ -56,23 +58,21 @@ body > header img {
   max-width: 100%;
 }
 
-body > nav ul {
-  margin: 2rem 0;
-  padding: 0;
-  list-style-type: none;
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  font-size: 1.3rem;
-  font-weight: bold;
-}
-
-body > nav a {
+header > a {
   text-decoration: none;
 }
 
+header h1 {
+  margin-bottom: 5px;
+}
+
+header .tagline {
+  margin: 0;
+  font-size: 0.8em;
+}
+
 main {
-  margin: 2rem auto 4rem;
+  margin: 0 auto 2rem;
   max-width: 65rem;
   min-height: calc(100vh - 200px);
   padding: 25px 25px 50px;
@@ -87,8 +87,22 @@ main {
 
 footer {
   text-align: center;
-  margin-bottom: 4rem;
   font-size: 1em;
+}
+
+footer nav ul {
+  margin: 2rem 0;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  font-weight: bold;
+}
+
+footer nav a {
+  text-decoration: none;
 }
 
 hr {

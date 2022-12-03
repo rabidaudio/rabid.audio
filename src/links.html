@@ -1,0 +1,69 @@
+---
+layout: default
+template_engine: erb
+---
+
+<style>
+.link-groups {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.link-group {
+  text-align: center;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  flex-basis: 500px;
+  flex-grow: 1;
+}
+.link {
+  margin: 20px;
+  border: 1px solid var(--accent-color);
+  border-radius: 5px;
+  padding: 15px;
+  transition: all 0.2s;
+}
+.link.clickable:hover {
+  background-color: var(--accent-color);
+  color: var(--on-accent-color);
+}
+.link-group a {
+  text-decoration: none;
+}
+.link .url {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: block;
+  font-size: 0.5em;
+  white-space: nowrap;
+  direction: rtl; /* make ellipsis start at front */
+}
+</style>
+
+<div class="link-groups">
+  <% site.metadata.links.each do |category, links| %>
+    <ul class="link-group">
+      <h2><%= category %></h2>
+      <% links.each do |name, dest| %>
+        <% if dest.starts_with?('http') %>
+          <a href="<%= dest %>">
+            <li class="link clickable">
+              <div class="title"><%= name %></div>
+              <div>
+                <code class="url"><%= dest.sub(/\Ahttps?\:\/\/(www.)?/, '') %></code>
+              </div>
+            </li>
+          </a>
+        <% else %>
+          <li class="link">
+            <div class="title"><%= name %></div>
+            <div>
+              <code class="copyable"><%= dest %></code>
+            </div>
+          </li>
+        <% end %>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
