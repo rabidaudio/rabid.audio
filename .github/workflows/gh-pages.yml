@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  deploy:
+  deploy main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -24,7 +24,38 @@ jobs:
       - run: yarn install
 
       - name: Build
-        run: bin/bridgetown deploy
+        run:
+          - yarn webpack --mode production
+          - bin/bridgetown build --url https://rabid.audio -e production
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./output
+          external_repository: rabidaudio/rabidaudio.github.io
+
+  deploy repo:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          bundler-cache: true
+
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: "16"
+          cache: "yarn"
+      - run: yarn install
+
+      - name: Build
+        run:
+          - yarn webpack --mode production
+          - bin/bridgetown build --url https://rabidaudio.github.io --base_path=rabid.audio -e production
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
