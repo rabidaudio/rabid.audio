@@ -31,13 +31,56 @@ template_engine: erb
 .link-group a {
   text-decoration: none;
 }
-.link .url {
+
+.link .url,
+.link .copyable {
+  display: block;
+}
+
+.copyable input,
+.copy-btn {
+  font-size: 1em;
+}
+
+.copyable input {
+  display: inline;
+  background-color: inherit;
+  border: none;
+  font-family: var(--font-mono);
+  color: var(--body-color);
+}
+
+.copyable input:focus-visible {
+  outline: none;
+}
+
+.link .url,
+.link .copyable input {
   overflow: hidden;
   text-overflow: ellipsis;
-  display: block;
-  font-size: 0.5em;
   white-space: nowrap;
   direction: rtl; /* make ellipsis start at front */
+}
+
+.copyable, .copyable input {
+  cursor: copy;
+}
+
+.copy-btn {
+  vertical-align: middle;
+  opacity: 0.8;
+  transition: opacity 0.2s;
+}
+
+.copyable:hover .copy-btn {
+  opacity: 1;
+}
+
+.copied-alert {
+  position: absolute;
+  color: #078607;
+  opacity: 0;
+  margin: 0 0.4em;
 }
 </style>
 
@@ -59,7 +102,12 @@ template_engine: erb
           <li class="link">
             <div class="title"><%= name %></div>
             <div>
-              <code class="copyable"><%= dest %></code>
+              <%# TODO: make this a web component %>
+              <div class="copyable">
+                <input type="text" size="<%= dest.length %>" value="<%= dest %>" readonly />
+                <span class="material-icons copy-btn">content_copy</span>
+                <span class="copied-alert">Copied!</span>
+              </div>
             </div>
           </li>
         <% end %>
@@ -67,3 +115,23 @@ template_engine: erb
     </ul>
   <% end %>
 </div>
+
+<script>
+window.addEventListener('DOMContentLoaded', () => {
+  for (const container of document.querySelectorAll('.copyable')) {
+    container.addEventListener('click', () => {
+      const input = container.getElementsByTagName('input')[0]
+      input.select()
+      input.setSelectionRange(0, 99999) // For mobile devices
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(input.value)
+        const alert = container.getElementsByClassName('copied-alert')[0]
+        alert.animate([
+          { 'opacity': 1 },
+          { 'opacity': 0 },
+        ], { duration: 2000 });
+      }
+    })
+  }
+})
+</script>

@@ -381,6 +381,11 @@ lilconfig@^2.0.5:
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.6.tgz#32a384558bd58af3d4c6e077dd1ad1d397bc69d4"
   integrity sha512-9JROoBW7pobfsx+Sq2JsASvCo6Pfo6WWoUW79HuB1BCoBXD4PLWJPqDF6fNj67pqBYTbAHkE57M1kS/+L1neOg==
 
+material-icons@^1.13.1:
+  version "1.13.1"
+  resolved "https://registry.yarnpkg.com/material-icons/-/material-icons-1.13.1.tgz#27de79bf68a4db0a1caec099d4f54ba658770e89"
+  integrity sha512-6EwhlEa4rwydNSWw11ig1oz/h/KcarJXn4n50Wd69v5Eh026Y6xBo9zLPeX4iF8+qUZV862X0AUUA0m0VaihWg==
+
 minimatch@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/minimatch/-/minimatch-5.1.0.tgz#1717b464f4971b144f6aabe8f2d0b8e4511e09c7"
