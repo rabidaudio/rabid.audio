@@ -32,6 +32,6 @@ timezone: America/New_York
 # pagination:
 #   enabled: true
 
-staging:
-  url: 'https://rabidaudio.gitlab.io/rabid.audio'
-  base_path: 'rabid.audio'
+# staging:
+#   url: 'https://rabidaudio.gitlab.io/rabid.audio'
+#   base_path: 'rabid.audio'

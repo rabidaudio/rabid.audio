@@ -36,30 +36,30 @@ jobs:
           external_repository: rabidaudio/rabidaudio.github.io
           publish_branch: main
 
-  deploy_repo:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
+  # deploy_repo:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
 
-      - name: Setup Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
+  #     - name: Setup Ruby
+  #       uses: ruby/setup-ruby@v1
+  #       with:
+  #         bundler-cache: true
 
-      - name: Setup Node
-        uses: actions/setup-node@v2
-        with:
-          node-version: "16"
-          cache: "yarn"
-      - run: yarn install
+  #     - name: Setup Node
+  #       uses: actions/setup-node@v2
+  #       with:
+  #         node-version: "16"
+  #         cache: "yarn"
+  #     - run: yarn install
 
-      - name: Build
-        run: bin/bridgetown deploy
-        env:
-          BRIDGETOWN_ENV: staging
+  #     - name: Build
+  #       run: bin/bridgetown deploy
+  #       env:
+  #         BRIDGETOWN_ENV: staging
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./output
+  #     - name: Deploy
+  #       uses: peaceiris/actions-gh-pages@v3
+  #       with:
+  #         github_token: ${{ secrets.GITHUB_TOKEN }}
+  #         publish_dir: ./output
