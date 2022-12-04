@@ -15,14 +15,14 @@ Some of these modules are [emulated in Max MSP](https://github.com/rabidaudio/sy
 
 This is a work in progress; different modules are at different stages of development.
 
-| Module             | Status         |
-| ------------------ | -------------- |
-| [CLK](synth/clk)   | Breadboarding  |
-| VCA                | PCB Design     |
-| ADSR               | Schematic      |
-| VCO                | Schematic      |
-| VCF                | Schematic      |
-| [UTIL](synth/util) | Needs revision |
+| Module       | Status         |
+| ------------ | -------------- |
+| [CLK](clk)   | PCB Design     |
+| VCA          | PCB Design     |
+| ADSR         | Schematic      |
+| VCO          | Schematic      |
+| VCF          | Schematic      |
+| [UTIL](util) | Needs revision |
 
 ## Utilities
 
