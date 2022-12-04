@@ -55,7 +55,8 @@ datasheets:
     name: Alpha 9mm pot
     description: 9mm pot
     notes: Popular in Eurorack. Come in Single/Dual and Linear/Audio taper.
-    link: https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/
+    links:
+      purchase: https://www.thonk.co.uk/shop/alpha-9mm-pots-vertical-t18/
     category: pot
   - file: DUAL GANG - RD902F-40-15R1-A50K-0057.pdf
     name: Alpha 9mm pot (dual gang)
@@ -216,13 +217,13 @@ datasheets:
     notes: Supports delays from 2.56ms to 51.2ms
     category: analog
   - file: PDB18.pdf
-    name: Bourns PDB18
-    description: Mini instrument potentiometers
+    name: PDB18
+    description: Bourns mini instrument potentiometers
     notes: Used in guitars. Available in linear and audio taper in several configurations.
     category: pot
   - file: ptv09.pdf
-    name: Bourns PTV09
-    description: 9mm potentiometer
+    name: PTV09
+    description: Bourns 9mm potentiometer
     notes: Competitor to the Alpha ones
     category: pot
   - file: SM460281N-10mm-7-segement.pdf
@@ -237,7 +238,8 @@ datasheets:
   - file: Thonkiconn_Jack_Datasheet.pdf
     description: Thonkiconn 3.5mm jack
     notes: Very popular in Eurorack
-    link: https://www.thonk.co.uk/shop/thonkiconn/
+    links:
+      purchase: https://www.thonk.co.uk/shop/thonkiconn/
     category: jack
   - file: VTL5C vactrol.pdf
     name: VTL5C
@@ -253,8 +255,34 @@ datasheets:
     name: RM subminiature rotary switch
     category: switch
   - file: PEC11R.pdf
-    name: Bourns 12mm incremental rotary encoder
+    name: PEC11R
+    description: Bourns 12mm incremental rotary encoder
     category: switch
   - file: pec11h.pdf
-    name: Bourns 11mm incremental rotary encoder
+    name: PEC11H
+    description: Bourns 11mm incremental rotary encoder
     category: switch
+  - file: Atmel-2586-AVR-8-bit-Microcontroller-ATtiny25-ATtiny45-ATtiny85_Datasheet.pdf
+    name: ATTiny85
+    description: A full 8-bit AVR microprocessor in a tiny 8-pin package
+    notes: >
+      Can be programmed via Arduino as long as you have a programmer (I use a [USBasp](https://www.fischl.de/usbasp/))
+      and the attiny library installed. It's got an internal oscillator which is good enough for situations which aren't
+      time-critical, meaning it works with zero external parts required.
+
+
+      ![pinout](images/ATtiny45-85.png)
+    category: microprocessor
+    links:
+      docs: https://highlowtech.org/?p=1695
+  - file: Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf
+    name: ATMega328P
+    description: 8-bit AVR microprocessor that powers Arduino
+    notes: >
+      The benefit of building around this chip is you can prototype with an Arduino, and then once
+      you're happy with the design, switch to operating the chip directly with
+      [a minimum of parts](https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoToBreadboard).
+
+
+      ![pinout](images/Atmega168PinMap2.png)
+    category: microprocessor

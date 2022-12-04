@@ -42,8 +42,10 @@ title: Resources
     <% if datasheet['file'] %>
       <p><a href="/resources/datasheets/<%= datasheet['file'] %>" target="_blank">Datasheet</a></p>
     <% end %>
-    <% if datasheet['link'] %>
-      <p><a href="<%= datasheet['link'] %>" target="_blank">Purchase</a></p>
+    <% (datasheet['links'] || {}).each do |type, link| %>
+      <p>
+        <a href="<%= link %>" target="_blank"><%= type.capitalize %></a>
+      </p>
     <% end %>
   <% end %>
 <% end %>

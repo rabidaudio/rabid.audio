@@ -7,3 +7,5 @@
 - Import LFM album scroll
 - Import old posts?
 - redirect rabidaudio.com and charlesjulianknight.com
+- mouseover resources to get quick description
+- mouseover calculations

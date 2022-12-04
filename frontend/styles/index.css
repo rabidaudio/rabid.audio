@@ -40,6 +40,10 @@ a {
   text-decoration: underline;
 }
 
+code, pre {
+  font-family: var(--font-mono);
+}
+
 h1 {
   margin: 1rem 0 3rem;
   text-align: center;
