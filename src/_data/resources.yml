@@ -153,6 +153,8 @@ datasheets:
       This is very useful for creating dual-ended power supplies needed for most op-amp
       circuits in situations where your power supply is limited (e.g. a 9V stompbox).
     category: regulator
+    links:
+      purchase: https://www.digikey.com/en/products/detail/texas-instruments/TLE2426CLPR/371935
   - file: tlv5620.pdf
     name: TLV5620
     description: Quad 8-bit DAC
@@ -177,6 +179,8 @@ datasheets:
       Just a little shorter than Alpha 9mm pots but if you
       seat them a little high they'll do fine.
     category: pot
+    links:
+      purchase: https://www.digikey.com/en/products/detail/e-switch/EG2301A/301966
   - file: FQP13N06L.pdf
     name: FQP13N
     description: 60 V N-Channel MOSTFET

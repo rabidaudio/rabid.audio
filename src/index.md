@@ -4,9 +4,18 @@ layout: default
 
 # Projects
 
-## [Synth](/projects/synth)
+## Synth
 
-<!-- splitter pedal -->
+### [Overview](/projects/synth)
+
+### [Clock module](/projects/synth/clk)
+
+### [Utility module](/projects/synth/util)
+
+## Stompboxes
+
+### [Splitter](/projects/splitter-pedal)
+
 <!-- chorus pedal -->
 <!-- gameboy synth -->
 <!-- hapticmetronome -->
