@@ -12,9 +12,15 @@ This is a clock Eurorack synth module designed to drive sequencers, drum machine
 
 It's entirely digital, which makes it an easier module to build since most of the complexity is in software.
 
-[Source files](https://github.com/rabidaudio/synthesizer/tree/clock/clock)
+## Source
 
-Status: In development. Working on a breadboard, most features software features have been implemented. PCB design in progress.
+Source files including code and CAD are available on [GitHub](https://github.com/rabidaudio/synthesizer/tree/clock/clock). Like most everything I do, this is [open hardware](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
+
+## Status
+
+In development. Working on a breadboard, most features software features have been implemented. PCB design in progress.
 
 ### TODO
 
@@ -54,6 +60,8 @@ Status: In development. Working on a breadboard, most features software features
 ![schematic](/images/clock_schematic.png)
 
 The [ATMega328P](/resources#ATMega328P) is used as the core microprocessor. Originally I planned on using the [ATTiny85](/resources#ATTiny85) with an [HT16K33](resources#HT16K33) LED driver, but there were just enough available pins on the Mega to drive the 7-segment displays directly, and the availability of a 16-bit timer drastically improves the resolution of the clock.
+
+An ISP header allows reprogramming of the firmware using any AVR programmer.
 
 The code uses [PlatformIO](https://platformio.org/) for build tooling. Separate C++ classes encapsulate logic of each of the components, using header-only files to simplify file structure.
 
