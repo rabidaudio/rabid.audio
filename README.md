@@ -9,3 +9,4 @@
 - redirect rabidaudio.com and charlesjulianknight.com
 - mouseover resources to get quick description
 - mouseover calculations
+- auto-generate portfolio with page metadata

@@ -14,7 +14,7 @@ It's entirely digital, which makes it an easier module to build since most of th
 
 [Source files](https://github.com/rabidaudio/synthesizer/tree/clock/clock)
 
-Status: In development. Working on a breadboard, most features software features have been implemented. Final PCB design in progress.
+Status: In development. Working on a breadboard, most features software features have been implemented. PCB design in progress.
 
 ### TODO
 
@@ -33,7 +33,7 @@ Status: In development. Working on a breadboard, most features software features
 - A separate subdivision output which can trigger at an integer multiple of the clock speed
 - Efficient 3HP size
 
-# Future features
+### Future features
 
 - "negative" subdivisions
 - remember BPM setting between power cycles
@@ -71,7 +71,7 @@ The timer has a maximum error of 0.06% for pulses less than 5 Hz (300 BPM) and l
 
 ![BPM vs Error](/images/clock_module_bpm_error.png)
 
-Swing works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At `0`, the beats are even and there is no swing. At maximum value the swing beats are triplets.
+[Swing](https://en.wikipedia.org/wiki/Swing_(jazz_performance_style)) works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At `0`, the beats are even and there is no swing. At maximum value the swing beats are triplets.
 
 <!-- TODO: subdivisions -->
 
@@ -127,3 +127,4 @@ To protect against voltages of greater than 5V, a simple voltage divider is used
 
 <!-- LPF? -->
 <!-- older rotary encoder designs? -->
+<!-- backpack and switching? -->
