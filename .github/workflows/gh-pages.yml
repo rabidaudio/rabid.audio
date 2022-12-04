@@ -35,6 +35,7 @@ jobs:
           publish_dir: ./output
           external_repository: rabidaudio/rabidaudio.github.io
           publish_branch: main
+          cname: rabid.audio
 
   # deploy_repo:
   #   runs-on: ubuntu-latest
