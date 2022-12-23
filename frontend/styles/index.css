@@ -78,7 +78,7 @@ header .tagline {
 }
 
 main {
-  margin: 0 auto 2rem;
+  margin: 0 auto 0;
   max-width: 65rem;
   min-height: calc(100vh - 200px);
   padding: 25px 25px 50px;
@@ -93,11 +93,25 @@ main {
 
 footer {
   text-align: center;
+  font-size: 0.7em;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-content: space-around;
+}
+
+footer .blurb {
+  flex: 0 1 auto;
+}
+
+nav {
   font-size: 1em;
 }
 
-footer nav ul {
-  margin: 2rem 0;
+nav ul {
+  /* margin: 2rem 0; */
   padding: 0;
   list-style-type: none;
   display: flex;
@@ -107,7 +121,7 @@ footer nav ul {
   font-weight: bold;
 }
 
-footer nav a {
+nav a {
   text-decoration: none;
 }
 

@@ -3,35 +3,7 @@
     Contact me at <a href="mailto:{{ metadata.email }}">{{ metadata.email }}</a>
   {%- endcomment -%}
 
-  <nav>
-    <ul>
-      <li>
-        <a href="{{ '/' | relative_url }}">Home</a>
-      </li>
-
-      {%- comment -%}
-        <li><a href="{{ '/projects' | relative_url }}">All Projects</a></li>
-      {%- endcomment -%}
-      {%- comment -%}
-        <li>
-        <a href="{{ '/projects/synth' | relative_url }}">Synthesizer</a>
-        </li>
-      {%- endcomment -%}
-      <li>
-        <a href="{{ '/resources' | relative_url }}">Resources</a>
-      </li>
-
-      {%- comment -%}
-        <li><a href="{{ '/about' | relative_url }}">About</a></li>
-      {%- endcomment -%}
-      {%- comment -%}
-        <li>
-        <a href="{{ '/posts' | relative_url }}">Posts</a>
-        </li>
-      {%- endcomment -%}
-      <li>
-        <a href="{{ '/links' | relative_url }}">Links</a>
-      </li>
-    </ul>
-  </nav>
+  <div class="blurb"><a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC-BY-SA</a>.</div>
+  <div class="blurb">Last Updated {{ "now" | date: "%Y-%m-%d" }}.</div>
+  <div class="blurb">Made with ♥ in Atlanta.</div>
 </footer>
