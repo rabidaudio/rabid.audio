@@ -1,12 +1,10 @@
 ---
 layout: default
-title: "Splitter"
+title: "Splitter Pedal"
 categories:
   - project
   - stompbox
 ---
-
-# Splitter
 
 ## Background
 

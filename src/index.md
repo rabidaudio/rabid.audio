@@ -4,6 +4,14 @@ title: Portfolio
 ---
 
 <style>
+.links-container {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  padding-inline-start: 0;
+}
+
 .schematic-container {
   display: flex;
 }
@@ -22,6 +30,7 @@ title: Portfolio
 
 - [Technology](#technology)
   - [Custom modular synthesizer modules](#custom-modular-synthesizer-modules)
+  - [Splitter pedal](#splitter-pedal)
   - [Gameboy VST plugin](#gameboy-vst-plugin)
 - [Music](#music)
   - [Blaseball: The Musical](#blaseball-the-musical)
@@ -46,10 +55,22 @@ Off-and-on over several years, I've been designing my own synthesizer modules de
 
 I hope to eventually have a 4-voice polyphonic synthesizer with the basics: envelope, filter, amplifier, and LFO. Two modules are designed and undergoing final revisions, others are still in progress and therefore are missing documentation but the source code is available. The various modules are thoroughly documented on [the projects section of this site](/projects/synth), including descriptions of functionality, design, source code and schematics.
 
-<ul style="list-style-type: none; display: flex; flex-direction: row; gap: 16px; padding-inline-start: 0;">
+<ul class="links-container">
   <li><a href="/projects/synth">Description</a></li>
   <li><a href="https://github.com/rabidaudio/synthesizer">Source code and schematics</a></li>
 </ul>
+
+### Splitter pedal
+
+<img style="max-width: 300px" src="/images/splitter_proto.jpg" alt="splitter pedal prototype">
+
+An open-source guitar effects pedal for routing signal chains by frequency. Capable of routing low- or high-frequencies through an alternate signal path, or blending that path with the dry signal. Efficient design keeps BOM cost low.
+
+<ul class="links-container">
+  <li><a href="/projects/splitter-pedal">Description</a></li>
+  <li><a href="https://github.com/rabidaudio/effects/tree/main/splitter">Source code and schematics</a></li>
+</ul>
+
 
 ### Gameboy VST plugin
 
@@ -57,12 +78,11 @@ I hope to eventually have a 4-voice polyphonic synthesizer with the basics: enve
 
 An open-source DAW plugin written with [JUCE](https://juce.com/) that exposes the sounds of the Nintendo Gameboy (and Color) as a software instrument for making chiptune sounds. It's a faithful recreation of both the sound and the limitations of the console, because it wraps Shay Green'S [Gb_Snd_Emu](www.slack.net/~ant/libs/audio.html#Gb_Snd_Emu), the audio implementation used by many emulators including [Visual Boy Advance - M](https://github.com/visualboyadvance-m/visualboyadvance-m).
 
-<ul style="list-style-type: none; display: flex; flex-direction: row; gap: 16px; padding-inline-start: 0;">
+<ul class="links-container">
   <li><a href="https://github.com/rabidaudio/gameboy-synth">Source code</a></li>
   <li><a href="https://github.com/rabidaudio/gameboy-synth/releases/tag/v0.0.1-alpha1">Download</a> (unsigned debug build, Mac-only)</li>
 </ul>
 
-<!-- splitter pedal -->
 <!-- chorus pedal -->
 <!-- hapticmetronome -->
 <!-- LastFM -->
@@ -75,7 +95,7 @@ An open-source DAW plugin written with [JUCE](https://juce.com/) that exposes th
 
 Nearly 40 volunteers from around the world organized via Discord to write, record, and edit a digital musical in 72 hours over the course of three weekends, centered around the baseball simulation horror game and internet phenomenon [Blaseball](https://blaseball.com/). As a production assistant, I maintained the website, edited the script, and tracked, verified, and organized recordings and sheet music, and some transcription.
 
-<ul style="list-style-type: none; display: flex; flex-direction: row; gap: 16px; padding-inline-start: 0;">
+<ul class="links-container">
   <li><a href="https://blaseballthemusical.com/">Website</a></li>
   <li><a href="https://drive.google.com/file/d/1QxX8BIvJmdSDyd-F015TYnnJ4tz-Nujv/view">Program</a></li>
   <li><a href="https://blaseballmusical.bandcamp.com/album/the-deaths-of-sebastian-telephone">Bandcamp</a></li>
@@ -97,12 +117,3 @@ Contributor, a prolific 50+ member band/internet music collective. Regular "live
 Solo post rock project. Self-producing music to practice recording and mixing.
 
 <iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1098434587&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/were-in-serious-times" title="Serious Times" target="_blank" style="color: #cccccc; text-decoration: none;">Serious Times</a> · <a href="https://soundcloud.com/were-in-serious-times/dont-tell-me-to-drink-more-water-again-2" title="Don&#x27;t Tell Me to Drink More Water Again" target="_blank" style="color: #cccccc; text-decoration: none;">Don&#x27;t Tell Me to Drink More Water Again</a></div>
-
-<!-- ### [Splitter](/projects/splitter-pedal) -->
-
-<!-- chorus pedal -->
-<!-- gameboy synth -->
-<!-- hapticmetronome -->
-<!-- LastFM -->
-
-

@@ -107,7 +107,6 @@ datasheets:
     description: Dual Operational Transconductance Amplifier (OTA)
     notes: >
       This is the heart of most of my voltage-controlled designs.
-      See my writeup on the chip.
     category: analog
   - file: lm317.pdf
     name: LM317

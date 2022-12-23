@@ -13,6 +13,11 @@
     "JUCE",
     "Kicad",
     "scrobble",
-    "stompbox"
+    "SOIC",
+    "SPDT",
+    "stompbox",
+    "Tempco",
+    "Thonkiconn",
+    "transconductance"
   ]
 }

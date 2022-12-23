@@ -1,15 +1,15 @@
 ---
 layout: default
-title: "Synthesizer"
+title: "Custom Eurorack Synth modules"
 ---
-
-# Custom Eurorack Synth modules
 
 This is a collection of custom synthesizer modules designed around the [Eurorack](https://en.wikipedia.org/wiki/Eurorack) standard.
 
 The goal is to design these from scratch; I can use textbook and datasheet example circuits, and I can look at other circuits for ideas and inspiration, but I'm not cloning an existing circuit but instead coming up with my own designs.
 
 Some of these modules are [emulated in Max MSP](https://github.com/rabidaudio/synthesizer/blob/master/synth2.maxpat) to preview how the circuits will sound.
+
+<img style="width: 100%; max-width: 500px" src="/images/vco-emulation.png">
 
 ## Modules
 
@@ -34,7 +34,7 @@ In the process of building these modules, I've also built some tools to assist.
 
 ## Source
 
-This project is hosted on [Github](https://github.com/rabidaudio/synthesizer). The repository goes back quite a long way, evolving out of coursework from GT ECE 4893 Analog Circuits for Music Synthesis with Dr. Lanterman.
+This project is hosted on [Github](https://github.com/rabidaudio/synthesizer). The repository goes back quite a long way, evolving out of coursework from [GT ECE 4893 Analog Circuits for Music Synthesis](https://lanterman.ece.gatech.edu/ems10/) with Dr. Lanterman.
 
 In the spirit of the open-design movement, all source code is licensed under the permissive MIT license, and circuit designs are licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike](http://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
@@ -83,11 +83,6 @@ In addition, I'm targeting:
     - differential input voltage is limited to 5V
   - treat amp bias input as `V- + 1.2V` for the purpose of calculating `I_abc`
   - 50 V/us slew rate
-- [DMMT5401](/resources#DMMT5401) (NPN) and [DMMT5551](/resources#DMMT5551) (PNP) matched pair transistors
-  - similar characteristics to 2N3904, 2N3906
-  - useful for current mirrors and [exponential converters](/resources/reference/exponential.pdf)
-  - easier than trying to match transistors by hand (but [here's a guide for matching](/resources/reference/transistor-matching.pdf))
-  - Unfortunately only come in SOT26 (3mm long)
 - [DG403](/resources#DG403)
   - dual SPDT analog switch
   - very generous on control ranges and input limits
@@ -102,6 +97,11 @@ In addition, I'm targeting:
   - not strictly required - classic synths would take some time to "heat up"
 - 2N3904 / 2N3906
   - General-purpose BJTs
+- [DMMT5401](/resources#DMMT5401) (NPN) and [DMMT5551](/resources#DMMT5551) (PNP) matched pair transistors
+  - similar characteristics to 2N3904, 2N3906
+  - useful for current mirrors and [exponential converters](/resources/reference/exponential.pdf)
+  - easier than trying to match transistors by hand (but [here's a guide for matching](/resources/reference/transistor-matching.pdf))
+  - Unfortunately only come in SOT26 (3mm long)
 - 2N2222
   - General-purpose Diodes
 - [Alpha 9mm pots](/resources#Alpha%209mm%20pot)

@@ -10,3 +10,4 @@
 - mouseover resources to get quick description
 - mouseover calculations
 - auto-generate portfolio with page metadata
+- better image alt text
