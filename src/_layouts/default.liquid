@@ -7,6 +7,9 @@
     {% render "navbar", metadata: site.metadata, resource: resource %}
 
     <main>
+      {% if resource.data.title %}
+        <h1>{{ resource.data.title }}</h1>
+      {% endif %}
       {{ content }}
     </main>
 

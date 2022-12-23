@@ -2,17 +2,69 @@
 layout: default
 ---
 
-# Portfolio
+<style>
+.schematic-container {
+  display: flex;
+}
+.schematic-container img {
+  width: 25%;
+}
+@media screen and (max-width: 550px) {
+  .schematic-container {
+    flex-wrap: wrap;
+  }
+  .schematic-container img {
+    width: 50%;
+  }
+}
+</style>
+
+- [Technology](#technology)
+  - [Custom modular synthesizer modules](#custom-modular-synthesizer-modules)
+  - [Gameboy VST plugin](#gameboy-vst-plugin)
+- [Music](#music)
+  - [Blaseball: The Musical](#blaseball-the-musical)
+  - [the garages](#the-garages)
+  - [Serious Times](#serious-times)
+
 
 ## Technology
 
 <!-- Technology: code examples (source code repositories), hardware schematics, software documentation, photo and/or video documentation. -->
 
-<!-- ## [Synth](/projects/synth) -->
+### Custom modular synthesizer modules
+
+<div class="schematic-container">
+  <img src="/images/amp-schematic-core.png">
+  <img src="/images/adsr-schematic-core.png">
+  <img src="/images/clock_schematic.png">
+  <img src="/images/util_schematic.png">
+</div>
+
+Off-and-on over several years, I've been designing my own synthesizer modules designed around the Eurorack form factor. I gave myself the challenge to design these from scratch; I can use simple schematics from textbooks and datasheet example circuits, and I can look at other circuits for ideas and inspiration, but I'm not cloning an existing circuit but instead coming up with my own designs.
+
+I hope to eventually have a 4-voice polyphonic synthesizer with the basics: envelope, filter, amplifier, and LFO. Two modules are designed and undergoing final revisions, others are still in progress and therefore are missing documentation but the source code is available. The various modules are thoroughly documented on [the projects section of this site](/projects/synth), including descriptions of functionality, design, source code and schematics.
+
+<ul style="list-style-type: none; display: flex; flex-direction: row; gap: 16px; padding-inline-start: 0;">
+  <li><a href="/projects/synth">Description</a></li>
+  <li><a href="https://github.com/rabidaudio/synthesizer">Source code and schematics</a></li>
+</ul>
+
+### Gameboy VST plugin
+
+<img style="max-width: 300px" src="/images/gameboy-synth-screenshot.png" alt="plugin">
+
+An open-source DAW plugin written with [JUCE](https://juce.com/) that exposes the sounds of the Nintendo Gameboy (and Color) as a software instrument for making chiptune sounds. It's a faithful recreation of both the sound and the limitations of the console, because it wraps Shay Green'S [Gb_Snd_Emu](www.slack.net/~ant/libs/audio.html#Gb_Snd_Emu), the audio implementation used by many emulators including [Visual Boy Advance - M](https://github.com/visualboyadvance-m/visualboyadvance-m).
+
+<ul style="list-style-type: none; display: flex; flex-direction: row; gap: 16px; padding-inline-start: 0;">
+  <li><a href="https://github.com/rabidaudio/gameboy-synth">Source code</a></li>
+  <li><a href="https://github.com/rabidaudio/gameboy-synth/releases/tag/v0.0.1-alpha1">Download</a> (unsigned debug build, Mac-only)</li>
+</ul>
+
+
 
 <!-- splitter pedal -->
 <!-- chorus pedal -->
-<!-- gameboy synth -->
 <!-- hapticmetronome -->
 <!-- LastFM -->
 
@@ -22,9 +74,9 @@ layout: default
 
 ### Blaseball: The Musical
 
-Nearly 40 volunteers from around the world organized via Discord to write, record, and edit a digital musical in 72 hours over the course of three weekends, centered around the baseball simulation horror game and internet phenomenon [Blaseball](https://blaseball.com/). As a production assistant, I mantained the website, edited the script, and tracked, verified, and organized recordings and sheet music.
+Nearly 40 volunteers from around the world organized via Discord to write, record, and edit a digital musical in 72 hours over the course of three weekends, centered around the baseball simulation horror game and internet phenomenon [Blaseball](https://blaseball.com/). As a production assistant, I maintained the website, edited the script, and tracked, verified, and organized recordings and sheet music, and some transcription.
 
-<ul style="  list-style-type: none; display: flex; flex-direction: row; gap: 16px; padding-inline-start: 0;">
+<ul style="list-style-type: none; display: flex; flex-direction: row; gap: 16px; padding-inline-start: 0;">
   <li><a href="https://blaseballthemusical.com/">Website</a></li>
   <li><a href="https://drive.google.com/file/d/1QxX8BIvJmdSDyd-F015TYnnJ4tz-Nujv/view">Program</a></li>
   <li><a href="https://blaseballmusical.bandcamp.com/album/the-deaths-of-sebastian-telephone">Bandcamp</a></li>

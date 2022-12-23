@@ -136,3 +136,10 @@ img[alt$="-halfwidth"] {
 pre {
   white-space: break-spaces;
 }
+
+/* tables */
+
+td, th {
+  padding: 1px 5px;
+  text-align: start;
+}

@@ -15,14 +15,14 @@ Some of these modules are [emulated in Max MSP](https://github.com/rabidaudio/sy
 
 This is a work in progress; different modules are at different stages of development.
 
-| Module       | Status         |
-| ------------ | -------------- |
-| [CLK](clk)   | PCB Design     |
-| VCA          | PCB Design     |
-| ADSR         | Schematic      |
-| VCO          | Schematic      |
-| VCF          | Schematic      |
-| [UTIL](util) | Needs revision |
+| Module                                                                          | Status         | Description  |
+|---------------------------------------------------------------------------------|----------------|--------------|
+| [CLK](https://github.com/rabidaudio/synthesizer/tree/clock/clock)               | PCB Design     | [Docs](clk)  |
+| [VCA](https://github.com/rabidaudio/synthesizer/tree/master/amp)                | PCB Design     |              |
+| [ADSR](https://github.com/rabidaudio/synthesizer/tree/master/adsr)              | Schematic      |              |
+| [VCO](https://github.com/rabidaudio/synthesizer/tree/master/vco)                | Schematic      |              |
+| [VCF](https://github.com/rabidaudio/synthesizer/tree/master/_old/class/project) | Schematic      |              |
+| [UTIL](https://github.com/rabidaudio/synthesizer/tree/master/utils)             | Needs revision | [Docs](util) |
 
 ## Utilities
 
@@ -30,7 +30,7 @@ In the process of building these modules, I've also built some tools to assist.
 
 - [Headphone breakout board](/2020/03/15/headphone-breakout)
 - [Breadboard supply adapter](/2020/05/25/breadboard-psu)
-- Transistor matcher
+- [Transistor matcher](/2020/03/28/transistor-matcher)
 
 ## Source
 
