@@ -76,7 +76,7 @@ An open-source guitar effects pedal for routing signal chains by frequency. Capa
 
 <img style="max-width: 300px" src="/images/gameboy-synth-screenshot.png" alt="plugin">
 
-An open-source DAW plugin written with [JUCE](https://juce.com/) that exposes the sounds of the Nintendo Gameboy (and Color) as a software instrument for making chiptune sounds. It's a faithful recreation of both the sound and the limitations of the console, because it wraps Shay Green'S [Gb_Snd_Emu](www.slack.net/~ant/libs/audio.html#Gb_Snd_Emu), the audio implementation used by many emulators including [Visual Boy Advance - M](https://github.com/visualboyadvance-m/visualboyadvance-m).
+An open-source DAW plugin written with [JUCE](https://juce.com/) that exposes the sounds of the Nintendo Gameboy (and Color) as a software instrument for making chiptune sounds. It's a faithful recreation of both the sound and the limitations of the console, because it wraps Shay Green'S [Gb_Snd_Emu](http://www.slack.net/~ant/libs/audio.html#Gb_Snd_Emu), the audio implementation used by many emulators including [Visual Boy Advance - M](https://github.com/visualboyadvance-m/visualboyadvance-m).
 
 <ul class="links-container">
   <li><a href="https://github.com/rabidaudio/gameboy-synth">Source code</a></li>

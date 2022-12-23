@@ -7,7 +7,7 @@ This is a collection of custom synthesizer modules designed around the [Eurorack
 
 The goal is to design these from scratch; I can use textbook and datasheet example circuits, and I can look at other circuits for ideas and inspiration, but I'm not cloning an existing circuit but instead coming up with my own designs.
 
-Some of these modules are [emulated in Max MSP](https://github.com/rabidaudio/synthesizer/blob/master/synth2.maxpat) to preview how the circuits will sound.
+Some of these modules are [emulated in Max MSP](https://github.com/rabidaudio/synthesizer/blob/master/synth.maxpat) to preview how the circuits will sound.
 
 <img style="width: 100%; max-width: 500px" src="/images/vco-emulation.png">
 
