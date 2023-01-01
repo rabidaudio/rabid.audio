@@ -6,15 +6,13 @@ categories:
   - synthesizer
 ---
 
-# CLK
-
 This is a clock Eurorack synth module designed to drive sequencers, drum machines, arpeggiators, etc.
 
 It's entirely digital, which makes it an easier module to build since most of the complexity is in software.
 
 ## Source
 
-Source files including code and CAD are available on [GitHub](https://github.com/rabidaudio/synthesizer/tree/clock/clock). Like most everything I do, this is [open hardware](http://creativecommons.org/licenses/by-nc-sa/4.0/).
+Source files including code and CAD are available on [GitHub](https://github.com/rabidaudio/synthesizer/tree/master/clock). Like most everything I do, this is [open hardware](http://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ![Creative Commons License](https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png)
 
@@ -24,8 +22,8 @@ In development. Working on a breadboard, most features software features have be
 
 ### TODO
 
-- Integrate rotary encoder
-- Design and print PCB
+- Assemble and verify PCB
+- Fix software
 - Design panel cuts and decals
 - Assemble PCB and verify
 - Cut and decal panel

@@ -6,8 +6,6 @@ categories:
   - synthesizer
 ---
 
-# UTIL
-
 This is a Eurorack synth module which combines a collection of common tools for transforming signals, either control voltages or audio signals. While there are several distinct utilities, most are not mutually-exclusive.
 
 This was the first module I designed.

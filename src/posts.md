@@ -18,3 +18,5 @@ layout: default
 <!-- plastic vintage tone -->
 <!-- debugging techniques -->
 <!-- time domain and frequency domain -->
+<!-- list of instruments -->
+<!-- favorite vinyl records -->

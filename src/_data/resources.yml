@@ -274,7 +274,7 @@ datasheets:
       time-critical, meaning it works with zero external parts required.
 
 
-      ![pinout](images/ATtiny45-85.png)
+      ![pinout](/images/ATtiny45-85.png)
     category: microprocessor
     links:
       docs: https://highlowtech.org/?p=1695
@@ -287,5 +287,5 @@ datasheets:
       [a minimum of parts](https://docs.arduino.cc/built-in-examples/arduino-isp/ArduinoToBreadboard).
 
 
-      ![pinout](images/Atmega168PinMap2.png)
+      ![pinout](/images/Atmega168PinMap2.png)
     category: microprocessor

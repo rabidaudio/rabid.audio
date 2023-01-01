@@ -53,7 +53,7 @@ title: Portfolio
 
 Off-and-on over several years, I've been designing my own synthesizer modules designed around the Eurorack form factor. I gave myself the challenge to design these from scratch; I can use simple schematics from textbooks and datasheet example circuits, and I can look at other circuits for ideas and inspiration, but I'm not cloning an existing circuit but instead coming up with my own designs.
 
-I hope to eventually have a 4-voice polyphonic synthesizer with the basics: envelope, filter, amplifier, and LFO. Two modules are designed and undergoing final revisions, others are still in progress and therefore are missing documentation but the source code is available. The various modules are thoroughly documented on [the projects section of this site](/projects/synth), including descriptions of functionality, design, source code and schematics.
+I hope to eventually have a 4-voice polyphonic synthesizer with the basics: envelope, filter, amplifier, and LFO. Two modules are designed and undergoing final revisions, others are still in progress and therefore are missing documentation but the source code is available. A couple modules are thoroughly documented, including descriptions of functionality, design, source code and schematics.
 
 <ul class="links-container">
   <li><a href="/projects/synth">Description</a></li>

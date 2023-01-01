@@ -17,7 +17,7 @@ This is a work in progress; different modules are at different stages of develop
 
 | Module                                                                          | Status         | Description  |
 |---------------------------------------------------------------------------------|----------------|--------------|
-| [CLK](https://github.com/rabidaudio/synthesizer/tree/clock/clock)               | PCB Design     | [Docs](clk)  |
+| [CLK](https://github.com/rabidaudio/synthesizer/tree/master/clock)               | PCB Design     | [Docs](clk)  |
 | [VCA](https://github.com/rabidaudio/synthesizer/tree/master/amp)                | PCB Design     |              |
 | [ADSR](https://github.com/rabidaudio/synthesizer/tree/master/adsr)              | Schematic      |              |
 | [VCO](https://github.com/rabidaudio/synthesizer/tree/master/vco)                | Schematic      |              |
