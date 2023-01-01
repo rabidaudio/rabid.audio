@@ -19,4 +19,5 @@ layout: default
 <!-- debugging techniques -->
 <!-- time domain and frequency domain -->
 <!-- list of instruments -->
+<!-- jagmaster setup -->
 <!-- favorite vinyl records -->
