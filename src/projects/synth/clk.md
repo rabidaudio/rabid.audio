@@ -18,7 +18,7 @@ Source files including code and CAD are available on [GitHub](https://github.com
 
 ## Status
 
-In development. Working on a breadboard, most features software features have been implemented. PCB design in progress.
+In development. Working on a breadboard, most features software features have been implemented. PCB designed and ordered, awaiting fab.
 
 ### TODO
 
@@ -33,7 +33,7 @@ In development. Working on a breadboard, most features software features have be
 - 15 to 300 BPM
 - Tap-tempo input
 - CV input for controlling clock speed
-- Swing control, up to triplets up or back
+- Swing control, up to triplets leading or lagging
 - A separate subdivision output which can trigger at an integer multiple of the clock speed
 - Efficient 3HP size
 
