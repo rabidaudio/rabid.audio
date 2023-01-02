@@ -289,3 +289,11 @@ datasheets:
 
       ![pinout](/images/Atmega168PinMap2.png)
     category: microprocessor
+  - file: LM386.pdf
+    name: LM386
+    description: Stereo amplifier
+    category: analog
+    notes: >
+      Classic chip for making headphone amplifiers and such.
+      Though it's supposed to be low noise, I've had a lot of noise problems with these.
+      But it's got relatively accessible power supply requirements and a minimum of parts.
