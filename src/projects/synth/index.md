@@ -9,7 +9,7 @@ The goal is to design these from scratch; I can use textbook and datasheet examp
 
 Some of these modules are [emulated in Max MSP](https://github.com/rabidaudio/synthesizer/blob/master/synth.maxpat) to preview how the circuits will sound.
 
-<img style="width: 100%; max-width: 500px" src="/images/vco-emulation.png">
+{% img big center %}vco-emulation.png{% endimg %}
 
 ## Modules
 
@@ -17,12 +17,12 @@ This is a work in progress; different modules are at different stages of develop
 
 | Module                                                                          | Status         | Description  |
 |---------------------------------------------------------------------------------|----------------|--------------|
-| [CLK](https://github.com/rabidaudio/synthesizer/tree/master/clock)               | PCB Design     | [Docs](clk)  |
+| [CLK](https://github.com/rabidaudio/synthesizer/tree/master/clock)               | PCB Design     | [Docs](/projects/synth/clk)  |
 | [VCA](https://github.com/rabidaudio/synthesizer/tree/master/amp)                | PCB Design     |              |
-| [ADSR](https://github.com/rabidaudio/synthesizer/tree/master/adsr)              | Schematic      |              |
+| [ADSR](https://github.com/rabidaudio/synthesizer/tree/master/adsr)              | Schematic      |  [Docs](/projects/synth/adsr)            |
 | [VCO](https://github.com/rabidaudio/synthesizer/tree/master/vco)                | Schematic      |              |
 | [VCF](https://github.com/rabidaudio/synthesizer/tree/master/_old/class/project) | Schematic      |              |
-| [UTIL](https://github.com/rabidaudio/synthesizer/tree/master/utils)             | Needs revision | [Docs](util) |
+| [UTIL](https://github.com/rabidaudio/synthesizer/tree/master/utils)             | Needs revision | [Docs](/projects/synth/util) |
 
 ## Utilities
 

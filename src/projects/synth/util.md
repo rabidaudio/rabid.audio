@@ -10,7 +10,7 @@ This is a Eurorack synth module which combines a collection of common tools for 
 
 This was the first module I designed.
 
-![populated PCB -halfwidth](/images/util_image.jpg)
+{% img center %}util_image.jpg{% endimg %}
 
 ### TODO
 
@@ -49,6 +49,6 @@ Digital `OR` can be implemented by summing signals on `A_IN` and `B_IN` With the
 
 A summing inverting amplifier with a variable feedback resistor handles the adder, inverter, and scalar. A connection on either A or B toggles an analog switch selecting between a constant voltage source and the summing output. Another analog switch controlled by the gate allows that signal to be toggled before it is buffered in both an inverted and re-inverted back to positive outputs.
 
-![schematic](/images/util_schematic.png)
+{% img full %}util_schematic.png{% endimg %}
 
 This manages to use an extreme minimum number of parts, requiring only one quad op-amp and one dual analog switch. Some switching and transistor trickery is used to configure the behavior depending on what patches are connected.

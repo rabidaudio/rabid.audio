@@ -10,7 +10,7 @@ categories:
 
 To explain this pedal, I think it's easiest to start with the problem it addresses. Sometimes you want to apply an effect not to the whole signal but only to one part of the frequency spectrum. A good DAW wil be able to split a signal chain and apply effects separately. One common use of this is in bass guitar, where applying effects like gain to the low end can cause it to sound muddy. [Some pedals](https://origineffects.com/product/cali76-compact-bass/) for bass include a built-in high-pass filter to keep the low-end clean.
 
-![Example of very primitive splitter from GarageBand](/images/splitter_garageband.png)
+{% img center %}splitter_garageband.png{% endimg %}
 
 ## Usage
 
@@ -21,7 +21,7 @@ To explain this pedal, I think it's easiest to start with the problem it address
 3. Wet/Dry mix
 4. Bypass switch
 
-![layout](/images/splitter_cuts.png)
+{% img short %}splitter_cuts.png{% endimg %}
 
 This pedal provides the ability to route certain frequencies through a different effects chain and mix back together again. The wet signal is passed through a pair of send/receive jacks, and mixed back with the dry signal to the output.
 
@@ -91,11 +91,12 @@ CAD files, SPICE simulations, and decal designs are [on GitHub](https://github.c
 
 No calibration required.
 
-![pcb](/images/splitter_pcb.png)
+{% img small %}splitter_pcb.png{% endimg %}
 
 ## Design
 
-![schematic](/images/splitter_schematic.png)
+
+{% img full %}splitter_schematic.png{% endimg %}
 
 ### Power supply
 
@@ -111,7 +112,7 @@ C1/C2/R1/R2/RV1/U1A act as a variable [2nd-order active high pass filter](https:
 
 To vary both R components of a 2nd order filter, it simply uses a dual audio taper pot. Rather than a true [LR active crossover filter](https://en.wikipedia.org/wiki/Linkwitz%E2%80%93Riley_filter), this circuit simply subtracts the original signal from the filtered signal to get the opposite frequencies. This creates a comb filter with an uneven phase shift, which means this pedal will have moderate a tonal effect. Both of these limitations are for cost savings and simplicity. A more robust circuit would use two LR VCFs but this would drastically increase cost and complexity.
 
-![comb effect](/images/splitter_comb_bode.png)
+{% img center big %}splitter_comb_bode.png{% endimg %}
 
 ### Jumpers
 
@@ -131,4 +132,4 @@ Below is a picture of the prototype version I assembled. I only had a white LED 
   <source src="/raw/splitter.mp3" type="audio/mpeg">
 </audio>
 
-![prototype](/images/splitter_proto.jpg)
+{% img small %}splitter_proto.jpg{% endimg %}

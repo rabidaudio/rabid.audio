@@ -1,0 +1,37 @@
+.image-container {
+    width: 100%;
+    max-width: 400px;
+}
+
+.image-container.center {
+    margin: auto;
+}
+
+.image-container.small {
+    min-width: 300px;
+    max-width: 33%;
+}
+
+.image-container.big {
+    min-width: 300px;
+    max-width: 66%;
+}
+
+.image-container.full {
+    width: 100%;
+    max-width: initial;
+}
+
+.image-container.short {
+    max-height: 400px;
+}
+
+
+.image-container img {
+    width: 100%;
+}
+
+.image-container.short img {
+    width: initial;
+    height: 400px;
+}

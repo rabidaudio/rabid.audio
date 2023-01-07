@@ -1,4 +1,5 @@
 @import 'material-icons/iconfont/material-icons.css';
+@import './post-images.css';
 
 :root {
   --body-background: #f2f2f2;
@@ -129,22 +130,6 @@ hr {
   border: none;
   border-top: 2px dotted #bbb;
   margin: 3rem 0;
-}
-
-/* control image sizes in markdown */
-
-main img {
-  max-width: 100%;
-}
-
-img[alt$="-fullwidth"] {
-  width: 100%;
-  display: block;
-}
-
-img[alt$="-halfwidth"] {
-  width: 50%;
-  display: block;
 }
 
 pre {

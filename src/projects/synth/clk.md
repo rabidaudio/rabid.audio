@@ -55,7 +55,7 @@ In development. Working on a breadboard, most features software features have be
 
 ## Design
 
-![schematic](/images/clock_schematic.png)
+{% img full %}clock_schematic.png{% endimg %}
 
 The [ATMega328P](/resources#ATMega328P) is used as the core microprocessor. Originally I planned on using the [ATTiny85](/resources#ATTiny85) with an [HT16K33](resources#HT16K33) LED driver, but there were just enough available pins on the Mega to drive the 7-segment displays directly, and the availability of a 16-bit timer drastically improves the resolution of the clock.
 
@@ -75,7 +75,7 @@ Rather than doing this heavy floating-point math on-device, these were [pre-gene
 
 The timer has a maximum error of 0.06% for pulses less than 5 Hz (300 BPM) and less than 0.25% for the maximum pulse rate of 20 Hz.
 
-![BPM vs Error](/images/clock_module_bpm_error.png)
+{% img big center %}clock_module_bpm_error.png{% endimg %}
 
 [Swing](https://en.wikipedia.org/wiki/Swing_(jazz_performance_style)) works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At `0`, the beats are even and there is no swing. At maximum value the swing beats are triplets.
 

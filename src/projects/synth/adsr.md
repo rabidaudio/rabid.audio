@@ -22,4 +22,6 @@ This module is still a work-in-progress. The design has been confirmed on a brea
 
 ## Design
 
-<!-- https://github.com/rabidaudio/synthesizer/tree/master/adsr -->
+[Source code](https://github.com/rabidaudio/synthesizer/tree/master/adsr)
+
+{% img full %}adsr-schematic.png{% endimg %}
