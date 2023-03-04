@@ -102,7 +102,7 @@ Nearly 40 volunteers from around the world organized via Discord to write, recor
   <li><a href="https://open.spotify.com/playlist/0ohj1O2VEJR82q55Vt0jsm?si=c6dda03504df4543">Spotify</a></li>
 </ul>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/keKpHmwfIMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 560px" width="100%" height="315" src="https://www.youtube.com/embed/keKpHmwfIMk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### the garages
 
@@ -110,7 +110,7 @@ Contributor, a prolific 50+ member band/internet music collective. Regular "live
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3467737381/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=2873697696/transparent=true/" seamless><a href="https://thegarages.bandcamp.com/album/ta032-unearthed-2">TA03.2: UNEARTHED by the garages</a></iframe>
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/visLwKGz-5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe style="max-width: 560px" width="100%" height="315" src="https://www.youtube.com/embed/visLwKGz-5s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ### Serious Times
 
