@@ -297,3 +297,7 @@ datasheets:
       Classic chip for making headphone amplifiers and such.
       Though it's supposed to be low noise, I've had a lot of noise problems with these.
       But it's got relatively accessible power supply requirements and a minimum of parts.
+  - file: YSL-R596AR3G4B5C-C10.pdf
+    name: RGB LED
+    category: led
+    description: 5mm, Common anode
