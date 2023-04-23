@@ -23,7 +23,7 @@ main {
 }
 </style>
 
-# Charles Julian Knight
+# CJK
 
 > 709 Killian St. SE Atlanta, GA 30312<br/>
 > 404.316.3749 | [cjk@rabidaudio.com](mailto:cjk@rabidaudio.com)
@@ -153,4 +153,4 @@ Startup Exchange is a student organization to foster entrepreneurship and hacker
 
 - Portfolio: [`rabid.audio`](https://rabid.audio)
 - GitHub: [`github.com/rabidaudio`](https://github.com/rabidaudio)
-- LinkedIn: [`linkedin.com/in/charlesjulianknight`](https://www.linkedin.com/in/charlesjulianknight)
+- LinkedIn: [`linkedin.com/in/cjulianknight`](https://www.linkedin.com/in/cjulianknight)
