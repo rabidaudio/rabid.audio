@@ -25,3 +25,5 @@ This module is still a work-in-progress. The design has been confirmed on a brea
 [Source code](https://github.com/rabidaudio/synthesizer/tree/master/adsr)
 
 {% img full %}adsr-schematic.png{% endimg %}
+
+### [View Online](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Frabidaudio%2Fsynthesizer%2Ftree%2Fmaster%2Fadsr)

@@ -22,11 +22,7 @@ In development. Working on a breadboard, most features software features have be
 
 ### TODO
 
-- Assemble and verify PCB
-- Fix software
-- Design panel cuts and decals
-- Assemble PCB and verify
-- Cut and decal panel
+- Fix swing
 
 ## Features
 
@@ -36,12 +32,6 @@ In development. Working on a breadboard, most features software features have be
 - Swing control, up to triplets leading or lagging
 - A separate subdivision output which can trigger at an integer multiple of the clock speed
 - Efficient 3HP size
-
-### Future features
-
-- "negative" subdivisions
-- remember BPM setting between power cycles
-- start/stop/restart
 
 ## Usage
 
@@ -56,6 +46,8 @@ In development. Working on a breadboard, most features software features have be
 ## Design
 
 {% img full %}clock_schematic.png{% endimg %}
+
+### [View online](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Frabidaudio%2Fsynthesizer%2Ftree%2Fmaster%2Fclock%2Fclock)
 
 The [ATMega328P](/resources#ATMega328P) is used as the core microprocessor. Originally I planned on using the [ATTiny85](/resources#ATTiny85) with an [HT16K33](resources#HT16K33) LED driver, but there were just enough available pins on the Mega to drive the 7-segment displays directly, and the availability of a 16-bit timer drastically improves the resolution of the clock.
 

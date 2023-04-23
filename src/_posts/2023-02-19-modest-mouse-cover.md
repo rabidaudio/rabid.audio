@@ -7,6 +7,6 @@ I bought a new guitar today. It's a budget instrument, a Chinese-made [Alvarez A
 
 I started [a document](https://docs.google.com/document/d/1BEAfFYWayn878wMqsEY9xT3BromaxvqmTYKdC9yzOF4/edit?usp=sharing) with my acoustic repertoire: lyrics, chords, and notes.
 
-To celebrate, I recorded a cover of Modest Mouse's Bankrupt on Selling. It's the song I play instinctively when I pick up a guitar, ever since I learned it back in college. I put way too much compression and reverb on the vocals here because I can't sing. Don't judge too harshly!
+To celebrate, I recorded a cover of Modest Mouse's "Bankrupt on Selling." It's the song I play instinctively when I pick up a guitar, ever since I learned it back in college. I put way too much compression and reverb on the vocals here because I can't sing. Don't judge too harshly!
 
 <iframe style="max-width: 560px" width="100%" height="315" src="https://www.youtube.com/embed/fjkdfNGDF9s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
