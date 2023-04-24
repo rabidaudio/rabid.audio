@@ -1,9 +1,7 @@
 ---
 layout: default
-title: Music
+title: Assorted Music Credits
 ---
-
-# Assorted music credits
 
 ## Serious Times
 
