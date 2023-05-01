@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Synthesizer - Clock module"
+title: "Synthesizer - The Count"
 categories:
   - project
   - synthesizer
@@ -18,34 +18,36 @@ Source files including code and CAD are available on [GitHub](https://github.com
 
 ## Status
 
-In development. Working on a breadboard, most features software features have been implemented. PCB designed and ordered, awaiting fab.
-
-### TODO
-
-- Fix swing
+Complete, Revision B assets are available for download on [GitHub](https://github.com/rabidaudio/synthesizer/tree/master/clock). Pictures and assembly directions coming soon. I have a couple of spare panels and PCBs, as well as a few of the specialized parts. If you're interested in building one I'd be happy to ship them at-cost. Or if you'd be interested in a kit, let me know.
 
 ## Features
 
-- 15 to 300 BPM
+- 15 to 400 BPM
 - Tap-tempo input
 - CV input for controlling clock speed
-- Swing control, up to triplets leading or lagging
-- A separate subdivision output which can trigger at an integer multiple of the clock speed
+- Swing control (a.k.a. shuffle)
+- A separate subdivision output which can trigger at an interval relative to the clock speed
 - Efficient 3HP size
+- Save/load/reset settings
 
 ## Usage
 
-- Turn the knob to control the BPM. LEDs display the current BPM, and decimal points blink with the outputs.
-- Apply a unipolar voltage from 0-5V to the CV input to adjust the clock speed. 0V is no additional increase in rate over the knob setting. Each 1V is 64 additional BPM, capped at 300 BPM.
+- 7-segment LEDs display the current BPM. The left LED displays the BEAT output, the right LED displays the DIV output.
+- Turn the knob to control the BPM. Base BPM is adjustable from 15-400 beats per minute.
+- The BEAT output triggers at the specified BPM.
+- The DIV output triggers at a configurable interval relative to the specified BPM.
+- Apply a unipolar voltage from 0-5V to the CV input to adjust the clock speed. 0V is no additional increase in rate over the knob setting. Each 1V is 64 additional BPM.
 - Tap the knob button two or more times to set the BPM through tap-tempo. This effects the base BPM before the CV is applied.
-- Hold the subdivision button and turn the knob to control the subdivisions. LEDs display the subdivision setting.
-- Hold the swing button and turn the knob to control the amount of swing. LEDs display the swing amount from -127 to 127.
-- Press both the subdivision button and swing button at the same time to reset the subdivision counter and pause the clock. LEDs display `000`.
-- Hold both the subdivision button and swing button at the same time for 2 seconds to perform a factory reset, returning the BPM, subdivision, and swing settings to the defaults.
+- Turn the knob while holding the DIV button to control the subdivision setting. The display will show the subdivision value. A division of 1 means that DIV will match the BPM. At 2, DIV will trigger twice for each beat. At 1/2, DIV will trigger once every 2 beats. Allowed values: 1/8, 1/7, 1/6, 1/5, 1/4, 1/3, 1/2, 1, 2, 3, 4.
+- Turn the knob while holding the SWING button to control the amount of swing from -75% to 75%, adjustable in steps of 3%. Swing applies an offset ot every other beat. LEDs display the swing amount. Negative values lag while positive values lead. 0% is played straight, and 66% is exactly a triplet feel.
+- Press both the DIV and SWING buttons at the same time to pause the output. While paused, LEDs display ` || `.
+- While paused, tapping the knob button will manually trigger one beat. This can be useful for synchronizing the module with a sequencer.
+- While paused, holding buttons will manipulate the saved settings. Hold the DIV button for 2 seconds to save the current settings (BPM, subdivision, and swing). The display will blink `SSS`. These settings will be loaded whenever the module is powered on. Hold the SWING button for 2 seconds to load the saved settings. The display will blink `LLL`. Hold the knob button for 2 seconds to perform a factory reset, returning the saved and current BPM, subdivision, and swing settings to the factory defaults. The display will blink `FFF`.
+- Un-pause the output by pressing DIV and SWING at the same time again.
+
+<!-- ## Assembly instructions -->
 
 ## Design
-
-{% img full %}clock_schematic.png{% endimg %}
 
 ### [View online](https://kicanvas.org/?github=https%3A%2F%2Fgithub.com%2Frabidaudio%2Fsynthesizer%2Ftree%2Fmaster%2Fclock%2Fclock)
 
@@ -59,26 +61,37 @@ This is a relatively simple module, all digital module with most of the logic in
 
 ### Timer
 
-`Timer1` is a 16-bit timer which is used as the clock core. This way the main loop is free to focus on user input without worrying about timing or performance; `Timer1` will interrupt when it's time to trigger a clock signal. It counts from 0 up to the value in register `OCR1A`, at which point an interrupt is issued and the timer restarts. We bring the clock pin high when the timer is at 0. We use `OCR1B` as a second interrupt at 313 to bring the clock signal low again, creating a fixed pulse width of 20ms.
+`Timer1` is a 16-bit timer which is used as the clock core. This way the main loop is free to focus on user input without worrying about timing or performance; `Timer1` will interrupt when it's time to trigger a clock signal. It counts from 0 up to the value in register `OCR1A`, at which point an interrupt is issued and the timer restarts. We bring the clock pin high when the timer is at 0. We use `OCR1B` as a second interrupt at 313 to bring the clock signal low again, creating a fixed pulse width of 16ms (chosen such that at the highest timer frequency the duty cycle will be about 50%).
 
 The formula for timer frequency is `16_000_000/((OCR1A+1)*1024)` where `16_000_000` represents the the 16MHz system clock of the ATMega and `1024` is the pre-scaler setting For a 16-bit timer this gives a possible frequency range from 5208 Hz to 0.238Hz. See [the datasheet](/resources#ATMega328P) for a more thorough explanation of AVR timers.
 
 Rather than doing this heavy floating-point math on-device, these were [pre-generated](https://docs.google.com/spreadsheets/d/e/2PACX-1vRYF0LwfJ1-PHLnWnM49WWA0hqCR1MDAl3SorFMbPlyfnnnua1AY_6QSFmG-xYukErxw6XOodOVI3JO/pubhtml) and loaded into flash as a lookup table.
 
-The timer has a maximum error of 0.06% for pulses less than 5 Hz (300 BPM) and less than 0.25% for the maximum pulse rate of 20 Hz.
+The timer has a maximum error of 0.03% for pulses less than 5 Hz (300 BPM) and less than 0.13% for the maximum pulse rate of 26.6 Hz.
 
 {% img big center %}clock_module_bpm_error.png{% endimg %}
 
-[Swing](https://en.wikipedia.org/wiki/Swing_(jazz_performance_style)) works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At `0`, the beats are even and there is no swing. At maximum value the swing beats are triplets.
+#### Subdivisions
 
-<!-- TODO: subdivisions -->
+A song in 4/4 time at 120 BPM will have 120 quarter notes every minute. But most music further subdivides the beat into smaller intervals. Most sequencers will be set up to play a 16th note per step for example. This module assumes this situation by setting the default subdivision value to 4. That means that for every beat, the DIV output will trigger 4 times. If BEAT triggers quarter notes, then DIV triggers 16th notes. Setting the subdivision to 1 causes BEAT and DIV to be the same.
+
+Fractional subdivisions, or super-divisions, are also allowed. In this mode, DIV will trigger an integer multiple of beats. So if BEAT represents a quarter note, a subdivision of 1/2 will cause DIV to trigger on half-notes and 1/4 on whole notes.
+
+The way this is accomplished is by checking which of BEAT or DIV will be higher frequency, and setting the timer internally to use that clock speed. It then counts the number of clock signals and triggers the lower frequency output at an integer multiple of the timer. Thus, while the maximum base BPM is 400, a subdivision of 4 will have a BPM of 1600, or about 27 Hz.
+
+#### Swing
+
+[Swing](https://en.wikipedia.org/wiki/Swing_(jazz_performance_style)) works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At `0`, the beats are even and there is no swing. At 66% the swing beats are triplets. The module allows going up to 75%, which is a quarter adjustment. In most musical styles that use a swing feel, such as jazz, 50%-66% is a common range.
+
+The way this is accomplished is by calculating an offset from a straight interval. For example, with a BPM of 120, the timer will count to 7812. A triplet of 7812 would therefore have a counter value of `7812/3 = 2604`. Rather than triggering after exactly 7812, we can instead alternate triggering on `7812 - 2604 = 5208` and `7812 + 2604 = 10416`, swapping `OCR1A` between these two values after every trigger.
+
+This feature is designed to be used with subdivisions, as it adjusts the core timer interval, and therefore causes the output with the higher frequency to swing. If a fractional subdivision is used, the BEAT output will be swung, which may not be the desired behavior.
 
 ### LEDs
 
 Most 7 segment displays are quite large, too large for our 3HP form factor. However I was able to find some [10mm wide 7-segment displays](/resources#SM460281N) from China. One quirk is despite clearly having a decimal LED, there's no pin exposed for it; just the 7 main segments and the common cathode.
 
-Rather than drive all `7*3 = 21` LEDs at the same time, the microprocessor steps through each display one at a time and sets the character for that display. Not only does this reduce the number of pins required (to `7 + number_of_displays`), it also uses less
-power.
+Rather than drive all `7*3 = 21` LEDs at the same time, the microprocessor steps through each display one at a time and sets the character for that display. Not only does this reduce the number of pins required (to `7 + number_of_displays`), it also uses less power.
 
 The common cathode for the selected display is pulled low, while the common cathode for the other displays remain high. The microprocessor round-robins through each display approximately every 1ms, which is fast enough that our eyes perceive this as a reduction in brightness rather than a blink. With three displays, each display is on 1/3 of the time, cutting the brightness to 33.3%. At higher numbers of displays this solution would start to break down as the brightness would become too low, but for this application it works quite well.
 
@@ -122,7 +135,10 @@ For more precision we could use an op-amp, but here the requirements are minimal
 
 To protect against voltages of greater than 5V, a simple voltage divider is used. The voltage is scaled by `100Kohm/(100Kohm + 180Kohm) = ~36%`. Thus if you apply the +12V rail to the CV in (the hypothetical highest voltage available in a Eurorack system), the microprocessor's analog input will see 4.39V, comfortably below the 5V supply range.
 
+### Front Panel
 
-<!-- LPF? -->
-<!-- older rotary encoder designs? -->
-<!-- backpack and switching? -->
+In the past I had planned on using toner transfer to apply decals to hand-cut aluminum sheets, but this is a huge pain. It turns out a much more popular approach in DIY synth is to use a PCB as a panel. Then you can design it the same way as the PCBs, send it off with the boards to be manufactured together, and you get some neat color options. [JLCPCB](https://jlcpcb.com/) also offers 1-sided aluminum PCBs which are perfect for this, as you still get the strength and appearance of using aluminum. Here I printed black silkscreen on white boards. Then anywhere with soldermask reveals the silver-colored aluminum underneath.
+
+I was struggling to come up with a good panel design, so I reached out to the Mastodon synthdiy community. [Olksiy H](https://sonomu.club/@oleksiy) helped me think through a theme and designed a sick front panel. I later went back and tried my hand again using the techniques I gathered from him. Both variants are available in the [source code](https://github.com/rabidaudio/synthesizer/tree/master/clock/panel).
+
+<!-- TODO: pictures -->
