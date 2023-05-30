@@ -5,6 +5,7 @@
 
 .image-container.center {
     margin: auto;
+    text-align: center;
 }
 
 .image-container.small {
@@ -24,6 +25,8 @@
 
 .image-container.short {
     max-height: 400px;
+    width: auto;
+    max-width: inherit;
 }
 
 
