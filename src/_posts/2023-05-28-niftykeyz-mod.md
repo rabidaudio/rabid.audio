@@ -61,9 +61,22 @@ of the case, gaining a little bit more space.
 
 My plan is to salvage the jacks and mounting brackets from the existing board, but I decided
 to buy the connector because all those pins would be hard to desolder cleanly and I wanted to
-be sure it would fit the design. The connector is $0.16 on DigiKey and a single board is $4 on
+be sure it would fit the design. The connector is $0.16 on DigiKey and a single board is $0.40 on
 [JLCPCB](https://jlcpcb.com/). Unfortunately with minimum order quantities and shipping that
 comes out to $30 (plus an additional $20 if it turns out my PCB design is wrong and I have to
 run a second batch!). Still, worth it for a good kit IMO.
 
-Boards should arrive in about a week. I'll update here with pictures of the final assembly.
+~~Boards should arrive in about a week. I'll update here with pictures of the final assembly.~~
+
+**Update: 2023-06-01:** Boards and parts arrived today. De-soldering the screw mounts ended up
+being more difficult than expected, because it's a big metal hunk that absorbed all the heat.
+I ended up first using the heat gun for a solid minute to get the part pretty hot and then the
+iron was able to heat the pads up enough to melt the solder to be sucked up.
+
+{% img center %}2023-05-28-niftykeyz-mod/new-front.jpg{% endimg %}
+
+The board worked flawlessly. It sticks into the rack by a millimeter or so, but not enough to
+get in the way of any of my modules. Long shot but if anyone has one of these keyboards and
+wants to do the same, reach out and I'll send you one of my PCBs at-cost.
+
+{% img center short %}2023-05-28-niftykeyz-mod/new-protrude.jpg{% endimg %}
