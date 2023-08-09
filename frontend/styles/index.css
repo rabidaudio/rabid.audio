@@ -142,3 +142,9 @@ td, th {
   padding: 1px 5px;
   text-align: start;
 }
+
+blockquote {
+  border-left: 10px #ebebeb solid;
+  margin-left: 0;
+  padding-left: 1em;
+}
