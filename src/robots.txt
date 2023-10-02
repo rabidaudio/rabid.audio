@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /resources/
+
+Sitemap: https://rabid.audio/sitemap.xml
