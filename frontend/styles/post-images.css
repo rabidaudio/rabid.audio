@@ -23,18 +23,13 @@
     max-width: initial;
 }
 
-.image-container.short {
-    max-height: 400px;
-    width: auto;
-    max-width: inherit;
-}
-
-
 .image-container img {
     width: 100%;
 }
 
 .image-container.short img {
-    width: initial;
-    height: 400px;
+    width: auto;
+    height: auto;
+    max-height: 400px;
+    max-width: 100%;
 }

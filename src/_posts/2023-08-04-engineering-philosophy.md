@@ -55,7 +55,7 @@ Skills and knowledge can grow in two dimensions: depth and breadth. T-shaped peo
 
 ### Run a data team like a product team
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/zoqyefI5VKU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+{% youtube_embed zoqyefI5VKU %}
 
 
 ### Code reviews
@@ -227,7 +227,8 @@ Also by measuring you can then brag about it in your merge request.
 
 In the mid 2010s, React revolutionized the frontend JS world by designing a framework around the concept of one-way data flows. In this paradigm, UIs are declarative, and pass data down to their children. When data changes, the UIs are simply re-rendered with the new state. Events (typically user interaction) bubble back up or trigger background operations which eventually change the state at a higher level, causing new data to flow downwards and re-render the UI.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/nYkdrAPrdcw?start=616" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+{% youtube_embed nYkdrAPrdcw?start=616 %}
 
 React is not the only JS framework that uses this paradigm, and the design pattern can be implemented in any language/framework. Following this pattern makes it easy to reason about and change.
 
