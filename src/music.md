@@ -5,9 +5,11 @@ title: Assorted Music Credits
 
 ## Serious Times
 
-Solo post rock project. Self-producing music to practice recording and mixing.
+Solo post rock project. Self-producing music to practice recording and mixing. [serioustimes.bandcamp.com](https://serioustimes.bandcamp.com)
 
-<iframe width="100%" height="300" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/1098434587&color=%23ff5500&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"></iframe><div style="font-size: 10px; color: #cccccc;line-break: anywhere;word-break: normal;overflow: hidden;white-space: nowrap;text-overflow: ellipsis; font-family: Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif;font-weight: 100;"><a href="https://soundcloud.com/were-in-serious-times" title="Serious Times" target="_blank" style="color: #cccccc; text-decoration: none;">Serious Times</a> · <a href="https://soundcloud.com/were-in-serious-times/dont-tell-me-to-drink-more-water-again-2" title="Don&#x27;t Tell Me to Drink More Water Again" target="_blank" style="color: #cccccc; text-decoration: none;">Don&#x27;t Tell Me to Drink More Water Again</a></div>
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=3210345782/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://serioustimes.bandcamp.com/track/if-fashion-is-suffering-then-im-a-narcissist">If Fashion is Suffering Then I&#39;m a Narcissist by Serious Times</a></iframe>
+
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=3867325892/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://serioustimes.bandcamp.com/track/dont-tell-me-to-drink-more-water-again">Don&#39;t Tell Me to Drink More Water Again by Serious Times</a></iframe>
 
 ## the garages
 
