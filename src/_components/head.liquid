@@ -11,6 +11,7 @@
 </title>
 
 <meta name="description" content="{{ metadata.description }}" />
+<meta name="theme-color" content="#d01040" />
 <link rel="me" href="https://hachyderm.io/@okay_sure_cool" />
 
 <link
@@ -33,7 +34,17 @@
   rel="preconnect"
   href="https://fonts.gstatic.com"
   crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oxygen:wght@400;700&display=swap" rel="stylesheet">
+<link
+  rel="preload"
+  href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oxygen:wght@400;700&display=swap"
+  as="style"
+  onload="this.onload=null;this.rel='stylesheet'" />
+<noscript>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Oxygen:wght@400;700&display=swap"
+    rel="stylesheet"
+    type="text/css" />
+</noscript>
 
 <link rel="stylesheet" href="{% asset_path css %}" />
 <script src="{% asset_path js %}" defer></script>
