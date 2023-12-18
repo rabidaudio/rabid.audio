@@ -25,9 +25,6 @@ main {
 
 # CJK
 
-> 709 Killian St. SE Atlanta, GA 30312<br/>
-> 404.316.3749 | [cjk@rabidaudio.com](mailto:cjk@rabidaudio.com)
-
 ## Education
 
 __Georgia Institute of Technology__ - Atlanta, GA<br/>
@@ -41,13 +38,13 @@ B.A. Dual-Degree Program, Fall 2009 - Spring 2012
 ### Co-founder & Chief Technical Officer, [FIXD Automotive](https://www.fixdapp.com)
 __August 2015 - August 2023__ | Atlanta
 
-FIXD Automotive is a company that makes car ownership as easy and affordable as possible for the everyday driver. The flagship product is a Bluetooth [OBD-II](https://en.wikipedia.org/wiki/On-board_diagnostics) sensor and mobile app that diagnoses car problems, explaining error codes in simple language. While there, the company grew rapidly, being the [fastest growing lower middle-market company in Georgia](https://www.acg.org/atlanta-60) in 2018. As of Q2 2023 it has grown to 40 employees, graduated from [ATDC](https://atdc.org/), and sold around 2 million units, all while remaining profitable and never raising any outside capital.
+FIXD Automotive is a company that makes car ownership as easy and affordable as possible for the everyday driver. The flagship product is a Bluetooth [OBD-II](https://en.wikipedia.org/wiki/On-board_diagnostics) sensor and mobile app that diagnoses car problems, explaining error codes in simple language. While there, the company grew rapidly, being the [fastest growing lower middle-market company in Georgia](https://www.acg.org/atlanta-60) in 2018. As of Q2 2023 it has grown to around 30 employees, graduated from [ATDC](https://atdc.org/), and sold around 2 million units, all while remaining profitable and never raising any outside capital.
 
 - Wrote the initial production versions of both [Android](https://play.google.com/store/apps/details?id=com.fixdapp.two) and [iOS](https://itunes.apple.com/us/app/fixd/id957168651?mt=8) native mobile applications, and the REST-ful API backend in [Ruby on Rails](http://rubyonrails.org/) to power them. Also worked on projects in [Nodejs](https://nodejs.org/en/), [Go](https://go.dev/), [Python](https://www.python.org/), [Svelte](https://svelte.dev/), and [Flutter](https://flutter.dev/).
 - Oversaw the release of several iterations of the FIXD Sensor, a dual-band Bluetooth device. The latest generation model reduced the original cost-of-goods by ~75%. Worked closely with our manufacturer in Shenzhen, China to ensure product quality, having visited the facility on multiple occasions.
 - Built out the cloud infrastructure on AWS using established best-practices for cloud deployments, leveraging Docker containers and [Convox](https://convox.com/) PaaS for application deployments. Provisioned using infrastructure-as-code practices via [Terraform](https://www.terraform.io/). Services include EC2, RDS, S3, ECS, CloudFormation, Lambda, Athena, CloudWatch. Grew to 125 vCPUs across 5 separate organizational accounts.
 - Reverse-engineered diagnostic protocols used by vehicles, information that ranges from sparse to proprietary. Researched, documented, and coded interfaces to access both standardized and proprietary data for tens of thousands of year-make-models. As odometer is not mandated by OBD-II, created a proprietary algorithm for predicting the mileage for a vehicle based on other outputs from the car.
-- Recruited, trained, and grew the Engineering team to a size of 16 split across 6 teams. Focused on developing talent over recruiting experience. Steered culture through one-on-ones, code review, and creation of an Engineering Handbook. Defined software development processes and practices based on Agile methodologies. Combined git flow with a robust CI/CD pipeline to enable developers to deploy code constantly while still ensuring the product met our quality standards.
+- Recruited, trained, and grew the Engineering team to a size of 13 split across 4 teams. Focused on developing talent over recruiting experience. Steered culture through one-on-ones, code review, and creation of an Engineering Handbook. Defined software development processes and practices based on Agile methodologies. Combined git flow with a robust CI/CD pipeline to enable developers to deploy code constantly while still ensuring the product met our quality standards.
 <!-- Lynx -->
 <!-- CarRx -->
 - Built a data platform, and later a team to maintain it, around the open-source "modern data stack." Extracted GB of data per week from dozens of data sources into [Snowflake](https://www.snowflake.com/en/), applied business logic, reported KPIs for the company, and provided tools and training for employees to perform their own analyses. Stack included [Meltano](https://meltano.com/), [DBT](https://www.getdbt.com/), [Dagster](https://dagster.io/), and [Metabase](https://www.metabase.com/). Personally was a major contributor to these young tools, sending dozens of pull requests and playing a part in design and direction.
