@@ -25,6 +25,8 @@ main {
 
 # CJK
 
+[`rabid.audio`](https://rabid.audio) \| [`github.com/rabidaudio`](https://github.com/rabidaudio) \| [`linkedin.com/in/cjulianknight`](https://www.linkedin.com/in/cjulianknight)
+
 ## Education
 
 __Georgia Institute of Technology__ - Atlanta, GA<br/>
@@ -38,7 +40,7 @@ B.A. Dual-Degree Program, Fall 2009 - Spring 2012
 ### Co-founder & Chief Technical Officer, [FIXD Automotive](https://www.fixdapp.com)
 __August 2015 - August 2023__ | Atlanta
 
-FIXD Automotive is a company that makes car ownership as easy and affordable as possible for the everyday driver. The flagship product is a Bluetooth [OBD-II](https://en.wikipedia.org/wiki/On-board_diagnostics) sensor and mobile app that diagnoses car problems, explaining error codes in simple language. While there, the company grew rapidly, being the [fastest growing lower middle-market company in Georgia](https://www.acg.org/atlanta-60) in 2018. As of Q2 2023 it has grown to around 30 employees, graduated from [ATDC](https://atdc.org/), and sold around 2 million units, all while remaining profitable and never raising any outside capital.
+FIXD Automotive is a company that makes car ownership as easy and affordable as possible for the everyday driver. The flagship product is a Bluetooth [OBD-II](https://en.wikipedia.org/wiki/On-board_diagnostics) sensor and mobile app that diagnoses car problems, explaining error codes in simple language. While there, the company grew rapidly, being the [fastest growing lower middle-market company in Georgia](https://www.acg.org/atlanta-60) in 2018. As of Q3 2023 it had grown to around 30 employees, graduated from [ATDC](https://atdc.org/), and sold around 2 million units, all while remaining profitable and never raising any outside capital.
 
 - Wrote the initial production versions of both [Android](https://play.google.com/store/apps/details?id=com.fixdapp.two) and [iOS](https://itunes.apple.com/us/app/fixd/id957168651?mt=8) native mobile applications, and the REST-ful API backend in [Ruby on Rails](http://rubyonrails.org/) to power them. Also worked on projects in [Nodejs](https://nodejs.org/en/), [Go](https://go.dev/), [Python](https://www.python.org/), [Svelte](https://svelte.dev/), and [Flutter](https://flutter.dev/).
 - Oversaw the release of several iterations of the FIXD Sensor, a dual-band Bluetooth device. The latest generation model reduced the original cost-of-goods by ~75%. Worked closely with our manufacturer in Shenzhen, China to ensure product quality, having visited the facility on multiple occasions.
@@ -50,6 +52,8 @@ FIXD Automotive is a company that makes car ownership as easy and affordable as 
 - Built a data platform, and later a team to maintain it, around the open-source "modern data stack." Extracted GB of data per week from dozens of data sources into [Snowflake](https://www.snowflake.com/en/), applied business logic, reported KPIs for the company, and provided tools and training for employees to perform their own analyses. Stack included [Meltano](https://meltano.com/), [DBT](https://www.getdbt.com/), [Dagster](https://dagster.io/), and [Metabase](https://www.metabase.com/). Personally was a major contributor to these young tools, sending dozens of pull requests and playing a part in design and direction.
 - Built and migrated to our own in-house e-commerce platform from [Shopify](https://www.shopify.com/) in only 12 weeks, which outperformed the previous one in KPIs. Included highly-optimized direct-to-checkout experience, with support for one-click post-purchase up-sells and subscription-based products. The company plans to productize the platform and begin offering it to other companies in 2024.
 - Set policies and ensured compliance around IT security and user privacy. As Data Protection Officer, brought company into compliance with [GDPR](https://en.wikipedia.org/wiki/General_Data_Protection_Regulation) and [CCPA](https://en.wikipedia.org/wiki/California_Consumer_Privacy_Act), and automated customer data deletion requests.
+
+<!-- <div style="page-break-after: always"></div> -->
 
 ### Lead Software Engineer, [TechJect](http://techject.com/)
 __May 2015 - August 2015__ | Atlanta
@@ -77,12 +81,12 @@ TechJect designed consumer drones, including the [Robot Dragonfly](https://www.i
 - Developed and administered the email server and a collection of [Wordpress](https://wordpress.org/) sites including a [WooCommerce](https://woocommerce.com/) e-commerce site and customer support sites, and wired the office with CAT 6.
 - Introduced peers to `git` and implemented version control practices for the company.
 
-
 ### Developer, [GetNotes](http://www.getnotes.co/)
 __January 2014 - June 2014__ | Atlanta
 
 Joined an [Atlanta Ventures](http://www.atlantaventures.com/)-funded startup during their progress through the [Flashpoint accelerator](http://flashpoint.co/) at Georgia Tech. The company offered crowd-sourced audio-to-text transcription as a service. Worked directly with the CTO to build and manage a web application in the [Zend PHP Framework](https://framework.zend.com/). Implemented new application features and patched bugs in a rapid development cycle. Advised on technologies and company direction, lead initial research into machine-learning algorithms for automated transcription. Through the Flashpoint program, learned a rigorous customer discovery processes.
 
+<!-- <div style="page-break-after: always"></div> -->
 
 ### Distributed Systems/AIX Co-Op, [Norfolk Southern Corporation](http://www.nscorp.com/content/nscorp/en.html)
 __September 2012 - August 2013__ | Atlanta
@@ -143,9 +147,3 @@ Startup Exchange is a student organization to foster entrepreneurship and hacker
 - ["Kotlin Coroutines in Android"](https://speakerdeck.com/rabidaudio/kotlin-coroutines-in-android), [Connect.Tech](https://2017.connect.tech/) - Atlanta, GA, September 2017
 - "Custom modular synthesizer", Atlanta Tech Demo Night - Atlanta, GA, May 2015
 - ["Error Correction Over Noisy Channels"](https://speakerdeck.com/rabidaudio/error-correction-over-noisy-channels), Berry College - Rome, GA, March 2012
-
-## Links
-
-- Portfolio: [`rabid.audio`](https://rabid.audio)
-- GitHub: [`github.com/rabidaudio`](https://github.com/rabidaudio)
-- LinkedIn: [`linkedin.com/in/cjulianknight`](https://www.linkedin.com/in/cjulianknight)
