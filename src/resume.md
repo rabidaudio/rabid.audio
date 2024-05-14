@@ -46,7 +46,7 @@ FIXD Automotive is a company that makes car ownership as easy and affordable as 
 - Managed the release of multiple iterations of the FIXD Sensor, a dual-band Bluetooth device. The latest generation model reduced the original cost-of-goods by ~75%. Worked closely with our manufacturer in Shenzhen, China to ensure product quality, having visited the facility on multiple occasions.
 - Designed the cloud infrastructure on AWS using established best-practices for cloud deployments, leveraging Docker containers and [Convox](https://convox.com/) PaaS for application deployments. Provisioned using infrastructure-as-code practices via [Terraform](https://www.terraform.io/). Services include EC2, RDS, S3, ECS, CloudFormation, Lambda, Athena, CloudWatch. Grew to 125 vCPUs across 5 separate organizational accounts.
 - Reverse-engineered diagnostic protocols used by vehicles, information that ranges from sparse to proprietary. Researched, documented, and coded interfaces to access both standardized and proprietary data for tens of thousands of year-make-models. As odometer is not mandated by OBD-II, designed a proprietary algorithm for predicting the mileage for a vehicle based on other outputs from the car.
-- Recruited, trained, and grew the Engineering team to a size of 13 split across 4 teams. Focused on developing talent over recruiting experience. Steered culture through one-on-ones, code review, and creation of an Engineering Handbook. Defined software development processes and practices based on Agile methodologies. Combined git flow with a robust CI/CD pipeline to enable developers to deploy code constantly while still ensuring the product met our quality standards.
+- Recruited, trained, and grew the Engineering team to a size of 13 split across 4 teams. Focused on developing talent over recruiting experience. Steered culture through one-on-ones, code review, and creation of an Engineering Handbook [modeled after GitLab](https://handbook.gitlab.com/handbook/about/). Defined software development processes and practices based on Agile methodologies. Combined git flow with a robust CI/CD pipeline to enable developers to deploy code constantly while still ensuring the product met our quality standards.
 <!-- Lynx -->
 <!-- CarRx -->
 - Built a data platform, and later a team to maintain it, around the open-source "modern data stack." Extracted GB of data per week from dozens of data sources into [Snowflake](https://www.snowflake.com/en/), applied business logic, reported KPIs for the company, and provided tools and training for employees to perform their own analyses. Stack included [Meltano](https://meltano.com/), [DBT](https://www.getdbt.com/), [Dagster](https://dagster.io/), and [Metabase](https://www.metabase.com/). Personally was a major contributor to these young tools, sending dozens of pull requests and playing a part in design and direction.
@@ -126,6 +126,11 @@ Solo submission for Georgia Tech Invention Studio hackathon that served as precu
 <!-- 	Startup Weekend Maker Edition 2013 (award name?) -->
 
 ## Organizations
+
+#### Admin, [Fourth Strike](https://fourth-strike.com/)
+__November 2023 - Present__
+
+Fourth Strike is a not-for-profit record label with the goal of promoting queer music. Building a custom tool for tracking accounting and royalties owed and paid for hundreds of artists across dozens of records, and leading an audit of existing records.
 
 #### Volunteer, [Code for Atlanta](http://http://codeforatlanta.org/)
 __January 2017 - March 2020__
