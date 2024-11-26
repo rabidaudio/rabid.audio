@@ -45,7 +45,118 @@ Complete, Revision B assets are available for download on [GitHub](https://githu
 - While paused, holding buttons will manipulate the saved settings. Hold the DIV button for 2 seconds to save the current settings (BPM, subdivision, and swing). The display will blink `SSS`. These settings will be loaded whenever the module is powered on. Hold the SWING button for 2 seconds to load the saved settings. The display will blink `LLL`. Hold the knob button for 2 seconds to perform a factory reset, returning the saved and current BPM, subdivision, and swing settings to the factory defaults. The display will blink `FFF`.
 - Un-pause the output by pressing DIV and SWING at the same time again.
 
-<!-- ## Assembly instructions -->
+## Assembly Instructions
+
+### BOM
+
+There's a small number of components necessary here, and most are generic. Passive components do not require
+high tolerances; 20% resistors will work just fine. Here I used a 1N4148 diode, but any general-purpose diode
+should be fine (1N4001, etc). The firmware will run on a ATmega168P but you can also use a higher-memory version
+such as the more-common ATmega328P used by Arduino. Unfortunately, it's really hard to find 7-segment displays
+in a 10mm wide form factor. I settled on the [`SM460281N`](/resources#SM460281N) which can be shipped from
+China from [LCSC](https://www.lcsc.com/product-detail/Led%20Segment%20Display_ARKLED-Wuxi-ARK-Tech-Elec-SM460281N-7_C252194.html).
+The jacks are standard Thonkiconn 3.5mm which you can get from [ThonkDIY] (and probably other places too?).
+
+|                     | **Resistors**                                                |                               |
+|---------------------|--------------------------------------------------------------|-------------------------------|
+| 1x                  | 180K                                                         | R1                            |
+| 1x                  | 100K                                                         | R2                            |
+| 5x                  | 1K                                                           | R3, R4, R5, R9, R10           |
+| 6x                  | 10K                                                          | R6, R7, R8, R11, R12, R13     |
+|---------------------|--------------------------------------------------------------|-------------------------------|
+|                     | **Capacitors**                                               |                               |
+|---------------------|--------------------------------------------------------------|-------------------------------|
+| 1x                  | 10u electrolytic                                             | C1                            |
+| 3x                  | 10n                                                          | C2, C5, C6                    |
+| 2x                  | 22p                                                          | C3, C4                        |
+|---------------------|--------------------------------------------------------------|-------------------------------|
+|                     | **Diodes**                                                   |                               |
+|---------------------|--------------------------------------------------------------|-------------------------------|
+| 2x                  | 3mm LED                                                      | D1, D2                        |
+| 1x                  | 1N4148 (or similar)                                          | D3                            |
+|---------------------|--------------------------------------------------------------|-------------------------------|
+|                     | **Everything else**                                          |                               |
+|---------------------|--------------------------------------------------------------|-------------------------------|
+| 1x                  | [ATMega168P](/resources#ATMega328P)                          | U1                            |
+| 1x                  | [LM7805 5V regulator](/resources#LM7805)                     | U2                            |
+| 3x                  | [SM460281N 10mm 7-segment display](/resources#SM460281N)     | U3, U4, U5                    |
+| 1x                  | 16MHz crystal oscillator                                     | Y1                            |
+| 1x                  | [PEC11R Rotary encoder](/resources#PEC11R)                   | RE1                           |
+| 2x                  | [TL1105SP pushbutton switches](/resources#TL1105)            | SW1, SW2                      |
+| 1x                  | 2x3 2.5mm male pin headers                                   | J1                            |
+| 1x                  | 2x5 2.5mm male pin headers                                   | J2                            |
+| 3x                  | 1x5 2.5mm female pin headers                                 | J3, J5, J7                    |
+| 3x                  | 1x5 2.5mm male pin headers                                   | J4, J6, J8                    |
+| 1x                  | 1x7 2.5mm female pin headers                                 | J9                            |
+| 1x                  | 1x7 2.5mm male pin headers                                   | J10                           |
+| 3x                  | [Thonkiconn 3.5mm jacks](/resources#Thonkiconn)              | J11, J12, J13                 |
+
+#### Purchase
+
+- SM460281N 10mm 7-segment display: [LCSC](https://www.lcsc.com/product-detail/Led%20Segment%20Display_ARKLED-Wuxi-ARK-Tech-Elec-SM460281N-7_C252194.html)
+- Thonkiconn 3.5mm jacks: [Thonk](https://www.thonk.co.uk/shop/thonkiconn/)
+- Everything else (except passives and pin headers) [Digikey](https://www.digikey.com/short/nm5fr5jc)
+
+### Steps
+
+1. Start by soldering the resistors to both boards. Note that they go on both sides of the top board:
+  Top board, top face: R9, R10, R13
+  Top board, bottom face: R1, R2, R7, R8, R11, R12
+  Bottom board, bottom face: R3, R4, R5, R6
+
+Clip the legs close
+
+2. Capacitors
+  Top board, top face: C6
+  Top board, bottom face: C5
+  Bottom board, bottom face: 
+Orientation
+
+3. Diode 
+  top board, bottom face
+  orientation
+
+4. Crystal oscillator, bottom board bottom face
+
+5. ISR and eurorack headers
+6. LM7805, bottom board, bottom face
+7. IC holder
+8. Female headers bottom board + Male headers, top board
+    sandwich together and solder
+
+Take a break
+
+insert components, but **dont solder yet**
+switches, with caps
+rotary encoder. electrical tape on bottom. put nut ~50% of the way down
+LEDs - long legs positive (jack side)
+Jacks
+7 segment displays (period down, rotary encoder side)
+put panel on - nuts for jack and rotary encoder. adjust lower rotary encoder jack for level panel height
+Solder jacks, encoder, and switches (NOT LEDs yet)
+Push LEDs into position in panel. can use tape. may have to angle/bend LEDs.Solder.
+Push up 7-segments. legs probably too short for flush with panel. use tape to 
+
+### Programming firmware
+
+You'll need a programmer in order to load the firmware onto the chip. The simplest way to do this is to use an Arduino Uno and swap the chip into the 28-pin header. You can also use a programmer with the standard ISP header pinout such as the USBtinyISP, USBasp, Atmel-ICE, etc. to program the chip directly onto the assembled board.
+
+If you've got a brand new bare chip, you'll need to start by setting the [clock fuse byte](https://www.xanthium.in/how-to-configuring-atmega328p-fuse-low-byte-embedded-design-use-external-crystal-fuse-settings). You'll need to be sure to set the clock to an external 16MHz clock or else the display will blink annoyingly and the beat output will be too slow. You can do this using the Arduino IDE or using avrdude directly:
+
+```bash
+# NOTE: you'll likely need to tweak this command for your programmer, and for the chip if you're using a 328p instead
+avrdude -c usbasp -p m168p -U lfuse:w:0xFF:m
+```
+
+After that, you can program the chip using [PlatformIO](platformio.org):
+
+```bash
+platformio run -t upload --verbose
+```
+
+No calibration is required.
+
+Reduce brightness of LEDs by increasing the value of R9 and R10
 
 ## Design
 
@@ -142,3 +253,25 @@ In the past I had planned on using toner transfer to apply decals to hand-cut al
 I was struggling to come up with a good panel design, so I reached out to the Mastodon synthdiy community. [Olksiy H](https://sonomu.club/@oleksiy) helped me think through a theme and designed a sick front panel. I later went back and tried my hand again using the techniques I gathered from him. Both variants are available in the [source code](https://github.com/rabidaudio/synthesizer/tree/master/clock/panel).
 
 <!-- TODO: pictures -->
+
+## Fix in a future iteration
+
+As this is my first fully-complete module, I learned a lot. There's some things I'd do differently that I may fix in a future revision, but weren't worth fixing at this time.
+
+- Add standoffs to hold the two boards together. Relying on pin-header friction is not the best
+- Rethink components beneath rotary encoder. Too easy to short out
+- Make the front panel symmetrical
+- More intuitive keyboard shortcuts
+- CV in isn't all that valuable; another output (or an external clock input) would be more useful
+- Reduce brightness of LEDs by increasing R9 and R10
+- More space around programmer so it's not running into regulator
+
+
+<!--
+1. finish directions
+2. video
+3. pictures
+4. Remove panel design note from alt panel
+5. ensure component values are on pcb gerbers
+6. re-export gerbers for final revb
+-->
