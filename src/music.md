@@ -3,9 +3,15 @@ layout: default
 title: Assorted Music Credits
 ---
 
+## Stolen Velour
+
+Sad girl slowcore / grungy lovewave. [stolenvelouratl.bandcamp.com](https://stolenvelouratl.bandcamp.com)
+
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1146763258/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://stolenvelouratl.bandcamp.com/track/floorboards">floorboards by Stolen Velour</a></iframe>
+
 ## Serious Times
 
-Solo post rock project. [serioustimes.bandcamp.com](https://serioustimes.bandcamp.com)
+Post rock. [serioustimes.bandcamp.com](https://serioustimes.bandcamp.com)
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=3210345782/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://serioustimes.bandcamp.com/track/if-fashion-is-suffering-then-im-a-narcissist">If Fashion is Suffering Then I&#39;m a Narcissist by Serious Times</a></iframe>
 
