@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Headphone breakout board
+categories:
+    - electronics
 ---
 
 {% img small center %}hp_image.jpg{% endimg %}

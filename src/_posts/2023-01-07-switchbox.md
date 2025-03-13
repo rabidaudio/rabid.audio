@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Switchbox
+categories:
+    - music tech
+    - effects pedals
+    - electronics
 ---
 
 {% img small center %}switchbox.jpg{% endimg %}

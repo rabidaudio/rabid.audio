@@ -1,6 +1,10 @@
 ---
 layout: post
 title: 'NiftyKeyz mod: smaller jack board'
+categories:
+    - music tech
+    - synthesizer
+    - electronics
 ---
 
 All along the plan for [my rack](/projects/synth) was 4-voice polyphony. I intended to

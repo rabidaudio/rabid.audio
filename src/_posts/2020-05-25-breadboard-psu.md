@@ -1,6 +1,10 @@
 ---
 layout: post
 title: Eurorack breadboard power adapter
+categories:
+    - music tech
+    - synthesizer
+    - electronics
 ---
 
 When I prototype on a breadboard, I have a consistent way of using the power rails on the top and bottom so that I don't accidentally plug anything in backwards. From top to bottom, its +12v, GND, then GND and -12v.

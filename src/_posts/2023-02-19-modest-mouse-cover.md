@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Modest Mouse cover
+categories:
+    - music
 ---
 
 I bought a new guitar today. It's a budget instrument, a Chinese-made [Alvarez AF30CE](https://alvarezguitars.com/guitar/af30ce/) which I got from [Maple Street Guitars](https://www.maplestreetguitars.com/). Nothing to write home about, but I think it sounds pretty good for what it is. It's got a little pickup with an integrated tuner, which is really nice.

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Goodbye, FIXD
+categories:
+    - career
 ---
 
 As I enter the last week at [FIXD Automotive](https://fixd.com), a company I co-founded and built over 8 years, I'm reflecting on the journey; the successes, the learnings (and there were many!), and the friendships.

@@ -1,6 +1,9 @@
 ---
 layout: post
 title: External Guitar Power Supply
+categories:
+    - music tech
+    - electronics
 ---
 
 I have this 1998 made in Japan Squier Vista "Jagmaster" (a cross between a Jaguar and a Jazzmaster).

@@ -1,6 +1,8 @@
 ---
 layout: post
 title: Transistor matcher
+categories:
+    - electronics
 ---
 
 Matched pairs of BJTs are a common requirement in analog audio circuits for current mirrors and exponential converters. Fancy machines can measure the behavior of individual transistors so their input and output characteristics can be plotted and compared. But [this technique from Ian Fritz](/resources/reference/transistor-matching.pdf) suggests a much more hobbyist-friendly approach. Effectively it biases two transistors with the same expected currents and measures the actual difference between the two.
