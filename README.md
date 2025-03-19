@@ -1,13 +1,17 @@
-# TODO
+Just another tech blog.
 
-- switch to erb
-- Home page
-- Blog page
-- Project write ups
-- Import LFM album scroll
-- Import old posts?
-- redirect rabidaudio.com and charlesjulianknight.com
-- mouseover resources to get quick description
-- mouseover calculations
-- auto-generate portfolio with page metadata
-- better image alt text
+http://rabid.audio
+
+Set up
+------
+
+```bash
+bundle install
+bundle exec bridgetown s
+```
+
+
+License
+=======
+
+Blog content is all [CC-BY-SA](http://creativecommons.org/licenses/by-sa/4.0/). Custom code and design is [MIT](LICENSE).
