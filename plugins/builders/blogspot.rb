@@ -17,7 +17,7 @@ class Builders::Blogspot < SiteBuilder
         end
 
         def date
-            Bridgetown::Utils.parse_date(post.updated['$t'])
+            Bridgetown::Utils.parse_date(post.published['$t'])
         end
 
         def body
