@@ -23,9 +23,9 @@ main {
 }
 </style>
 
-# CJK
+# JDK
 
-[`rabid.audio`](https://rabid.audio) \| [`github.com/rabidaudio`](https://github.com/rabidaudio) \| [`linkedin.com/in/cjulianknight`](https://www.linkedin.com/in/cjulianknight)
+[`rabid.audio`](https://rabid.audio) \| [`github.com/rabidaudio`](https://github.com/rabidaudio) \| [`linkedin.com/in/julienknight`](https://www.linkedin.com/in/julienknight)
 
 ## Education
 
