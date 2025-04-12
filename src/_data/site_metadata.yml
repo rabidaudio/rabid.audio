@@ -6,7 +6,7 @@
 
 title: rabid.audio
 tagline: Music technology
-email: cjk@rabidaudio.com
+email: julien@rabidaudio.com
 description: >-
   Documenting my work at the intersection of technology and music.
 links:
@@ -24,9 +24,13 @@ links:
     
   Work:
     GitHub: https://github.com/rabidaudio
-    LinkedIn: https://www.linkedin.com/in/cjulianknight
-    Wellfound: https://wellfound.com/u/cjknight
+    LinkedIn: https://www.linkedin.com/in/julienknight
+    # Wellfound: https://wellfound.com/u/cjknight
     Talks: https://speakerdeck.com/rabidaudio
+  
+  Personal:
+    Socials: https://okaysure.cool
+
 blogspot_archives:
   rabidaudio.blogspot.com:
     layout: blogspot_post

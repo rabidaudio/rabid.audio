@@ -11,7 +11,7 @@ Our first demo is one of mine, it's called "floorboards" and you can hear it bel
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1146763258/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://stolenvelouratl.bandcamp.com/track/floorboards">floorboards by Stolen Velour</a></iframe>
 
-I've also created a record label to put out music, [Killian Street Records](https://killianstreet.bandcamp.com). I had planned on doing this for a while, assigning [Chris Kraemer's first EP](https://chriskraemer.bandcamp.com/album/killian-street-sessions) which I produced as `KST-001` and [my solo folk EP](https://serioustimes.bandcamp.com/album/sparkle-girl) as `KST-002`. The label will let me use one account for DistroKid and manage multiple Bandcamp and Shopify pages.
+I've also created a record label to put out music, [Killian Street Records](https://killianstreet.bandcamp.com). I had planned on doing this for a while, assigning [Chris Kraemer's first EP](https://chriskraemer.bandcamp.com/album/killian-street-sessions) which I produced as `KST-001` and [my solo folk EP](https://serioustimes.bandcamp.com/album/sparkle-girl) as `KST-002`. The label will let me use one account for DistroKid and manage multiple Bandcamp and Spotify pages.
 
 I've been working on some new material for Serious Times also, which should be out later this year.
 
