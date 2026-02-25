@@ -190,3 +190,8 @@ li {
 .post-categories li:last-child:after {
   content: "";
 }
+
+blockquote.instagram-media,
+iframe.instagram-media {
+  width: 200px !important;
+}

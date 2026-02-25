@@ -3,6 +3,7 @@ require 'debug'
 class Builders::PostImages < SiteBuilder
     def build
         liquid_tag :img, as_block: true do |args, tag|
+            # debugger
             caption_arg, caption = *args.match(/\"([^\"]+)\"/)
             args = args.sub(caption_arg, '') if caption_arg
             classes = args.split(' ')

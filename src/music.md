@@ -3,25 +3,23 @@ layout: default
 title: Assorted Music Credits
 ---
 
-## Stolen Velour
-
-Sad girl slowcore / grungy lovewave
-
-[stolenvelour.music](https://stolenvelour.music)
-
-<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1146763258/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://stolenvelouratl.bandcamp.com/track/floorboards">floorboards by Stolen Velour</a></iframe>
-
 ## Kelly Romo
 
-Bass player
+Bass player with an "alt-gay grief rock" outfit, [instagram.com/kellyromo](https://instagram.com/kellyromo)
 
-[instagram.com/kellyromo](https://instagram.com/kellyromo)
+{% youtube_embed lJhkKpsX36U %}
+
+## Punter
+
+Sad girl emo. EP coming soon.
+
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1241489771/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1745886232/transparent=true/" seamless><a href="https://killianstreet.bandcamp.com/album/causerie-a-compilation-benefiting-yrc-atl">Causerie: A Compilation Benefiting YRC ATL by Punter</a></iframe>
+
+{% youtube_embed 4sXlWnfAPus %}
 
 ## Serious Times
 
-Post-rock
-
-[serioustimes.bandcamp.com](https://serioustimes.bandcamp.com)
+Post-rock. [serioustimes.bandcamp.com](https://serioustimes.bandcamp.com)
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=3867325892/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://serioustimes.bandcamp.com/track/dont-tell-me-to-drink-more-water-again">Don&#39;t Tell Me to Drink More Water Again by Serious Times</a></iframe>
 
@@ -29,7 +27,7 @@ Post-rock
 
 ## the garages
 
-Member of a prolific 100+ member band/queer internet music collective centered around the baseball simulation horror game and internet phenomenon [Blaseball](https://blaseball.com/). Contributed 6 guitar and bass parts across three "live" shows. Produced one song for Tribute Act 3, where members cover other members songs. [thegarages.bandcamp.com](https://thegarages.bandcamp.com)
+Organizer of a prolific 100+ member band/queer internet music collective Fourth Strike centered around the baseball simulation horror game and internet phenomenon [Blaseball](https://blaseball.com/). Featured on [We've Been the Garages](https://thegarages.bandcamp.com/album/weve-been-the-garages), [Sign Off @ Desert Bus](https://thegarages.bandcamp.com/album/the-garages-sign-off-desert-bus-2024), [Underground](https://thegarages.bandcamp.com/album/the-garages-underground), [RIV](https://thegarages.bandcamp.com/album/the-garages-riv), and [Tribute Act 3](https://thegarages.bandcamp.com/album/ta032-unearthed-2).
 
 {% youtube_embed Tn7h-HHzums?start=240 %}
 
@@ -40,6 +38,14 @@ Member of a prolific 100+ member band/queer internet music collective centered a
 Recorded, mixed, and mastered Chris's [debut EP](https://chriskraemer.bandcamp.com/album/killian-street-sessions).
 
 <iframe style="border: 0; width: 100%; height: 274px;" src="https://bandcamp.com/EmbeddedPlayer/album=1782249538/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://chriskraemer.bandcamp.com/album/killian-street-sessions">Killian Street Sessions by Chris Kraemer</a></iframe>
+
+## Stolen Velour
+
+Sad girl slowcore / grungy lovewave
+
+[stolenvelour.music](https://stolenvelour.music)
+
+<iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1146763258/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://stolenvelouratl.bandcamp.com/track/floorboards">floorboards by Stolen Velour</a></iframe>
 
 ## Blaseball: The Musical
 
