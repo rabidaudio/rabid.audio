@@ -72,7 +72,10 @@ I learned quite a lot about mastering by doing a comp album where all the songs 
 
 I co-founded a small, private makerspace called The Coven. We provide space for transgender makers in Atlanta, specializing in equipment and expertise in the areas of analog audio/video and cosplay. We have 3D and resin printers, a laser cutter, drill press, sewing and embroidery machines, a analog/digital media workstation, and two robust electronics workstations.
 
-<!-- TODO Makerspace photo -->
+<div style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;justify-content: space-around;align-items:center">
+    <div>{% img short %}2026-01-01-year-in-review/makerspace1.jpg{% endimg %}</div>
+    <div>{% img short %}2026-01-01-year-in-review/makerspace2.jpg{% endimg %}</div>
+</div>
 
 Eventually we will be formally opening the space for members but with our busy lives it's taken time to get everything set up. But getting all my electronics equipment out of my house has allowed me to convert my office entirely to music and get my living room back. I've been spending quite a lot of time working in the space, and have worked on some smaller projects which I might cover in future posts.
 
