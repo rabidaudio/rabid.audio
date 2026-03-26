@@ -68,7 +68,7 @@ Returned to TechJect after completing my undergrad program. Lead a team of 3 sof
 ### Consultant, RabidAudio
 __May 2015 - August 2015__ | Atlanta
 
-After completing my undergraduate degree, I founded a technology development consultancy. Embedded electronics and software development, specializing in IoT and Bluetooth electronics products, pro-audio projects, and full-stack web design.
+After completing my undergraduate degree, founded a technology development consultancy. Embedded electronics and software development, specializing in IoT and Bluetooth electronics products, pro-audio projects, and full-stack web design.
 
 ### Electrical & Computer Engineer, [TechJect](http://techject.com/)
 __May 2014 - December 2014__ | Atlanta
@@ -109,7 +109,7 @@ Provided technical support for faculty, staff, and students via phone, email, an
 
 #### Forbes [30 Under 30](https://www.forbes.com/profile/fixd), 2019
 
-Included along with co-founders on the 30U30 list in the Manufaturing & Industry category in recognition of the growth of FIXD Automotive.
+Included along with co-founders on the 30U30 list in the Manufacturing & Industry category in recognition of the growth of FIXD Automotive.
 
 #### Finalist, [Static Showdown 2015](https://2015.staticshowdown.com/winners)
 
@@ -126,6 +126,18 @@ Solo submission for Georgia Tech Invention Studio hackathon that served as precu
 <!-- 	Startup Weekend Maker Edition 2013 (award name?) -->
 
 ## Organizations
+
+#### Board Member, [Y'all Rock Camp ATL](https://yallrockcampatl.org)
+__March 2026 - Present__
+
+Y'all Rock Camp ATL is a day camp for girls and transgender/gender-expansive youth ages 10-16. In a week, campers learn to play an instrument, form a band, write an original song, and perform it live on stage at a local venue. Working board members organize camp, fundraise, and recruit volunteers and performers. Volunteer since 2023.
+
+
+#### Co-Founder, The Coven Makerspace
+__June 2025 - Present__
+
+The Coven is a small, private makerspace in Atlanta focused on providing transgender makers with a space and equipment to create. Equipment including electronics workstations, filament and resin printers, laser cutter, sewing and embroidery machines, and more facilitate projects in focus areas of music technology, analog video, and cosplay.
+
 
 #### Admin, [Fourth Strike](https://fourth-strike.com/)
 __November 2023 - Present__
