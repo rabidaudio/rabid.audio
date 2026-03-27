@@ -5,6 +5,7 @@
   --body-background: #f2f2f2;
   --body-color: #444;
   --accent-color: #d01040;
+  --link-color: #a30000;
   --on-accent-color: #fff;
   /* --heading-color: black; */
   --heading-color: var(--accent-color);
@@ -37,13 +38,18 @@ a {
   /* font-family: var(--font-mono); */
   font-family: var(--font-default);
 
-  color: var(--body-color);
+  color: var(--link-color);
   text-decoration: underline;
 }
 
 code,
 pre {
   font-family: var(--font-mono);
+}
+
+code:not(pre code) {
+  margin: 0px 0.15em;
+  font-weight: 600;
 }
 
 h1 {
