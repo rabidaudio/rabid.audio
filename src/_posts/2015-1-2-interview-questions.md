@@ -1,20 +1,18 @@
 ---
-title:      Doing it Wrong
-subtitle:   Thoughts on asking the *right* interview questions
-date:       2014-9-8 16:42:00 -500
-layout:     blogspot_post
-published:  true
+title: Doing it Wrong
+subtitle: Thoughts on asking the *right* interview questions
+date: 2014-9-8 16:42:00 -500
+layout: blogspot_post
+published: true
 categories:
-- career
+  - career
 ---
 
-Somehow at all my past employers (with the exception of my highschool retail job), I've been asked to assist in the interview process for new employees. This was in spite of the fact that these were all intern jobs. Maybe this is common practice, but I get the impression that it isn't. In any case, it should be. I've learned a lot not just about how to interview well, but about how to find and recognize talent. If you own a company and your interns don't sit in on interviews, at least for new interns so they can answer questions about the experience, you should absolutely consider it. 
+Somehow at all my past employers (with the exception of my highschool retail job), I've been asked to assist in the interview process for new employees. This was in spite of the fact that these were all intern jobs. Maybe this is common practice, but I get the impression that it isn't. In any case, it should be. I've learned a lot not just about how to interview well, but about how to find and recognize talent. If you own a company and your interns don't sit in on interviews, at least for new interns so they can answer questions about the experience, you should absolutely consider it.
 
 Anyway, here are some things I've noticed, come to look for, etc.
 
-
-## Don't ask *those* questions. 
-
+## Don't ask _those_ questions.
 
 You know. Questions like
 
@@ -26,20 +24,15 @@ or
 
 These questions are either the kind of thing you might have seen in an undergrad class, assuming you took it and remember it, or they are things that panicked interviewees look up the answers to and memorize before a technical interview. They tell you nothing about the applicant's practical problem solving skills.
 
-In fact, it doesn't even tell you if they know specifics of your language/framework's patterns or syntax- just how thorough their CS education was and how good their memorization skills are. You risk tossing out a lot of self-taught coders with practical skills in exchange for developers with a lot of theory who have never built anything the way software actually gets built. The software industry is notorious for these kinds of questions, but I suspect it happens in other technical industries too. 
-
+In fact, it doesn't even tell you if they know specifics of your language/framework's patterns or syntax- just how thorough their CS education was and how good their memorization skills are. You risk tossing out a lot of self-taught coders with practical skills in exchange for developers with a lot of theory who have never built anything the way software actually gets built. The software industry is notorious for these kinds of questions, but I suspect it happens in other technical industries too.
 
 ## What's really important
 
+### 1. Do they naturally pick up new skills?
 
-### 1. Do they naturally pick up new skills? 
-
-
-This is the single most important skill for an engineer. It is more important than experience, and knowledge, combined. My mother could take classes at the Iron Yard and learn Ruby on Rails in a matter of weeks (you should seriously do it Mom!). Anyone can code. Everyone _should_ learn to code. But not everyone has the ability to pick up skills naturally. In fact, I believe the people who do already have those skills got them on their own. No one running a business should hire someone who's only experience is taking a class, unless they demonstrate their ability to adapt. 
-
+This is the single most important skill for an engineer. It is more important than experience, and knowledge, combined. My mother could take classes at the Iron Yard and learn Ruby on Rails in a matter of weeks (you should seriously do it Mom!). Anyone can code. Everyone _should_ learn to code. But not everyone has the ability to pick up skills naturally. In fact, I believe the people who do already have those skills got them on their own. No one running a business should hire someone who's only experience is taking a class, unless they demonstrate their ability to adapt.
 
 ### 2. How do they approach problems?
-
 
 This is the one area where I advocate asking specific technical questions. Google and others like to ask off-the-wall questions like
 
@@ -61,9 +54,7 @@ For example, here's one I've used before:
 
 I'd be expecting a bash one-liner answer because that's how I'd solve the problem, but if someone said they'd find a Python package or Ruby gem for getting MP3 track info and then write a script, that answer is just as valid. In this case, it tells you they know their platform and they don't rewrite things that already exist. This is very different from someone who decompresses all the files to WAV and uses bit depth and sample rate to convert file bytes to minutes, which is very different from someone who exports the library data to a spreadsheet and adds up the column. All totally valid solutions with very different approaches.
 
-
 ### 3. Can they communicate well enough to teach others?
-
 
 One thing I will do is ask a naive, broad question about a field the applicant clearly knows a lot about. Ideally, I'd know the answer already, but sometimes I've asked things I've sincerely been curious about. I have to be sure to phrase the question in a way that sets up a teaching interaction. For example, I might say,
 

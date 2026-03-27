@@ -3,6 +3,7 @@ layout: default
 ---
 
 {% for post in collections.posts.resources %}
+
   <p><code>{{ post.date | date: "%Y-%m-%d" }}</code> <a href="{{ post.relative_url }}">{{ post.data.title }}</a></p>
 {% endfor %}
 

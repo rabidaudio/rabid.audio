@@ -2,11 +2,11 @@
 layout: post
 title: 2025 Retrospective
 categories:
-    - music
-    - career
+  - music
+  - career
 ---
 
-It's been a while since I wrote a blog post, and a lot has happened this past year. I figured I'd dump it all in one post. 
+It's been a while since I wrote a blog post, and a lot has happened this past year. I figured I'd dump it all in one post.
 
 ## Kelly Romo
 

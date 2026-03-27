@@ -2,7 +2,7 @@
 layout: post
 title: Headphone breakout board
 categories:
-    - electronics
+  - electronics
 ---
 
 {% img small center %}hp_image.jpg{% endimg %}
@@ -14,4 +14,3 @@ I put together a small breakout board for it and printed them via OSHPark.
 [Source code](https://github.com/rabidaudio/synthesizer/tree/master/hp_breakout)
 
 {% img %}hp_layout.png{% endimg %}
-

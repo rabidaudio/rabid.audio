@@ -4,12 +4,12 @@ subtitle: An introduction to Node's task runner
 layout: blogspot_post
 date: 2014-12-19 01:16:00 -500
 cateogories:
-- software
+  - software
 ---
 
 As you can see, I finally have my new blog going. I was originally going to write a Jekyll-like CMS with Node and Backbone,
 but I finally gave in and used the real thing. It's a lot more flexible than I expected, and over all I'm loving it. There
-was just one thing I learned in my previous attempt that I really wanted, and that was Grunt. 
+was just one thing I learned in my previous attempt that I really wanted, and that was Grunt.
 
 If you aren't familiar, [`grunt`](http://gruntjs.com) is a script runner for javascript, analogous to `rake` in the Rails
 world. My first experience with it was trying to fix a broken Gruntfile from a Yeoman generator, and I was quite intimidated.
@@ -44,11 +44,11 @@ the tasks you can run. Here's the skeleton:
 {% highlight javascript %}
 module.exports = function(grunt) {
 
-  grunt.initConfig({
+grunt.initConfig({
 
-  });
+});
 
-  grunt.registerTask('default', []);
+grunt.registerTask('default', []);
 });
 {% endhighlight %}
 
@@ -72,27 +72,27 @@ grunt.loadNpmTasks('grunt-jekyll');
 
 This makes the package available to `grunt`. Then we need to add the configuration. If we look at the documentation, it tells us
 all the configuration options for this package. Inside `grunt.initConfig`, we need to add a `jekyll` configuration. Each item
-inside is a specific task. 
+inside is a specific task.
 
 {% highlight javascript %}
 grunt.initConfig({
-  jekyll: {
-    //Production Build
-    dist: {
-      options: {
-        dest: '_site/blog',
-        config: '_config.yml'
-      }
-    },
-    //Develpemnt Build
-    dev: {
-      options: {
-        dest: '_site/blog',
-        config: '_config.yml',
-        drafts: true
-      }
-    }
-  }
+jekyll: {
+//Production Build
+dist: {
+options: {
+dest: '\_site/blog',
+config: '\_config.yml'
+}
+},
+//Develpemnt Build
+dev: {
+options: {
+dest: '\_site/blog',
+config: '\_config.yml',
+drafts: true
+}
+}
+}
 });
 {% endhighlight %}
 
@@ -108,8 +108,8 @@ task, but I'm using mostly the default options, so we can simplify this signific
 
 {% highlight javascript %}
 jekyll: {
-  dist: {},
-  dev: { options: { drafts: true } }
+dist: {},
+dev: { options: { drafts: true } }
 }
 {% endhighlight %}
 
@@ -118,18 +118,18 @@ Here's our whole file at present:
 {% highlight javascript %}
 module.exports = function(grunt) {
 
-  //load tasks
-  grunt.loadNpmTasks('grunt-jekyll');
+//load tasks
+grunt.loadNpmTasks('grunt-jekyll');
 
-  //configure tasks
-  grunt.initConfig({
-    jekyll: {
-      dist: {},
-      dev: { options: { drafts: true } }
-    }
-  });
+//configure tasks
+grunt.initConfig({
+jekyll: {
+dist: {},
+dev: { options: { drafts: true } }
+}
+});
 
-  grunt.registerTask('default', []);
+grunt.registerTask('default', []);
 });
 {% endhighlight %}
 
@@ -150,10 +150,10 @@ grunt.loadNpmTasks('grunt-contrib-jshint');
 
 {% highlight javascript %}
 grunt.initConfig({
-  ...
-  jshint:{
-    src: ['_src/**/*.js']
-  }
+...
+jshint:{
+src: ['_src/**/*.js']
+}
 });
 {% endhighlight %}
 
@@ -192,7 +192,7 @@ and it should run `jshint` first and then `jekyll:dist`.
 
 ### Divshot
 
-Now that we've got  the hang of this, I'm going to quickly throw in a `deploy` task. GitHub has free hosting for Jekyll blogs, but I'm
+Now that we've got the hang of this, I'm going to quickly throw in a `deploy` task. GitHub has free hosting for Jekyll blogs, but I'm
 currently trying out [Divshot](http://divshot.io), which is kind of similar to Heroku but for static sites. There's a package already,
 [`grunt-divshot`](https://www.npmjs.com/package/grunt-divshot), which I install, load, and make some default tasks for. This package
 has a webserver built in, but I'm going to use connect, so I simply don't use the `divshot` task (which runs `divshot:server`), and
@@ -220,31 +220,31 @@ need it. So I use `concat` for development builds and `uglify` for production. S
 
 {% highlight javascript %}
 grunt.initConfig({
-  ...
-  //js compilation (production version)
-  uglify: {
-    dist: {
-      files: {
-        'js/output.js': ['<%= cfg.vendor %>', '_src/**/*.js']
-      },
-      options: {
-        compress: true,
-      }
-    }
-  },
+...
+//js compilation (production version)
+uglify: {
+dist: {
+files: {
+'js/output.js': ['<%= cfg.vendor %>', '_src/**/*.js']
+},
+options: {
+compress: true,
+}
+}
+},
 
-  //js compilation (dev version)
-  concat: {
-    options: {
-      separator: '\n\n\n',
-      banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - ' +
-        '<%= grunt.template.today("yyyy-mm-dd") %> */',
-    },
-    dev: {
-      src: ['<%= cfg.vendor %>', '_src/**/*.js'],
-      dest: 'js/output.js',
-    },
-  },
+//js compilation (dev version)
+concat: {
+options: {
+separator: '\n\n\n',
+banner: '/_! <%= pkg.name %> - v<%= pkg.version %> - ' +
+'<%= grunt.template.today("yyyy-mm-dd") %> _/',
+},
+dev: {
+src: ['<%= cfg.vendor %>', '_src/**/*.js'],
+dest: 'js/output.js',
+},
+},
 });
 {% endhighlight %}
 
@@ -254,11 +254,11 @@ JSON or YAML files as such:
 {% highlight javascript %}
 grunt.initConfig({
 
-  //config files
-  pkg: grunt.file.readJSON('package.json'),
-  cfg: grunt.file.readYAML('_config.yml'),
+//config files
+pkg: grunt.file.readJSON('package.json'),
+cfg: grunt.file.readYAML('\_config.yml'),
 
-  ...
+...
 {% endhighlight %}
 
 In this case, I'm reading from `package.json` for some variables and `_config.yml` for others. In my `_config.yml`, I made a list
@@ -268,15 +268,13 @@ whole files array so that `output.js` is made of first my included bower javascr
 `_src` directory. Note that while `uglify` has one task, `dist`, with options, `concat` has an `options` object which applies to all
 tasks (of which there is only `dev`). Most grunt tasks allow for global options which can be overwritten by individual tasks.
 
-
 ## Advanced Tasks
 
 Up to this point, all these tasks have been pretty simple. You might be wondering why you'd bother with grunt at all and not just make
-some shell scripts. Well, one benefit is cross-compatibility; any platform with Node.js can use it. Another is the ability to make 
+some shell scripts. Well, one benefit is cross-compatibility; any platform with Node.js can use it. Another is the ability to make
 hierarchies of tasks. To do the same in scripts would require one script for each task or a bunch of function definitions. Still,
 that's a pretty reasonable point. The next task is something that would be significantly more work to script but is painless in grunt.
 But first, let's add some cool features to our existing Gruntfile.
-
 
 ### Autoload Tasks and Time Them
 
@@ -308,7 +306,6 @@ grunt task. Simply install it and add
 require('time-grunt')(grunt);
 {% endhighlight %}
 
-
 ### Watch and Serve Locally
 
 Now the real magic happens. One of the most popular grunt tasks is
@@ -323,50 +320,50 @@ and listens for file changes, automatically rebuilding the project and **refresh
 
 {% highlight javascript %}
 grunt.initConfig({
-  ...
-  watch: {
-    options:{
-      spawn: false,
-      livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
-    },
-    scripts: {
-      files: ['_src/**/*.js', '_vendor/**/*.js'],
-      tasks: ['devbuild'],
-    },
-    content: {
-      files: [
-        '*.*',
-        '_sass/*css',
-        'css/*css',
-        '_drafts/*',
-        '_posts/*',
-        '_layouts/*',
-        '_includes/*',
-        'images/*',
-        '_plugins/*',
-        '_config.yml'
-      ],
-      tasks: ['jekyll:dev'],
-    },
-  },
+...
+watch: {
+options:{
+spawn: false,
+livereload: grunt.option('livereloadport') || LIVERELOAD_PORT
+},
+scripts: {
+files: ['_src/**/*.js', '_vendor/**/*.js'],
+tasks: ['devbuild'],
+},
+content: {
+files: [
+'*.*',
+'_sass/*css',
+'css/*css',
+'_drafts/*',
+'_posts/*',
+'_layouts/*',
+'_includes/*',
+'images/*',
+'_plugins/*',
+'_config.yml'
+],
+tasks: ['jekyll:dev'],
+},
+},
 
-  //serve it up
-  connect: {
-    options: {
-      port: grunt.option('port') || SERVER_PORT,
-      hostname: '0.0.0.0'
-    },
-    livereload: {
-      options: {
-        middleware: function (connect) {
-          return [
-            require('connect-livereload')({port: LIVERELOAD_PORT}),
-            mountFolder(connect, '_site')
-          ];
-        }
-      }
-    }
-  }
+//serve it up
+connect: {
+options: {
+port: grunt.option('port') || SERVER_PORT,
+hostname: '0.0.0.0'
+},
+livereload: {
+options: {
+middleware: function (connect) {
+return [
+require('connect-livereload')({port: LIVERELOAD_PORT}),
+mountFolder(connect, '_site')
+];
+}
+}
+}
+}
 });
 {% endhighlight %}
 
@@ -377,7 +374,7 @@ script, we need to return `require('connect-livereload')({port: LIVERELOAD_PORT}
 
 {% highlight javascript %}
 var mountFolder = function (connect, dir) {
-    return connect.static(require('path').resolve(dir));
+return connect.static(require('path').resolve(dir));
 };
 {% endhighlight %}
 
@@ -386,9 +383,9 @@ a new tab.
 
 {% highlight javascript %}
 open: {
-  server: {
-    path: 'http://localhost:<%= connect.options.port %>/blog'
-  }
+server: {
+path: 'http://localhost:<%= connect.options.port %>/blog'
+}
 }
 {% endhighlight %}
 
@@ -398,7 +395,6 @@ Now that we have all of these partial tasks, let's make the default task open th
 grunt.registerTask('serve', ['devbuild', 'connect:livereload', 'open:server', 'watch']);
 grunt.registerTask('default', ['serve']);
 {% endhighlight %}
-
 
 ## Custom Tasks
 
@@ -410,7 +406,7 @@ will call the `new` task with the first argument `"post"`.
 
 {% highlight javascript %}
 grunt.registerTask('new', 'Start a new post or draft', function(type) {
-  ...
+...
 });
 {% endhighlight %}
 

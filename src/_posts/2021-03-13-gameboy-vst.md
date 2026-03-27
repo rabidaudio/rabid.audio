@@ -2,8 +2,8 @@
 layout: post
 title: Gameboy VST plugin
 categories:
-    - music tech
-    - software
+  - music tech
+  - software
 ---
 
 {% img small center %}gameboy-synth-screenshot.png{% endimg %}

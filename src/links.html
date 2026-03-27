@@ -4,135 +4,136 @@ template_engine: erb
 ---
 
 <style>
-.link-groups {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-.link-group {
-  text-align: center;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  flex-basis: 500px;
-  flex-grow: 1;
-  max-width: 100%;
-}
-.link {
-  margin: 20px;
-  border: 1px solid var(--accent-color);
-  border-radius: 5px;
-  padding: 15px;
-  transition: all 0.2s;
-}
-.link.clickable:hover {
-  background-color: var(--accent-color);
-  color: var(--on-accent-color);
-}
-.link-group a {
-  text-decoration: none;
-}
+  .link-groups {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .link-group {
+    text-align: center;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    flex-basis: 500px;
+    flex-grow: 1;
+    max-width: 100%;
+  }
+  .link {
+    margin: 20px;
+    border: 1px solid var(--accent-color);
+    border-radius: 5px;
+    padding: 15px;
+    transition: all 0.2s;
+  }
+  .link.clickable:hover {
+    background-color: var(--accent-color);
+    color: var(--on-accent-color);
+  }
+  .link-group a {
+    text-decoration: none;
+  }
 
-.link .url,
-.link .copyable {
-  display: block;
-}
+  .link .url,
+  .link .copyable {
+    display: block;
+  }
 
-.copyable input,
-.copy-btn {
-  font-size: 1em;
-}
+  .copyable input,
+  .copy-btn {
+    font-size: 1em;
+  }
 
-.copyable input {
-  display: inline;
-  background-color: inherit;
-  border: none;
-  font-family: var(--font-mono);
-  color: var(--body-color);
-}
+  .copyable input {
+    display: inline;
+    background-color: inherit;
+    border: none;
+    font-family: var(--font-mono);
+    color: var(--body-color);
+  }
 
-.copyable input:focus-visible {
-  outline: none;
-}
+  .copyable input:focus-visible {
+    outline: none;
+  }
 
-.link .url,
-.link .copyable input {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  direction: rtl; /* make ellipsis start at front */
-}
+  .link .url,
+  .link .copyable input {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    direction: rtl; /* make ellipsis start at front */
+  }
 
-.copyable, .copyable input {
-  cursor: copy;
-}
+  .copyable,
+  .copyable input {
+    cursor: copy;
+  }
 
-.copy-btn {
-  vertical-align: middle;
-  opacity: 0.8;
-  transition: opacity 0.2s;
-}
+  .copy-btn {
+    vertical-align: middle;
+    opacity: 0.8;
+    transition: opacity 0.2s;
+  }
 
-.copyable:hover .copy-btn {
-  opacity: 1;
-}
+  .copyable:hover .copy-btn {
+    opacity: 1;
+  }
 
-.copied-alert {
-  position: absolute;
-  color: #078607;
-  opacity: 0;
-  margin: 0 0.4em;
-}
+  .copied-alert {
+    position: absolute;
+    color: #078607;
+    opacity: 0;
+    margin: 0 0.4em;
+  }
 </style>
 
 <div class="link-groups">
   <% site.metadata.links.each do |category, links| %>
-    <ul class="link-group">
-      <h2><%= category %></h2>
-      <% links.each do |name, dest| %>
-        <% if dest.starts_with?('http') %>
-          <a href="<%= dest %>">
-            <li class="link clickable">
-              <div class="title"><%= name %></div>
-              <div>
-                <code class="url"><%= dest.sub(/\Ahttps?\:\/\/(www.)?/, '') %></code>
-              </div>
-            </li>
-          </a>
-        <% else %>
-          <li class="link">
-            <div class="title"><%= name %></div>
-            <div>
-              <%# TODO: make this a web component %>
-              <div class="copyable">
-                <input type="text" size="<%= dest.length %>" value="<%= dest %>" readonly />
-                <span class="material-icons copy-btn">content_copy</span>
-                <span class="copied-alert">Copied!</span>
-              </div>
-            </div>
-          </li>
-        <% end %>
-      <% end %>
-    </ul>
+  <ul class="link-group">
+    <h2><%= category %></h2>
+    <% links.each do |name, dest| %> <% if dest.starts_with?('http') %>
+    <a href="<%= dest %>">
+      <li class="link clickable">
+        <div class="title"><%= name %></div>
+        <div>
+          <code class="url"><%= dest.sub(/\Ahttps?\:\/\/(www.)?/, '') %></code>
+        </div>
+      </li>
+    </a>
+    <% else %>
+    <li class="link">
+      <div class="title"><%= name %></div>
+      <div>
+        <%# TODO: make this a web component %>
+        <div class="copyable">
+          <input
+            type="text"
+            size="<%= dest.length %>"
+            value="<%= dest %>"
+            readonly
+          />
+          <span class="material-icons copy-btn">content_copy</span>
+          <span class="copied-alert">Copied!</span>
+        </div>
+      </div>
+    </li>
+    <% end %> <% end %>
+  </ul>
   <% end %>
 </div>
 
 <script>
-window.addEventListener('DOMContentLoaded', () => {
-  for (const container of document.querySelectorAll('.copyable')) {
-    container.addEventListener('click', () => {
-      const input = container.getElementsByTagName('input')[0]
-      input.select()
-      input.setSelectionRange(0, 99999) // For mobile devices
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(input.value)
-        const alert = container.getElementsByClassName('copied-alert')[0]
-        alert.animate([
-          { 'opacity': 1 },
-          { 'opacity': 0 },
-        ], { duration: 2000 });
-      }
-    })
-  }
-})
+  window.addEventListener("DOMContentLoaded", () => {
+    for (const container of document.querySelectorAll(".copyable")) {
+      container.addEventListener("click", () => {
+        const input = container.getElementsByTagName("input")[0];
+        input.select();
+        input.setSelectionRange(0, 99999); // For mobile devices
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(input.value);
+          const alert = container.getElementsByClassName("copied-alert")[0];
+          alert.animate([{ opacity: 1 }, { opacity: 0 }], { duration: 2000 });
+        }
+      });
+    }
+  });
 </script>

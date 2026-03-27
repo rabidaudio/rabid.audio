@@ -1,17 +1,17 @@
 ---
-title:      Freelance Announcement
-subtitle:   I am now for hire
-date:       2015-5-7 2:17:39 -400
-layout:     blogspot_post
+title: Freelance Announcement
+subtitle: I am now for hire
+date: 2015-5-7 2:17:39 -400
+layout: blogspot_post
 categories:
-- career
+  - career
 ---
 
 Now that I've _(finally!)_ completed my degree, I'm venturing out into the real world.
 In the back of my mind I always wanted to be my own boss. I've had the entrepreneurial
 drive since before I knew what that meant. Like many of my peers, I sold candy and
 little toys to my peers when I was in grade school (at least until Mrs. Wiggins shut
-us down- shame on her!). 
+us down- shame on her!).
 
 I'm now officially accepting contracts for design work through RabidAudio. That's right,
 what started as a recording studio-turned-record-label-turned-personal-blog is now a
@@ -41,18 +41,18 @@ at [Flashpoint](http://flashpoint.gatech.edu) and a few projects on my own, I ha
 in the business side of things, like how to learn what your customer wants, how to express business
 concepts elegantly, how to handle founder equity, or how (and when!) to obtain intellectual property
 protection. If you're looking to build a repeatable customer discovery or customer
-acquisition process, or if you just want some honest startup advice, let me know. 
+acquisition process, or if you just want some honest startup advice, let me know.
 
 I also want to specialize my work (technical and non-technical) to startups. If you can sell me
 on the viability of the company, I'll be willing to take partial or occasionally complete payment in
-equity. 
+equity.
 
 ### Software
 
 I do a lot of web development for fun. The browser is like a common language that everyone speaks.
 The expansion of the Internet is largely thanks to the popularity of the web, and no other "platform"
 has lived as long and yet it will continue for longer still. So the evolution of the standards and
-practices is fascinating from a historical and techno-sociological level. 
+practices is fascinating from a historical and techno-sociological level.
 
 The evolution of tools is directly tied to this. There has been a recent explosion of languages, package
 managers, frameworks, and tools at the web developer's hands.
@@ -79,7 +79,7 @@ requirejs almond browserify
 yeoman
  -->
 
-I honestly don't really enjoy the coding part of web development. What I really love is *architecture.*
+I honestly don't really enjoy the coding part of web development. What I really love is _architecture._
 I like designing the most elegant system. I like mixing and matching these tools until I have code
 that is pleasing to read and also happens to work. The ideal web API server has no code, only a description
 of the tables and CRUD permissions, and the beautiful, clear documentation is self-generated (although
@@ -95,4 +95,3 @@ No surprise here, I love projects related to music or sound. I don't really care
 from building tube amplifiers, guitar effects, synthesizer modules, etc. on the electronics end
 to coding DAW platforms, music apps, music tech startups, etc. on the software side, to totally
 totally off-the-wall things to just jamming. Come talk to me.
-

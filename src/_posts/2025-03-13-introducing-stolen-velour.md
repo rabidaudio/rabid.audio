@@ -2,7 +2,7 @@
 layout: post
 title: Introducing Stolen Velour
 categories:
-    - music
+  - music
 ---
 
 I've started a new band! We're called [Stolen Velour](https://stolenvelour.music) (a play on "stolen valor", "velour" is velvet fabric). My friend Emmaline and I are "co-fronting" the band. We each bring our own songs and sing lead on them, with the other playing lead guitar. This dynamic might not work forever but for now it's suiting us pretty well. My songs tend to be sad girl slowcore/emo songs while hers tend to be a blend of indie rock and shoegaze. We're calling it "grungy lovewave."

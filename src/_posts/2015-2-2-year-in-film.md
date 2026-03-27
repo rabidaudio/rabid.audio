@@ -1,10 +1,10 @@
 ---
-title:      2014 in Film
-subtitle:   100 Movies in 365 Days
-date:       2015-2-2 2:14:49 -0500
-layout:     blogspot_post
+title: 2014 in Film
+subtitle: 100 Movies in 365 Days
+date: 2015-2-2 2:14:49 -0500
+layout: blogspot_post
 categories:
-- film
+  - film
 ---
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>

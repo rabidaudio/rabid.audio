@@ -25,7 +25,7 @@ To explain this pedal, I think it's easiest to start with the problem it address
 
 This pedal provides the ability to route certain frequencies through a different effects chain and mix back together again. The wet signal is passed through a pair of send/receive jacks, and mixed back with the dry signal to the output.
 
-### Bypass 
+### Bypass
 
 When bypassed (4), IN is connected to OUT (true bypass) and the device is powered off.
 
@@ -37,7 +37,7 @@ This mode sends the high frequencies from IN to SEND (wet channel) and mixes (3)
 
 ### Send mode (2) = down (lows)
 
-Like the up mode but the wet and dry are reversed; the low frequencies are sent through the send/receive and the high frequencies are kept dry. This mode can be used to apply effects only to the low frequencies while keeping the high frequencies clean. 
+Like the up mode but the wet and dry are reversed; the low frequencies are sent through the send/receive and the high frequencies are kept dry. This mode can be used to apply effects only to the low frequencies while keeping the high frequencies clean.
 
 This mode sends the low frequencies from IN to SEND (wet channel) and mixes (3) the RECV with the high frequencies from IN (dry channel). The cutoff controls the frequency separating low and high.
 
@@ -119,11 +119,11 @@ R1/R2/R4/R6/C1/U2A act as a 1st-order active low pass filter with a cutoff which
 
 The maximum control current for the LM13700 is 2mA. When RV1 is fully shorted, the total current out of the pot is 4 mA which is then split between the two OTAs.
 
-The formula for the cutoff of both filters is `f0 = (R6*gm)/((R4+R6)*2*pi*C1)` where `gm ~= 19.2*Iabc`. Thus, a 680pF capacitor gives a filter cutoff of 20.17KHz at 2mA. As the control current decreases, the cutoff 
+The formula for the cutoff of both filters is `f0 = (R6*gm)/((R4+R6)*2*pi*C1)` where `gm ~= 19.2*Iabc`. Thus, a 680pF capacitor gives a filter cutoff of 20.17KHz at 2mA. As the control current decreases, the cutoff
 
 https://docs.google.com/spreadsheets/d/e/2PACX-1vT8rBejbugFlT3EW5vfu0i-iW_NIMdOeeCCaixy12qmzPs54GQdZPlqS4ZHJ6NFuLR04HVoCBH7RM92/pubhtml
 
- with a Q of 0.5 and a cutoff from 7.2Hz to 7.2kHz. U1D subtracts the high pass signal from the input to get a low pass signal.
+with a Q of 0.5 and a cutoff from 7.2Hz to 7.2kHz. U1D subtracts the high pass signal from the input to get a low pass signal.
 
 To vary both R components of a 2nd order filter, it simply uses a dual audio taper pot. Rather than a true [LR active crossover filter](https://en.wikipedia.org/wiki/Linkwitz%E2%80%93Riley_filter), this circuit simply subtracts the original signal from the filtered signal to get the opposite frequencies. This creates a comb filter with an uneven phase shift, which means this pedal will have moderate a tonal effect. Both of these limitations are for cost savings and simplicity. A more robust circuit would use two LR VCFs but this would drastically increase cost and complexity.
 

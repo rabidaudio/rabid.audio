@@ -16,7 +16,7 @@ Some of these modules are [emulated in Max MSP](https://github.com/rabidaudio/sy
 This is a work in progress; different modules are at different stages of development.
 
 | Modules                      | Status         | Source Code                                                                        |
-|------------------------------|----------------|------------------------------------------------------------------------------------|
+| ---------------------------- | -------------- | ---------------------------------------------------------------------------------- |
 | [CLK](/projects/synth/clk)   | PCB Design     | [GitHub](https://github.com/rabidaudio/synthesizer/tree/master/clock)              |
 | VCA                          | PCB Design     | [GitHub](https://github.com/rabidaudio/synthesizer/tree/master/amp)                |
 | [ADSR](/projects/synth/adsr) | Schematic      | [GitHub](https://github.com/rabidaudio/synthesizer/tree/master/adsr)               |

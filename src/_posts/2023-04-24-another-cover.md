@@ -2,7 +2,7 @@
 layout: post
 title: Another cover
 categories:
-    - music
+  - music
 ---
 
 I've been playing [my new guitar]({% link _posts/2023-02-19-modest-mouse-cover.md %}) basically every day since I got it. Seriously my Jazz bass is feeling unloved.

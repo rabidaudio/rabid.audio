@@ -13,8 +13,7 @@ https://console.aws.amazon.com/s3/home
 
 Put in a name and select a region close to you (or the majority of your readers)
 
-Upload your compiled site files using 
-
+Upload your compiled site files using
 
 ```json
 {
@@ -60,7 +59,7 @@ give it some name for origin id
 
 HTTP / HTTPS
 
- you may want to wait to know everything works with HTTP before setting up HTTPS
+you may want to wait to know everything works with HTTP before setting up HTTPS
 
 Enter your domain name in Alternate Domain Names (CNAMEs)
 
@@ -89,11 +88,9 @@ https://console.aws.amazon.com/route53/home
 
 You will need to go to your domain registrar and change the DNS servers to the ones provided to you by Amazon
 
-
 updates will require you to invalidate cloudfront. AWS discourages you from doing this frequently (they charge a few dollars for every 1000 inalidations). you can use fingerprinting of files like rails does to avoid this: http://guides.rubyonrails.org/asset_pipeline.html#what-is-fingerprinting-and-why-should-i-care-questionmark
 
 then you never have to invalidate
-
 
 Costs
 
@@ -101,6 +98,6 @@ s3 is likely free (assuming your site is less than 1 GB and you get less than a 
 
 As long as you aren't makeing thousands of invalidations, cloudfront is likely to run less than .50
 
-Also, if you are on the AWS free tier, your S3 and CloudFront usage probably fall within the free limits. 
+Also, if you are on the AWS free tier, your S3 and CloudFront usage probably fall within the free limits.
 
 using Route 53 as your DNS will cost around another dollar per month

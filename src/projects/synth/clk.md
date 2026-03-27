@@ -40,7 +40,7 @@ Complete, Revision B assets are available for download on [GitHub](https://githu
 - Tap the knob button two or more times to set the BPM through tap-tempo. This effects the base BPM before the CV is applied.
 - Turn the knob while holding the DIV button to control the subdivision setting. The display will show the subdivision value. A division of 1 means that DIV will match the BPM. At 2, DIV will trigger twice for each beat. At 1/2, DIV will trigger once every 2 beats. Allowed values: 1/8, 1/7, 1/6, 1/5, 1/4, 1/3, 1/2, 1, 2, 3, 4.
 - Turn the knob while holding the SWING button to control the amount of swing from -75% to 75%, adjustable in steps of 3%. Swing applies an offset ot every other beat. LEDs display the swing amount. Negative values lag while positive values lead. 0% is played straight, and 66% is exactly a triplet feel.
-- Press both the DIV and SWING buttons at the same time to pause the output. While paused, LEDs display ` || `.
+- Press both the DIV and SWING buttons at the same time to pause the output. While paused, LEDs display `||`.
 - While paused, tapping the knob button will manually trigger one beat. This can be useful for synchronizing the module with a sequencer.
 - While paused, holding buttons will manipulate the saved settings. Hold the DIV button for 2 seconds to save the current settings (BPM, subdivision, and swing). The display will blink `SSS`. These settings will be loaded whenever the module is powered on. Hold the SWING button for 2 seconds to load the saved settings. The display will blink `LLL`. Hold the knob button for 2 seconds to perform a factory reset, returning the saved and current BPM, subdivision, and swing settings to the factory defaults. The display will blink `FFF`.
 - Un-pause the output by pressing DIV and SWING at the same time again.
@@ -57,39 +57,39 @@ in a 10mm wide form factor. I settled on the [`SM460281N`](/resources#SM460281N)
 China from [LCSC](https://www.lcsc.com/product-detail/Led%20Segment%20Display_ARKLED-Wuxi-ARK-Tech-Elec-SM460281N-7_C252194.html).
 The jacks are standard Thonkiconn 3.5mm which you can get from [ThonkDIY] (and probably other places too?).
 
-|                     | **Resistors**                                                |                               |
-|---------------------|--------------------------------------------------------------|-------------------------------|
-| 1x                  | 180K                                                         | R1                            |
-| 1x                  | 100K                                                         | R2                            |
-| 5x                  | 1K                                                           | R3, R4, R5, R9, R10           |
-| 6x                  | 10K                                                          | R6, R7, R8, R11, R12, R13     |
-|---------------------|--------------------------------------------------------------|-------------------------------|
-|                     | **Capacitors**                                               |                               |
-|---------------------|--------------------------------------------------------------|-------------------------------|
-| 1x                  | 10u electrolytic                                             | C1                            |
-| 3x                  | 10n                                                          | C2, C5, C6                    |
-| 2x                  | 22p                                                          | C3, C4                        |
-|---------------------|--------------------------------------------------------------|-------------------------------|
-|                     | **Diodes**                                                   |                               |
-|---------------------|--------------------------------------------------------------|-------------------------------|
-| 2x                  | 3mm LED                                                      | D1, D2                        |
-| 1x                  | 1N4148 (or similar)                                          | D3                            |
-|---------------------|--------------------------------------------------------------|-------------------------------|
-|                     | **Everything else**                                          |                               |
-|---------------------|--------------------------------------------------------------|-------------------------------|
-| 1x                  | [ATMega168P](/resources#ATMega328P)                          | U1                            |
-| 1x                  | [LM7805 5V regulator](/resources#LM7805)                     | U2                            |
-| 3x                  | [SM460281N 10mm 7-segment display](/resources#SM460281N)     | U3, U4, U5                    |
-| 1x                  | 16MHz crystal oscillator                                     | Y1                            |
-| 1x                  | [PEC11R Rotary encoder](/resources#PEC11R)                   | RE1                           |
-| 2x                  | [TL1105SP pushbutton switches](/resources#TL1105)            | SW1, SW2                      |
-| 1x                  | 2x3 2.5mm male pin headers                                   | J1                            |
-| 1x                  | 2x5 2.5mm male pin headers                                   | J2                            |
-| 3x                  | 1x5 2.5mm female pin headers                                 | J3, J5, J7                    |
-| 3x                  | 1x5 2.5mm male pin headers                                   | J4, J6, J8                    |
-| 1x                  | 1x7 2.5mm female pin headers                                 | J9                            |
-| 1x                  | 1x7 2.5mm male pin headers                                   | J10                           |
-| 3x                  | [Thonkiconn 3.5mm jacks](/resources#Thonkiconn)              | J11, J12, J13                 |
+|                       | **Resistors**                                                  |                                 |
+| --------------------- | -------------------------------------------------------------- | ------------------------------- |
+| 1x                    | 180K                                                           | R1                              |
+| 1x                    | 100K                                                           | R2                              |
+| 5x                    | 1K                                                             | R3, R4, R5, R9, R10             |
+| 6x                    | 10K                                                            | R6, R7, R8, R11, R12, R13       |
+| --------------------- | -------------------------------------------------------------- | ------------------------------- |
+|                       | **Capacitors**                                                 |                                 |
+| --------------------- | -------------------------------------------------------------- | ------------------------------- |
+| 1x                    | 10u electrolytic                                               | C1                              |
+| 3x                    | 10n                                                            | C2, C5, C6                      |
+| 2x                    | 22p                                                            | C3, C4                          |
+| --------------------- | -------------------------------------------------------------- | ------------------------------- |
+|                       | **Diodes**                                                     |                                 |
+| --------------------- | -------------------------------------------------------------- | ------------------------------- |
+| 2x                    | 3mm LED                                                        | D1, D2                          |
+| 1x                    | 1N4148 (or similar)                                            | D3                              |
+| --------------------- | -------------------------------------------------------------- | ------------------------------- |
+|                       | **Everything else**                                            |                                 |
+| --------------------- | -------------------------------------------------------------- | ------------------------------- |
+| 1x                    | [ATMega168P](/resources#ATMega328P)                            | U1                              |
+| 1x                    | [LM7805 5V regulator](/resources#LM7805)                       | U2                              |
+| 3x                    | [SM460281N 10mm 7-segment display](/resources#SM460281N)       | U3, U4, U5                      |
+| 1x                    | 16MHz crystal oscillator                                       | Y1                              |
+| 1x                    | [PEC11R Rotary encoder](/resources#PEC11R)                     | RE1                             |
+| 2x                    | [TL1105SP pushbutton switches](/resources#TL1105)              | SW1, SW2                        |
+| 1x                    | 2x3 2.5mm male pin headers                                     | J1                              |
+| 1x                    | 2x5 2.5mm male pin headers                                     | J2                              |
+| 3x                    | 1x5 2.5mm female pin headers                                   | J3, J5, J7                      |
+| 3x                    | 1x5 2.5mm male pin headers                                     | J4, J6, J8                      |
+| 1x                    | 1x7 2.5mm female pin headers                                   | J9                              |
+| 1x                    | 1x7 2.5mm male pin headers                                     | J10                             |
+| 3x                    | [Thonkiconn 3.5mm jacks](/resources#Thonkiconn)                | J11, J12, J13                   |
 
 #### Purchase
 
@@ -100,21 +100,21 @@ The jacks are standard Thonkiconn 3.5mm which you can get from [ThonkDIY] (and p
 ### Steps
 
 1. Start by soldering the resistors to both boards. Note that they go on both sides of the top board:
-  Top board, top face: R9, R10, R13
-  Top board, bottom face: R1, R2, R7, R8, R11, R12
-  Bottom board, bottom face: R3, R4, R5, R6
+   Top board, top face: R9, R10, R13
+   Top board, bottom face: R1, R2, R7, R8, R11, R12
+   Bottom board, bottom face: R3, R4, R5, R6
 
 Clip the legs close
 
 2. Capacitors
-  Top board, top face: C6
-  Top board, bottom face: C5
-  Bottom board, bottom face: 
-Orientation
+   Top board, top face: C6
+   Top board, bottom face: C5
+   Bottom board, bottom face:
+   Orientation
 
-3. Diode 
-  top board, bottom face
-  orientation
+3. Diode
+   top board, bottom face
+   orientation
 
 4. Crystal oscillator, bottom board bottom face
 
@@ -122,7 +122,7 @@ Orientation
 6. LM7805, bottom board, bottom face
 7. IC holder
 8. Female headers bottom board + Male headers, top board
-    sandwich together and solder
+   sandwich together and solder
 
 Take a break
 
@@ -135,7 +135,7 @@ Jacks
 put panel on - nuts for jack and rotary encoder. adjust lower rotary encoder jack for level panel height
 Solder jacks, encoder, and switches (NOT LEDs yet)
 Push LEDs into position in panel. can use tape. may have to angle/bend LEDs.Solder.
-Push up 7-segments. legs probably too short for flush with panel. use tape to 
+Push up 7-segments. legs probably too short for flush with panel. use tape to
 
 ### Programming firmware
 
@@ -192,7 +192,7 @@ The way this is accomplished is by checking which of BEAT or DIV will be higher 
 
 #### Swing
 
-[Swing](https://en.wikipedia.org/wiki/Swing_(jazz_performance_style)) works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At `0`, the beats are even and there is no swing. At 66% the swing beats are triplets. The module allows going up to 75%, which is a quarter adjustment. In most musical styles that use a swing feel, such as jazz, 50%-66% is a common range.
+[Swing](<https://en.wikipedia.org/wiki/Swing_(jazz_performance_style)>) works by alternating each beat between two different timer values. These timer values average to the base clock frequency, but their ratio is controlled by the swing value. At `0`, the beats are even and there is no swing. At 66% the swing beats are triplets. The module allows going up to 75%, which is a quarter adjustment. In most musical styles that use a swing feel, such as jazz, 50%-66% is a common range.
 
 The way this is accomplished is by calculating an offset from a straight interval. For example, with a BPM of 120, the timer will count to 7812. A triplet of 7812 would therefore have a counter value of `7812/3 = 2604`. Rather than triggering after exactly 7812, we can instead alternate triggering on `7812 - 2604 = 5208` and `7812 + 2604 = 10416`, swapping `OCR1A` between these two values after every trigger.
 
@@ -226,11 +226,9 @@ void write(uint8_t bitmask)
 }
 ```
 
-
 ### Knob
 
 Rather than a potentiometer, the knob control is a [24-detent rotary encoder](/resources#PEC11R). [Pin-control interrupts](https://www.electrosoftcloud.com/en/pcint-interrupts-on-arduino/) (`PCINT`) detect rotations and keep track of the number of steps. Then the main logic loop polls this and adjusts the parameter as necessary. [This video](https://www.youtube.com/watch?v=v4BbSzJ-hz4) is pretty good at explaining how a rotary encoder works.
-
 
 ### Power supply
 
@@ -265,7 +263,6 @@ As this is my first fully-complete module, I learned a lot. There's some things 
 - CV in isn't all that valuable; another output (or an external clock input) would be more useful
 - Reduce brightness of LEDs by increasing R9 and R10
 - More space around programmer so it's not running into regulator
-
 
 <!--
 1. finish directions

@@ -1,10 +1,10 @@
 ---
-title:      AC Light Dimmer Circuit     # Titles shouldn't be more than 33 chars for good formatting.
-subtitle:               # Roll over into the subtitle if necessary (optional)
-date:       2015-1-10 18:24:58 -500      # 2008-12-14 10:30:00 +0900
-layout:     blogspot_post
+title: AC Light Dimmer Circuit # Titles shouldn't be more than 33 chars for good formatting.
+subtitle: # Roll over into the subtitle if necessary (optional)
+date: 2015-1-10 18:24:58 -500 # 2008-12-14 10:30:00 +0900
+layout: blogspot_post
 categories:
-- electronics
+  - electronics
 ---
 
 ### Intro
@@ -18,7 +18,7 @@ work together nicely). Here's this week's.
 When I moved into my old apartment, I bought [the cheapest floor lamp in Ikea](http://www.ikea.com/us/en/catalog/products/10139879/).
 Part of the reason it is so cheap is that the wire runs along the outside of the pole, which doesn't look particularly attractive.
 So one evening I got a metal saw and cut a new whole near the base and ran the wire through the inside of the pole, increasing it's
-attractiveness dramatically. 
+attractiveness dramatically.
 
 One consequence of this was I lost the power switch to the lamp. At the time it was on a wall switch circuit, but now that I've
 moved, the only way to turn it on and off is to use the plug. I was considering a few quick electrical ways to fix this, and
