@@ -1,0 +1,26 @@
+{
+  "siteId": "barbaric-coach-rvmku",
+  "exclude": [],
+  "retain": [],
+  "headers": {},
+  "rewriteRules": [
+    {
+      "match": "^$",
+      "replace": "/index.html",
+      "last": true,
+      "flags": ""
+    },
+    {
+      "match": "^(.*?)/$",
+      "replace": "${1}/index.html",
+      "last": true,
+      "flags": ""
+    },
+    {
+      "match": "^(.*?)/([^.]+)$",
+      "replace": "${1}/${2}/index.html",
+      "last": true,
+      "flags": ""
+    }
+  ]
+}

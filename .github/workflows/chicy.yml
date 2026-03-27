@@ -29,10 +29,6 @@ jobs:
           BRIDGETOWN_ENV: production
 
       - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          deploy_key: ${{ secrets.ACTIONS_DEPLOY_KEY }}
-          publish_dir: ./output
-          external_repository: rabidaudio/rabidaudio.github.io
-          publish_branch: main
-          cname: rabid.audio
+        run: |
+          npm i -g chicy.online
+          chicy deploy output --promote --wait
