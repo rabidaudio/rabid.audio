@@ -30,3 +30,5 @@ jobs:
 
       - name: Deploy
         run: npm run publish
+        env:
+          CHICY_DEPLOY_KEY: ${{ secrets.CHICY_DEPLOY_KEY }}
