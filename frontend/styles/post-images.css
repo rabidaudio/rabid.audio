@@ -1,35 +1,35 @@
 .image-container {
-    width: 100%;
-    max-width: 400px;
+  width: 100%;
+  max-width: 400px;
 }
 
 .image-container.center {
-    margin: auto;
-    text-align: center;
+  margin: auto;
+  text-align: center;
 }
 
 .image-container.small {
-    min-width: 300px;
-    max-width: 33%;
+  min-width: 300px;
+  max-width: 33%;
 }
 
 .image-container.big {
-    min-width: 300px;
-    max-width: 66%;
+  min-width: 300px;
+  max-width: 66%;
 }
 
 .image-container.full {
-    width: 100%;
-    max-width: initial;
+  width: 100%;
+  max-width: initial;
 }
 
 .image-container img {
-    width: 100%;
+  width: 100%;
 }
 
 .image-container.short img {
-    width: auto;
-    height: auto;
-    max-height: 400px;
-    max-width: 100%;
+  width: auto;
+  height: auto;
+  max-height: 400px;
+  max-width: 100%;
 }

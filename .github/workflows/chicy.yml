@@ -29,6 +29,4 @@ jobs:
           BRIDGETOWN_ENV: production
 
       - name: Deploy
-        run: |
-          npm i -g chicy.online
-          chicy deploy output --promote --wait
+        run: npx chicy deploy output --promote --wait

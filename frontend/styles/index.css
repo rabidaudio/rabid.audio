@@ -1,5 +1,5 @@
-@import 'material-icons/iconfont/material-icons.css';
-@import './post-images.css';
+@import "material-icons/iconfont/material-icons.css";
+@import "./post-images.css";
 
 :root {
   --body-background: #f2f2f2;
@@ -9,7 +9,7 @@
   /* --heading-color: black; */
   --heading-color: var(--accent-color);
   --font-default: "Oxygen", "Helvetica Neue", "Helvetica", BlinkMacSystemFont,
-  -apple-system, "Arial", sans-serif;
+    -apple-system, "Arial", sans-serif;
   --font-mono: "Cutive Mono", monospace;
 }
 
@@ -29,19 +29,20 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-mono); 
+  font-family: var(--font-mono);
   color: var(--accent-color);
 }
 
 a {
   /* font-family: var(--font-mono); */
   font-family: var(--font-default);
-  
+
   color: var(--body-color);
   text-decoration: underline;
 }
 
-code, pre {
+code,
+pre {
   font-family: var(--font-mono);
 }
 
@@ -138,7 +139,8 @@ pre {
 
 /* tables */
 
-td, th {
+td,
+th {
   padding: 1px 5px;
   text-align: start;
 }
@@ -160,7 +162,7 @@ li {
   background-color: hsl(48, 100%, 96.1%);
   border-top-color: hsl(32.1, 94.6%, 43.7%);
   border-top-width: 3px;
-  border-radius: 0.35rem; 
+  border-radius: 0.35rem;
 }
 
 .alert h3 {
