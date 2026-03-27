@@ -20,8 +20,8 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "latest"
-          cache: "yarn"
-      - run: yarn install
+          cache: 'npm'
+      - run: npm install
 
       - name: Build
         run: bin/bridgetown deploy
@@ -29,4 +29,4 @@ jobs:
           BRIDGETOWN_ENV: production
 
       - name: Deploy
-        run: npx chicy deploy output --promote --wait
+        run: echo $CHICY_DEPLOY_KEY && npx chicy deploy output --promote --wait
