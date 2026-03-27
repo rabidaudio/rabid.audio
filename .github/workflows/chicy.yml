@@ -1,4 +1,4 @@
-name: Deploy to GitHub pages
+name: Deploy to chicy.online
 
 on:
   push:
@@ -23,12 +23,10 @@ jobs:
           cache: "npm"
       - run: npm install
 
-      - name: Build
-        run: bin/bridgetown deploy
+      - name: Deploy
+        run: |
+          bin/bridgetown deploy
+          npm run publish
         env:
           BRIDGETOWN_ENV: production
-
-      - name: Deploy
-        run: npm run publish
-        env:
           CHICY_DEPLOY_KEY: ${{ secrets.CHICY_DEPLOY_KEY }}
