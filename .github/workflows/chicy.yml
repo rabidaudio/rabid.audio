@@ -29,4 +29,5 @@ jobs:
           npm run publish
         env:
           BRIDGETOWN_ENV: production
+          AWS_REGION: us-east-1
           CHICY_DEPLOY_KEY: ${{ secrets.CHICY_DEPLOY_KEY }}
