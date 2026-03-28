@@ -7,7 +7,7 @@ categories:
 
 ## Background
 
-I'm a big fan of static sites. Why so much of the web uses Wordpress with it's bulky, error-prone, and insecure PHP backend to store what's effectively just some HTML and CSS never made sense to me.
+I'm a big fan of static sites. Why so much of the web uses Wordpress with its bulky, error-prone, and insecure PHP backend to store what's effectively just some HTML and CSS never made sense to me.
 
 Tooling for this sort of site is incredibly flexible. This blog is created using  [Bridgetown](https://www.bridgetownrb.com/), and an earlier iteration of it used [Jekyll](https://jekyllrb.com/). Site generators allow a really pleasant and flexible abstraction for creating content that can then be packaged into static HTML/CSS/JS/etc files for deployment. My personal links site [okaysure.cool](https://okaysure.cool) is literally [just a single html file](https://github.com/rabidaudio/okaysure.cool).
 
@@ -26,13 +26,13 @@ Introducing [`chicy.online`](https://github.com/rabidaudio/chicy.online), a host
 Getting started is easy. Simply install the CLI from NPM:
 
 ```bash
-npm install --save-dev chicy.online
+npm install -g chicy.online
 ```
 
 Next, create a new site:
 
 ```bash
-npx chicy init --name "My Cool Site"
+chicy init --name "My Cool Site"
 ```
 
 #### Authentication
@@ -86,7 +86,7 @@ CHICY_DEPLOY_KEY=dk_ac3d... npx chicy deploy dist/ --promote --wait
 
 ## Custom domains
 
-At this point your site should be live on your unique subdomain, e.g. `teeny-angle-dwas5.sites.chicy.online`. But no static site service would be complete if it didn't let you bring your own domain. `chicy` will automatically provision and validate an SSL certificate and serve your site via HTTPS.
+At this point your site should be live on your unique subdomain, e.g. `teeny-angle-dwas5.sites.chicy.online`. But no static site service would be complete if it didn't let you bring your own domain. `chicy` will automatically provision and validate an SSL certificate and serv  e your site via HTTPS.
 
 ### DNS Records
 
@@ -228,13 +228,15 @@ In order to avoid having a backend server running, all the processing is done wi
 
 Lambda functions can execute for up to 15 minutes, but API Gateway calls must complete within 6 seconds. For this reason, longer tasks are triggered by S3 events. When a deployment is created, temporary AWS credentials are generated which have only permission to write to a particular deployment file in S3. The CLI then uses these credentials to place a tarball of the site content at that location. When the object is placed, a Lambda function is invoked which downloads the tarball and clones the site's internal git repository. It deletes any existing files, unzips the tarball in place, makes a new commit for the deployment, and pushes the repository back to S3.
 
-On promotion, a dummy file is placed into S3 to trigger the promotion (this is dirty but simpler than other methods of invocation). It clones the repository, checks out the desired deployment, and copies the files into the directory on S3 that acts as an origin for CloudFront. The site configuration at the time of the deployment is pulled out of DynamoDb and put into CloudFront's Key-Value Store by domain name. When a request is made, the Function looks up this configuration by requested hostname and applies any rewrite rules before handing the request to CloudFront.
+On promotion, a dummy file is placed into S3 to trigger the promotion (this is dirty but simpler than other methods of invocation). It clones the repository, checks out the desired deployment, and copies the files into the directory on S3 that acts as an origin for CloudFront. The site configuration at the time of the deployment is pulled out of DynamoDB and put into CloudFront's Key-Value Store by domain name. When a request is made, the Function looks up this configuration by requested hostname and applies any rewrite rules before handing the request to CloudFront.
+
+An earlier design iteration kept all the past deployment tarballs and unzipped them into place to switch deployments. To make storage more efficient, the app now uses [git-remote-s3](https://github.com/awslabs/git-remote-s3), a git plugin that uses S3 as a remote git server, and commits new files on top of the old ones. This allows leveraging git to store differential versions. It also uses LFS for large binary files, although to what extent this is configured correctly I am unsure. In the future, I may change the CLI to push the new files directly to the S3 origin instead of the intermediate tarball step, which will offload some work from Lambda and reduce execution times.
 
 Lambda functions make sense for small and/or bursty traffic because it's billed per-call. For low traffic volumes the price-per-call is less than having a server sitting idle waiting for requests. And when traffic is unpredictable, serverless applications are able to scale instantly. But if your volume is constant and predictable, having a dedicated server running becomes cheaper. Fortunately because the Lambda handler is just a wrapper for a Node.js server, it would be trivial to run it with a server later.
 
 ## Costs
 
-S3 storage, at the least-optimized on-demand tier, is as of writing only $0.023/GB/mo. Amazon is really pushing their new flat-rate pricing (probably to compete with CloudFlare) but I'm pretty sure at scale it's a bad deal. Outside of the generous free tier, serving content is $0.085/GB + $0.020/GB transfer + $0.0100 per 10K requests. There's also a charge of $0.10/tenant/mo for the multi-tenant feature. Invalidations are $0.005/path. CF Functions are $0.10 per 1 million invocations and KVS is $0.03 per 1 million reads. DynamoDB on-demand pricing is complicated, but $0.625 per million write request units $0.125 per million read request units plus $0.25/GB/mo of storage. Lambda is $0.0000166667 for every GB-second and $0.20 per 1M requests.
+S3 storage, at the least-optimized on-demand tier, is as of writing only $0.023/GB/mo. Amazon is really pushing their new flat-rate pricing for CloudFront (probably to compete with CloudFlare) but I'm pretty sure at scale it's a bad deal. Outside of the generous free tier, serving content is $0.085/GB + $0.020/GB transfer + $0.0100 per 10K requests. There's also a charge of $0.10/tenant/mo for the multi-tenant feature. Invalidations are $0.005/path. CF Functions are $0.10 per 1 million invocations and KVS is $0.03 per 1 million reads. DynamoDB on-demand pricing is complicated, but $0.625 per million write request units $0.125 per million read request units plus $0.25/GB/mo of storage. Lambda is $0.0000166667 for every GB-second and $0.20 per 1M requests.
 
 If we estimate liberally that a site uses 5GB of storage, deploying 1GB of assets once a week, each requiring 100 API calls and 10m of Lambda execution time, and receives a 100K page views a month at an average of 200kb for a total of 20GB transferred:
 
@@ -242,7 +244,7 @@ If we estimate liberally that a site uses 5GB of storage, deploying 1GB of asset
 0.023*5 + 0.085*1 + 0.020*20 + (100,000/10,000)*0.0100 + 0.10 + 4*0.005 + (0.10 + 0.03)*(100,000/1,000,000) + 4*(20*0.625 + 200*0.125)/1,000,000 + 0.25*(1/1024/1024) + 4*10*60*(256/1024)*0.0000166667 + 4*(100/1000000)*0.20 = 0.8432
 ```
 
-...comes out to just shy of $1/site/month. And this is excluding the volume discounts and large free-tier benefits. The largest of this is by far the cost per-10K Cloudfront requests.
+...comes just shy of $1/site/month. And this is excluding the volume discounts and large free-tier benefits. The largest of this is by far the cost per-10K Cloudfront requests.
 
 I'd like to confirm this at scale (cloud pricing is incredibly hard to estimate by design), but ideally I'd love to charge around $1 per month per site to users (probably billed annually due to transaction costs). Currently I haven't built any user limits or billing infrastructure so if you want to test it out you can do it for free (just please don't rack up my AWS bill thanks).
 
