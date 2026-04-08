@@ -7,7 +7,7 @@
     "esbuild": "node esbuild.config.js --minify",
     "esbuild-dev": "node esbuild.config.js --watch",
     "lint:fix": "prettier -w .",
-    "publish": "chicy deploy output --promote --wait"
+    "publish": "chicy deploy output --message $DEPLOY_MESSAGE --promote --wait --verbose"
   },
   "devDependencies": {
     "chicy.online": "^0.2.2",

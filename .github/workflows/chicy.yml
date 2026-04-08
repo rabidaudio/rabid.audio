@@ -26,6 +26,7 @@ jobs:
       - name: Deploy
         run: |
           bin/bridgetown deploy
+          DEPLOY_MESSAGE=$(git rev-parse --short HEAD)
           npm run publish
         env:
           BRIDGETOWN_ENV: production
