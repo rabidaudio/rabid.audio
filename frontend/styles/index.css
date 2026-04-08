@@ -203,3 +203,15 @@ blockquote.instagram-media,
 iframe.instagram-media {
   width: 200px !important;
 }
+
+.footnotes {
+  line-height: initial;
+  font-size: 0.8em;
+}
+
+.footnotes:before {
+  content: 'Footnotes';
+  font-size: 1.5em;
+  font-family: var(--font-mono);
+  color: var(--accent-color);
+}
