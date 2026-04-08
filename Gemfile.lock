@@ -42,6 +42,8 @@ GEM
       streamlined (>= 0.6.0)
       tilt (~> 2.0)
       zeitwerk (>= 2.7.3)
+    bridgetown-feed (4.0.0)
+      bridgetown (>= 1.2.0)
     bridgetown-foundation (2.1.2)
       dry-inflector (>= 1.0)
       hash_with_dot_access (~> 2.0)
@@ -175,6 +177,7 @@ PLATFORMS
 
 DEPENDENCIES
   bridgetown (~> 2.1.0)
+  bridgetown-feed (~> 4.0.0)
   bridgetown-sitemap (~> 3.0.2)
   debug (>= 1.0.0)
   puma (~> 6.4)
