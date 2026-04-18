@@ -26,7 +26,7 @@ jobs:
       - name: Deploy
         run: |
           bin/bridgetown deploy
-          chicy deploy output --message $(git rev-parse --short HEAD) --promote --wait
+          npx chicy deploy output --message $(git rev-parse --short HEAD) --promote --wait
         env:
           BRIDGETOWN_ENV: production
           AWS_REGION: us-east-1
