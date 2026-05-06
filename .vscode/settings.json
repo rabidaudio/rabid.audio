@@ -1,5 +1,5 @@
 {
-  "workbench.colorTheme": "Default Dark+",
+  "workbench.colorTheme": "Dark+",
   "cSpell.enabled": true,
   "cSpell.words": [
     "Bandcamp",
@@ -15,6 +15,7 @@
     "hackathon",
     "JUCE",
     "Kicad",
+    "luthier",
     "Makerspace",
     "Nyquist",
     "opamp",
