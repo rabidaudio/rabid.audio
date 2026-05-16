@@ -1,9 +1,15 @@
+.image-parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  justify-content: space-around;
+  align-items:center;
+}
+
 .image-container {
   width: 100%;
   max-width: 400px;
-}
-
-.image-container.center {
   margin: auto;
   text-align: center;
 }
