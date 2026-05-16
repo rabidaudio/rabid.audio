@@ -13,17 +13,17 @@ This project isn't quite building a guitar from scratch, but it's a step closer 
 
 My first ever guitar was a budget Strat, a "[Starcaster by Fender](https://en.wikipedia.org/wiki/Starcaster_by_Fender)". This was my guitar from a picture I uploaded to Wikipedia before completely ruining the instrument.
 
-{% img center small %}2026-05-06-partscaster-1-the-plan/starcaster.jpg{% endimg %}
+{% img small %}starcaster.jpg{% endimg %}
 
 I proceeded to destroy the guitar, unleashing my destructive teenage angst on it in an attempt to make it "punk rock."
 
-{% img center small %}2026-05-06-partscaster-1-the-plan/startcaster-modded-full.jpeg{% endimg %}
+{% img small %}startcaster-modded-full.jpeg{% endimg %}
 
 I cut parts out of it, scratched and burned the finish, drilled holes in it, hammered huge nails into it, etc. While I think it's overwhelmingly in poor taste, I will say the checkerboard pickguard was a cool idea, one I may come back to eventually.
 
-{% img center %}2026-05-06-partscaster-1-the-plan/headstock-damage.jpeg{% endimg %}
+{% img %}headstock-damage.jpeg{% endimg %}
 
-{% img center %}2026-05-06-partscaster-1-the-plan/body-closeup.jpeg{% endimg %}
+{% img %}body-closeup.jpeg{% endimg %}
 
 (Forgive the low resolution of these photos, they are from 2011).
 
@@ -39,7 +39,7 @@ With some wood restoration the general shape of the headstock can be restored, b
 
 I ordered a Squier Mini Affinity Jazzmaster HH refurbished for very cheap. The neck on it is absolute trash; the fingerboard looks like plywood and is full of nasty marks and discoloration. The thing can't hold tuning at all. But I got it for the body and that part seems solid. It is a lovely mint green color, a double-humbucker setup, and has a hardtail bridge which makes it easy to work with. The body is very light; smaller than a normal Jazzmaster but comparable to a normal Strat.
 
-{% img center %}2026-05-06-partscaster-1-the-plan/both.jpg{% endimg %}
+{% img %}both.jpg{% endimg %}
 
 The two guitars have different scale lengths. The Strat is a normal Fender 25.5" scale length, while the Squier is a mini scale, clocking in at 22.75". However they are surprisingly compatible. The Squier has the same neck width at the nut and last fret, and uses normal-sized hardware. This means the neck pocket is the same size also. The way they reduce the scale length is dropping a fret or two off the neck and moving the bridge forward about 8mm. For the bridge I can either move it back, or build a custom bridge plate that uses the same mounting holes but sets the back wall back the appropriate amount.
 

@@ -97,7 +97,7 @@ with your DNS provider for directions on how to do this.
 www.example.com CNAME teeny-angle-dwas5.sites.chicy.online
 ```
 
-{% img full %}2026-03-27-introducing-chicy-online/cname.png{% endimg %}
+{% img full %}cname.png{% endimg %}
 
 If you're using a subdomain like `www.example.com`, that is the only record you need.
 

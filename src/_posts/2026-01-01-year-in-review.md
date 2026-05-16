@@ -12,7 +12,7 @@ It's been a while since I wrote a blog post, and a lot has happened this past ye
 
 In April I joined [Kelly Romo](https://www.instagram.com/kelly_romo/) as her full-time bass player. I played six shows with her this year, culminating in [a headlining show at The Masquerade in December](https://www.masqueradeatlanta.com/events/kelly-romo/). With Kelly I played my first "real" gig at a ticketed, paid venue. I was so nervous before the show but as soon as I got on stage it all went away and I had such a great time.
 
-{% img center short %}2026-01-01-year-in-review/kelly-romo.jpg{% endimg %}
+{% img short %}kelly-romo.jpg{% endimg %}
 
 She's working on a new album, and a couple singles from it have dropped already. My favorite of the songs so far, Back Again, has a music video.
 
@@ -28,17 +28,17 @@ I took some of my unreleased songs that SV had been performing and a few new one
 
 In November I booked [a show of transgender folk artists at Waller's](https://www.instagram.com/okay_sure_cool/p/DQKrmZjEZ4m/). It gave myself and my friends, all of whom had performed only a handful of times prior, a safe and welcoming place to perform. It was the first time I felt content with my performance of my solo material. And the turnout was better than I expected for a bunch of still-establishing acts.
 
-{% img center %}2026-01-01-year-in-review/wallers.jpg{% endimg %}
+{% img %}wallers.jpg{% endimg %}
 
 ## Watershed
 
-{% img center big %}2026-01-01-year-in-review/tent.jpg{% endimg %}
+{% img big %}tent.jpg{% endimg %}
 
 My (now ex-) boyfriend has this brick shed in his backyard in Reynoldstown. When he first moved in, he said it would be a cool place to do shows. Looking at the dark, dusty room I was skeptical. But after pressure-washing the walls, sealing the leaks in the roof, re-running power, and adding proper lighting I had a change of heart.
 
 In May for my 34th birthday I co-booked the Shedwarming show. I opened with both Chris Kraemer and Stolen Velour, before a stacked lineup of really talented artists.
 
-{% img center %}2026-01-01-year-in-review/shed.jpg{% endimg %}
+{% img %}shed.jpg{% endimg %}
 
 It was an absolutely magical night, my best birthday party ever. That show ended up launching what would be called [Watershed](https://www.instagram.com/watershed.atl/) (a triple-entendre; starting as literally a shed full of water, a play on the name of Atlanta's city water department, and a turning point for house venues).
 
@@ -56,7 +56,7 @@ From there word about the venue spread fast and soon out-of-town bands were book
 
 Some incredible bands played that stage throughout summer and fall, including Janie, Tongues of Fire, T.E.N.T., Hillview #73, and Split Silk. Several bands played their first shows, including Baby Bites, Code Unknown, Sweet Arcana, and myself.
 
-{% img center short %}2026-01-01-year-in-review/mosh.gif{% endimg %}
+{% img short %}mosh.gif{% endimg %}
 
 Unfortunately there were several noise complaints culminating in a cease-and-desist. Combined with the cold weather, burnout, and the busy lives of the organizers, the venue has gone dormant these past few months. But I'm hoping come spring we kick things off again.
 
@@ -72,10 +72,10 @@ I learned quite a lot about mastering by doing a comp album where all the songs 
 
 I co-founded a small, private makerspace called The Coven. We provide space for transgender makers in Atlanta, specializing in equipment and expertise in the areas of analog audio/video and cosplay. We have 3D and resin printers, a laser cutter, drill press, sewing and embroidery machines, a analog/digital media workstation, and two robust electronics workstations.
 
-<div style="display: flex;flex-direction: row;flex-wrap: wrap;width: 100%;justify-content: space-around;align-items:center">
-    <div>{% img short %}2026-01-01-year-in-review/makerspace1.jpg{% endimg %}</div>
-    <div>{% img short %}2026-01-01-year-in-review/makerspace2.jpg{% endimg %}</div>
-</div>
+{% img short %}
+makerspace1.jpg
+makerspace2.jpg
+{% endimg %}
 
 Eventually we will be formally opening the space for members but with our busy lives it's taken time to get everything set up. But getting all my electronics equipment out of my house has allowed me to convert my office entirely to music and get my living room back. I've been spending quite a lot of time working in the space, and have worked on some smaller projects which I might cover in future posts.
 
@@ -95,7 +95,7 @@ The year started with a house show that I booked and played two sets in, the fir
 
 I've grown as a musician both qualitatively and quantitatively. My vocals show a stark improvement just from the summer to now, putting aside how much better they were this summer than only a few years ago. My stage presence has also improved noticeably and I'm more confident talking between songs.
 
-{% img center short %}2026-01-01-year-in-review/strut.jpg{% endimg %}
+{% img short %}strut.jpg{% endimg %}
 
 I track all the shows I've played and the numbers have exploded this year. From 6 shows, all open mic or talent show-type gigs, over the previous 15 years to 20 sets across 15 shows in 2025. 7 of those were my own original material. I booked 5 shows and volunteered or organized 7 more. I worked on 36 songs, wither that was performing, recording, producing, mixing, or mastering. I wrote 7 songs, two of which have released publicly, with the rest hopefully coming soon.
 
