@@ -7,15 +7,11 @@ Hi, I'm Julien Dorothy. I'm a [musician](/music) and hobbyist music technologist
 
 You can also see a lot more past, mostly software projects, on my [Github profile](https://github.com/rabidaudio). And if you need it, my [professional resume](/resume).
 
-## Active Projects
+## Projects
 
-- [Synthesizer](/projects/synth)
-  - [CLK](/projects/synth/clk)
-  - [ADSR](/projects/synth/adsr)
-  - [UTIL](/projects/synth/util)
-- Effects pedals
-  - [Splitter](/projects/splitter-pedal)
-  - [Chorus](/projects/chorus-pedal)
+{% for project in site.data.projects %}
+  - [{{ project[0] }}]({%link {{ project[1].first[1].path }} %})
+{% endfor %}
 
 ## Posts
 

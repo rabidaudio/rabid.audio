@@ -3,6 +3,7 @@ layout: post
 title: Partscaster Build Part I - The Plan
 categories:
   - music tech
+project: Partscaster
 ---
 
 I love making guitars. There was a point growing up where I wanted to be a luthier. Electronics were always pretty accessible, but any sort of woodworking was really intimidating. But now with the makerspace my confidence is growing with those skills.

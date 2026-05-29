@@ -3,6 +3,7 @@ layout: post
 title: Partscaster Build Part II - Prototyping
 categories:
   - music tech
+project: Partscaster
 ---
 
 In this post I'll cover most of the work on the guitar I [planned in the last post]({% link _posts/2026-05-06-partscaster-1-the-plan.md %}). This time I remembered to take a lot of progress photos. Let's get into it!

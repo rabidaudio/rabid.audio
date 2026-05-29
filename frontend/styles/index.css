@@ -199,6 +199,37 @@ li {
   content: "";
 }
 
+.post-project {
+  font-style: italic;
+  font-size: 0.8em;
+}
+
+.post-project-series {
+  font-style: initial;
+}
+
+.project-navigation {
+  display: flex;
+  flex-direction: row;
+  align-content: space-between;
+}
+
+.project-navigation-prev,
+.project-navigation-next {
+  flex-basis: 100%; 
+}
+
+.project-navigation-prev {
+  text-align: start;
+  order: 1;
+}
+
+.project-navigation-next {
+  text-align: end;
+  order: 2;
+}
+
+
 blockquote.instagram-media,
 iframe.instagram-media {
   width: 200px !important;

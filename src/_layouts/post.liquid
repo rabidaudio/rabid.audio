@@ -2,6 +2,17 @@
 layout: default
 ---
 
+{% if resource.project %}
+    <div class="post-project">
+        <span>Part of a project series: {{ resource.project }}</span>
+        <ol class="post-project-series">
+        {% for post in site.data.projects[resource.project] %}
+            <li><a href="{% link {{ post[1].path }} %}">{{ post[1].title }}</a></li>
+        {% endfor %}
+        </ol>
+    </div>
+{% endif %}
+
 <div class="post-timestamp">
     Published: {{ resource.data.date | date: "%d %b %Y" }}
 </div>
@@ -14,4 +25,27 @@ layout: default
     </ul>
 {% endif %}
 
+<hr style="margin-top: 0px;"/>
+
 {{ content }}
+
+{% if resource.project %}
+    <div class="project-navigation">
+    {% for post in site.data.projects[resource.project] %}
+        {% if post[0] == resource.id %}
+            {% unless forloop.first %}
+                {% assign prev_idx = forloop.index | minus: 2 %}
+                {% for prev in site.data.projects[resource.project] offset: prev_idx limit: 1 %}
+                    <a class="project-navigation-prev" href="{%link {{ prev[1].path }} %}">Previous: {{ prev[1].title }}</a>
+                {% endfor %}
+            {% endunless %}
+            {% unless forloop.last %}
+                {% assign next_idx = forloop.index %}
+                {% for next in site.data.projects[resource.project] offset: next_idx limit: 1 %}
+                    <a class="project-navigation-next" href="{%link {{ next[1].path }} %}">Next: {{ next[1].title }}</a>
+                {% endfor %}
+            {% endunless %}
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endif %}
