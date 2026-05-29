@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: "Bass Chorus Pedal"
 categories:
   - project
