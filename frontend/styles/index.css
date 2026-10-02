@@ -246,3 +246,12 @@ iframe.instagram-media {
   font-family: var(--font-mono);
   color: var(--accent-color);
 }
+
+.fine {
+  font-size: small;
+  font-style: italic;
+}
+
+.center {
+  text-align: center;
+}
