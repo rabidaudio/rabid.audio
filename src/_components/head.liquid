@@ -50,5 +50,14 @@
 <script src="{% asset_path js %}" defer></script>
 {% live_reload_dev_js %}
 
-{%# TODO: When available on NPM, use package instead %}
-<script type="module" src="https://kicanvas.org/kicanvas/kicanvas.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", (event) => {
+    if (document.getElementsByTagName('kicanvas-embed').length > 0 ) {
+      console.log('loading kicanvas.js')
+      const tag = document.createElement('script')
+      tag.setAttribute('type', 'module')
+      tag.setAttribute('src', 'https://kicanvas.org/kicanvas/kicanvas.js')
+      document.head.append(tag)
+    }
+  })
+</script>
