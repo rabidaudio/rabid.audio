@@ -11,8 +11,12 @@ description: >-
 links:
   Music Artist:
     Killian Street Records: https://killianstreet.bandcamp.com
-    Stolen Velour: https://stolenvelouratl.bandcamp.com
+    Punter: https://punter.band
+    # Stolen Velour: https://stolenvelouratl.bandcamp.com
     Serious Times: https://serioustimes.bandcamp.com
+
+  Personal:
+    Socials: https://okaysure.cool
 
   Music Fan:
     Bandcamp (fan): https://bandcamp.com/rabidaudio
@@ -28,8 +32,6 @@ links:
     # Wellfound: https://wellfound.com/u/cjknight
     Talks: https://speakerdeck.com/rabidaudio
 
-  Personal:
-    Socials: https://okaysure.cool
 
 blogspot_archives:
   rabidaudio.blogspot.com:

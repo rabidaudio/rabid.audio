@@ -3,21 +3,25 @@ layout: default
 title: Assorted Music Credits
 ---
 
-## Kelly Romo
+## Performance
 
-Bass player with an "alt-gay grief rock" outfit, [instagram.com/kellyromo](https://instagram.com/kellyromo)
+### Kelly Romo
+
+Aalt-gay grief rock, bass. [instagram.com/kellyromo](https://instagram.com/kellyromo)
 
 {% youtube_embed lJhkKpsX36U %}
 
-## Punter
+### Punter
 
-Sad girl emo. EP coming soon.
+Sad girl slowcore. EP coming soon. [punter.band](https://punter.band/)
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=1241489771/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=1745886232/transparent=true/" seamless><a href="https://killianstreet.bandcamp.com/album/causerie-a-compilation-benefiting-yrc-atl">Causerie: A Compilation Benefiting YRC ATL by Punter</a></iframe>
 
-{% youtube_embed 4sXlWnfAPus %}
+{%# youtube_embed 4sXlWnfAPus %}
+<div style="text-align: center">
+<video style="width: 100%; max-width: 600px" src="https://punter.band/content/punter_promo_greymirror.mp4" poster="https://punter.band/content/punter_promo_greymirror_still.png" controls=""></video></div>
 
-## Serious Times
+### Serious Times
 
 Post-rock. [serioustimes.bandcamp.com](https://serioustimes.bandcamp.com)
 
@@ -25,7 +29,7 @@ Post-rock. [serioustimes.bandcamp.com](https://serioustimes.bandcamp.com)
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=3210345782/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://serioustimes.bandcamp.com/track/if-fashion-is-suffering-then-im-a-narcissist">If Fashion is Suffering Then I&#39;m a Narcissist by Serious Times</a></iframe>
 
-## the garages
+### the garages
 
 Organizer of a prolific 100+ member band/queer internet music collective Fourth Strike centered around the baseball simulation horror game and internet phenomenon [Blaseball](https://blaseball.com/). Featured on [We've Been the Garages](https://thegarages.bandcamp.com/album/weve-been-the-garages), [Sign Off @ Desert Bus](https://thegarages.bandcamp.com/album/the-garages-sign-off-desert-bus-2024), [Underground](https://thegarages.bandcamp.com/album/the-garages-underground), [RIV](https://thegarages.bandcamp.com/album/the-garages-riv), and [Tribute Act 3](https://thegarages.bandcamp.com/album/ta032-unearthed-2).
 
@@ -33,13 +37,7 @@ Organizer of a prolific 100+ member band/queer internet music collective Fourth 
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/album=3467737381/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/track=2873697696/transparent=true/" seamless><a href="https://thegarages.bandcamp.com/album/ta032-unearthed-2">TA03.2: UNEARTHED by the garages</a></iframe>
 
-## Chris Kraemer
-
-Recorded, mixed, and mastered Chris's [debut EP](https://chriskraemer.bandcamp.com/album/killian-street-sessions).
-
-<iframe style="border: 0; width: 100%; height: 274px;" src="https://bandcamp.com/EmbeddedPlayer/album=1782249538/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://chriskraemer.bandcamp.com/album/killian-street-sessions">Killian Street Sessions by Chris Kraemer</a></iframe>
-
-## Stolen Velour
+### Stolen Velour
 
 Sad girl slowcore / grungy lovewave
 
@@ -47,7 +45,26 @@ Sad girl slowcore / grungy lovewave
 
 <iframe style="border: 0; width: 100%; height: 120px;" src="https://bandcamp.com/EmbeddedPlayer/track=1146763258/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/artwork=small/transparent=true/" seamless><a href="https://stolenvelouratl.bandcamp.com/track/floorboards">floorboards by Stolen Velour</a></iframe>
 
-## Blaseball: The Musical
+## Production
+
+###  Y'all Rock Camp ATL
+
+Mixed, mastered, and did art design for live album. Produced physical audio CDs. Mastered and did art design for benefit compilation album.
+
+<div style="display: flex; justify-content: space-around;">
+  <iframe style="border: 0; width: 400px; height: 472px;" src="https://bandcamp.com/EmbeddedPlayer/album=3376764993/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://killianstreet.bandcamp.com/album/yall-rock-camp-atl-live-at-the-masquerade-2026">Y&#39;all Rock Camp ATL LIVE at the Masquerade 2026 by Y&#39;all Rock Camp ATL</a></iframe>
+
+  <iframe style="border: 0; width: 400px; height: 373px;" src="https://bandcamp.com/EmbeddedPlayer/album=1241489771/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://killianstreet.bandcamp.com/album/causerie-a-compilation-benefiting-yrc-atl">Causerie: A Compilation Benefiting YRC ATL by Various Artists</a></iframe>
+</div>
+
+### Chris Kraemer
+
+Recorded, mixed, and mastered Chris's [debut EP](https://chriskraemer.bandcamp.com/album/killian-street-sessions).
+
+<iframe style="border: 0; width: 100%; height: 274px;" src="https://bandcamp.com/EmbeddedPlayer/album=1782249538/size=large/bgcol=ffffff/linkcol=0687f5/artwork=small/transparent=true/" seamless><a href="https://chriskraemer.bandcamp.com/album/killian-street-sessions">Killian Street Sessions by Chris Kraemer</a></iframe>
+
+
+### Blaseball: The Musical
 
 Was a production assistant alongside nearly 40 volunteers from around the world who organized via Discord to write, record, and edit a digital musical in 72 hours over the course of three weekends, centered around the baseball simulation horror game [Blaseball](https://blaseball.com/).
 
