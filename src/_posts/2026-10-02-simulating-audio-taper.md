@@ -14,7 +14,7 @@ But sometimes audio-taper pots in a particular value are difficult to find. Manu
 Most "audio-taper" pots sold are not actually logarithmic, but instead use a piecewise-linear approximation. These are normally marked as "A" taper (e.g. A100K), as opposed to linear (e.g. B100K).
 
 {% img %}
-https://eepower.com/uploads/education/potentiometer_taper.png
+potentiometer_taper.png
 {% endimg %}
 <p class="fine center">Source: <a href="https://eepower.com/resistor-guide/resistor-types/potentiometer-taper">eepower.com</a></p>
 
